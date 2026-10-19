@@ -1,6 +1,6 @@
-# Color Tokens — Decision Log (through 2026-10-01)
+# Color Tokens — Decision Log (through 2026-10-15)
 
-> **Superseded for values (2026-09-24).** The current color values for every theme and site live in `mng-colors.tokens.json` in this folder (with `mng-colors.css` and `mng-colors-sites.csv`; engineering fixes are in `production-vs-design-differences.md` entry 21). Keep this file for the history: why tokens were added, renamed, removed or excluded. The newest decisions are in §8–§10.
+> **Superseded for values (2026-09-24).** The current color values for every theme and site live in `mng-colors.tokens.json` in this folder (with `mng-colors.css` and `mng-colors-sites.csv`; engineering fixes are in `production-vs-design-differences.md` entry 21). Keep this file for the history: why tokens were added, renamed, removed or excluded. The newest decisions are in §8–§11.
 >
 > **Changed since this was written:**
 > - The export now includes The Baltimore Sun, Capital Gazette and `subsite-custom`, reversing the exclusions noted below. Those values come from the Figma style guides, not from Figma variables (Figma's Colors collection is capped at 20 modes).
@@ -174,3 +174,21 @@ Carried over from `CRUX-Gap-Analysis.md`, which was retired on 2026-09-24. All o
 2. **In Figma:** the PMP style guide was renamed "NEPA-PMP — Theme Style Guide", its notes now cover both delivery routes, and the NEPA site list moved there from the Modern Earthy style guide. The Colors collection mode "Prairie Mountain Publishing" was renamed "NEPA-PMP" (same mode ID, so bound components are unaffected). Should-be values are unchanged (Measured Vibrant values).
 3. **In the export:** the sub-theme key is now `nepa-pmp` (was `prairie-mountain-publishing`). The NEPA sites now carry NEPA-PMP's 2 fixes instead of Modern Earthy's 4. Engineering note: on NEPA the fix goes in 5 separate site plugins, not one shared stylesheet.
 4. **Disputed themes resolved, matching Figma:** Daily Press (Measured Vibrant), New York Daily News (Measured Vibrant + `site-tribune`), GrowthSpotter (Measured Vibrant + `site-tribune`, own ramp), The Morning Call (Modern Earthy + its own override). On Morning Call, `secondary` and `tertiary` aren't in the override but inherit the design values, so 2 of its 6 Figma callouts don't change what renders; Karl decided 2026-10-01 to keep them as missing/wrong: the values should be set explicitly, so all 6 callouts stand.
+
+## 11. Daily Herald sub-theme (2026-10-15)
+
+1. **Daily Herald gets its own Modern Earthy sub-theme** (Karl; palette approved by the other team and merged 2026-10-19), placed in the Modern Earthy row of the Color Pallets page next to NEPA-PMP. Key `daily-herald`; dailyherald.com now resolves Modern Earthy → Daily Herald instead of "not on MNG themes".
+2. **Primary `#0072B4` is given; the rest was extrapolated and approved by Karl.** The light/dark steps reuse the OKLCH lightness and chroma steps of the other blue sub-themes (Boston Herald, Morning Call, St. Paul Pioneer Press), with the hue held at the primary's:
+
+   | Token | Hex | Step from primary (OKLCH) | Text on it |
+   |---|---|---|---|
+   | `primary-lighter` | `#3b97dc` | L +0.12 | `#141414` (5.8:1) |
+   | `primary-light` | `#087abe` | L +0.025, C +0.004 (kept at 4.6:1 with white) | `#ffffff` (4.6:1) |
+   | `primary` | `#0072b4` | given | `#ffffff` (5.2:1) |
+   | `primary-dark` | `#0066a2` | L −0.04, C −0.01 | `#ffffff` (6.1:1) |
+   | `primary-darker` | `#0e598b` | L −0.085, C −0.028 | `#ffffff` (7.5:1) |
+
+   `primary-light` takes a smaller step than Boston Herald's (+0.066) so white text still passes AA; with the usual step it would drop to 4.4:1.
+3. **Secondary `#eeff41` and tertiary `#ff5722`** match the other blue Modern Earthy sub-themes (Boston Herald, Morning Call). Near-black, white and nav-text are the Modern Earthy defaults (`#1a1a1a`, `#fafafa`, `#1a1a1a`).
+4. **Not a Figma mode.** The Colors collection is at Figma's 20-mode limit, so, like The Baltimore Sun and Capital Gazette, the values live in the token files and in the Figma style guide (swatches unbound).
+5. **No production audit.** dailyherald.com still runs on Everyware (verified 2026-09-24). Its production column in Figma says so; production-vs-design entry 21 lists the ten Customizer values to set when it moves.

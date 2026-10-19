@@ -591,6 +591,7 @@ Listed in the Figma page's **Pending Updates**. None is in the production font u
 | Morning Call | sub-theme | Modern Earthy | 6 | 1 |
 | 21C Michigan Sites (Combined) | sub-theme | Modern Earthy | 3 | 4 |
 | Boston Herald | sub-theme | Modern Earthy | 4 | 1 |
+| Daily Herald | sub-theme | Modern Earthy | — (not live on MNG themes yet) | 1 |
 | NEPA-PMP | sub-theme | Modern Earthy | 2 | 24 |
 | Chicago Tribune | sub-theme | Measured Vibrant | 2 | 1 |
 | South Florida Sun Sentinel | sub-theme | Measured Vibrant | 2 | 1 |
@@ -773,6 +774,14 @@ Loads: `modernearthy.css + Customizer override (div#page)`. Figma mode: Boston H
 
 **Publications:** Boston Herald (bostonherald.com)
 
+### Daily Herald (sub-theme of Modern Earthy)
+
+New palette, added 2026-10-15 (Karl). Planned delivery: `modernearthy.css + Customizer override (div#page)`. Not a Figma mode (the Colors collection is at its 20-mode limit); the spec is the "Daily Herald — Style Guide" section on the Color Pallets page and `tokens/themes/daily-herald.tokens.json`.
+
+No fixes yet: dailyherald.com still runs on Everyware (verified 2026-09-24), so there is no production column to compare. When it moves to Modern Earthy, set all ten values in the Customizer (`div#page`): `--primary-lighter` `#3b97dc`, `--primary-light` `#087abe`, `--primary` `#0072b4`, `--primary-dark` `#0066a2`, `--primary-darker` `#0e598b`, `--secondary` `#eeff41`, `--tertiary` `#ff5722` (`--near-black`, `--white` and `--nav-text` use the Modern Earthy defaults `#1a1a1a` / `#fafafa` / `#1a1a1a`). Then audit it like the other sub-themes.
+
+**Publications:** Daily Herald (dailyherald.com)
+
 ### NEPA-PMP (sub-theme of Modern Earthy)
 
 Loads: `modernearthy.css + color override on body: site-pmp style.min.css (PMP sites) or each NEPA site's own site plugin (site-citizensvoice, site-thetimes-tribune, site-wcexaminer, site-republicanherald, site-standardspeaker), identical values`. Figma mode: NEPA-PMP. Production audited 2026-10-01.
@@ -909,7 +918,7 @@ None. The sites whose theme was disputed (the 5 NEPA sites, Daily Press, The Mor
 | Colorado Daily | coloradodaily.com | Colorado Weeklies | Modern Earthy | NEPA-PMP | 2 |
 | Julesburg Advocate | julesburgadvocate.com | Colorado Weeklies | Modern Earthy | NEPA-PMP | 2 |
 | Lamar Ledger | lamarledger.com | Colorado Weeklies | Modern Earthy | NEPA-PMP | 2 |
-| Daily Herald | dailyherald.com | Daily Herald | — | — | n/a (not on MNG themes) |
+| Daily Herald | dailyherald.com | Daily Herald | Modern Earthy (planned) | Daily Herald | — (not live on MNG themes yet) |
 | The Denver Post | denverpost.com | Denver | Bold Coastal | Denver Post | 3 |
 | Lowell Sun | lowellsun.com | Fitch | Modern Earthy | — | 4 |
 | Sentinel & Enterprise (Fitchburg) | sentinelandenterprise.com | Fitch | Modern Earthy | — | 4 |

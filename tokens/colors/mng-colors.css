@@ -307,6 +307,21 @@
   --nav-text: #141414;
 }
 
+/* Daily Herald (sub-theme of Modern Earthy) · 1 publication · added 2026-10-15; not a Figma mode (20-mode limit); not live on MNG themes yet */
+[data-mng-theme="daily-herald"],
+[data-mng-site="dailyherald.com"] {
+  --primary-lighter: #3b97dc;
+  --primary-light: #087abe;
+  --primary: #0072b4;
+  --primary-dark: #0066a2;
+  --primary-darker: #0e598b;
+  --secondary: #eeff41;
+  --tertiary: #ff5722;
+  --near-black: #1a1a1a;
+  --white: #fafafa;
+  --nav-text: #1a1a1a;
+}
+
 /* NEPA-PMP (sub-theme of Modern Earthy) · 24 publications · Engineering fixes: 2 (see production-vs-design-differences.md entry 21) */
 [data-mng-theme="nepa-pmp"],
 [data-mng-site="coloradodaily.com"],
@@ -435,7 +450,6 @@
 }
 
 /* Site-level overrides (design values). Publications not listed use their theme block above. */
-/* dailyherald.com (Daily Herald): Not on MNG WordPress themes (Everyware platform, verified 2026-09-24): no MNG theme tokens. */
 [data-mng-site="readingeagle.com"] { /* Reading Eagle */ --subsite-custom: #fafafa; --subsite-text: #000000; }
 [data-mng-site="thereporteronline.com"] { /* The Lansdale Reporter */ --subsite-custom: #164396; --subsite-text: #f9f9f9; }
 [data-mng-site="trentonian.com"] { /* Trentonian */ --subsite-custom: #0c8fcf; --subsite-text: #f9f9f9; }

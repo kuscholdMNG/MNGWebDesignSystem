@@ -486,6 +486,32 @@
      }
     }
    },
+   "daily-herald": {
+    "primary-lighter": {"$value": "#3b97dc"},
+    "primary-light": {"$value": "#087abe"},
+    "primary": {"$value": "#0072b4"},
+    "primary-dark": {"$value": "#0066a2"},
+    "primary-darker": {"$value": "#0e598b"},
+    "secondary": {"$value": "#eeff41"},
+    "tertiary": {"$value": "#ff5722"},
+    "near-black": {"$value": "#1a1a1a"},
+    "white": {"$value": "#fafafa"},
+    "nav-text": {"$value": "#1a1a1a"},
+    "$extensions": {
+     "com.mng": {
+      "name": "Daily Herald",
+      "level": "sub-theme",
+      "parentTheme": "Modern Earthy",
+      "loads": "modernearthy.css + Customizer override (div#page), planned",
+      "inFigma": false,
+      "figmaMode": null,
+      "mismatchCount": 0,
+      "mismatches": [],
+      "sites": [ "dailyherald.com" ],
+      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Not in the Figma Colors collection (20-mode limit); documented on the Color Pallets page. Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
+     }
+    }
+   },
    "nepa-pmp": {
     "primary-lighter": {"$value": "#717fd1"},
     "primary-light": {"$value": "#5869ca"},
@@ -699,13 +725,27 @@
  "site": {
   "$type": "color",
   "dailyherald-com": {
-   "$description": "Not on MNG WordPress themes (Everyware platform, verified 2026-09-24): no MNG theme tokens.",
+   "primary-lighter": {"$value": "{color.theme.daily-herald.primary-lighter}"},
+   "primary-light": {"$value": "{color.theme.daily-herald.primary-light}"},
+   "primary": {"$value": "{color.theme.daily-herald.primary}"},
+   "primary-dark": {"$value": "{color.theme.daily-herald.primary-dark}"},
+   "primary-darker": {"$value": "{color.theme.daily-herald.primary-darker}"},
+   "secondary": {"$value": "{color.theme.daily-herald.secondary}"},
+   "tertiary": {"$value": "{color.theme.daily-herald.tertiary}"},
+   "near-black": {"$value": "{color.theme.daily-herald.near-black}"},
+   "white": {"$value": "{color.theme.daily-herald.white}"},
+   "nav-text": {"$value": "{color.theme.daily-herald.nav-text}"},
    "$extensions": {
     "com.mng": {
      "publication": "Daily Herald",
      "domain": "dailyherald.com",
      "cluster": "Daily Herald",
-     "note": "Not on MNG WordPress themes (Everyware platform, verified 2026-09-24): no MNG theme tokens."
+     "theme": "Modern Earthy",
+     "subTheme": "Daily Herald",
+     "tokenSource": "color.theme.daily-herald",
+     "mismatchCount": 0,
+     "fixesFrom": "color.theme.daily-herald",
+     "note": "Daily Herald sub-theme added 2026-10-15 (design values). Production still runs on Everyware (verified 2026-09-24), not on MNG themes."
     }
    }
   },

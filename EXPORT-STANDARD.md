@@ -17,7 +17,7 @@ Direction is **Figma → code**. We do not make files meant to be imported back 
 | Where a value comes from in production | `$extensions.com.mng.production` on the token (site, stylesheet, selector or CSS variable, date verified). |
 | Where a value goes to in Figma | `$extensions.com.mng.figma` on the token (file, collection, variable, mode, and which components use it). |
 | Production gaps | `production-vs-design-differences.md`. Tokens are never changed to match production. |
-| Values that don't fit in Figma | Baltimore Sun and Capital Gazette (over Figma's 20-mode limit) live only in the token files. That is the one place the token file, not Figma, holds the design value. |
+| Values that don't fit in Figma | Baltimore Sun, Capital Gazette and Daily Herald (over Figma's 20-mode limit) live only in the token files. That is the one place the token file, not Figma, holds the design value. |
 
 ## 3. File format
 

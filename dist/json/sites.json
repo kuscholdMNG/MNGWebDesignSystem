@@ -769,8 +769,37 @@
   },
   "dailyherald.com": {
     "publication": "Daily Herald",
-    "onMngThemes": false,
-    "note": "Not on MNG WordPress themes (Everyware platform, verified 2026-09-24): no MNG theme tokens."
+    "cluster": "Daily Herald",
+    "onMngThemes": true,
+    "theme": "modern-earthy",
+    "subTheme": "daily-herald",
+    "css": [
+      "css/core.css",
+      "css/themes/daily-herald.css",
+      "css/wordpress.css"
+    ],
+    "tokens": {
+      "color.theme.primary-lighter": "#3b97dc",
+      "color.theme.primary-lighter.rgba": "rgba(59, 151, 220, 1)",
+      "color.theme.primary-light": "#087abe",
+      "color.theme.primary-light.rgba": "rgba(8, 122, 190, 1)",
+      "color.theme.primary": "#0072b4",
+      "color.theme.primary.rgba": "rgba(0, 114, 180, 1)",
+      "color.theme.primary-dark": "#0066a2",
+      "color.theme.primary-dark.rgba": "rgba(0, 102, 162, 1)",
+      "color.theme.primary-darker": "#0e598b",
+      "color.theme.primary-darker.rgba": "rgba(14, 89, 139, 1)",
+      "color.theme.secondary": "#eeff41",
+      "color.theme.secondary.rgba": "rgba(238, 255, 65, 1)",
+      "color.theme.tertiary": "#ff5722",
+      "color.theme.tertiary.rgba": "rgba(255, 87, 34, 1)",
+      "color.theme.near-black": "#1a1a1a",
+      "color.theme.near-black.rgba": "rgba(26, 26, 26, 1)",
+      "color.theme.white": "#fafafa",
+      "color.theme.white.rgba": "rgba(250, 250, 250, 1)",
+      "color.theme.nav-text": "#1a1a1a",
+      "color.theme.nav-text.rgba": "rgba(26, 26, 26, 1)"
+    }
   },
   "dailylocal.com": {
     "publication": "West Chester Daily Local",

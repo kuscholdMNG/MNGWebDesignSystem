@@ -2,7 +2,7 @@
 
 > **2026-10-14:** the DTCG 2025.10 color tokens now live in `tokens/core/color.tokens.json` (primitives) and `tokens/themes/` (one file per theme, sub-theme and product, site overrides in `tokens/themes/sites/`, stacking in `mng.resolver.json`), with hex + color object + RGBA. Ready-to-use files are in `dist/`. This folder stays as the input for `scripts/build-tokens/make-tokens.py` (publications, sites, production audit) and for the CSV and decision log until step 5 of the export cleanup deletes it.
 
-Generated 2026-10-01 from the MNG Web Design System Figma file (`jFHYqhZbJjvWQmDI4myCsd`): the Colors collection (`3749:16`, 20 modes) plus the Color Pallets | 2026.09.10 style guides. Covers **97 publications** and **22 themes / sub-themes**, including the two that don't fit Figma's 20-mode limit (The Baltimore Sun, Capital Gazette).
+Generated 2026-10-01 from the MNG Web Design System Figma file (`jFHYqhZbJjvWQmDI4myCsd`): the Colors collection (`3749:16`, 20 modes) plus the Color Pallets | 2026.09.10 style guides. Covers **97 publications** and **23 themes / sub-themes**, including the three that don't fit Figma's 20-mode limit (The Baltimore Sun, Capital Gazette and, since 2026-10-15, Daily Herald).
 
 | File | Use |
 |---|---|
@@ -35,6 +35,10 @@ Token values are always the **design (should-be)** values. Production is never c
 
 - **Documented exceptions** (currently only Greeley Tribune) are part of the design, so their values are in the tokens and they have no red outline.
 - **The Baltimore Sun** uses its documented Figma styles as is. No production comparison is tracked for it.
+
+## Changes on 2026-10-15
+
+- **New sub-theme: Daily Herald** (dailyherald.com), on Modern Earthy. Primary `#0072b4` (Karl); the rest of the ramp was extrapolated from it (see the decision log, §11). Not a Figma mode (20-mode limit): the spec is the "Daily Herald — Style Guide" section on the Color Pallets page. The site still runs on Everyware, so there is no production audit yet.
 
 ## Changes on 2026-10-01
 

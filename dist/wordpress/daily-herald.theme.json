@@ -1,0 +1,380 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "MNG Web Design System: Daily Herald",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "gray-black",
+          "name": "Gray Black",
+          "color": "#000000"
+        },
+        {
+          "slug": "gray-min",
+          "name": "Gray Min",
+          "color": "#141414"
+        },
+        {
+          "slug": "gray-100",
+          "name": "Gray 100",
+          "color": "#393938"
+        },
+        {
+          "slug": "gray-200",
+          "name": "Gray 200",
+          "color": "#5e5d5c"
+        },
+        {
+          "slug": "gray-300",
+          "name": "Gray 300",
+          "color": "#838280"
+        },
+        {
+          "slug": "gray-400",
+          "name": "Gray 400",
+          "color": "#a7a6a3"
+        },
+        {
+          "slug": "gray-500",
+          "name": "Gray 500",
+          "color": "#cccac7"
+        },
+        {
+          "slug": "gray-600",
+          "name": "Gray 600",
+          "color": "#f1efeb"
+        },
+        {
+          "slug": "gray-max",
+          "name": "Gray Max",
+          "color": "#ffffff"
+        },
+        {
+          "slug": "feedback-low-success",
+          "name": "Feedback Low Success",
+          "color": "#2e8000"
+        },
+        {
+          "slug": "feedback-medium",
+          "name": "Feedback Medium",
+          "color": "#856a00"
+        },
+        {
+          "slug": "feedback-high-error",
+          "name": "Feedback High Error",
+          "color": "#cc2b27"
+        },
+        {
+          "slug": "neutral-panel",
+          "name": "Neutral Panel",
+          "color": "#f1f1f1"
+        },
+        {
+          "slug": "surface-nav-panel",
+          "name": "Surface Nav Panel",
+          "color": "#fbfbfb"
+        },
+        {
+          "slug": "tributes-primary-lighter",
+          "name": "Tributes Primary Lighter",
+          "color": "#f15f87"
+        },
+        {
+          "slug": "tributes-primary-light",
+          "name": "Tributes Primary Light",
+          "color": "#c00c3d"
+        },
+        {
+          "slug": "tributes-primary",
+          "name": "Tributes Primary",
+          "color": "#8d092d"
+        },
+        {
+          "slug": "tributes-primary-dark",
+          "name": "Tributes Primary Dark",
+          "color": "#770000"
+        },
+        {
+          "slug": "tributes-primary-darker",
+          "name": "Tributes Primary Darker",
+          "color": "#4d0000"
+        },
+        {
+          "slug": "tributes-secondary",
+          "name": "Tributes Secondary",
+          "color": "#b3bc9c"
+        },
+        {
+          "slug": "tributes-tertiary",
+          "name": "Tributes Tertiary",
+          "color": "#3a252b"
+        },
+        {
+          "slug": "tributes-tan",
+          "name": "Tributes Tan",
+          "color": "#a39c8a"
+        },
+        {
+          "slug": "tributes-tan-light",
+          "name": "Tributes Tan Light",
+          "color": "#e8e6e2"
+        },
+        {
+          "slug": "theme-primary-lighter",
+          "name": "Theme Primary Lighter",
+          "color": "#3b97dc"
+        },
+        {
+          "slug": "theme-primary-light",
+          "name": "Theme Primary Light",
+          "color": "#087abe"
+        },
+        {
+          "slug": "theme-primary",
+          "name": "Theme Primary",
+          "color": "#0072b4"
+        },
+        {
+          "slug": "theme-primary-dark",
+          "name": "Theme Primary Dark",
+          "color": "#0066a2"
+        },
+        {
+          "slug": "theme-primary-darker",
+          "name": "Theme Primary Darker",
+          "color": "#0e598b"
+        },
+        {
+          "slug": "theme-secondary",
+          "name": "Theme Secondary",
+          "color": "#eeff41"
+        },
+        {
+          "slug": "theme-tertiary",
+          "name": "Theme Tertiary",
+          "color": "#ff5722"
+        },
+        {
+          "slug": "theme-near-black",
+          "name": "Theme Near Black",
+          "color": "#1a1a1a"
+        },
+        {
+          "slug": "theme-white",
+          "name": "Theme White",
+          "color": "#fafafa"
+        },
+        {
+          "slug": "theme-nav-text",
+          "name": "Theme Nav Text",
+          "color": "#1a1a1a"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "noto-sans",
+          "name": "Noto Sans",
+          "fontFamily": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif"
+        },
+        {
+          "slug": "noto-serif",
+          "name": "Noto Serif",
+          "fontFamily": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif"
+        },
+        {
+          "slug": "heading",
+          "name": "Heading",
+          "fontFamily": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif"
+        },
+        {
+          "slug": "body",
+          "name": "Body",
+          "fontFamily": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif"
+        },
+        {
+          "slug": "eyebrow",
+          "name": "Eyebrow",
+          "fontFamily": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif"
+        },
+        {
+          "slug": "small-headline",
+          "name": "Small Headline",
+          "fontFamily": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "10",
+          "name": "10px",
+          "size": "10px"
+        },
+        {
+          "slug": "11",
+          "name": "11px",
+          "size": "11px"
+        },
+        {
+          "slug": "12",
+          "name": "12px",
+          "size": "12px"
+        },
+        {
+          "slug": "13",
+          "name": "13px",
+          "size": "13px"
+        },
+        {
+          "slug": "14",
+          "name": "14px",
+          "size": "14px"
+        },
+        {
+          "slug": "15",
+          "name": "15px",
+          "size": "15px"
+        },
+        {
+          "slug": "15-2",
+          "name": "15.2px",
+          "size": "15.2px"
+        },
+        {
+          "slug": "16",
+          "name": "16px",
+          "size": "16px"
+        },
+        {
+          "slug": "16-5",
+          "name": "16.5px",
+          "size": "16.5px"
+        },
+        {
+          "slug": "18",
+          "name": "18px",
+          "size": "18px"
+        },
+        {
+          "slug": "19",
+          "name": "19px",
+          "size": "19px"
+        },
+        {
+          "slug": "20",
+          "name": "20px",
+          "size": "20px"
+        },
+        {
+          "slug": "21",
+          "name": "21px",
+          "size": "21px"
+        },
+        {
+          "slug": "23",
+          "name": "23px",
+          "size": "23px"
+        },
+        {
+          "slug": "24",
+          "name": "24px",
+          "size": "24px"
+        },
+        {
+          "slug": "25",
+          "name": "25px",
+          "size": "25px"
+        },
+        {
+          "slug": "26",
+          "name": "26px",
+          "size": "26px"
+        },
+        {
+          "slug": "29",
+          "name": "29px",
+          "size": "29px"
+        },
+        {
+          "slug": "31",
+          "name": "31px",
+          "size": "31px"
+        },
+        {
+          "slug": "36",
+          "name": "36px",
+          "size": "36px"
+        },
+        {
+          "slug": "40",
+          "name": "40px",
+          "size": "40px"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        {
+          "slug": "050",
+          "name": "050 (4px)",
+          "size": "4px"
+        },
+        {
+          "slug": "100",
+          "name": "100 (8px)",
+          "size": "8px"
+        },
+        {
+          "slug": "150",
+          "name": "150 (12px)",
+          "size": "12px"
+        },
+        {
+          "slug": "200",
+          "name": "200 (16px)",
+          "size": "16px"
+        },
+        {
+          "slug": "250",
+          "name": "250 (20px)",
+          "size": "20px"
+        },
+        {
+          "slug": "300",
+          "name": "300 (24px)",
+          "size": "24px"
+        }
+      ]
+    },
+    "custom": {
+      "radius": {
+        "sm": "4px",
+        "utility": "5px",
+        "lg": "8px"
+      },
+      "breakpoint": {
+        "fold": "340px",
+        "mobile": "360px",
+        "tablet": "768px",
+        "tablet-landscape": "1024px",
+        "desktop": "1280px",
+        "wordpress-grid-xs": "320px",
+        "wordpress-grid-s": "640px",
+        "wordpress-grid-m": "800px",
+        "wordpress-grid-l": "1040px",
+        "wordpress-grid-xl": "1280px"
+      },
+      "font-weight": {
+        "regular": "400",
+        "bold": "700",
+        "medium": "500",
+        "semibold": "600"
+      },
+      "font-theme": {
+        "eyebrow-size": "21px",
+        "eyebrow-weight": "400"
+      }
+    }
+  }
+}

@@ -686,6 +686,32 @@ export const themes = {
       }
     }
   },
+  "daily-herald": {
+    "color": {
+      "theme": {
+        "primary-lighter": "#3b97dc",
+        "primary-light": "#087abe",
+        "primary": "#0072b4",
+        "primary-dark": "#0066a2",
+        "primary-darker": "#0e598b",
+        "secondary": "#eeff41",
+        "tertiary": "#ff5722",
+        "near-black": "#1a1a1a",
+        "white": "#fafafa",
+        "nav-text": "#1a1a1a"
+      }
+    },
+    "font": {
+      "theme": {
+        "heading-family": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif",
+        "body-family": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif",
+        "eyebrow-size": "21px",
+        "eyebrow-weight": 400,
+        "eyebrow-family": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif",
+        "small-headline-family": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif"
+      }
+    }
+  },
   "nepa-pmp": {
     "color": {
       "theme": {
@@ -1087,10 +1113,14 @@ export const sites = {
     "onMngThemes": true
   },
   "dailyherald.com": {
-    "theme": null,
-    "subTheme": null,
-    "css": null,
-    "onMngThemes": false
+    "theme": "modern-earthy",
+    "subTheme": "daily-herald",
+    "css": [
+      "css/core.css",
+      "css/themes/daily-herald.css",
+      "css/wordpress.css"
+    ],
+    "onMngThemes": true
   },
   "dailylocal.com": {
     "theme": "modern-earthy",

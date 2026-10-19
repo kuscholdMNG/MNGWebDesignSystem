@@ -191,6 +191,17 @@
             "$ref": "../wordpress/type-theme/modern-earthy.tokens.json"
           }
         ],
+        "daily-herald": [
+          {
+            "$ref": "modern-earthy.tokens.json"
+          },
+          {
+            "$ref": "daily-herald.tokens.json"
+          },
+          {
+            "$ref": "../wordpress/type-theme/modern-earthy.tokens.json"
+          }
+        ],
         "nepa-pmp": [
           {
             "$ref": "modern-earthy.tokens.json"
@@ -493,6 +504,17 @@
         "dailyfreeman.com": [
           {
             "$ref": "modern-earthy.tokens.json"
+          },
+          {
+            "$ref": "../wordpress/type-theme/modern-earthy.tokens.json"
+          }
+        ],
+        "dailyherald.com": [
+          {
+            "$ref": "modern-earthy.tokens.json"
+          },
+          {
+            "$ref": "daily-herald.tokens.json"
           },
           {
             "$ref": "../wordpress/type-theme/modern-earthy.tokens.json"
@@ -1448,6 +1470,19 @@
             "bostonherald.com"
           ]
         },
+        "daily-herald": {
+          "name": "Daily Herald",
+          "level": "sub-theme",
+          "parentTheme": "modern-earthy",
+          "loads": "modernearthy.css + Customizer override (div#page), planned",
+          "figmaMode": null,
+          "productionAudit": null,
+          "mismatchCount": 0,
+          "sites": [
+            "dailyherald.com"
+          ],
+          "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Not in the Figma Colors collection (20-mode limit); documented on the Color Pallets page. Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
+        },
         "nepa-pmp": {
           "name": "NEPA-PMP",
           "level": "sub-theme",
@@ -1563,8 +1598,15 @@
         "dailyherald.com": {
           "publication": "Daily Herald",
           "cluster": "Daily Herald",
-          "onMngThemes": false,
-          "note": "Not on MNG WordPress themes (Everyware platform, verified 2026-09-24): no MNG theme tokens."
+          "onMngThemes": true,
+          "theme": "modern-earthy",
+          "subTheme": "daily-herald",
+          "tokenSource": "daily-herald",
+          "chain": [
+            "modern-earthy",
+            "daily-herald"
+          ],
+          "mismatchCount": 0
         },
         "theoaklandpress.com": {
           "publication": "Daily Oakland Press",

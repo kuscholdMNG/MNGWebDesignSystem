@@ -283,7 +283,7 @@ export declare const wordpress: {
   };
 };
 
-export type ThemeKey = "bold-coastal" | "modern-earthy" | "measured-vibrant" | "denverpost" | "east-bay-times" | "the-mercury-news" | "st-paul-pioneer-press" | "petaluma-argus-courier" | "the-press-democrat" | "the-sonoma-index-tribune" | "the-baltimore-sun" | "capital-gazette" | "morning-call" | "21c-michigan-sites-combined" | "boston-herald" | "nepa-pmp" | "chicago-tribune" | "south-florida-sun-sentinel" | "orlando-sentinel" | "growthspotter" | "hartford-courant" | "endless-tributes";
+export type ThemeKey = "bold-coastal" | "modern-earthy" | "measured-vibrant" | "denverpost" | "east-bay-times" | "the-mercury-news" | "st-paul-pioneer-press" | "petaluma-argus-courier" | "the-press-democrat" | "the-sonoma-index-tribune" | "the-baltimore-sun" | "capital-gazette" | "morning-call" | "21c-michigan-sites-combined" | "boston-herald" | "daily-herald" | "nepa-pmp" | "chicago-tribune" | "south-florida-sun-sentinel" | "orlando-sentinel" | "growthspotter" | "hartford-courant" | "endless-tributes";
 export interface ThemeTokens {
   color: { theme: Record<string, string> };
   font?: Record<string, Record<string, string | number>>;
