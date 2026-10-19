@@ -1,6 +1,6 @@
-# Color Tokens — Decision Log (through 2026-10-15)
+# Color Tokens — Decision Log (through 2026-10-19)
 
-> **Superseded for values (2026-09-24).** The current color values for every theme and site live in `mng-colors.tokens.json` in this folder (with `mng-colors.css` and `mng-colors-sites.csv`; engineering fixes are in `production-vs-design-differences.md` entry 21). Keep this file for the history: why tokens were added, renamed, removed or excluded. The newest decisions are in §8–§11.
+> **Superseded for values (2026-09-24).** The current color values for every theme and site live in `mng-colors.tokens.json` in this folder (with `mng-colors.css` and `mng-colors-sites.csv`; engineering fixes are in `production-vs-design-differences.md` entry 21). Keep this file for the history: why tokens were added, renamed, removed or excluded. The newest decisions are in §8–§12.
 >
 > **Changed since this was written:**
 > - The export now includes The Baltimore Sun, Capital Gazette and `subsite-custom`, reversing the exclusions noted below. Those values come from the Figma style guides, not from Figma variables (Figma's Colors collection is capped at 20 modes).
@@ -190,5 +190,13 @@ Carried over from `CRUX-Gap-Analysis.md`, which was retired on 2026-09-24. All o
 
    `primary-light` takes a smaller step than Boston Herald's (+0.066) so white text still passes AA; with the usual step it would drop to 4.4:1.
 3. **Secondary `#eeff41` and tertiary `#ff5722`** match the other blue Modern Earthy sub-themes (Boston Herald, Morning Call). Near-black, white and nav-text are the Modern Earthy defaults (`#1a1a1a`, `#fafafa`, `#1a1a1a`).
-4. **Not a Figma mode.** The Colors collection is at Figma's 20-mode limit, so, like The Baltimore Sun and Capital Gazette, the values live in the token files and in the Figma style guide (swatches unbound).
+4. ~~**Not a Figma mode.** The Colors collection is at Figma's 20-mode limit, so, like The Baltimore Sun and Capital Gazette, the values live in the token files and in the Figma style guide (swatches unbound).~~ Superseded 2026-10-19: Daily Herald is a Figma mode (§12).
 5. **No production audit.** dailyherald.com still runs on Everyware (verified 2026-09-24). Its production column in Figma says so; production-vs-design entry 21 lists the ten Customizer values to set when it moves.
+
+## 12. The Mercury News + East Bay Times combined; Daily Herald gets a Figma mode (2026-10-19)
+
+1. **One sub-theme for both sites** (Karl: "if Mercury News and East Bay Times have identical color palettes, combine them into a single mode"). Every design value was identical (all 10 `color/theme/*` variables, checked in Figma 2026-10-19). New key `the-mercury-news-east-bay-times`, name "The Mercury News + East Bay Times"; `east-bay-times` and `the-mercury-news` are retired.
+2. **Figma:** the The Mercury News mode (`6857:5`) was renamed "The Mercury News + East Bay Times", so its ID and any layer bound to it are unchanged. The two style guides on the Color Pallets page were combined into "The Mercury News + East Bay Times — Style Guide" (`6867:24243`, now at the old East Bay Times spot): one should-be column for both sites and a production column per site, each labeled with its site. The East Bay Times section (`6867:24131`) was removed, and the Bold Coastal row sections to its right moved left to close the gap. No layer in the main file or WordPress Elements had either mode set (checked 2026-10-19; Reader Dashboard v2.0 timed out, not checked).
+3. **Production audits stay per site.** East Bay Times still shows production `secondary` `#eeff41` (should be `#ffc518`); The Mercury News matches. The mismatch now carries `sites: ["eastbaytimes.com"]`, and `make-tokens.py` writes it as `mismatchSites`. Both sites set an undocumented `subsite-custom` `#0097a7`.
+4. **Daily Herald took the freed slot.** The East Bay Times mode (`6857:4`) was renamed "Daily Herald" and its 10 theme values set to the Daily Herald palette (§11). Any layer that had been set to the East Bay Times mode would now show Daily Herald; none were found. The collection stays at 20 modes.
+5. **The Daily Herald palette was approved** by the other team (2026-10-19) and merged (pull request #4).

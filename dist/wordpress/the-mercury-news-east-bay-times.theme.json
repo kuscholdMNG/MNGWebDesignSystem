@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
-  "title": "MNG Web Design System: East Bay Times",
+  "title": "MNG Web Design System: The Mercury News + East Bay Times",
   "settings": {
     "color": {
       "palette": [

@@ -70,23 +70,12 @@
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
           }
         ],
-        "east-bay-times": [
+        "the-mercury-news-east-bay-times": [
           {
             "$ref": "bold-coastal.tokens.json"
           },
           {
-            "$ref": "east-bay-times.tokens.json"
-          },
-          {
-            "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
-          }
-        ],
-        "the-mercury-news": [
-          {
-            "$ref": "bold-coastal.tokens.json"
-          },
-          {
-            "$ref": "the-mercury-news.tokens.json"
+            "$ref": "the-mercury-news-east-bay-times.tokens.json"
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
@@ -571,7 +560,7 @@
             "$ref": "bold-coastal.tokens.json"
           },
           {
-            "$ref": "east-bay-times.tokens.json"
+            "$ref": "the-mercury-news-east-bay-times.tokens.json"
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
@@ -727,7 +716,7 @@
             "$ref": "bold-coastal.tokens.json"
           },
           {
-            "$ref": "the-mercury-news.tokens.json"
+            "$ref": "the-mercury-news-east-bay-times.tokens.json"
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
@@ -1333,29 +1322,19 @@
             "denverpost.com"
           ]
         },
-        "east-bay-times": {
-          "name": "East Bay Times",
+        "the-mercury-news-east-bay-times": {
+          "name": "The Mercury News + East Bay Times",
           "level": "sub-theme",
           "parentTheme": "bold-coastal",
           "loads": "boldcoastal.css + Customizer override (div#page)",
-          "figmaMode": "East Bay Times",
+          "figmaMode": "The Mercury News + East Bay Times",
           "productionAudit": "2026-08-03",
           "mismatchCount": 2,
           "sites": [
+            "mercurynews.com",
             "eastbaytimes.com"
-          ]
-        },
-        "the-mercury-news": {
-          "name": "The Mercury News",
-          "level": "sub-theme",
-          "parentTheme": "bold-coastal",
-          "loads": "boldcoastal.css + Customizer override (div#page)",
-          "figmaMode": "The Mercury News",
-          "productionAudit": "2026-08-03",
-          "mismatchCount": 1,
-          "sites": [
-            "mercurynews.com"
-          ]
+          ],
+          "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only."
         },
         "st-paul-pioneer-press": {
           "name": "St. Paul Pioneer Press",
@@ -1475,13 +1454,13 @@
           "level": "sub-theme",
           "parentTheme": "modern-earthy",
           "loads": "modernearthy.css + Customizer override (div#page), planned",
-          "figmaMode": null,
+          "figmaMode": "Daily Herald",
           "productionAudit": null,
           "mismatchCount": 0,
           "sites": [
             "dailyherald.com"
           ],
-          "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Not in the Figma Colors collection (20-mode limit); documented on the Color Pallets page. Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
+          "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Figma mode Daily Herald since 2026-10-19 (it took the East Bay Times mode slot when East Bay Times and The Mercury News were combined). Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
         },
         "nepa-pmp": {
           "name": "NEPA-PMP",
@@ -1849,11 +1828,11 @@
           "cluster": "BANG",
           "onMngThemes": true,
           "theme": "bold-coastal",
-          "subTheme": "east-bay-times",
-          "tokenSource": "east-bay-times",
+          "subTheme": "the-mercury-news-east-bay-times",
+          "tokenSource": "the-mercury-news-east-bay-times",
           "chain": [
             "bold-coastal",
-            "east-bay-times"
+            "the-mercury-news-east-bay-times"
           ],
           "mismatchCount": 2
         },
@@ -1862,11 +1841,11 @@
           "cluster": "BANG",
           "onMngThemes": true,
           "theme": "bold-coastal",
-          "subTheme": "the-mercury-news",
-          "tokenSource": "the-mercury-news",
+          "subTheme": "the-mercury-news-east-bay-times",
+          "tokenSource": "the-mercury-news-east-bay-times",
           "chain": [
             "bold-coastal",
-            "the-mercury-news"
+            "the-mercury-news-east-bay-times"
           ],
           "mismatchCount": 1
         },

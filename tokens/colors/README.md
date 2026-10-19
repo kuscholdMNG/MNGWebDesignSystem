@@ -2,7 +2,7 @@
 
 > **2026-10-14:** the DTCG 2025.10 color tokens now live in `tokens/core/color.tokens.json` (primitives) and `tokens/themes/` (one file per theme, sub-theme and product, site overrides in `tokens/themes/sites/`, stacking in `mng.resolver.json`), with hex + color object + RGBA. Ready-to-use files are in `dist/`. This folder stays as the input for `scripts/build-tokens/make-tokens.py` (publications, sites, production audit) and for the CSV and decision log until step 5 of the export cleanup deletes it.
 
-Generated 2026-10-01 from the MNG Web Design System Figma file (`jFHYqhZbJjvWQmDI4myCsd`): the Colors collection (`3749:16`, 20 modes) plus the Color Pallets | 2026.09.10 style guides. Covers **97 publications** and **23 themes / sub-themes**, including the three that don't fit Figma's 20-mode limit (The Baltimore Sun, Capital Gazette and, since 2026-10-15, Daily Herald).
+Generated 2026-10-01 from the MNG Web Design System Figma file (`jFHYqhZbJjvWQmDI4myCsd`): the Colors collection (`3749:16`, 20 modes) plus the Color Pallets | 2026.09.10 style guides. Covers **97 publications** and **22 themes / sub-themes**, including the two that don't fit Figma's 20-mode limit (The Baltimore Sun, Capital Gazette). Since 2026-10-19 The Mercury News and East Bay Times share one sub-theme, and Daily Herald is a Figma mode.
 
 | File | Use |
 |---|---|
@@ -35,6 +35,11 @@ Token values are always the **design (should-be)** values. Production is never c
 
 - **Documented exceptions** (currently only Greeley Tribune) are part of the design, so their values are in the tokens and they have no red outline.
 - **The Baltimore Sun** uses its documented Figma styles as is. No production comparison is tracked for it.
+
+## Changes on 2026-10-19
+
+- **The Mercury News and East Bay Times are one sub-theme**, `the-mercury-news-east-bay-times` ("The Mercury News + East Bay Times"), because their design palettes were identical (Karl). In Figma the The Mercury News mode was renamed (same mode ID) and the two style guides were combined into one, with each site's production column kept. The old keys `east-bay-times` and `the-mercury-news` (and their `dist/` files) are gone; use `data-mng-theme="the-mercury-news-east-bay-times"`, or the site attribute as before. Each site keeps its own fixes: the `secondary` fix is East Bay Times only.
+- **Daily Herald is now a Figma mode.** It took the freed East Bay Times mode slot (renamed, values replaced). The Daily Herald palette was approved by the other team the same day.
 
 ## Changes on 2026-10-15
 

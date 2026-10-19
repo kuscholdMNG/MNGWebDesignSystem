@@ -135,24 +135,10 @@
   --subsite-custom: #000000;
 }
 
-/* East Bay Times (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 2 (see production-vs-design-differences.md entry 21) */
-[data-mng-theme="east-bay-times"],
+/* The Mercury News + East Bay Times (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 1 (Mercury News), 2 (East Bay Times) (see production-vs-design-differences.md entry 21) · combined 2026-10-19 */
+[data-mng-theme="the-mercury-news-east-bay-times"],
+[data-mng-site="mercurynews.com"],
 [data-mng-site="eastbaytimes.com"] {
-  --primary-lighter: #a0d0ed;
-  --primary-light: #007ab8;
-  --primary: #006da3;
-  --primary-dark: #006394;
-  --primary-darker: #00527a;
-  --secondary: #ffc518;
-  --tertiary: #cd2709;
-  --near-black: #0a0908;
-  --white: #ffffff;
-  --nav-text: #0a0908;
-}
-
-/* The Mercury News (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 1 (see production-vs-design-differences.md entry 21) */
-[data-mng-theme="the-mercury-news"],
-[data-mng-site="mercurynews.com"] {
   --primary-lighter: #a0d0ed;
   --primary-light: #007ab8;
   --primary: #006da3;
@@ -307,7 +293,7 @@
   --nav-text: #141414;
 }
 
-/* Daily Herald (sub-theme of Modern Earthy) · 1 publication · added 2026-10-15; not a Figma mode (20-mode limit); not live on MNG themes yet */
+/* Daily Herald (sub-theme of Modern Earthy) · 1 publication · added 2026-10-15; Figma mode Daily Herald since 2026-10-19; not live on MNG themes yet */
 [data-mng-theme="daily-herald"],
 [data-mng-site="dailyherald.com"] {
   --primary-lighter: #3b97dc;

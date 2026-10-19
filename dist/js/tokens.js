@@ -392,34 +392,7 @@ export const themes = {
       }
     }
   },
-  "east-bay-times": {
-    "color": {
-      "theme": {
-        "primary-lighter": "#a0d0ed",
-        "primary-light": "#007ab8",
-        "primary": "#006da3",
-        "primary-dark": "#006394",
-        "primary-darker": "#00527a",
-        "secondary": "#ffc518",
-        "tertiary": "#cd2709",
-        "near-black": "#0a0908",
-        "white": "#ffffff",
-        "nav-text": "#0a0908",
-        "subsite-custom": "#0097a7"
-      }
-    },
-    "font": {
-      "theme": {
-        "heading-family": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif",
-        "body-family": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif",
-        "eyebrow-size": "20px",
-        "eyebrow-weight": 400,
-        "eyebrow-family": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif",
-        "small-headline-family": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif"
-      }
-    }
-  },
-  "the-mercury-news": {
+  "the-mercury-news-east-bay-times": {
     "color": {
       "theme": {
         "primary-lighter": "#a0d0ed",
@@ -1175,10 +1148,10 @@ export const sites = {
   },
   "eastbaytimes.com": {
     "theme": "bold-coastal",
-    "subTheme": "east-bay-times",
+    "subTheme": "the-mercury-news-east-bay-times",
     "css": [
       "css/core.css",
-      "css/themes/east-bay-times.css",
+      "css/themes/the-mercury-news-east-bay-times.css",
       "css/wordpress.css"
     ],
     "onMngThemes": true
@@ -1327,10 +1300,10 @@ export const sites = {
   },
   "mercurynews.com": {
     "theme": "bold-coastal",
-    "subTheme": "the-mercury-news",
+    "subTheme": "the-mercury-news-east-bay-times",
     "css": [
       "css/core.css",
-      "css/themes/the-mercury-news.css",
+      "css/themes/the-mercury-news-east-bay-times.css",
       "css/wordpress.css"
     ],
     "onMngThemes": true

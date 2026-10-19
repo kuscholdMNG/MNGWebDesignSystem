@@ -983,10 +983,10 @@
     "cluster": "BANG",
     "onMngThemes": true,
     "theme": "bold-coastal",
-    "subTheme": "east-bay-times",
+    "subTheme": "the-mercury-news-east-bay-times",
     "css": [
       "css/core.css",
-      "css/themes/east-bay-times.css",
+      "css/themes/the-mercury-news-east-bay-times.css",
       "css/wordpress.css"
     ],
     "tokens": {
@@ -1499,10 +1499,10 @@
     "cluster": "BANG",
     "onMngThemes": true,
     "theme": "bold-coastal",
-    "subTheme": "the-mercury-news",
+    "subTheme": "the-mercury-news-east-bay-times",
     "css": [
       "css/core.css",
-      "css/themes/the-mercury-news.css",
+      "css/themes/the-mercury-news-east-bay-times.css",
       "css/wordpress.css"
     ],
     "tokens": {

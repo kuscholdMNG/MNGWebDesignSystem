@@ -140,6 +140,8 @@ for key, th in L['theme'].items():
             if name in mism:
                 x = mism[name]
                 prod.update({'productionValue': x['production'], 'fix': x['fix'], 'differencesEntry': DIFF_ENTRY_COLORS})
+                if x.get('sites'):  # mismatch on only some of the sub-theme's sites (e.g. East Bay Times secondary)
+                    prod['mismatchSites'] = x['sites']
         desc = None
         if fname in fig_colors and fig_colors[fname]['description'] and key == 'bold-coastal':
             desc = fig_colors[fname]['description']

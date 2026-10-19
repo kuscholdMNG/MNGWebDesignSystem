@@ -580,8 +580,7 @@ Listed in the Figma page's **Pending Updates**. None is in the production font u
 | Modern Earthy | theme | — | 4 | 25 |
 | Measured Vibrant | theme | — | 2 | 23 |
 | Denver Post | sub-theme | Bold Coastal | 3 | 1 |
-| East Bay Times | sub-theme | Bold Coastal | 2 | 1 |
-| The Mercury News | sub-theme | Bold Coastal | 1 | 1 |
+| The Mercury News + East Bay Times | sub-theme | Bold Coastal | 2 (1 on Mercury News) | 2 |
 | St. Paul Pioneer Press | sub-theme | Bold Coastal | 5 | 1 |
 | Petaluma Argus-Courier | sub-theme | Bold Coastal | 1 | 1 |
 | The Press Democrat | sub-theme | Bold Coastal | 3 | 2 |
@@ -647,26 +646,16 @@ Loads: `boldcoastal.css + Customizer override (div#page)`. Figma mode: DenverPos
 
 **Publications:** The Denver Post (denverpost.com)
 
-### East Bay Times (sub-theme of Bold Coastal)
+### The Mercury News + East Bay Times (sub-theme of Bold Coastal)
 
-Loads: `boldcoastal.css + Customizer override (div#page)`. Figma mode: East Bay Times. Production audited 2026-08-03.
+Loads: `boldcoastal.css + Customizer override (div#page)` on both sites. Figma mode: The Mercury News + East Bay Times (the two sites had identical design palettes and were combined into one mode and one style guide on 2026-10-19). Production audited 2026-08-03, each site separately.
 
-| Token | Design | Production | Fix |
-|---|---|---|---|
-| `--secondary` | `#ffc518` | `#eeff41` | Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). |
-| `--subsite-custom` | `undocumented` | `#0097a7` | Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it. |
+| Token | Design | Production | Fix | Sites |
+|---|---|---|---|---|
+| `--secondary` | `#ffc518` | `#eeff41` | Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). | East Bay Times only (Mercury News matches) |
+| `--subsite-custom` | `undocumented` | `#0097a7` | Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it. | Both |
 
-**Publications:** East Bay Times (eastbaytimes.com)
-
-### The Mercury News (sub-theme of Bold Coastal)
-
-Loads: `boldcoastal.css + Customizer override (div#page)`. Figma mode: The Mercury News. Production audited 2026-08-03.
-
-| Token | Design | Production | Fix |
-|---|---|---|---|
-| `--subsite-custom` | `undocumented` | `#0097a7` | Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it. |
-
-**Publications:** The Mercury News (mercurynews.com)
+**Publications:** The Mercury News (mercurynews.com), East Bay Times (eastbaytimes.com)
 
 ### St. Paul Pioneer Press (sub-theme of Bold Coastal)
 
@@ -776,7 +765,7 @@ Loads: `modernearthy.css + Customizer override (div#page)`. Figma mode: Boston H
 
 ### Daily Herald (sub-theme of Modern Earthy)
 
-New palette, added 2026-10-15 (Karl). Planned delivery: `modernearthy.css + Customizer override (div#page)`. Not a Figma mode (the Colors collection is at its 20-mode limit); the spec is the "Daily Herald — Style Guide" section on the Color Pallets page and `tokens/themes/daily-herald.tokens.json`.
+New palette, added 2026-10-15 (Karl). Planned delivery: `modernearthy.css + Customizer override (div#page)`. Figma mode: Daily Herald (since 2026-10-19). The spec is that mode, the "Daily Herald — Style Guide" section on the Color Pallets page and `tokens/themes/daily-herald.tokens.json`.
 
 No fixes yet: dailyherald.com still runs on Everyware (verified 2026-09-24), so there is no production column to compare. When it moves to Modern Earthy, set all ten values in the Customizer (`div#page`): `--primary-lighter` `#3b97dc`, `--primary-light` `#087abe`, `--primary` `#0072b4`, `--primary-dark` `#0066a2`, `--primary-darker` `#0e598b`, `--secondary` `#eeff41`, `--tertiary` `#ff5722` (`--near-black`, `--white` and `--nav-text` use the Modern Earthy defaults `#1a1a1a` / `#fafafa` / `#1a1a1a`). Then audit it like the other sub-themes.
 
@@ -909,10 +898,10 @@ None. The sites whose theme was disputed (the 5 NEPA sites, Daily Press, The Mor
 | The Pottstown Mercury | pottsmerc.com | 21C Pennsylvania | Modern Earthy | — | 4 |
 | Trentonian | trentonian.com | 21C Pennsylvania | Modern Earthy | — | 4 |
 | West Chester Daily Local | dailylocal.com | 21C Pennsylvania | Modern Earthy | — | 4 |
-| East Bay Times | eastbaytimes.com | BANG | Bold Coastal | East Bay Times | 2 |
+| East Bay Times | eastbaytimes.com | BANG | Bold Coastal | The Mercury News + East Bay Times | 2 |
 | Marin Independent Journal | marinij.com | BANG | Measured Vibrant | — | 2 |
 | Silicon Valley | siliconvalley.com | BANG | Modern Earthy | — | 4 |
-| The Mercury News | mercurynews.com | BANG | Bold Coastal | The Mercury News | 1 |
+| The Mercury News | mercurynews.com | BANG | Bold Coastal | The Mercury News + East Bay Times | 1 |
 | Boston Herald | bostonherald.com | Boston | Modern Earthy | Boston Herald | 4 |
 | Nashoba Valley Voice | nashobavalleyvoice.com | Boston | Modern Earthy | — | 4 |
 | Colorado Daily | coloradodaily.com | Colorado Weeklies | Modern Earthy | NEPA-PMP | 2 |

@@ -157,7 +157,7 @@
      }
     }
    },
-   "east-bay-times": {
+   "the-mercury-news-east-bay-times": {
     "primary-lighter": {"$value": "#a0d0ed"},
     "primary-light": {"$value": "#007ab8"},
     "primary": {"$value": "#006da3"},
@@ -170,47 +170,20 @@
     "nav-text": {"$value": "#0a0908"},
     "$extensions": {
      "com.mng": {
-      "name": "East Bay Times",
+      "name": "The Mercury News + East Bay Times",
       "level": "sub-theme",
       "parentTheme": "Bold Coastal",
       "loads": "boldcoastal.css + Customizer override (div#page)",
       "inFigma": true,
-      "figmaMode": "East Bay Times",
+      "figmaMode": "The Mercury News + East Bay Times",
       "productionAudit": "2026-08-03",
       "mismatchCount": 2,
       "mismatches": [
-       { "token": "secondary", "design": "#ffc518", "production": "#eeff41", "productionSource": "", "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page).", "scope": "sub-theme", "figmaCallout": true },
+       { "token": "secondary", "design": "#ffc518", "production": "#eeff41", "productionSource": "", "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches.", "scope": "site", "sites": [ "eastbaytimes.com" ], "figmaCallout": true },
        { "token": "subsite-custom", "design": "undocumented", "production": "#0097a7", "productionSource": "", "fix": "Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it.", "scope": "sub-theme", "figmaCallout": true }
       ],
-      "sites": [ "eastbaytimes.com" ]
-     }
-    }
-   },
-   "the-mercury-news": {
-    "primary-lighter": {"$value": "#a0d0ed"},
-    "primary-light": {"$value": "#007ab8"},
-    "primary": {"$value": "#006da3"},
-    "primary-dark": {"$value": "#006394"},
-    "primary-darker": {"$value": "#00527a"},
-    "secondary": {"$value": "#ffc518"},
-    "tertiary": {"$value": "#cd2709"},
-    "near-black": {"$value": "#0a0908"},
-    "white": {"$value": "#ffffff"},
-    "nav-text": {"$value": "#0a0908"},
-    "$extensions": {
-     "com.mng": {
-      "name": "The Mercury News",
-      "level": "sub-theme",
-      "parentTheme": "Bold Coastal",
-      "loads": "boldcoastal.css + Customizer override (div#page)",
-      "inFigma": true,
-      "figmaMode": "The Mercury News",
-      "productionAudit": "2026-08-03",
-      "mismatchCount": 1,
-      "mismatches": [
-       { "token": "subsite-custom", "design": "undocumented", "production": "#0097a7", "productionSource": "", "fix": "Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it.", "scope": "sub-theme", "figmaCallout": true }
-      ],
-      "sites": [ "mercurynews.com" ]
+      "sites": [ "mercurynews.com", "eastbaytimes.com" ],
+      "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only."
      }
     }
    },
@@ -503,12 +476,12 @@
       "level": "sub-theme",
       "parentTheme": "Modern Earthy",
       "loads": "modernearthy.css + Customizer override (div#page), planned",
-      "inFigma": false,
-      "figmaMode": null,
+      "inFigma": true,
+      "figmaMode": "Daily Herald",
       "mismatchCount": 0,
       "mismatches": [],
       "sites": [ "dailyherald.com" ],
-      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Not in the Figma Colors collection (20-mode limit); documented on the Color Pallets page. Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
+      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Figma mode Daily Herald since 2026-10-19 (it took the East Bay Times mode slot when East Bay Times and The Mercury News were combined). Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
      }
     }
    },
@@ -1199,50 +1172,50 @@
    }
   },
   "eastbaytimes-com": {
-   "primary-lighter": {"$value": "{color.theme.east-bay-times.primary-lighter}"},
-   "primary-light": {"$value": "{color.theme.east-bay-times.primary-light}"},
-   "primary": {"$value": "{color.theme.east-bay-times.primary}"},
-   "primary-dark": {"$value": "{color.theme.east-bay-times.primary-dark}"},
-   "primary-darker": {"$value": "{color.theme.east-bay-times.primary-darker}"},
-   "secondary": {"$value": "{color.theme.east-bay-times.secondary}"},
-   "tertiary": {"$value": "{color.theme.east-bay-times.tertiary}"},
-   "near-black": {"$value": "{color.theme.east-bay-times.near-black}"},
-   "white": {"$value": "{color.theme.east-bay-times.white}"},
-   "nav-text": {"$value": "{color.theme.east-bay-times.nav-text}"},
+   "primary-lighter": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-lighter}"},
+   "primary-light": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-light}"},
+   "primary": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary}"},
+   "primary-dark": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-dark}"},
+   "primary-darker": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-darker}"},
+   "secondary": {"$value": "{color.theme.the-mercury-news-east-bay-times.secondary}"},
+   "tertiary": {"$value": "{color.theme.the-mercury-news-east-bay-times.tertiary}"},
+   "near-black": {"$value": "{color.theme.the-mercury-news-east-bay-times.near-black}"},
+   "white": {"$value": "{color.theme.the-mercury-news-east-bay-times.white}"},
+   "nav-text": {"$value": "{color.theme.the-mercury-news-east-bay-times.nav-text}"},
    "$extensions": {
     "com.mng": {
      "publication": "East Bay Times",
      "domain": "eastbaytimes.com",
      "cluster": "BANG",
      "theme": "Bold Coastal",
-     "subTheme": "East Bay Times",
-     "tokenSource": "color.theme.east-bay-times",
+     "subTheme": "The Mercury News + East Bay Times",
+     "tokenSource": "color.theme.the-mercury-news-east-bay-times",
      "mismatchCount": 2,
-     "fixesFrom": "color.theme.east-bay-times"
+     "fixesFrom": "color.theme.the-mercury-news-east-bay-times"
     }
    }
   },
   "mercurynews-com": {
-   "primary-lighter": {"$value": "{color.theme.the-mercury-news.primary-lighter}"},
-   "primary-light": {"$value": "{color.theme.the-mercury-news.primary-light}"},
-   "primary": {"$value": "{color.theme.the-mercury-news.primary}"},
-   "primary-dark": {"$value": "{color.theme.the-mercury-news.primary-dark}"},
-   "primary-darker": {"$value": "{color.theme.the-mercury-news.primary-darker}"},
-   "secondary": {"$value": "{color.theme.the-mercury-news.secondary}"},
-   "tertiary": {"$value": "{color.theme.the-mercury-news.tertiary}"},
-   "near-black": {"$value": "{color.theme.the-mercury-news.near-black}"},
-   "white": {"$value": "{color.theme.the-mercury-news.white}"},
-   "nav-text": {"$value": "{color.theme.the-mercury-news.nav-text}"},
+   "primary-lighter": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-lighter}"},
+   "primary-light": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-light}"},
+   "primary": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary}"},
+   "primary-dark": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-dark}"},
+   "primary-darker": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-darker}"},
+   "secondary": {"$value": "{color.theme.the-mercury-news-east-bay-times.secondary}"},
+   "tertiary": {"$value": "{color.theme.the-mercury-news-east-bay-times.tertiary}"},
+   "near-black": {"$value": "{color.theme.the-mercury-news-east-bay-times.near-black}"},
+   "white": {"$value": "{color.theme.the-mercury-news-east-bay-times.white}"},
+   "nav-text": {"$value": "{color.theme.the-mercury-news-east-bay-times.nav-text}"},
    "$extensions": {
     "com.mng": {
      "publication": "The Mercury News",
      "domain": "mercurynews.com",
      "cluster": "BANG",
      "theme": "Bold Coastal",
-     "subTheme": "The Mercury News",
-     "tokenSource": "color.theme.the-mercury-news",
+     "subTheme": "The Mercury News + East Bay Times",
+     "tokenSource": "color.theme.the-mercury-news-east-bay-times",
      "mismatchCount": 1,
-     "fixesFrom": "color.theme.the-mercury-news"
+     "fixesFrom": "color.theme.the-mercury-news-east-bay-times"
     }
    }
   },

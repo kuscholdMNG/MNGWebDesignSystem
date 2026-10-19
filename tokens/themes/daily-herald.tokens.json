@@ -6,13 +6,13 @@
       "level": "sub-theme",
       "parentTheme": "modern-earthy",
       "loads": "modernearthy.css + Customizer override (div#page), planned",
-      "figmaMode": null,
+      "figmaMode": "Daily Herald",
       "productionAudit": null,
       "mismatchCount": 0,
       "sites": [
         "dailyherald.com"
       ],
-      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Not in the Figma Colors collection (20-mode limit); documented on the Color Pallets page. Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
+      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Figma mode Daily Herald since 2026-10-19 (it took the East Bay Times mode slot when East Bay Times and The Mercury News were combined). Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
     }
   },
   "color": {
@@ -32,7 +32,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(59, 151, 220, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/primary-lighter",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -50,7 +55,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(8, 122, 190, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/primary-light",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -68,7 +78,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(0, 114, 180, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/primary",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -86,7 +101,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(0, 102, 162, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/primary-dark",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -104,7 +124,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(14, 89, 139, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/primary-darker",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -122,7 +147,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(238, 255, 65, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/secondary",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -140,7 +170,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(255, 87, 34, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/tertiary",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -158,7 +193,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(26, 26, 26, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/near-black",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -176,7 +216,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(250, 250, 250, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/white",
+              "mode": "Daily Herald"
+            }
           }
         }
       },
@@ -194,7 +239,12 @@
         "$extensions": {
           "com.mng": {
             "rgba": "rgba(26, 26, 26, 1)",
-            "figma": null
+            "figma": {
+              "file": "MNG Web Design System",
+              "collection": "Colors",
+              "variable": "color/theme/nav-text",
+              "mode": "Daily Herald"
+            }
           }
         }
       }
