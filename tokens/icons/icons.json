@@ -1988,7 +1988,7 @@
  "productionOnly": [
   {
    "class": "icon-google-plus",
-   "note": "Points at U+EEEA, which isn't in the font. Not documented; remove (design-vs-production entry 13)."
+   "note": "Points at U+EEEA, which isn't in the font. Not documented; remove (design-vs-production entry 10)."
   },
   {
    "class": "icon-mng-podcast1",

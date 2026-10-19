@@ -45,7 +45,7 @@
  },
  "Morning Call": {
   "loads": "`modernearthy.css + Customizer override (div#page)`. Figma mode: Morning Call. Production audited 2026-08-03.",
-  "notes": ""
+  "notes": "Production's `--primary` (`#014b78`) is the design's `primary-dark`: the Customizer ramp looks shifted one step. Fix it as listed (design is the source of truth)."
  },
  "21C Michigan Sites (Combined)": {
   "loads": "`modernearthy.css + Customizer override (div#page), identical on all 4 sites`. Figma mode: 21C Michigan Sites (Combined). Production audited 2026-08-03.",
@@ -61,7 +61,7 @@
  },
  "NEPA-PMP": {
   "loads": "`modernearthy.css + color override on body: site-pmp style.min.css (PMP sites) or each NEPA site's own site plugin (site-citizensvoice, site-thetimes-tribune, site-wcexaminer, site-republicanherald, site-standardspeaker), identical values`. Figma mode: NEPA-PMP. Production audited 2026-10-01.",
-  "notes": "> One color sub-theme for two groups: the 19 PMP sites (shared site-pmp stylesheet) and the 5 NEPA sites (each site's own plugin stylesheet). Verified live 2026-10-01: NEPA sets the same six variables on body with identical values, and renders the same type as PMP."
+  "notes": "> One color sub-theme for two groups: the 19 PMP sites (shared site-pmp stylesheet) and the 5 NEPA sites (each site's own plugin stylesheet). Verified live 2026-10-01: NEPA sets the same six variables on body with identical values, and renders the same type as PMP.\n\nGreeley Tribune's `div#page` override of `--primary`, `--primary-light` and `--primary-dark` is a documented exception (Karl, 2026-09-30): it's noted under the NEPA-PMP style guide without red outlines and needs no fix."
  },
  "Chicago Tribune": {
   "loads": "`measuredvibrant.css (Measured Vibrant values; own Figma mode)`. Figma mode: Chicago Tribune.",

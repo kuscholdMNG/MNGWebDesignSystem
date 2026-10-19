@@ -30,6 +30,6 @@ Screenshot reference: captured live on ocregister.com at 375px width (see masthe
 
 **Gap:** No live page using it was found on the 6 review sites (Chicago Tribune's Investigations section uses the normal section layout), and there's nothing for it in WordPress Elements.
 
-**Action needed:** when more article pages are added to WordPress Elements, find a live special investigative report page, build the template in Figma and classify its breakpoints (Karl, 2026-10-14). Until then they're left out of the breakpoint inventory and design-vs-production entry 33.
+**Action needed:** when more article pages are added to WordPress Elements, find a live special investigative report page, build the template in Figma and classify its breakpoints (Karl, 2026-10-14). Until then they're left out of the breakpoint inventory and design-vs-production entry 30.
 
 **Status:** Open (future).

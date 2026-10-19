@@ -71,7 +71,7 @@ Modes: Measured Vibrant, Bold Coastal, Modern Earthy.
 
 **Live-confirmed 2026-08-27 (Denver Post, Orlando Sentinel):** both sites' live-rendered `--primary` (read on the WordPress Customizer's actual scope rather than at `:root` — see `modal.md` for why that distinction matters) matches this table exactly: Denver Post `#8E1024`, Orlando Sentinel `#1776C4`.
 
-**⚠️ Discrepancy found, mcall.com (2026-08-27):** live-rendered `--primary` on mcall.com is `#014B78` — that's an exact match for this table's **`primary-dark`** column for Morning Call, not `primary` (`#166291`). Either the site is live-rendering the wrong step of its own color ramp, or this table's column values are shifted for this row specifically. Not yet root-caused (design-vs-production entry 4).
+**⚠️ Discrepancy found, mcall.com (2026-08-27):** live-rendered `--primary` on mcall.com is `#014B78` — that's an exact match for this table's **`primary-dark`** column for Morning Call, not `primary` (`#166291`). Either the site is live-rendering the wrong step of its own color ramp, or this table's column values are shifted for this row specifically. Not yet root-caused (design-vs-production entry 1).
 
 ---
 

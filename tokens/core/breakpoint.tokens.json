@@ -1,5 +1,5 @@
 {
-  "$description": "MNG Device breakpoints (core). Min-width boundaries matching the Figma screen widths 340 / 360 / 768 / 1024 / 1280. fold (340) is the smallest supported width. Reader Dashboard today; every product eventually. Production drift: design-vs-production.md entry 31.",
+  "$description": "MNG Device breakpoints (core). Min-width boundaries matching the Figma screen widths 340 / 360 / 768 / 1024 / 1280. fold (340) is the smallest supported width. Reader Dashboard today; every product eventually. Production drift: design-vs-production.md entry 28.",
   "breakpoint": {
     "$type": "dimension",
     "fold": {

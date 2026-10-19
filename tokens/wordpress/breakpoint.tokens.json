@@ -1,5 +1,5 @@
 {
-  "$description": "WordPress grid breakpoints (WordPress layer, legacy). From the WordPress themes' grid (16 columns x 80px, 20px gutters, 1280 container). Used by the three shared themes and Obituaries. Retired when WordPress moves to the MNG Device set. Obituaries drift: design-vs-production.md entry 32.",
+  "$description": "WordPress grid breakpoints (WordPress layer, legacy). From the WordPress themes' grid (16 columns x 80px, 20px gutters, 1280 container). Used by the three shared themes and Obituaries. Retired when WordPress moves to the MNG Device set. Obituaries drift: design-vs-production.md entry 29.",
   "breakpoint": {
     "wordpress-grid": {
       "$type": "dimension",

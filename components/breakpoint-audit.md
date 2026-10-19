@@ -115,7 +115,7 @@ So Figma only modeled the top ad for the Home variant, and even there the labele
 
 **Resolved in Figma, 2026-09-15:** per Karl, added/corrected the ad placeholder on all three `Default`-state Page variants (SM-Mobile tier) to match live production — Home → `Top Leaderboard 320x50` (corrected), Section Front → `Top Leaderboard 320x100` (added), Article → `Top Leaderboard 320x50` (added). All three screenshot-verified clean, no overlap.
 
-**Logged for engineering, 2026-09-15:** the underlying production inconsistency (same ad position serving different sizes per page type) is now entry #22 in `design-vs-production.md` (Engineering Handoff), flagged for production to be made consistent.
+**Logged for engineering, 2026-09-15:** the underlying production inconsistency (same ad position serving different sizes per page type) is now entry #19 in `design-vs-production.md` (Engineering Handoff), flagged for production to be made consistent.
 
 **Also logged:** the Trust/Source tooltip popup found on the Article page (see Popups below) doesn't have a Figma component yet — added as a new to-do in `Article-Page-To-Do.md`.
 
@@ -277,7 +277,7 @@ Once the component was rebuilt at 1040px, two rows within it turned out to have 
 
 5. **Revised per Karl:** the Trending-strip spacing tighten was reverted back to the original 32px, and the strip's container was set to clip its content instead — the last headline now crops hard at the 1040px edge rather than the row being cramped. Separately, Karl asked to look again at how a real production site handles a top nav that doesn't fit, using Chicago Tribune (one of the project's standing 6-site review list) at 1040px width as the reference: its `.nav-primary` row (11 items) is 1100.8px wide inside a 973.75px wrapper, and because the page sets `overflow-x: hidden`, the row just centers and gets clipped on both edges — no wrap, no shrink, first/last items cut off mid-word. A quick cross-site check (same 6 sites) found Chicago Tribune and Orlando Sentinel both carry the most top-nav items (11) and trending items (6) of the six — see the table in the chat record of this pass; OC Register 8/5, Denver Post 9/3, The Morning Call 10/4, Greeley Tribune 7/2.
 
-   Per Karl's direction ("we need to build it this way regardless"), rebuilt the Figma nav row to intentionally match this broken production treatment rather than hide it: brought Home, Section Front, and Article's top nav rows up to 11 items each (added placeholder items — Home/Article gained Business/Politics/Entertainment/Suburbs; Section Front, which already used a themed 10-item "Things To Do" style list, gained one more: Shopping), let the row size to its natural (now wider) content width instead of force-fitting it to the container, and set the row's parent to clip at the component's 1040px bounds. Result: the row is centered and overflows both edges, first/last items cut off mid-word — visually matching Chicago Tribune's live bug. Logged as entry #23 in `design-vs-production.md` (Engineering Handoff) for production to actually fix (smaller font/spacing at this tier, wrap, or an overflow menu — whatever the real fix, it needs to be platform-wide since at least two sites already hit 11 items).
+   Per Karl's direction ("we need to build it this way regardless"), rebuilt the Figma nav row to intentionally match this broken production treatment rather than hide it: brought Home, Section Front, and Article's top nav rows up to 11 items each (added placeholder items — Home/Article gained Business/Politics/Entertainment/Suburbs; Section Front, which already used a themed 10-item "Things To Do" style list, gained one more: Shopping), let the row size to its natural (now wider) content width instead of force-fitting it to the container, and set the row's parent to clip at the component's 1040px bounds. Result: the row is centered and overflows both edges, first/last items cut off mid-word — visually matching Chicago Tribune's live bug. Logged as entry #20 in `design-vs-production.md` (Engineering Handoff) for production to actually fix (smaller font/spacing at this tier, wrap, or an overflow menu — whatever the real fix, it needs to be platform-wide since at least two sites already hit 11 items).
 
 **Home Page**
 - Default: full desktop masthead, 226px — matches 1100px exactly. Ads on screen: `sponsorship_1` ~320x50 (top-right next to logo); `top_leaderboard` 970x250; `cube1_rrail_atf` 300x1050 right-rail.
@@ -309,7 +309,7 @@ Once the component was rebuilt at 1040px, two rows within it turned out to have 
 
 **Article Page**
 - Default: full desktop masthead. Ads on screen: `sponsorship_1` (Great Smoky Mountains); `top_leaderboard` (Tremfya); `cube1_rrail_atf` right-rail (Clay Travis & Buck Sexton / IFCJ). **Popup, 9th sighting overall:** trust/sourcing tooltip reappeared again, consistent with every width tested on this page except 700px.
-- Scrolled: breadcrumb + headline + share-icon row, same pattern as 1100/1280px. **Entry #24 cross-validated logged-out:** DOM inspection shows the identical measurement as the Ad-Free pass at this width — headline's right edge (x 1185px) sits 241px clear of the share widget's left edge (x 1426px), no overlap. Confirms entry #24 is genuinely independent of login state, as already concluded from the Ad-Free measurements.
+- Scrolled: breadcrumb + headline + share-icon row, same pattern as 1100/1280px. **Entry #21 cross-validated logged-out:** DOM inspection shows the identical measurement as the Ad-Free pass at this width — headline's right edge (x 1185px) sits 241px clear of the share widget's left edge (x 1426px), no overlap. Confirms entry #21 is genuinely independent of login state, as already concluded from the Ad-Free measurements.
 
 **Figma comparison:** spot-checked `456:2573` (XL-Desktop Default Home) — structurally matches production exactly (Subscribe/Log In buttons, sponsorship + top-leaderboard ad placeholders sized correctly). No drift since the 1280→1040 rebuild earlier in this project; no further Figma changes needed at this width.
 
@@ -353,9 +353,9 @@ Same bare-row/no-ad pattern for Default state confirmed across all three page ty
 
 - **Home** — Default: bare row, no ad, avatar visible. Scrolled: compact sticky masthead, consistent.
 - **Section Front (Sports)** — Default: bare row, no ad, avatar visible, full nav row fits (Sports has fewer items than News, doesn't hit the Tier-4 overflow). Scrolled: compact sticky masthead, consistent.
-- **Article** — Default: bare row, no ad, avatar visible. **Popup, 7th sighting overall:** trust/sourcing tooltip reappeared again on default load. Scrolled: overflow bug (entry #24) reconfirmed and worse at this width — see below.
+- **Article** — Default: bare row, no ad, avatar visible. **Popup, 7th sighting overall:** trust/sourcing tooltip reappeared again on default load. Scrolled: overflow bug (entry #21) reconfirmed and worse at this width — see below.
 
-**Entry #24 reconfirmed at this width, with a larger overlap.** DOM inspection: headline box x 430–815px, bookmark icon x 720–751px — a 95px overlap (vs. 69px at 1100px), with the bookmark icon now sitting directly on top of a headline word rather than just clipping the tail. Since this is exactly the width Figma's XL-Desktop tier now targets, this is a closer, more directly relevant match to what the component's live-content equivalent would show — but per the reasoning above, it remains a data-dependent (headline-length) issue rather than a systemic one, so it's still not being force-built into the static Figma mock. Updated `design-vs-production.md` entry #24 with this additional measurement.
+**Entry #21 reconfirmed at this width, with a larger overlap.** DOM inspection: headline box x 430–815px, bookmark icon x 720–751px — a 95px overlap (vs. 69px at 1100px), with the bookmark icon now sitting directly on top of a headline word rather than just clipping the tail. Since this is exactly the width Figma's XL-Desktop tier now targets, this is a closer, more directly relevant match to what the component's live-content equivalent would show — but per the reasoning above, it remains a data-dependent (headline-length) issue rather than a systemic one, so it's still not being force-built into the static Figma mock. Updated `design-vs-production.md` entry #21 with this additional measurement.
 
 **Figma `AdFree` variants:** `819:1845` (Home), `822:3434` (SectionFront), `824:4625` (Article) — all previously confirmed correct at the 1040px rebuild; no changes needed this pass.
 
@@ -369,7 +369,7 @@ Confirmed via `window.screen.width` that 1728px is the full display width on Kar
 - **Section Front (Sports)** — Default: bare row, no ad, avatar visible. Scrolled: compact sticky masthead, consistent.
 - **Article** — Default: bare row, no ad, avatar visible. **Popup, 8th sighting overall:** trust/sourcing tooltip reappeared again on default load.
 
-**Entry #24 resolves cleanly at this width — closes out the investigation.** At 1728px the scrolled Article masthead shows the headline cleanly truncated with a proper ellipsis, no overlap with the bookmark/share icons. DOM inspection confirms: the headline's container (`.entry-title`) sizes down correctly, its rendered text box (`.article-title`, right edge x 1185px) sits 241px clear of the share widget's left edge (x 1426px) — a comfortable margin, not a near-miss. This completes the picture across all three widths tested:
+**Entry #21 resolves cleanly at this width — closes out the investigation.** At 1728px the scrolled Article masthead shows the headline cleanly truncated with a proper ellipsis, no overlap with the bookmark/share icons. DOM inspection confirms: the headline's container (`.entry-title`) sizes down correctly, its rendered text box (`.article-title`, right edge x 1185px) sits 241px clear of the share widget's left edge (x 1426px) — a comfortable margin, not a near-miss. This completes the picture across all three widths tested:
 
 | Width | Overlap |
 |---|---|
@@ -377,7 +377,7 @@ Confirmed via `window.screen.width` that 1728px is the full display width on Kar
 | 1100px | 69px |
 | 1728px | none — 241px clearance |
 
-This confirms entry #24 is purely a narrow-viewport problem (not fixed-headline-length-dependent as the initial 1100px write-up guessed) — the underlying CSS issue is that the headline's flex/width allocation doesn't shrink correctly relative to the fixed-width share widget below some threshold between 1100px and 1728px. Updated `design-vs-production.md` entry #24 with this full width-comparison table so engineering has the complete picture rather than a single data point.
+This confirms entry #21 is purely a narrow-viewport problem (not fixed-headline-length-dependent as the initial 1100px write-up guessed) — the underlying CSS issue is that the headline's flex/width allocation doesn't shrink correctly relative to the fixed-width share widget below some threshold between 1100px and 1728px. Updated `design-vs-production.md` entry #21 with this full width-comparison table so engineering has the complete picture rather than a single data point.
 
 ---
 

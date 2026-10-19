@@ -195,7 +195,7 @@ Breakpoints come in three tiers:
 
    The Device set matches the Figma screen widths one to one (Fold 340, Mobile 360, Tablet 768, Tablet horizontal 1024, Desktop 1280). Its token names deliberately differ from the WordPress grid names and from the Masthead's `Device` labels (`MD-TabletV (640–799px)` and so on), because those carry WordPress ranges. Each Device token records its Figma frame width in `$extensions.com.mng.figma.frameWidth`.
 2. **Component breakpoints:** an intended one-off used by a single component goes in that component's `<slug>.tokens.json`, not in the system set.
-3. **Production drift:** any other production breakpoint is logged in `design-vs-production.md` with the official breakpoint it should snap to. Reader Dashboard must match the Device set (open questions: entry 31). Obituaries is part of the WordPress layer and must match the WordPress grid (drift: entry 32).
+3. **Production drift:** any other production breakpoint is logged in `design-vs-production.md` with the official breakpoint it should snap to. Reader Dashboard must match the Device set (open questions: entry 28). Obituaries is part of the WordPress layer and must match the WordPress grid (drift: entry 29).
 
 The full list of production breakpoints and how each is classified lives in `tokens/breakpoint-inventory.json` (built from the website repo and a CSS scan of the 6 review sites).
 
