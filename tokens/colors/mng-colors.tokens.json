@@ -1,5 +1,5 @@
 {
- "$description": "MNG Web Design System color tokens, generated 2026-10-01 from the MNG Web Design System Figma file (Colors collection 3749:16 and the Color Pallets | 2026.09.10 style guides). Design (should-be) values only; production mismatches are in $extensions.com.mng.mismatches.",
+ "$description": "MNG Web Design System color tokens, generated 2026-10-01 from the MNG Web Design System Figma file (Colors collection 3749:16 and the Color Pallets | 2026.10.19 style guides). Design (should-be) values only; production mismatches are in $extensions.com.mng.mismatches.",
  "color": {
   "$type": "color",
   "gray": {
