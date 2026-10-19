@@ -432,7 +432,7 @@ export const themes = {
         "near-black": "#0a0908",
         "white": "#ffffff",
         "nav-text": "#0a0908",
-        "subsite-custom": "#0097a7"
+        "subsite-custom": "#ffffff"
       }
     },
     "font": {
@@ -749,7 +749,8 @@ export const themes = {
         "tertiary": "#ab9500",
         "near-black": "#1f1e1c",
         "white": "#fbfbfb",
-        "nav-text": "#1f1e1c"
+        "nav-text": "#1f1e1c",
+        "subsite-custom": "#000000"
       }
     },
     "font": {

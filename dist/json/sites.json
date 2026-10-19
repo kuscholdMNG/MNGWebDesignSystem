@@ -2757,7 +2757,9 @@
       "color.theme.white": "#fbfbfb",
       "color.theme.white.rgba": "rgba(251, 251, 251, 1)",
       "color.theme.nav-text": "#1f1e1c",
-      "color.theme.nav-text.rgba": "rgba(31, 30, 28, 1)"
+      "color.theme.nav-text.rgba": "rgba(31, 30, 28, 1)",
+      "color.theme.subsite-custom": "#000000",
+      "color.theme.subsite-custom.rgba": "rgba(0, 0, 0, 1)"
     }
   },
   "themorningsun.com": {
@@ -3210,8 +3212,8 @@
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
       "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
-      "color.theme.subsite-custom": "#0097a7",
-      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
+      "color.theme.subsite-custom": "#ffffff",
+      "color.theme.subsite-custom.rgba": "rgba(255, 255, 255, 1)"
     }
   },
   "ukiahdailyjournal.com": {

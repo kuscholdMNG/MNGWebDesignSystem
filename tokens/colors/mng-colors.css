@@ -152,7 +152,7 @@
   --subsite-custom: #0097a7;
 }
 
-/* St. Paul Pioneer Press (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 5 (see production-vs-design-differences.md entry 21) */
+/* St. Paul Pioneer Press (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 4 (see production-vs-design-differences.md entry 21) */
 [data-mng-theme="st-paul-pioneer-press"],
 [data-mng-site="twincities.com"] {
   --primary-lighter: #0187e0;
@@ -165,7 +165,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
-  --subsite-custom: #0097a7;
+  --subsite-custom: #ffffff; /* sub-theme override */
 }
 
 /* Petaluma Argus-Courier (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 1 (see production-vs-design-differences.md entry 21) */
@@ -378,6 +378,7 @@
   --near-black: #1f1e1c;
   --white: #fbfbfb;
   --nav-text: #1f1e1c;
+  --subsite-custom: #000000; /* sub-theme override */
 }
 
 /* Orlando Sentinel (sub-theme of Measured Vibrant) · 1 publication · Engineering fixes: 2 (see production-vs-design-differences.md entry 21) */

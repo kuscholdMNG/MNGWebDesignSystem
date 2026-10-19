@@ -581,7 +581,7 @@ Listed in the Figma page's **Pending Updates**. None is in the production font u
 | Measured Vibrant | theme | — | 2 | 23 |
 | Denver Post | sub-theme | Bold Coastal | 3 | 1 |
 | The Mercury News + East Bay Times | sub-theme | Bold Coastal | 1 (East Bay Times only) | 2 |
-| St. Paul Pioneer Press | sub-theme | Bold Coastal | 5 | 1 |
+| St. Paul Pioneer Press | sub-theme | Bold Coastal | 4 | 1 |
 | Petaluma Argus-Courier | sub-theme | Bold Coastal | 1 | 1 |
 | The Press Democrat | sub-theme | Bold Coastal | 2 | 2 |
 | The Sonoma Index-Tribune | sub-theme | Bold Coastal | 1 | 1 |
@@ -670,7 +670,8 @@ Loads: `boldcoastal.css + Customizer override (div#page)`. Figma mode: St. Paul 
 | `--primary-darker` | `#005892` | `MISSING` | Define --primary-darker: #005892 (Customizer, div#page). It isn't set today. |
 | `--secondary` | `#ffea00` | `MISSING` | Define --secondary: #ffea00 (Customizer, div#page). It isn't set today. |
 | `--tertiary` | `#f4a700` | `MISSING` | Define --tertiary: #f4a700 (Customizer, div#page). It isn't set today. |
-| `--subsite-custom` | `#0097a7` | `#ffffff` (div#page override) | Change --subsite-custom from #ffffff to #0097a7 (Customizer, div#page). |
+
+`--subsite-custom` `#ffffff` is the sub-theme's own design value since 2026-10-19 (Karl): it overrides the Bold Coastal `#0097a7` and matches production, so there is no fix.
 
 **Publications:** St. Paul Pioneer Press (twincities.com)
 
@@ -809,6 +810,8 @@ Loads: `measuredvibrant.css + Customizer override (div#page)`. Figma mode: South
 |---|---|---|---|
 | `--primary-lighter` | `#4a92af` | `MISSING` | Define --primary-lighter: #4a92af (Customizer, div#page). It isn't set today. |
 | `--tertiary` | `#ab9500` | `#303f9f` (Theme default (inherited)) | Change --tertiary from #303f9f to #ab9500 (Customizer, div#page). |
+
+`--subsite-custom` `#000000` is the sub-theme's own design value since 2026-10-19 (Karl); Measured Vibrant has none. It matches production, so there is no fix.
 
 **Publications:** South Florida Sun Sentinel (sun-sentinel.com)
 
@@ -980,7 +983,7 @@ None. The sites whose theme was disputed (the 5 NEPA sites, Daily Press, The Mor
 | The Baltimore Sun | baltimoresun.com | Tribune | Bold Coastal | The Baltimore Sun | — |
 | The Morning Call | mcall.com | Tribune | Modern Earthy | Morning Call | 6 |
 | The Virginian-Pilot | pilotonline.com | Tribune | Measured Vibrant | — | 2 |
-| St. Paul Pioneer Press | twincities.com | Twin Cities | Bold Coastal | St. Paul Pioneer Press | 5 |
+| St. Paul Pioneer Press | twincities.com | Twin Cities | Bold Coastal | St. Paul Pioneer Press | 4 |
 
 ---
 

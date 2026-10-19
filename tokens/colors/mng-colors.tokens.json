@@ -198,7 +198,7 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#0097a7"},
+    "subsite-custom": {"$value": "#ffffff"},
     "$extensions": {
      "com.mng": {
       "name": "St. Paul Pioneer Press",
@@ -208,13 +208,12 @@
       "inFigma": true,
       "figmaMode": "St. Paul Pioneer Press",
       "productionAudit": "2026-08-03",
-      "mismatchCount": 5,
+      "mismatchCount": 4,
       "mismatches": [
        { "token": "primary-lighter", "design": "#0187e0", "production": "MISSING", "productionSource": "not set", "fix": "Define --primary-lighter: #0187e0 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
        { "token": "primary-darker", "design": "#005892", "production": "MISSING", "productionSource": "not set", "fix": "Define --primary-darker: #005892 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
        { "token": "secondary", "design": "#ffea00", "production": "MISSING", "productionSource": "not set", "fix": "Define --secondary: #ffea00 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "tertiary", "design": "#f4a700", "production": "MISSING", "productionSource": "not set", "fix": "Define --tertiary: #f4a700 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "subsite-custom", "design": "#0097a7", "production": "#ffffff", "productionSource": "div#page override", "fix": "Change --subsite-custom from #ffffff to #0097a7 (Customizer, div#page).", "scope": "sub-theme", "figmaCallout": true }
+       { "token": "tertiary", "design": "#f4a700", "production": "MISSING", "productionSource": "not set", "fix": "Define --tertiary: #f4a700 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true }
       ],
       "sites": [ "twincities.com" ]
      }
@@ -556,6 +555,7 @@
     "near-black": {"$value": "#1f1e1c"},
     "white": {"$value": "#fbfbfb"},
     "nav-text": {"$value": "#1f1e1c"},
+    "subsite-custom": {"$value": "#000000"},
     "$extensions": {
      "com.mng": {
       "name": "South Florida Sun Sentinel",
@@ -2738,7 +2738,7 @@
      "theme": "Bold Coastal",
      "subTheme": "St. Paul Pioneer Press",
      "tokenSource": "color.theme.st-paul-pioneer-press",
-     "mismatchCount": 5,
+     "mismatchCount": 4,
      "fixesFrom": "color.theme.st-paul-pioneer-press"
     }
    }
@@ -2981,6 +2981,7 @@
    "near-black": {"$value": "{color.theme.south-florida-sun-sentinel.near-black}"},
    "white": {"$value": "{color.theme.south-florida-sun-sentinel.white}"},
    "nav-text": {"$value": "{color.theme.south-florida-sun-sentinel.nav-text}"},
+   "subsite-custom": {"$value": "{color.theme.south-florida-sun-sentinel.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "South Florida Sun Sentinel",

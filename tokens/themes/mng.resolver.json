@@ -1343,7 +1343,7 @@
           "loads": "boldcoastal.css + Customizer override (div#page)",
           "figmaMode": "St. Paul Pioneer Press",
           "productionAudit": "2026-08-03",
-          "mismatchCount": 5,
+          "mismatchCount": 4,
           "sites": [
             "twincities.com"
           ]
@@ -2646,7 +2646,7 @@
             "bold-coastal",
             "st-paul-pioneer-press"
           ],
-          "mismatchCount": 5
+          "mismatchCount": 4
         },
         "dailypress.com": {
           "publication": "Daily Press",
