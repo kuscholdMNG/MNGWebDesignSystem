@@ -83,6 +83,7 @@
   --color-theme-primary-light: var(--mng-color-theme-primary-light);
   --color-theme-primary-lighter: var(--mng-color-theme-primary-lighter);
   --color-theme-secondary: var(--mng-color-theme-secondary);
+  --color-theme-subsite-custom: var(--mng-color-theme-subsite-custom);
   --color-theme-tertiary: var(--mng-color-theme-tertiary);
   --color-theme-white: var(--mng-color-theme-white);
   --font-theme-body: var(--mng-font-theme-body-family);

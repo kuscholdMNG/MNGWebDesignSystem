@@ -8,7 +8,7 @@
       "loads": "boldcoastal.css + Customizer override (div#page)",
       "figmaMode": "The Press Democrat",
       "productionAudit": "2026-08-03",
-      "mismatchCount": 3,
+      "mismatchCount": 2,
       "sites": [
         "pressdemocrat.com",
         "sonomacountygazette.com"
@@ -332,6 +332,34 @@
               "variable": "color/theme/nav-text",
               "mode": "The Press Democrat"
             },
+            "production": {
+              "source": "boldcoastal.css + Customizer override (div#page)",
+              "sites": [
+                "pressdemocrat.com",
+                "sonomacountygazette.com"
+              ],
+              "verified": "2026-08-03",
+              "matches": true
+            }
+          }
+        }
+      },
+      "subsite-custom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9333,
+            0.9333,
+            0.9333
+          ],
+          "alpha": 1,
+          "hex": "#eeeeee"
+        },
+        "$description": "Sub-site accent color. Defined in the color style guides; not a Figma variable yet.",
+        "$extensions": {
+          "com.mng": {
+            "rgba": "rgba(238, 238, 238, 1)",
+            "figma": null,
             "production": {
               "source": "boldcoastal.css + Customizer override (div#page)",
               "sites": [

@@ -149,6 +149,8 @@
   "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
   "color.theme.nav-text": "#0a0908",
   "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+  "color.theme.subsite-custom": "#0097a7",
+  "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)",
   "font.theme.heading-family": "\"Noto Serif\", \"Georgia\", \"Times New Roman\", serif",
   "font.theme.body-family": "\"Noto Sans\", \"Helvetica Neue\", \"Arial\", sans-serif",
   "font.theme.eyebrow-size": "20px",

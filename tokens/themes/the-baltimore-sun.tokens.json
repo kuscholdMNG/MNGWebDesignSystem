@@ -197,6 +197,25 @@
             "figma": null
           }
         }
+      },
+      "subsite-custom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1098,
+            0.1451,
+            0.3176
+          ],
+          "alpha": 1,
+          "hex": "#1c2551"
+        },
+        "$description": "Sub-site accent color. Defined in the color style guides; not a Figma variable yet.",
+        "$extensions": {
+          "com.mng": {
+            "rgba": "rgba(28, 37, 81, 1)",
+            "figma": null
+          }
+        }
       }
     }
   }

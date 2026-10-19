@@ -76,8 +76,7 @@
     "css": [
       "css/core.css",
       "css/themes/the-baltimore-sun.css",
-      "css/wordpress.css",
-      "css/sites/baltimoresun.com.css"
+      "css/wordpress.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#373751",
@@ -354,8 +353,7 @@
     "css": [
       "css/core.css",
       "css/themes/capital-gazette.css",
-      "css/wordpress.css",
-      "css/sites/capitalgazette.com.css"
+      "css/wordpress.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3c6f95",
@@ -953,8 +951,7 @@
     "css": [
       "css/core.css",
       "css/themes/denverpost.css",
-      "css/wordpress.css",
-      "css/sites/denverpost.com.css"
+      "css/wordpress.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#c81632",
@@ -1012,7 +1009,9 @@
       "color.theme.white": "#ffffff",
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
-      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)"
+      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+      "color.theme.subsite-custom": "#0097a7",
+      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
     }
   },
   "eptrail.com": {
@@ -1526,7 +1525,9 @@
       "color.theme.white": "#ffffff",
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
-      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)"
+      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+      "color.theme.subsite-custom": "#0097a7",
+      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
     }
   },
   "montereyherald.com": {
@@ -1713,8 +1714,7 @@
     "css": [
       "css/core.css",
       "css/themes/bold-coastal.css",
-      "css/wordpress.css",
-      "css/sites/ocregister.com.css"
+      "css/wordpress.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#1799a5",
@@ -1942,7 +1942,9 @@
       "color.theme.white": "#ffffff",
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
-      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)"
+      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+      "color.theme.subsite-custom": "#0097a7",
+      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
     }
   },
   "pilotonline.com": {
@@ -2049,7 +2051,9 @@
       "color.theme.white": "#ffffff",
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
-      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)"
+      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+      "color.theme.subsite-custom": "#eeeeee",
+      "color.theme.subsite-custom.rgba": "rgba(238, 238, 238, 1)"
     }
   },
   "pressenterprise.com": {
@@ -2608,7 +2612,9 @@
       "color.theme.white": "#ffffff",
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
-      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)"
+      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+      "color.theme.subsite-custom": "#eeeeee",
+      "color.theme.subsite-custom.rgba": "rgba(238, 238, 238, 1)"
     }
   },
   "sonomamag.com": {
@@ -2647,7 +2653,9 @@
       "color.theme.white": "#ffffff",
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
-      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)"
+      "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
+      "color.theme.subsite-custom": "#0097a7",
+      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
     }
   },
   "southplattesentinel.com": {
@@ -3179,8 +3187,7 @@
     "css": [
       "css/core.css",
       "css/themes/st-paul-pioneer-press.css",
-      "css/wordpress.css",
-      "css/sites/twincities.com.css"
+      "css/wordpress.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#0187e0",

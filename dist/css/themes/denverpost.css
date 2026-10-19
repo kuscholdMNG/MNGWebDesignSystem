@@ -20,6 +20,8 @@
   --mng-color-theme-white-rgb: 255 255 255;
   --mng-color-theme-nav-text: #141414;
   --mng-color-theme-nav-text-rgb: 20 20 20;
+  --mng-color-theme-subsite-custom: #000000;
+  --mng-color-theme-subsite-custom-rgb: 0 0 0;
   --mng-font-theme-heading-family: var(--mng-font-family-noto-serif);
   --mng-font-theme-body-family: var(--mng-font-family-noto-sans);
   --mng-font-theme-eyebrow-size: var(--mng-font-size-20);

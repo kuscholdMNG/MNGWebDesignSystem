@@ -298,7 +298,8 @@ export const themes = {
         "tertiary": "#f4a700",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#0097a7"
       }
     },
     "font": {
@@ -376,7 +377,8 @@ export const themes = {
         "tertiary": "#ffc518",
         "near-black": "#141414",
         "white": "#ffffff",
-        "nav-text": "#141414"
+        "nav-text": "#141414",
+        "subsite-custom": "#000000"
       }
     },
     "font": {
@@ -402,7 +404,8 @@ export const themes = {
         "tertiary": "#cd2709",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#0097a7"
       }
     },
     "font": {
@@ -428,7 +431,8 @@ export const themes = {
         "tertiary": "#f4a700",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#0097a7"
       }
     },
     "font": {
@@ -454,7 +458,8 @@ export const themes = {
         "tertiary": "#006fb7",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#0097a7"
       }
     },
     "font": {
@@ -480,7 +485,8 @@ export const themes = {
         "tertiary": "#006fb7",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#eeeeee"
       }
     },
     "font": {
@@ -506,7 +512,8 @@ export const themes = {
         "tertiary": "#f4a700",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#0097a7"
       }
     },
     "font": {
@@ -532,7 +539,8 @@ export const themes = {
         "tertiary": "#5f6264",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#1c2551"
       }
     },
     "font": {
@@ -558,7 +566,8 @@ export const themes = {
         "tertiary": "#5f6264",
         "near-black": "#0a0908",
         "white": "#ffffff",
-        "nav-text": "#0a0908"
+        "nav-text": "#0a0908",
+        "subsite-custom": "#0097a7"
       }
     },
     "font": {
@@ -878,8 +887,7 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-baltimore-sun.css",
-      "css/wordpress.css",
-      "css/sites/baltimoresun.com.css"
+      "css/wordpress.css"
     ],
     "onMngThemes": true
   },
@@ -960,8 +968,7 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/capital-gazette.css",
-      "css/wordpress.css",
-      "css/sites/capitalgazette.com.css"
+      "css/wordpress.css"
     ],
     "onMngThemes": true
   },
@@ -1135,8 +1142,7 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/denverpost.css",
-      "css/wordpress.css",
-      "css/sites/denverpost.com.css"
+      "css/wordpress.css"
     ],
     "onMngThemes": true
   },
@@ -1359,8 +1365,7 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/bold-coastal.css",
-      "css/wordpress.css",
-      "css/sites/ocregister.com.css"
+      "css/wordpress.css"
     ],
     "onMngThemes": true
   },
@@ -1792,8 +1797,7 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/st-paul-pioneer-press.css",
-      "css/wordpress.css",
-      "css/sites/twincities.com.css"
+      "css/wordpress.css"
     ],
     "onMngThemes": true
   },
@@ -1939,6 +1943,7 @@ export const cssVars = {
   "color.theme.primary-light": "var(--mng-color-theme-primary-light)",
   "color.theme.primary-lighter": "var(--mng-color-theme-primary-lighter)",
   "color.theme.secondary": "var(--mng-color-theme-secondary)",
+  "color.theme.subsite-custom": "var(--mng-color-theme-subsite-custom)",
   "color.theme.tertiary": "var(--mng-color-theme-tertiary)",
   "color.theme.white": "var(--mng-color-theme-white)",
   "font.theme.body-family": "var(--mng-font-theme-body-family)",

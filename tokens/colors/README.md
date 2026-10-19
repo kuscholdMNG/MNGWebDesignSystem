@@ -24,7 +24,7 @@ Every site row in the JSON, CSS and CSV shows its theme and sub-theme.
 ## Structure (tokens.json)
 
 - `color.gray / feedback / neutral / surface / tributes`: shared global colors.
-- `color.theme.<key>`: 10 tokens per theme or sub-theme (`primary-lighter` … `tertiary`, plus `near-black`, `white`, `nav-text`). `subsite-custom` and `subsite-text` are **site-specific** (Karl, 2026-10-19): they live only in site overrides and are never inherited from a theme or sub-theme. A site with no documented value has none ("undocumented").
+- `color.theme.<key>`: 10 tokens per theme or sub-theme (`primary-lighter` … `tertiary`, plus `near-black`, `white`, `nav-text`, and `subsite-custom`). **`subsite-custom` cascades** (Karl, 2026-10-19): a theme's value applies to every sub-theme and site under it unless one sets its own override (Bold Coastal `#0097a7`; overrides: Denver Post `#000000`, The Press Democrat `#eeeeee`, The Baltimore Sun `#1c2551`, and the single-site values listed in `mng-colors.css`). Modern Earthy and Measured Vibrant have no value, so their sub-themes show it as missing.
   - `$extensions.com.mng` holds `level` (theme / sub-theme), `parentTheme`, `loads` (theme files), `figmaMode` (`null` = not in Figma), `productionAudit` date, `mismatches` (the Figma red-dashed callouts, each with design value, production value and fix) and `sites`.
 - `site.<domain-slug>`: each publication's tokens, as aliases to its theme / sub-theme, plus literal site overrides. Slugs replace dots with dashes (dots break DTCG alias paths).
   - `$extensions.com.mng` holds publication, cluster, theme, subTheme, `mismatchCount` (fixes Engineering needs to make), `fixesFrom` (where those fixes live) and `exceptions` (documented site differences that need no fix).

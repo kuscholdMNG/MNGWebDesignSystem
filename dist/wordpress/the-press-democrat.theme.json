@@ -169,6 +169,11 @@
           "slug": "theme-nav-text",
           "name": "Theme Nav Text",
           "color": "#0a0908"
+        },
+        {
+          "slug": "theme-subsite-custom",
+          "name": "Theme Subsite Custom",
+          "color": "#eeeeee"
         }
       ]
     },

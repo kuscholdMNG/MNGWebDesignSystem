@@ -580,10 +580,10 @@ Listed in the Figma page's **Pending Updates**. None is in the production font u
 | Modern Earthy | theme | — | 4 | 25 |
 | Measured Vibrant | theme | — | 2 | 23 |
 | Denver Post | sub-theme | Bold Coastal | 3 | 1 |
-| The Mercury News + East Bay Times | sub-theme | Bold Coastal | 2 (1 on Mercury News) | 2 |
+| The Mercury News + East Bay Times | sub-theme | Bold Coastal | 1 (East Bay Times only) | 2 |
 | St. Paul Pioneer Press | sub-theme | Bold Coastal | 5 | 1 |
 | Petaluma Argus-Courier | sub-theme | Bold Coastal | 1 | 1 |
-| The Press Democrat | sub-theme | Bold Coastal | 3 | 2 |
+| The Press Democrat | sub-theme | Bold Coastal | 2 | 2 |
 | The Sonoma Index-Tribune | sub-theme | Bold Coastal | 1 | 1 |
 | The Baltimore Sun | sub-theme | Bold Coastal | — | 1 |
 | Capital Gazette | sub-theme | Bold Coastal | 3 | 1 |
@@ -653,9 +653,10 @@ Loads: `boldcoastal.css + Customizer override (div#page)` on both sites. Figma m
 | Token | Design | Production | Fix | Sites |
 |---|---|---|---|---|
 | `--secondary` | `#ffc518` | `#eeff41` (Customizer, div#page) | Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). | East Bay Times only (Mercury News matches) |
-| `--subsite-custom` | `undocumented` | `#0097a7` (boldcoastal.css, body; inherited) | Neither site sets a sub-site color; both inherit `#0097a7` from `boldcoastal.css`. Sub-site colors are site-specific and never inherited (Karl, 2026-10-19), so design has no value here: remove the theme-level value from `boldcoastal.css`, or design documents a value for each site. | Both |
 
 Why the two sites differ (checked live 2026-10-19): both Customizers set the same 7 values except `--secondary`. East Bay Times sets `#eeff41`, the stock Modern Earthy / Measured Vibrant secondary, so it was copied in by mistake, not a brand choice (Karl, 2026-10-19). On these sites `--secondary` colors the breaking-news bar, the sponsored flag and poll links.
+
+`--subsite-custom` is `#0097a7` in design since 2026-10-19 (Karl): it is the Bold Coastal value, and both sites already render it from `boldcoastal.css` (body), so there is no fix. It was blank in the old 2025 guide for these two sites.
 
 **Publications:** The Mercury News (mercurynews.com), East Bay Times (eastbaytimes.com)
 
@@ -691,7 +692,8 @@ Loads: `boldcoastal.css + Customizer override (div#page)`. Figma mode: The Press
 |---|---|---|---|
 | `--secondary` | `#ffea00` | `MISSING` | Define --secondary: #ffea00 (Customizer, div#page). It isn't set today. |
 | `--tertiary` | `#006fb7` | `#d10f14` (div#page override) | Change --tertiary from #d10f14 to #006fb7 (Customizer, div#page). |
-| `--subsite-custom` | `undocumented` | `#eeeeee` (div#page override) | Production sets --subsite-custom: #eeeeee, but design has no value. Design to confirm: document it, or engineering removes it. |
+
+`--subsite-custom` `#eeeeee` is the sub-theme's own design value since 2026-10-19 (Karl): it overrides the Bold Coastal `#0097a7` and matches production, so there is no fix.
 
 **Publications:** The Press Democrat (pressdemocrat.com), Sonoma County Gazette (sonomacountygazette.com)
 
@@ -900,10 +902,10 @@ None. The sites whose theme was disputed (the 5 NEPA sites, Daily Press, The Mor
 | The Pottstown Mercury | pottsmerc.com | 21C Pennsylvania | Modern Earthy | — | 4 |
 | Trentonian | trentonian.com | 21C Pennsylvania | Modern Earthy | — | 4 |
 | West Chester Daily Local | dailylocal.com | 21C Pennsylvania | Modern Earthy | — | 4 |
-| East Bay Times | eastbaytimes.com | BANG | Bold Coastal | The Mercury News + East Bay Times | 2 |
+| East Bay Times | eastbaytimes.com | BANG | Bold Coastal | The Mercury News + East Bay Times | 1 |
 | Marin Independent Journal | marinij.com | BANG | Measured Vibrant | — | 2 |
 | Silicon Valley | siliconvalley.com | BANG | Modern Earthy | — | 4 |
-| The Mercury News | mercurynews.com | BANG | Bold Coastal | The Mercury News + East Bay Times | 1 |
+| The Mercury News | mercurynews.com | BANG | Bold Coastal | The Mercury News + East Bay Times | 0 |
 | Boston Herald | bostonherald.com | Boston | Modern Earthy | Boston Herald | 4 |
 | Nashoba Valley Voice | nashobavalleyvoice.com | Boston | Modern Earthy | — | 4 |
 | Colorado Daily | coloradodaily.com | Colorado Weeklies | Modern Earthy | NEPA-PMP | 2 |
@@ -963,9 +965,9 @@ None. The sites whose theme was disputed (the 5 NEPA sites, Daily Press, The Mor
 | Torrance Daily Breeze | dailybreeze.com | SCNG | Bold Coastal | — | 2 |
 | Whittier Daily News | whittierdailynews.com | SCNG | Modern Earthy | — | 4 |
 | Petaluma Argus-Courier | petalumanews.com | Sonoma | Bold Coastal | Petaluma Argus-Courier | 1 |
-| Sonoma County Gazette | sonomacountygazette.com | Sonoma | Bold Coastal | The Press Democrat | 3 |
+| Sonoma County Gazette | sonomacountygazette.com | Sonoma | Bold Coastal | The Press Democrat | 2 |
 | Sonoma Magazine | sonomamag.com | Sonoma | — | — | n/a (not on MNG themes) |
-| The Press Democrat | pressdemocrat.com | Sonoma | Bold Coastal | The Press Democrat | 3 |
+| The Press Democrat | pressdemocrat.com | Sonoma | Bold Coastal | The Press Democrat | 2 |
 | The Sonoma Index-Tribune | sonomanews.com | Sonoma | Bold Coastal | The Sonoma Index-Tribune | 1 |
 | Capital Gazette | capitalgazette.com | Tribune | Bold Coastal | Capital Gazette | 3 |
 | Chicago Tribune | chicagotribune.com | Tribune | Measured Vibrant | Chicago Tribune | 2 |

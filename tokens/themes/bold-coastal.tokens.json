@@ -348,6 +348,34 @@
             }
           }
         }
+      },
+      "subsite-custom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0.5922,
+            0.6549
+          ],
+          "alpha": 1,
+          "hex": "#0097a7"
+        },
+        "$description": "Sub-site accent color. Defined in the color style guides; not a Figma variable yet.",
+        "$extensions": {
+          "com.mng": {
+            "rgba": "rgba(0, 151, 167, 1)",
+            "figma": null,
+            "production": {
+              "source": "boldcoastal.css",
+              "sites": [
+                "ocregister.com",
+                "dailybreeze.com"
+              ],
+              "verified": "2026-08-03",
+              "matches": true
+            }
+          }
+        }
       }
     }
   }

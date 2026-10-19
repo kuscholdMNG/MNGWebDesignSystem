@@ -40,6 +40,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7;
 }
 
 /* Modern Earthy (theme) · 25 publications · Engineering fixes: 4 (see production-vs-design-differences.md entry 21) */
@@ -131,9 +132,10 @@
   --near-black: #141414;
   --white: #ffffff;
   --nav-text: #141414;
+  --subsite-custom: #000000;
 }
 
-/* The Mercury News + East Bay Times (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 1 (Mercury News), 2 (East Bay Times) (see production-vs-design-differences.md entry 21) · combined 2026-10-19 */
+/* The Mercury News + East Bay Times (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 0 (Mercury News), 1 (East Bay Times) (see production-vs-design-differences.md entry 21) · combined 2026-10-19 */
 [data-mng-theme="the-mercury-news-east-bay-times"],
 [data-mng-site="mercurynews.com"],
 [data-mng-site="eastbaytimes.com"] {
@@ -147,6 +149,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7;
 }
 
 /* St. Paul Pioneer Press (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 5 (see production-vs-design-differences.md entry 21) */
@@ -162,6 +165,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7;
 }
 
 /* Petaluma Argus-Courier (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 1 (see production-vs-design-differences.md entry 21) */
@@ -177,9 +181,10 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7; /* inherited from Bold Coastal */
 }
 
-/* The Press Democrat (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 3 (see production-vs-design-differences.md entry 21) */
+/* The Press Democrat (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 2 (see production-vs-design-differences.md entry 21) */
 [data-mng-theme="the-press-democrat"],
 [data-mng-site="pressdemocrat.com"],
 [data-mng-site="sonomacountygazette.com"] {
@@ -193,6 +198,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #eeeeee; /* sub-theme override */
 }
 
 /* The Sonoma Index-Tribune (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 1 (see production-vs-design-differences.md entry 21) */
@@ -208,6 +214,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7; /* inherited from Bold Coastal */
 }
 
 /* The Baltimore Sun (sub-theme of Bold Coastal) · not a Figma mode (20-mode limit) · 1 publication · Engineering fixes: 0 (see production-vs-design-differences.md entry 21) */
@@ -223,6 +230,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #1c2551;
 }
 
 /* Capital Gazette (sub-theme of Bold Coastal) · not a Figma mode (20-mode limit) · 1 publication · Engineering fixes: 3 (see production-vs-design-differences.md entry 21) */
@@ -238,6 +246,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7;
 }
 
 /* Morning Call (sub-theme of Modern Earthy) · 1 publication · Engineering fixes: 6 (see production-vs-design-differences.md entry 21) */
@@ -446,8 +455,3 @@
 [data-mng-site="chicagotribune.com"] { /* Chicago Tribune */ --subsite-custom: #fdfdfd; --subsite-text: #0a0a0a; }
 [data-mng-site="nydailynews.com"] { /* New York Daily News */ --subsite-custom: #000000; --subsite-text: #f9f9f9; }
 [data-mng-site="pilotonline.com"] { /* The Virginian-Pilot */ --subsite-custom: #000000; --subsite-text: #f9f9f9; }
-[data-mng-site="ocregister.com"] { /* Orange County Register */ --subsite-custom: #0097a7; }
-[data-mng-site="denverpost.com"] { /* The Denver Post */ --subsite-custom: #000000; }
-[data-mng-site="twincities.com"] { /* St. Paul Pioneer Press */ --subsite-custom: #0097a7; }
-[data-mng-site="capitalgazette.com"] { /* Capital Gazette */ --subsite-custom: #0097a7; }
-[data-mng-site="baltimoresun.com"] { /* The Baltimore Sun */ --subsite-custom: #1c2551; }
