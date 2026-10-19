@@ -136,7 +136,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --secondary: #ffea00 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.the-sonoma-index-tribune.secondary"
           }

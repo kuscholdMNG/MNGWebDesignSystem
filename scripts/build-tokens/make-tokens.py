@@ -28,7 +28,7 @@ import json, os, re, sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIGMA_FILE = 'MNG Web Design System'
-DIFF_ENTRY_COLORS = 1
+DIFF_ENTRY_COLORS = 9
 
 def load(p):
     with open(os.path.join(ROOT, p), encoding='utf-8') as f:

@@ -8,7 +8,7 @@ Writes:
   - tokens/colors/mng-colors-sites.csv   (rows re-ordered; cluster, resolved values, fixes per site)
   - tokens/colors/mng-colors.css         (one block per theme/sub-theme for reference + one block per site)
   - tokens/colors/mng-colors-fixes.csv   one row per fix (a checklist for engineering, with a blank `done` column)
-  - design-vs-production.md  entry 1, between the BEGIN/END per-site markers
+  - design-vs-production.md  entry 9, between the BEGIN/END per-site markers
 Inputs: tokens/colors/mng-colors.tokens.json, scripts/colors-docs/notes.json (hand notes per theme/sub-theme).
 Run from the repo root: python3 scripts/colors-docs/build-color-docs.py
 """
@@ -86,10 +86,11 @@ o = io.StringIO(); w = csv.DictWriter(o, fields, lineterminator='\n'); w.writehe
 open(p, 'w').write(o.getvalue())
 
 # ---------- fixes checklist ----------
-# One row per thing engineering has to change, ordered theme > cluster > sub-theme > site. Theme-file rows come first in
-# each theme (fix once in the theme stylesheet); site rows repeat theme-file fixes that site still shows, so a site can be
-# checked off on its own. Platform-wide gray / alert (entry 2) and obituaries (entry 3) rows close the file.
-GRAY_ALERT = [  # design-vs-production entry 2, audited 2026-10-19; identical on all three themes
+# One row per thing engineering has to change. The easy wins come first: the gray / alert fixes for each theme file
+# (entry 7) and the obituaries fixes (entry 8). Then the per-site color fixes (entry 9), ordered theme > cluster >
+# sub-theme > site: theme-file rows first in each theme (fix once), then each site's rows (theme-file fixes repeated so
+# a site can be checked off on its own).
+GRAY_ALERT = [  # design-vs-production entry 7, audited 2026-10-19; identical on all three themes
     ('--text (body)', '#000000', '#141414', 'Change body text from #000000 to gray-min #141414.'),
     ('gray-min', '#0a0908', '#141414', 'Replace hard-coded $gray-min #0a0908 with #141414.'),
     ('--site-branding-gray-100', '#38322a', '#393938', 'Change --site-branding-gray-100 to #393938 (:root).'),
@@ -102,13 +103,14 @@ GRAY_ALERT = [  # design-vs-production entry 2, audited 2026-10-19; identical on
     ('alert high-error', 'MISSING', '#cc2b27', 'Add the high-error alert color #cc2b27.'),
 ]
 THEME_CSS = {'Bold Coastal': 'boldcoastal.css', 'Modern Earthy': 'modernearthy.css', 'Measured Vibrant': 'measuredvibrant.css'}
-OBITS = [  # design-vs-production entry 3 (rechecked 2026-10-19); obituaries look the same on every site
+OBITS = [  # design-vs-production entry 8 (rechecked 2026-10-19); obituaries look the same on every site
     ('primary-lighter (tributes)', 'MISSING', '#f15f87', 'Add Endless Tributes primary-lighter #f15f87.'),
     ('primary-dark (tributes)', 'MISSING', '#770000', 'Add Endless Tributes primary-dark #770000 (rgb 119, 0, 0).'),
     ('primary-darker (tributes)', 'MISSING', '#4d0000', 'Add Endless Tributes primary-darker #4d0000.'),
     ('tan-light (tributes)', '#ecede7', '#e8e6e2', 'Change tan-light from #ecede7 to #e8e6e2.'),
     ('--secondary-obit', '#946c82', 'remove', 'Remove --secondary-obit (not part of the Endless Tributes palette).'),
     ('--tertiary-obit', '#227db4', 'remove', 'Remove --tertiary-obit (not part of the Endless Tributes palette).'),
+    ('beige #ccc7bc (article pages)', '#ccc7bc', 'design to decide', 'Send Flowers banner (.obit-tribute-wrapper) and guestbook submit button use #ccc7bc, not a palette color (styleArticleObit.min.css). Waiting on design: which tributes color replaces it.'),
 ]
 def where(fix):
     m = re.search(r'\(([^()]*(?:\.css|Customizer)[^()]*)\)', fix)
@@ -116,6 +118,13 @@ def where(fix):
 FX = ['theme', 'cluster', 'sub_theme', 'publication', 'domain', 'token', 'production_value', 'design_value',
       'where_to_fix', 'scope', 'fix', 'differences_entry', 'done']
 fixrows = []
+for t in ['Bold Coastal', 'Modern Earthy', 'Measured Vibrant']:
+    for tok, prod, des, fix in GRAY_ALERT:
+        fixrows.append([t, '(all clusters)', '', '(theme file)', '(all %s sites)' % t, tok, prod, des,
+                        THEME_CSS[t], 'theme file: fix once', fix, '7', ''])
+for tok, prod, des, fix in OBITS:
+    fixrows.append(['Endless Tributes', '(all clusters)', '', '(obituaries)', '(every site)', tok, prod, des,
+                    'obituaries widget CSS', 'platform: fix once', fix, '8', ''])
 cur_theme = None
 for x in sites:
     if x['theme'] != cur_theme:
@@ -124,10 +133,7 @@ for x in sites:
             tk = key_by_name[x['theme']]
             for f in TH[tk]['$extensions']['com.mng'].get('mismatches', []):
                 fixrows.append([x['theme'], '(all clusters)', '', '(theme file)', '(all %s sites)' % x['theme'], '--' + f['token'],
-                                f['production'], f['design'], where(f['fix']), 'theme file: fix once', f['fix'], '1', ''])
-            for tok, prod, des, fix in GRAY_ALERT:
-                fixrows.append([x['theme'], '(all clusters)', '', '(theme file)', '(all %s sites)' % x['theme'], tok, prod, des,
-                                THEME_CSS[x['theme']], 'theme file: fix once', fix, '2', ''])
+                                f['production'], f['design'], where(f['fix']), 'theme file: fix once', f['fix'], '9', ''])
     if not x['theme']:
         continue
     tk = key_by_name[x['theme']]
@@ -138,17 +144,14 @@ for x in sites:
         scope = 'theme file (also listed above)' if shared else ('this site only' if f.get('sites') else
                 ('sub-theme: ' + x['sub'] if x['sub'] else 'this site'))
         fixrows.append([x['theme'], x['cluster'], x['sub'] or '', x['pub'], x['dom'], '--' + f['token'], f['production'],
-                        f['design'], where(f['fix']), scope, f['fix'], '1', ''])
-for tok, prod, des, fix in OBITS:
-    fixrows.append(['Endless Tributes', '(all clusters)', '', '(obituaries)', '(every site)', tok, prod, des,
-                    'obituaries widget CSS', 'platform: fix once', fix, '3', ''])
+                        f['design'], where(f['fix']), scope, f['fix'], '9', ''])
 o = io.StringIO(); w = csv.writer(o, lineterminator='\n'); w.writerow(FX); w.writerows(fixrows)
 open(os.path.join(ROOT, 'tokens/colors/mng-colors-fixes.csv'), 'w').write(o.getvalue())
 
 # ---------- CSS ----------
 L = ['/* MNG Web Design System — color tokens (design / should-be values). Generated by scripts/colors-docs/build-color-docs.py',
      '   from tokens/colors/mng-colors.tokens.json; do not edit by hand. Every publication has its own block, ordered',
-     '   theme > cluster > sub-theme > site. Engineering fixes: design-vs-production.md entry 1. */', '']
+     '   theme > cluster > sub-theme > site. Engineering fixes: design-vs-production.md entry 9. */', '']
 L.append('/* ===== Themes and sub-themes (reference: [data-mng-theme]) ===== */')
 for tk, t in TH.items():
     m = t['$extensions']['com.mng']
@@ -173,7 +176,7 @@ for x in sites:
     L.append('}')
 open(os.path.join(ROOT, 'tokens/colors/mng-colors.css'), 'w').write('\n'.join(L) + '\n')
 
-# ---------- entry 1 ----------
+# ---------- entry 9 ----------
 def fix_table(fx):
     if not fx: return ['No fixes.']
     out = ['| Token | Design | Production | Fix |', '|---|---|---|---|']

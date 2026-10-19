@@ -72,7 +72,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-lighter: #5796bd (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.hartford-courant.primary-lighter"
           }
@@ -116,7 +116,7 @@
               "matches": false,
               "productionValue": "#2b7ea5",
               "fix": "Change --primary from #2b7ea5 to #166d95 (Customizer, div#page).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.hartford-courant.primary"
           }
@@ -141,7 +141,7 @@
               "matches": false,
               "productionValue": "#2b7ea5",
               "fix": "Change --primary-dark from #2b7ea5 to #084e6f (Customizer, div#page).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.hartford-courant.primary-dark"
           }
@@ -166,7 +166,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-darker: #171e44 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.hartford-courant.primary-darker"
           }
@@ -191,7 +191,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --secondary: #eeff41 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.hartford-courant.secondary"
           }
@@ -216,7 +216,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --tertiary: #6a54ca (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.hartford-courant.tertiary"
           }

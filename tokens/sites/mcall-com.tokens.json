@@ -72,7 +72,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-lighter: #5399c4 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.morning-call.primary-lighter"
           }
@@ -97,7 +97,7 @@
               "matches": false,
               "productionValue": "#337ca9",
               "fix": "Change --primary-light from #337ca9 to #27719f (Customizer, div#page).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.morning-call.primary-light"
           }
@@ -122,7 +122,7 @@
               "matches": false,
               "productionValue": "#014b78",
               "fix": "Change --primary from #014b78 to #166291 (Customizer, div#page).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.morning-call.primary"
           }
@@ -166,7 +166,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-darker: #00385a (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.morning-call.primary-darker"
           }
@@ -191,7 +191,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --secondary: #eeff41 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.morning-call.secondary"
           }
@@ -216,7 +216,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --tertiary: #ff5722 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.morning-call.tertiary"
           }

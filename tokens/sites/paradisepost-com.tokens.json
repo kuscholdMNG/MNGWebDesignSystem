@@ -47,7 +47,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-lighter: #717fd1 (measuredvibrant.css, body). It isn't set today; the page falls back to #47b6ff.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.measured-vibrant.primary-lighter"
           }
@@ -167,7 +167,7 @@
               "matches": false,
               "productionValue": "#303f9f",
               "fix": "Change --tertiary from #303f9f to #eb5300 (measuredvibrant.css, body).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.measured-vibrant.tertiary"
           }

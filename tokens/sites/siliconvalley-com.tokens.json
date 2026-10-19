@@ -60,7 +60,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-lighter: #fe521e (modernearthy.css, body). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.modern-earthy.primary-lighter"
           }
@@ -104,7 +104,7 @@
               "matches": false,
               "productionValue": "#bc3b10",
               "fix": "Change --primary from #bc3b10 to #cc3300 (modernearthy.css, body).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.modern-earthy.primary"
           }
@@ -148,7 +148,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-darker: #a52804 (modernearthy.css, body). It isn't set today.",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.modern-earthy.primary-darker"
           }
@@ -192,7 +192,7 @@
               "matches": false,
               "productionValue": "#ff5722",
               "fix": "Change --tertiary from #ff5722 to #00828f (modernearthy.css, body).",
-              "differencesEntry": 1
+              "differencesEntry": 9
             },
             "resolvedFrom": "color.theme.modern-earthy.tertiary"
           }

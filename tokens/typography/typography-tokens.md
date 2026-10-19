@@ -35,7 +35,7 @@ In Figma the variables hold bare family names. In code (`tokens/core/typography.
 | `font/size/13` | 13px | Small button / caption size, measured live. Matches CRUX `xs`. |
 | `font/size/14` | 14px | Medium/primary button label (~14.06px measured live). |
 | `font/size/15` | 15px | Primary nav-bar label (600, Noto Sans, not theme-varying) and the Section Highlight headline list (`HeadlineList`). Confirmed live. |
-| `font/size/15-2` | 15.2px | Article breadcrumb type-of-work label and its " • " bullet (400, line height 15.2). Confirmed live 2026-10-08; production renders it in Helvetica (design-vs-production entry 9). |
+| `font/size/15-2` | 15.2px | Article breadcrumb type-of-work label and its " • " bullet (400, line height 15.2). Confirmed live 2026-10-08; production renders it in Helvetica (design-vs-production entry 6). |
 | `font/size/16` | 16px | Reader Dashboard body, nav items, card subtitles/links. **Not** the editorial body size (see `16-5`). |
 | `font/size/16-5` | 16.5px | Universal editorial body copy. Confirmed live on all 6 audited sites/themes. |
 | `font/size/18` | 18px | Reader Dashboard Section Title and the article-page "More News" headlines (`RelatedHeadline`). Confirmed live. |

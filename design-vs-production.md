@@ -2,17 +2,245 @@
 
 **Purpose:** A running list of every place live production has been found diverging from the Figma design-system spec, or where something was explicitly flagged as needing engineering (or legal) attention. Figma is the source of truth for these systems; when production disagrees, the fix belongs here as an engineering item rather than being silently absorbed into design tokens. Each entry says where the drift is, what Figma says vs. what's live, and what engineering should do about it.
 
-**Contents:** Colors 1–4 · Fonts and typography 5–9 · Icons 10 · Components, layout, ads and breakpoints 11–30.
+**Contents:** Icons 1 · Fonts and typography 2–6 · Colors 7–10 (easy wins first: 7 Universal Grays and Alerts, 8 Endless Tributes; then 9 per-site color fixes, 10 Breaking News bar and Sponsored badge) · Components, layout, ads and breakpoints 11–30.
 
 ---
 
-## 1. Color Tokens — theme and sub-theme color fixes (every publication)
+## 1. Icon font — mismatches with the Figma icon page, dead and duplicate glyphs, and known missing icons
+
+**Found:** 2026-08-28 to 2026-08-31, icon font audit (`components/icons.md` §3, §5, §6). Added here 2026-09-25: `icons.md` said these were in this handoff, but they had never been logged.
+
+**Figma spec (source of truth):** the `Icons` component set in the main MNG Web Design System file (node `4693:5`, 95 variants) and the documented icon list on its Icons page.
+
+**Production (live icon font, checked on chicagotribune.com):**
+
+| Item | What's wrong | Action |
+|---|---|---|
+| `google-plus` | Still in the live font. Google+ was shut down years ago, and the icon isn't documented. | Remove from the font. |
+| `mng-podcast1` | Same codepoint (`e902`) as `android` — a font-build duplicate, not a separate icon. | Remove the alias. |
+| `grid2` | Renders the same gift-box glyph as `gift2`, not a grid. The requested "grid" icon has not shipped. | Remove the alias; ship the real `grid` icon (artwork exists in Figma). |
+| `notification-filled`, `notification-outlines` | Designed in Figma (filled and outline exclamation-in-a-circle alert icons) but missing from the live font under any name. Karl confirmed these are real, finished icons waiting to ship. | Add to the font. |
+
+
+**Updated 2026-10-08:** re-checked glyph by glyph against the Figma **Icon Categories** frame (main file, Icons | 2026.08.28, node `1412:13`) using the font extracted from ocregister.com (`tokens/icons/`). **All MNG sites use the same icon font** (Karl, 2026-10-08), so these findings apply everywhere. Of the 171 documented icons, 162 match production by name and glyph. Third-party vendor icons and the "Need to source/make/add" list are out of scope.
+
+### 1.1 Mismatches between the Figma page and the production font
+
+| Figma name | Production | Action |
+|---|---|---|
+| `grid2` | `icon-grid2` shows the gift glyph (U+E930, same as `gift2`). The Figma grid2 artwork (9 dots) **is in the font** at U+E932, with no class. | Point `icon-grid2` at U+E932. (Supersedes the 2026-08 note above that the grid hasn't shipped: the 9-dot glyph is there, just not wired up. The square-tile `grid` in Pending Updates is a different icon; see 20.2.) |
+| `windows8` | `icon-windows8` shows warning2 (U+E986). The Windows logo is in the font at U+E987, with no class. | Point `icon-windows8` at U+E987. |
+| `book3` | `icon-book3` points at U+0065 (the letter "e"). The closed book is in the font at U+E993, with no class. | Point `icon-book3` at U+E993. |
+| `content_copy` | No class. The glyph is in the font at U+E921. | Add `icon-content_copy` (or the agreed name) → U+E921. |
+| `ios_share` | No class. The glyph is in the font at U+E93A. | Add `icon-ios_share` → U+E93A. |
+| `home`, `menu7`, `enlarge7` | Same glyphs, but production names them `icon-home3`, `icon-hamburger` and `icon-enlarge`. Already listed in the Figma page's CHANGE section and in `components/icons.md` §3 as naming fixes. | Decide which name wins (design and dev); rename the Figma entry or add the Figma name as a production alias. |
+| "iTunes / Apple Music" | Same glyph as `icon-music5`; no class with this name. | Naming only; no font change. |
+| *(none)* | `icon-google-plus` (no glyph), `icon-mng-podcast1` (= android) and `icon-users4` (= user4) have no Figma entry. `google-plus` and `mng-podcast1` are in the table above; `users4` was set aside by Karl 2026-08-31. U+E941 (a second padlock) is in the font with no class and no Figma entry. | Remove the dead classes; U+E941 can go in a font rebuild. |
+
+### 1.2 Known missing icons (to be added; not mismatches)
+
+Listed in the Figma page's **Pending Updates**. None is in the production font under any name. Figma artwork for all 12 is in `tokens/icons/svg-missing/`.
+
+- **ADD:** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`.
+- **CHANGE:** `notification-outlines` (replaces `notification`) and `notification-filled` (replaces `notification2`). Same items as the `notification-filled` / `notification-outlines` row above.
+
+**Status:** Open.
+
+---
+
+## 2. Font fallbacks — Helvetica instead of the design stacks (all sites)
+
+**Found:** 2026-10-14, computed `font-family` on all 6 review sites (ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall): nav labels, section headers, card headlines, excerpts, footer and obituaries. **Team:** CMS (WordPress themes).
+
+**Design** (main file, Fonts page, Font Styles and Fallbacks `2768:1051`; tokens `font.family.noto-sans` / `font.family.noto-serif`, CSS `--mng-font-family-noto-sans` / `-serif`):
+
+| Stack | Design (should be) | Production |
+|---|---|---|
+| Sans (`$body`) | `"Noto Sans", "Helvetica Neue", Arial, sans-serif` | `"Noto Sans", Helvetica, sans-serif` |
+| Serif (`$heading`) | `"Noto Serif", Georgia, "Times New Roman", serif` | `"Noto Serif", Helvetica, serif` |
+
+The same two stacks apply on every theme; each theme only chooses which one its headings and body use. Obituaries follow the site's theme.
+
+**Fix:** in the theme font-family definitions, replace `Helvetica` with **Helvetica Neue** (then Arial) in the sans stack (Karl, 2026-10-14), and use Georgia, then Times New Roman, in the serif stack instead of Helvetica. The fallbacks only show when Noto doesn't load, so nothing changes visually when the web fonts work.
+
+**Status:** Open.
+
+---
+
+## 3. Typography — headline tiers measured live with no matching Figma style
+
+**Found:** 2026-08-27, live typography audit (recorded in a handoff note since retired). **Re-measured 2026-09-24** on ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall and greeleytribune. The values were identical on all 7.
+
+**Production:**
+
+| Role | Size | Weight | Line height | Letter spacing |
+|---|---|---|---|---|
+| Second-tier homepage card headline | 26px | 700 | 30.3px | -0.91 |
+| Third-tier card headline | 20px | 700 | 23.6px | -0.4 |
+| Fourth-tier card headline | 19px | 600 | 24px | -0.665 |
+| Section Highlight headline list | 15px | 600 | 19px | -0.15 |
+| Related ("More News") headline | 18px | 600 | 21px | normal |
+| Body copy | 16.5px | 400 | 27px | -0.165 |
+| Lead story, top of page | 29px | 700 | 32.8px | -0.87 |
+| Lead story, media block | 29px | 700 | 33px | -1.16 |
+
+**Also found:** on Bold Coastal the 19px and 15px headlines are Noto Sans, even though the theme's heading font is Noto Serif. The old Figma Title style used an averaged -1.0 letter spacing that matched neither lead-story variant.
+
+**Resolved 2026-09-24 (design side):** added as Figma Editorial styles:
+- `CardSecondary`, `CardTertiary`, `CardQuaternary`, `HeadlineList`, `RelatedHeadline`, `TitleMedia` and `Editorial/Body/Default`.
+- A new theme token, `font/theme/small-headline-family`.
+- Title's letter spacing corrected to -0.87.
+
+See `tokens/typography/typography-tokens.md`. Production matches the new styles, so no engineering action is needed.
+
+**Status:** Resolved.
+
+---
+
+## 4. Reader Dashboard — Typography (2026-09-10)
+
+**Policy:** For anything specific to the Reader Dashboard, Figma is the source of truth — even where production currently differs. MNG Web Design System's `Dashboard/*` typography tokens (in the "Dashboard Typography" collection) are kept at their Figma-specified values; any place production has been found rendering something different is recorded here instead, for engineering to either fix in production or flag back to design if the production value should actually be adopted.
+
+### 4.1 Page title size — `Dashboard/Titles/PageDesktop`
+
+**Figma:** Noto Serif, **26px**, Bold (700) — matches Reader Dashboard v2.0's own Figma token (`Titles/Page (desktop, tabletH)`) exactly.
+
+**Production:** canoncitydailyrecord.com/dashboard/ (desktop width) renders this title at **36px**, via a Tailwind `lg:text-4xl` breakpoint utility class overriding the base size.
+
+**Action needed:** Reconcile production to the Figma-specified 26px, OR — if 36px is an intentional, approved change — get that confirmed with design so Figma can be updated to match and this item retired. Until then, MNG Web Design System's token stays at 26px per the policy above.
+
+**Status:** Open.
+
+### 4.2 Section Title weight — `Dashboard/Titles/SectionTitle`
+
+**Figma:** Noto Sans, 18px, Bold (700).
+
+**Production:** One live-measured instance showed weight 600 (Semi-Bold) instead of 700.
+
+**Caveat (lower confidence than 2.1):** The measured instance may have been an admin/debug panel ("MNG Debugger" / "Entitlements JWT") rather than genuine reader-facing UI.
+
+**Action needed:** Confirm on a real reader-facing Section Title instance whether it's 700 (matches Figma) or genuinely 600.
+
+**Status:** Open.
+
+### 4.3 `font/size/10` — unconfirmed in production
+
+**Figma:** Defined at 10px in Reader Dashboard v2.0's Type Primitives, carried into MNG Web Design System.
+
+**Production:** No confirmed live sighting during this audit (only canoncitydailyrecord.com/dashboard/ was checked).
+
+**Action needed:** Low priority — confirm where (if anywhere) this size is actually used live.
+
+**Status:** Open.
+
+---
+
+## 5. Upcoming Events (CitySpark widget) — font family
+
+**Found:** 2026-10-07, ocregister.com (homepage `.csLayHolder` → `.cswidholder` iframe, CitySpark template).
+
+**Figma spec (source of truth):** WordPress Elements `Upcoming Events Widget` matches production's layout, sizes, spacing and colors exactly (Karl, 2026-10-07), but sets all text in **Noto Sans**, like the rest of the design system.
+
+**Production:** every text element in the widget is **Roboto Condensed**: the title "Upcoming Events" 400 20/22, the "See All Events" and "Add your event" buttons 400 12/15, the card dates 400 11, event names 700 13/14, venues 400 12/14, date-strip days 400 15/20 uppercase and dates 400 20/19.
+
+**Fix:** change the CitySpark widget template's font to Noto Sans (same sizes and weights) on every site, with whoever manages the CitySpark account.
+
+---
+
+## 6. Article breadcrumbs — label font family and text color
+
+**Found:** 2026-10-08, ocregister.com article page (`.breadcrumbs` › `.breadcrumb-type-wrapper > a`, e.g. "NEWS › ENVIRONMENT • News").
+
+**Figma spec (source of truth):** WordPress Elements › Article Page › `Breadcrumbs` (`1110:19469`) matches production's sizes, spacing and colors (rebuilt 2026-10-08, Karl): crumbs Noto Sans 700 16/22 uppercase, the `arrow-right2` icon at 14px in `color/gray/500` with 5px on each side, and the label " • News" in Noto Sans 400 15.2/15.2 (`font/size/15-2`). All breadcrumb text (crumbs, bullet and label) is **`color/gray/min` (#141414)** (Karl, 2026-10-08).
+
+**Production:**
+- *Label font:* the label and its CSS-added " • " bullet have no font family set, so they render in **Helvetica** (inherited from the page default). The crumbs are Noto Sans.
+- *Text color differs across sites:* breadcrumb text (crumbs, bullet and label) is **#000000** on OC Register, Chicago Tribune and Orlando Sentinel, but **Denver Post's crumbs use its theme red #8E1024**. So some sites let breadcrumbs take a theme / site-override color and others don't.
+- *Separator arrow color differs across sites:* **#D7D6D2** on OC Register and Denver Post, **#C8C4C0** on Orlando Sentinel. Design uses `color/gray/500` (#CCCAC7), the closest gray token.
+- mcall.com and canoncitydailyrecord.com weren't checked (Chrome isn't allowed on those domains).
+
+**⚠ Decision needed: design AND dev teams together.** Should breadcrumb text be one neutral color on every site, or follow each site's theme / Customizer colors (as Denver Post's red does today)? Design's proposal (Karl, 2026-10-08): one neutral, `color/gray/min` (#141414), on every site whatever its theme or site override, so breadcrumbs don't take theme colors; the arrow is `color/gray/500` everywhere. Dev needs to confirm where Denver Post's red comes from (theme stylesheet or Customizer override) and what changing it affects. Record the agreed answer here.
+
+**Fix:**
+1. Set the label to Noto Sans (same 0.95em size, 400 weight) on every site. *Not blocked.*
+2. *Pending the decision above:* set all breadcrumb text to the agreed color on every site (proposed `color/gray/min` #141414: from #000000 on most sites, and from #8E1024 on Denver Post).
+3. *Pending the decision above:* set the separator arrow to one color on every site (proposed `color/gray/500` #CCCAC7, from #D7D6D2 / #C8C4C0).
+
+**Status:** Open. Fix 1 is ready; fixes 2 and 3 wait on the design + dev decision.
+
+---
+
+## 7. Color Tokens — Universal Grays and Alert colors (all three themes)
+
+**Figma spec (source of truth):** the Universal Grays (`color/gray/*`) and Alert colors (`color/feedback/*`) in the main file's Colors collection, shown in the **Grays & Alerts** block of the Bold Coastal, Modern Earthy and Measured Vibrant theme style guides on the Color Pallets page (production beside them, red-dashed where it differs). Requested again in ticket CI-14848.
+
+**Production (all 6 review sites, checked live 2026-10-19):** Bold Coastal, Modern Earthy and Measured Vibrant ship the same legacy grays, black body text and no alert colors, so every theme needs the same fixes. NEPA-PMP runs modernearthy.css and gets the Modern Earthy fixes.
+
+| Universal (design) | Production, all 3 themes | Fix |
+|---|---|---|
+| base text = `gray-min` `#141414` | `#000000`, hard-coded (×66 in boldcoastal.css and measuredvibrant.css, ×72 in modernearthy.css) | Change body text from `#000000` to `#141414`. |
+| `gray-min` `#141414` | `#0a0908` (`$gray-min`, compiled in; no CSS variable): ×97 boldcoastal.css, ×40 measuredvibrant.css; modernearthy.css mixes `#0a0908` ×40 and `#141414` ×45 | Replace `#0a0908` with `#141414`. |
+| `gray-100` `#393938` | `--site-branding-gray-100` `#38322a` | Change the value (`:root`). |
+| `gray-200` `#5e5d5c` | `--site-branding-gray-200` `#5d5b5a` | Change the value (`:root`). |
+| `gray-300` `#838280` | `--site-branding-gray-300` `#9d9a98` | Change the value (`:root`). |
+| `gray-400` `#a7a6a3` | `--site-branding-gray-400` `#aaa7a4` | Change the value (`:root`). |
+| `gray-500` `#cccac7` | `--site-branding-gray-500` `#d7d6d2` | Change the value (`:root`). |
+| `gray-600` `#f1efeb` | `--site-branding-gray-600` `#f1efeb` | None (matches). |
+| `gray-max` `#ffffff` | `#ffffff` | None (matches). |
+| Alert low-success `#2e8000`, medium `#856a00`, high-error `#cc2b27` | Not defined in any theme file | Add all three to every theme. |
+
+**Background:** the production grays are CRUX Style Library's older `grayRoot/100–600` scale. Design keeps `color/gray/*` as the source of truth; `grayRoot` isn't a token (Karl, 2026-09-10). The theme-specific Near Black / White neutrals (Bold Coastal `#0a0908`, Modern Earthy `#1a1a1a`, Measured Vibrant `#1f1e1c`) are separate theme tokens and keep their "Replace with gray-min" notes in Figma.
+
+**Status:** Open. These rows are also in `tokens/colors/mng-colors-fixes.csv`.
+
+---
+
+## 8. Color Tokens — Endless Tributes (obituaries) palette
+
+**Figma spec (source of truth):** the 9 `color/tributes/*` variables in the main file's Colors collection (same value in every mode, because obituary pages look the same on every site), shown in the Endless Tributes style guide on the Color Pallets page. Requested in ticket CI-14848.
+
+| Token | Hex |
+|---|---|
+| primary-lighter | `#f15f87` |
+| primary-light | `#c00c3d` |
+| primary ("Scarlet") | `#8d092d` |
+| primary-dark | `#770000` (rgb 119, 0, 0) |
+| primary-darker | `#4d0000` |
+| secondary ("Sage") | `#b3bc9c` |
+| tertiary ("Brown") | `#3a252b` |
+| tan | `#a39c8a` |
+| tan-light | `#e8e6e2` |
+
+**Production (obituaries pages on all 6 review sites, checked live 2026-10-19; identical on every site and unchanged since 2026-09-10):**
+
+| Color | Live | Fix |
+|---|---|---|
+| primary `#8d092d` | Rendered (`--primary-obit`) | None. |
+| primary-light `#c00c3d` | Hover state of the primary button (`--primary-obit-light`) | None. |
+| primary-lighter `#f15f87` | Not in any stylesheet | Add it. |
+| primary-dark `#770000` | Not in any stylesheet | Add it. |
+| primary-darker `#4d0000` | Not in any stylesheet | Add it. |
+| Sage `#b3bc9c` | Declared as `--quaternary-obit`, not used on the pages checked | Rename to the design name when the palette is added. |
+| Brown `#3a252b` | Hard-coded on `.obits-homepage-*`, not on the pages checked | None. |
+| tan `#a39c8a` | Hard-coded (search filter button) | None. |
+| tan-light `#e8e6e2` | Renders `#ecede7` | Change to `#e8e6e2`. |
+| `--secondary-obit` `#946c82`, `--tertiary-obit` `#227db4` | Declared at `:root`, not part of the palette | Remove. |
+
+**Also open — design decision needed:** `#ccc7bc` (beige) isn't a palette color but is still live on Denver Post obituary article pages (rechecked 2026-10-19 on two articles): the "Click here to Send Flowers" banner (`.obit-tribute-wrapper`, black text) and the guestbook "Post Your Message" button (`.guestbook-form-submit`), plus the "Upcoming events" and "Sign Guestbook" buttons when they show. Set in `styleArticleObit.min.css`. Design picks the tributes color that replaces it (tan-light `#e8e6e2` is the closest); then engineering swaps it.
+
+**Ticket CI-14848:** its Endless Tributes, gray and alert values match the design. A comment (2026-10-19) corrects its primary-dark label to `rgb(119, 0, 0)` and the deprecated "Modern Vibrant" theme name.
+
+**Status:** Open. These rows are also in `tokens/colors/mng-colors-fixes.csv`.
+
+---
+
+## 9. Color Tokens — theme and sub-theme color fixes (every publication)
 
 **Source:** the production columns of the Color Pallets style guides, audited 2026-08-03 (PMP 2026-09-24, Hartford Courant 2026-09-25, NEPA and the disputed Tribune sites 2026-10-01, The Mercury News, East Bay Times, Chicago Tribune and Cañon City 2026-10-19).
 
 **Figma spec (source of truth):** each theme's or sub-theme's should-be column on the Color Pallets page, and the matching Colors collection mode. Every row in the tables below is a red-dashed callout in that theme's "in Production" column. Fix production; don't change the tokens.
 
-**How to read this:** every publication in the cluster audit (97) has its own section, ordered **theme → cluster → sub-theme → site** (Karl, 2026-10-19), with its full list of fixes. Each theme opens with its theme-file fixes, which are fixed once in the theme stylesheet; a site's own table repeats them so each site reads on its own. To check fixes off, use `tokens/colors/mng-colors-fixes.csv` (one row per fix, same order, empty `done` column; it also lists the gray / alert fixes from entry 2 and the obituaries fixes from entry 3). Breaking News bar and Sponsored badge colors: entry 4. The same data is in `tokens/colors/mng-colors-sites.csv` (`engineering_fixes`), one file per site in `tokens/sites/`, and `$extensions.com.mng.mismatches` in `tokens/colors/mng-colors.tokens.json`. Sections and the index are generated by `scripts/colors-docs/build-color-docs.py`.
+**How to read this:** every publication in the cluster audit (97) has its own section, ordered **theme → cluster → sub-theme → site** (Karl, 2026-10-19), with its full list of fixes. Each theme opens with its theme-file fixes, which are fixed once in the theme stylesheet; a site's own table repeats them so each site reads on its own. To check fixes off, use `tokens/colors/mng-colors-fixes.csv` (one row per fix, empty `done` column; the gray / alert fixes from entry 7 and the obituaries fixes from entry 8 come first, then these per-site fixes in the same order). Breaking News bar and Sponsored badge colors: entry 10. The same data is in `tokens/colors/mng-colors-sites.csv` (`engineering_fixes`), one file per site in `tokens/sites/`, and `$extensions.com.mng.mismatches` in `tokens/colors/mng-colors.tokens.json`. Sections and the index are generated by `scripts/colors-docs/build-color-docs.py`.
 
 **Where to read colors live:** themed variables on `document.querySelector('#page')`, not `:root` (the Customizer override is scoped to `#page`; see the method note at the end of this doc).
 
@@ -1057,73 +1285,9 @@ Ordered theme > cluster > sub-theme > site, as above.
 
 ---
 
-## 2. Color Tokens — Universal Grays and Alert colors (all three themes)
+## 10. Component colors — Breaking News bar and Sponsored badge
 
-**Figma spec (source of truth):** the Universal Grays (`color/gray/*`) and Alert colors (`color/feedback/*`) in the main file's Colors collection, shown in the **Grays & Alerts** block of the Bold Coastal, Modern Earthy and Measured Vibrant theme style guides on the Color Pallets page (production beside them, red-dashed where it differs). Requested again in ticket CI-14848.
-
-**Production (all 6 review sites, checked live 2026-10-19):** Bold Coastal, Modern Earthy and Measured Vibrant ship the same legacy grays, black body text and no alert colors, so every theme needs the same fixes. NEPA-PMP runs modernearthy.css and gets the Modern Earthy fixes.
-
-| Universal (design) | Production, all 3 themes | Fix |
-|---|---|---|
-| base text = `gray-min` `#141414` | `#000000`, hard-coded (×66 in boldcoastal.css and measuredvibrant.css, ×72 in modernearthy.css) | Change body text from `#000000` to `#141414`. |
-| `gray-min` `#141414` | `#0a0908` (`$gray-min`, compiled in; no CSS variable): ×97 boldcoastal.css, ×40 measuredvibrant.css; modernearthy.css mixes `#0a0908` ×40 and `#141414` ×45 | Replace `#0a0908` with `#141414`. |
-| `gray-100` `#393938` | `--site-branding-gray-100` `#38322a` | Change the value (`:root`). |
-| `gray-200` `#5e5d5c` | `--site-branding-gray-200` `#5d5b5a` | Change the value (`:root`). |
-| `gray-300` `#838280` | `--site-branding-gray-300` `#9d9a98` | Change the value (`:root`). |
-| `gray-400` `#a7a6a3` | `--site-branding-gray-400` `#aaa7a4` | Change the value (`:root`). |
-| `gray-500` `#cccac7` | `--site-branding-gray-500` `#d7d6d2` | Change the value (`:root`). |
-| `gray-600` `#f1efeb` | `--site-branding-gray-600` `#f1efeb` | None (matches). |
-| `gray-max` `#ffffff` | `#ffffff` | None (matches). |
-| Alert low-success `#2e8000`, medium `#856a00`, high-error `#cc2b27` | Not defined in any theme file | Add all three to every theme. |
-
-**Background:** the production grays are CRUX Style Library's older `grayRoot/100–600` scale. Design keeps `color/gray/*` as the source of truth; `grayRoot` isn't a token (Karl, 2026-09-10). The theme-specific Near Black / White neutrals (Bold Coastal `#0a0908`, Modern Earthy `#1a1a1a`, Measured Vibrant `#1f1e1c`) are separate theme tokens and keep their "Replace with gray-min" notes in Figma.
-
-**Status:** Open. These rows are also in `tokens/colors/mng-colors-fixes.csv`.
-
----
-
-## 3. Color Tokens — Endless Tributes (obituaries) palette
-
-**Figma spec (source of truth):** the 9 `color/tributes/*` variables in the main file's Colors collection (same value in every mode, because obituary pages look the same on every site), shown in the Endless Tributes style guide on the Color Pallets page. Requested in ticket CI-14848.
-
-| Token | Hex |
-|---|---|
-| primary-lighter | `#f15f87` |
-| primary-light | `#c00c3d` |
-| primary ("Scarlet") | `#8d092d` |
-| primary-dark | `#770000` (rgb 119, 0, 0) |
-| primary-darker | `#4d0000` |
-| secondary ("Sage") | `#b3bc9c` |
-| tertiary ("Brown") | `#3a252b` |
-| tan | `#a39c8a` |
-| tan-light | `#e8e6e2` |
-
-**Production (obituaries pages on all 6 review sites, checked live 2026-10-19; identical on every site and unchanged since 2026-09-10):**
-
-| Color | Live | Fix |
-|---|---|---|
-| primary `#8d092d` | Rendered (`--primary-obit`) | None. |
-| primary-light `#c00c3d` | Hover state of the primary button (`--primary-obit-light`) | None. |
-| primary-lighter `#f15f87` | Not in any stylesheet | Add it. |
-| primary-dark `#770000` | Not in any stylesheet | Add it. |
-| primary-darker `#4d0000` | Not in any stylesheet | Add it. |
-| Sage `#b3bc9c` | Declared as `--quaternary-obit`, not used on the pages checked | Rename to the design name when the palette is added. |
-| Brown `#3a252b` | Hard-coded on `.obits-homepage-*`, not on the pages checked | None. |
-| tan `#a39c8a` | Hard-coded (search filter button) | None. |
-| tan-light `#e8e6e2` | Renders `#ecede7` | Change to `#e8e6e2`. |
-| `--secondary-obit` `#946c82`, `--tertiary-obit` `#227db4` | Declared at `:root`, not part of the palette | Remove. |
-
-**Also open:** `#ccc7bc` (beige) on the "Send Flowers" banner (`.obit-tribute-wrapper`) and the Guestbook submit button, found on a Denver Post obituary article page 2026-09-10; not part of the palette. Not rechecked on article pages 2026-10-19.
-
-**Ticket CI-14848:** its Endless Tributes, gray and alert values match the design. A comment (2026-10-19) corrects its primary-dark label to `rgb(119, 0, 0)` and the deprecated "Modern Vibrant" theme name.
-
-**Status:** Open. These rows are also in `tokens/colors/mng-colors-fixes.csv`.
-
----
-
-## 4. Component colors — Breaking News bar and Sponsored badge
-
-### 4.1 Breaking News bar — Denver Post uses primary-lighter instead of secondary
+### 10.1 Breaking News bar — Denver Post uses primary-lighter instead of secondary
 
 **Found:** 2026-10-02, live check of the six review sites (theme CSS read on `#page`; no breaking bar was active, so the color was read from the site's own `.breaking-bar` rule).
 
@@ -1144,7 +1308,7 @@ Ordered theme > cluster > sub-theme > site, as above.
 
 **Status:** Open, waiting on that decision.
 
-### 4.2 Sponsored content badge — needs to be fixed in production
+### 10.2 Sponsored content badge — needs to be fixed in production
 
 **Found:** 2026-10-02, live check of the six review sites (homepage, Latest Headlines and article lists).
 
@@ -1161,170 +1325,6 @@ Ordered theme > cluster > sub-theme > site, as above.
 **Fix:** update the Nativo sponsored-label template on every site to the design badge (#7D161E background, white `gray/max` text, Noto Sans), with Ad Ops. Re-check the other four sites when a sponsored unit is running.
 
 **Note:** the theme's own `.sponsored-content .sponsored-flag` (a different element) uses `primary-light` with white text, and `secondary` with dark text on images.
-
-**Status:** Open.
-
----
-
-## 5. Font fallbacks — Helvetica instead of the design stacks (all sites)
-
-**Found:** 2026-10-14, computed `font-family` on all 6 review sites (ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall): nav labels, section headers, card headlines, excerpts, footer and obituaries. **Team:** CMS (WordPress themes).
-
-**Design** (main file, Fonts page, Font Styles and Fallbacks `2768:1051`; tokens `font.family.noto-sans` / `font.family.noto-serif`, CSS `--mng-font-family-noto-sans` / `-serif`):
-
-| Stack | Design (should be) | Production |
-|---|---|---|
-| Sans (`$body`) | `"Noto Sans", "Helvetica Neue", Arial, sans-serif` | `"Noto Sans", Helvetica, sans-serif` |
-| Serif (`$heading`) | `"Noto Serif", Georgia, "Times New Roman", serif` | `"Noto Serif", Helvetica, serif` |
-
-The same two stacks apply on every theme; each theme only chooses which one its headings and body use. Obituaries follow the site's theme.
-
-**Fix:** in the theme font-family definitions, replace `Helvetica` with **Helvetica Neue** (then Arial) in the sans stack (Karl, 2026-10-14), and use Georgia, then Times New Roman, in the serif stack instead of Helvetica. The fallbacks only show when Noto doesn't load, so nothing changes visually when the web fonts work.
-
-**Status:** Open.
-
----
-
-## 6. Typography — headline tiers measured live with no matching Figma style
-
-**Found:** 2026-08-27, live typography audit (recorded in a handoff note since retired). **Re-measured 2026-09-24** on ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall and greeleytribune. The values were identical on all 7.
-
-**Production:**
-
-| Role | Size | Weight | Line height | Letter spacing |
-|---|---|---|---|---|
-| Second-tier homepage card headline | 26px | 700 | 30.3px | -0.91 |
-| Third-tier card headline | 20px | 700 | 23.6px | -0.4 |
-| Fourth-tier card headline | 19px | 600 | 24px | -0.665 |
-| Section Highlight headline list | 15px | 600 | 19px | -0.15 |
-| Related ("More News") headline | 18px | 600 | 21px | normal |
-| Body copy | 16.5px | 400 | 27px | -0.165 |
-| Lead story, top of page | 29px | 700 | 32.8px | -0.87 |
-| Lead story, media block | 29px | 700 | 33px | -1.16 |
-
-**Also found:** on Bold Coastal the 19px and 15px headlines are Noto Sans, even though the theme's heading font is Noto Serif. The old Figma Title style used an averaged -1.0 letter spacing that matched neither lead-story variant.
-
-**Resolved 2026-09-24 (design side):** added as Figma Editorial styles:
-- `CardSecondary`, `CardTertiary`, `CardQuaternary`, `HeadlineList`, `RelatedHeadline`, `TitleMedia` and `Editorial/Body/Default`.
-- A new theme token, `font/theme/small-headline-family`.
-- Title's letter spacing corrected to -0.87.
-
-See `tokens/typography/typography-tokens.md`. Production matches the new styles, so no engineering action is needed.
-
-**Status:** Resolved.
-
----
-
-## 7. Reader Dashboard — Typography (2026-09-10)
-
-**Policy:** For anything specific to the Reader Dashboard, Figma is the source of truth — even where production currently differs. MNG Web Design System's `Dashboard/*` typography tokens (in the "Dashboard Typography" collection) are kept at their Figma-specified values; any place production has been found rendering something different is recorded here instead, for engineering to either fix in production or flag back to design if the production value should actually be adopted.
-
-### 7.1 Page title size — `Dashboard/Titles/PageDesktop`
-
-**Figma:** Noto Serif, **26px**, Bold (700) — matches Reader Dashboard v2.0's own Figma token (`Titles/Page (desktop, tabletH)`) exactly.
-
-**Production:** canoncitydailyrecord.com/dashboard/ (desktop width) renders this title at **36px**, via a Tailwind `lg:text-4xl` breakpoint utility class overriding the base size.
-
-**Action needed:** Reconcile production to the Figma-specified 26px, OR — if 36px is an intentional, approved change — get that confirmed with design so Figma can be updated to match and this item retired. Until then, MNG Web Design System's token stays at 26px per the policy above.
-
-**Status:** Open.
-
-### 7.2 Section Title weight — `Dashboard/Titles/SectionTitle`
-
-**Figma:** Noto Sans, 18px, Bold (700).
-
-**Production:** One live-measured instance showed weight 600 (Semi-Bold) instead of 700.
-
-**Caveat (lower confidence than 2.1):** The measured instance may have been an admin/debug panel ("MNG Debugger" / "Entitlements JWT") rather than genuine reader-facing UI.
-
-**Action needed:** Confirm on a real reader-facing Section Title instance whether it's 700 (matches Figma) or genuinely 600.
-
-**Status:** Open.
-
-### 7.3 `font/size/10` — unconfirmed in production
-
-**Figma:** Defined at 10px in Reader Dashboard v2.0's Type Primitives, carried into MNG Web Design System.
-
-**Production:** No confirmed live sighting during this audit (only canoncitydailyrecord.com/dashboard/ was checked).
-
-**Action needed:** Low priority — confirm where (if anywhere) this size is actually used live.
-
-**Status:** Open.
-
----
-
-## 8. Upcoming Events (CitySpark widget) — font family
-
-**Found:** 2026-10-07, ocregister.com (homepage `.csLayHolder` → `.cswidholder` iframe, CitySpark template).
-
-**Figma spec (source of truth):** WordPress Elements `Upcoming Events Widget` matches production's layout, sizes, spacing and colors exactly (Karl, 2026-10-07), but sets all text in **Noto Sans**, like the rest of the design system.
-
-**Production:** every text element in the widget is **Roboto Condensed**: the title "Upcoming Events" 400 20/22, the "See All Events" and "Add your event" buttons 400 12/15, the card dates 400 11, event names 700 13/14, venues 400 12/14, date-strip days 400 15/20 uppercase and dates 400 20/19.
-
-**Fix:** change the CitySpark widget template's font to Noto Sans (same sizes and weights) on every site, with whoever manages the CitySpark account.
-
----
-
-## 9. Article breadcrumbs — label font family and text color
-
-**Found:** 2026-10-08, ocregister.com article page (`.breadcrumbs` › `.breadcrumb-type-wrapper > a`, e.g. "NEWS › ENVIRONMENT • News").
-
-**Figma spec (source of truth):** WordPress Elements › Article Page › `Breadcrumbs` (`1110:19469`) matches production's sizes, spacing and colors (rebuilt 2026-10-08, Karl): crumbs Noto Sans 700 16/22 uppercase, the `arrow-right2` icon at 14px in `color/gray/500` with 5px on each side, and the label " • News" in Noto Sans 400 15.2/15.2 (`font/size/15-2`). All breadcrumb text (crumbs, bullet and label) is **`color/gray/min` (#141414)** (Karl, 2026-10-08).
-
-**Production:**
-- *Label font:* the label and its CSS-added " • " bullet have no font family set, so they render in **Helvetica** (inherited from the page default). The crumbs are Noto Sans.
-- *Text color differs across sites:* breadcrumb text (crumbs, bullet and label) is **#000000** on OC Register, Chicago Tribune and Orlando Sentinel, but **Denver Post's crumbs use its theme red #8E1024**. So some sites let breadcrumbs take a theme / site-override color and others don't.
-- *Separator arrow color differs across sites:* **#D7D6D2** on OC Register and Denver Post, **#C8C4C0** on Orlando Sentinel. Design uses `color/gray/500` (#CCCAC7), the closest gray token.
-- mcall.com and canoncitydailyrecord.com weren't checked (Chrome isn't allowed on those domains).
-
-**⚠ Decision needed: design AND dev teams together.** Should breadcrumb text be one neutral color on every site, or follow each site's theme / Customizer colors (as Denver Post's red does today)? Design's proposal (Karl, 2026-10-08): one neutral, `color/gray/min` (#141414), on every site whatever its theme or site override, so breadcrumbs don't take theme colors; the arrow is `color/gray/500` everywhere. Dev needs to confirm where Denver Post's red comes from (theme stylesheet or Customizer override) and what changing it affects. Record the agreed answer here.
-
-**Fix:**
-1. Set the label to Noto Sans (same 0.95em size, 400 weight) on every site. *Not blocked.*
-2. *Pending the decision above:* set all breadcrumb text to the agreed color on every site (proposed `color/gray/min` #141414: from #000000 on most sites, and from #8E1024 on Denver Post).
-3. *Pending the decision above:* set the separator arrow to one color on every site (proposed `color/gray/500` #CCCAC7, from #D7D6D2 / #C8C4C0).
-
-**Status:** Open. Fix 1 is ready; fixes 2 and 3 wait on the design + dev decision.
-
----
-
-## 10. Icon font — mismatches with the Figma icon page, dead and duplicate glyphs, and known missing icons
-
-**Found:** 2026-08-28 to 2026-08-31, icon font audit (`components/icons.md` §3, §5, §6). Added here 2026-09-25: `icons.md` said these were in this handoff, but they had never been logged.
-
-**Figma spec (source of truth):** the `Icons` component set in the main MNG Web Design System file (node `4693:5`, 95 variants) and the documented icon list on its Icons page.
-
-**Production (live icon font, checked on chicagotribune.com):**
-
-| Item | What's wrong | Action |
-|---|---|---|
-| `google-plus` | Still in the live font. Google+ was shut down years ago, and the icon isn't documented. | Remove from the font. |
-| `mng-podcast1` | Same codepoint (`e902`) as `android` — a font-build duplicate, not a separate icon. | Remove the alias. |
-| `grid2` | Renders the same gift-box glyph as `gift2`, not a grid. The requested "grid" icon has not shipped. | Remove the alias; ship the real `grid` icon (artwork exists in Figma). |
-| `notification-filled`, `notification-outlines` | Designed in Figma (filled and outline exclamation-in-a-circle alert icons) but missing from the live font under any name. Karl confirmed these are real, finished icons waiting to ship. | Add to the font. |
-
-
-**Updated 2026-10-08:** re-checked glyph by glyph against the Figma **Icon Categories** frame (main file, Icons | 2026.08.28, node `1412:13`) using the font extracted from ocregister.com (`tokens/icons/`). **All MNG sites use the same icon font** (Karl, 2026-10-08), so these findings apply everywhere. Of the 171 documented icons, 162 match production by name and glyph. Third-party vendor icons and the "Need to source/make/add" list are out of scope.
-
-### 10.1 Mismatches between the Figma page and the production font
-
-| Figma name | Production | Action |
-|---|---|---|
-| `grid2` | `icon-grid2` shows the gift glyph (U+E930, same as `gift2`). The Figma grid2 artwork (9 dots) **is in the font** at U+E932, with no class. | Point `icon-grid2` at U+E932. (Supersedes the 2026-08 note above that the grid hasn't shipped: the 9-dot glyph is there, just not wired up. The square-tile `grid` in Pending Updates is a different icon; see 20.2.) |
-| `windows8` | `icon-windows8` shows warning2 (U+E986). The Windows logo is in the font at U+E987, with no class. | Point `icon-windows8` at U+E987. |
-| `book3` | `icon-book3` points at U+0065 (the letter "e"). The closed book is in the font at U+E993, with no class. | Point `icon-book3` at U+E993. |
-| `content_copy` | No class. The glyph is in the font at U+E921. | Add `icon-content_copy` (or the agreed name) → U+E921. |
-| `ios_share` | No class. The glyph is in the font at U+E93A. | Add `icon-ios_share` → U+E93A. |
-| `home`, `menu7`, `enlarge7` | Same glyphs, but production names them `icon-home3`, `icon-hamburger` and `icon-enlarge`. Already listed in the Figma page's CHANGE section and in `components/icons.md` §3 as naming fixes. | Decide which name wins (design and dev); rename the Figma entry or add the Figma name as a production alias. |
-| "iTunes / Apple Music" | Same glyph as `icon-music5`; no class with this name. | Naming only; no font change. |
-| *(none)* | `icon-google-plus` (no glyph), `icon-mng-podcast1` (= android) and `icon-users4` (= user4) have no Figma entry. `google-plus` and `mng-podcast1` are in the table above; `users4` was set aside by Karl 2026-08-31. U+E941 (a second padlock) is in the font with no class and no Figma entry. | Remove the dead classes; U+E941 can go in a font rebuild. |
-
-### 10.2 Known missing icons (to be added; not mismatches)
-
-Listed in the Figma page's **Pending Updates**. None is in the production font under any name. Figma artwork for all 12 is in `tokens/icons/svg-missing/`.
-
-- **ADD:** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`.
-- **CHANGE:** `notification-outlines` (replaces `notification`) and `notification-filled` (replaces `notification2`). Same items as the `notification-filled` / `notification-outlines` row above.
 
 **Status:** Open.
 
