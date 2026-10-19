@@ -130,7 +130,7 @@
       "slug": "capital-gazette",
       "publication": "Capital Gazette",
       "domain": "capitalgazette.com",
-      "cluster": "Tribune",
+      "cluster": "Baltimore",
       "theme": "Bold Coastal",
       "in_color_tokens": true,
       "horizontal": {
@@ -1320,7 +1320,7 @@
       "slug": "st-paul-pioneer-press",
       "publication": "St. Paul Pioneer Press",
       "domain": "twincities.com",
-      "cluster": "Twin Cities",
+      "cluster": "St. Paul",
       "theme": "Bold Coastal",
       "in_color_tokens": true,
       "horizontal": {
@@ -1386,7 +1386,7 @@
       "slug": "the-baltimore-sun",
       "publication": "The Baltimore Sun",
       "domain": "baltimoresun.com",
-      "cluster": "Tribune",
+      "cluster": "Baltimore",
       "theme": "Bold Coastal",
       "in_color_tokens": true,
       "horizontal": {
