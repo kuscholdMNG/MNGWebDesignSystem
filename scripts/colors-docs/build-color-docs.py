@@ -219,7 +219,7 @@ p = os.path.join(ROOT, 'design-vs-production.md'); s = open(p).read()
 a = s.index('<!-- BEGIN per-site color fixes'); b = s.index('<!-- END per-site color fixes -->') + len('<!-- END per-site color fixes -->')
 s = s[:a] + '\n'.join(M) + s[b:]
 # index table, same order
-a = s.index('### Index: every publication'); b = s.index('\n## 22.', a)
+a = s.index('### Index: every publication'); b = s.index('\n## ', a + 1)
 I = ['### Index: every publication', '', 'Ordered theme > cluster > sub-theme > site, as above.', '',
      '| Theme | Cluster | Sub-theme | Publication | Domain | Fixes |', '|---|---|---|---|---|---|']
 for x in sites:

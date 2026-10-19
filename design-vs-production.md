@@ -1120,6 +1120,563 @@ Ordered theme > cluster > sub-theme > site, as above.
 
 ---
 
+## 2. Color Tokens — Neutral gray scale (`color/gray/*`) mismatch
+
+**Found:** 2026-09-10, CRUX Style Library color-token audit / production repertoire check (requested by Karl).
+
+**Figma spec (source of truth):** the main file's `color/gray/100–600` (Colors collection):
+
+| Token | Value |
+|---|---|
+| `color/gray/100` | `#393938` |
+| `color/gray/200` | `#5E5D5C` |
+| `color/gray/300` | `#838280` |
+| `color/gray/400` | `#A7A6A3` |
+| `color/gray/500` | `#CCCAC7` |
+| `color/gray/600` | `#F1EFEB` |
+
+**Production:** every site in the repertoire ships its own `--site-branding-gray-100` through `--site-branding-gray-600` CSS custom properties, and all 6 sites use the identical (wrong) values:
+
+| CSS custom property | Live value |
+|---|---|
+| `--site-branding-gray-100` | `#38322A` |
+| `--site-branding-gray-200` | `#5D5B5A` |
+| `--site-branding-gray-300` | `#9D9A98` |
+| `--site-branding-gray-400` | `#AAA7A4` |
+| `--site-branding-gray-500` | `#D7D6D2` |
+| `--site-branding-gray-600` | `#F1EFEB` (matches the design system at this step only) |
+
+**Sites verified (6/6 match, all identical):** ocregister.com, denverpost.com, chicagotribune.com, orlandosentinel.com, canoncitydailyrecord.com, mcall.com. Verified via a direct CSS custom-property scan of each site's live stylesheets (Claude in Chrome), not a screenshot/visual check.
+
+**Note:** the live production values exactly match CRUX Style Library's `grayRoot/100–600` token set — a separate, seemingly superseded scale that isn't CRUX's own primary `color/gray/*` ramp either (CRUX's own `color/gray/*` matches the design system's values above exactly). It looks like production was built against an older/alternate gray ramp and was never updated when the design system's `color/gray/*` scale (consistent with CRUX's own `color/gray/*`) became canonical.
+
+**Decision (Karl, 2026-09-10):** Use the design system's existing grays as the source of truth. CRUX's `grayRoot` scale was NOT added as a new token set — production should be corrected to match the existing `color/gray/*` values instead.
+
+**Action needed:** Update each site's `--site-branding-gray-100` through `--site-branding-gray-600` custom properties to the design-system values in the table above.
+
+**Status:** Open.
+
+
+**Per-theme audit, 2026-10-19 (for CI-14848; Karl).** Live stylesheet scan of each theme file on ocregister.com and denverpost.com (Bold Coastal), orlandosentinel.com (Measured Vibrant) and mcall.com (Modern Earthy), plus chicagotribune.com (Measured Vibrant) and canoncitydailyrecord.com (Modern Earthy, NEPA-PMP) checked later the same day with the same results: all 6 review sites. All three themes ship the same legacy grays, so every theme needs the same fixes. Figma: a new **Grays & Alerts** block in each of the Bold Coastal, Modern Earthy and Measured Vibrant theme style guides on the Color Pallets page (Universal Grays and Alert colors as the should-be column, bound to `color/gray/*` and `color/feedback/*`; the theme's production values beside them, red-dashed where they differ).
+
+| Universal (design) | Production, all 3 themes | Fix |
+|---|---|---|
+| base text = `gray-min` `#141414` | `#000000`, hard-coded (×66 in boldcoastal.css and measuredvibrant.css, ×72 in modernearthy.css) | Change body text from `#000000` to `#141414`. |
+| `gray-min` `#141414` | `#0a0908` (`$gray-min`, compiled in; no CSS variable): ×97 boldcoastal.css, ×40 measuredvibrant.css; modernearthy.css mixes `#0a0908` ×40 and `#141414` ×45 | Replace `#0a0908` with `#141414`. |
+| `gray-100` `#393938` | `--site-branding-gray-100` `#38322a` | Change the value. |
+| `gray-200` `#5e5d5c` | `--site-branding-gray-200` `#5d5b5a` | Change the value. |
+| `gray-300` `#838280` | `--site-branding-gray-300` `#9d9a98` | Change the value. |
+| `gray-400` `#a7a6a3` | `--site-branding-gray-400` `#aaa7a4` | Change the value. |
+| `gray-500` `#cccac7` | `--site-branding-gray-500` `#d7d6d2` | Change the value. |
+| `gray-600` `#f1efeb` | `--site-branding-gray-600` `#f1efeb` | None (matches). |
+| `gray-max` `#ffffff` | `#ffffff` | None (matches). |
+| Alert low-success `#2e8000`, medium `#856a00`, high-error `#cc2b27` | Not defined in any theme file | Add all three to every theme. |
+
+The theme-specific Near Black / White neutrals (Bold Coastal `#0a0908`, Modern Earthy `#1a1a1a`, Measured Vibrant `#1f1e1c`) are separate theme tokens and keep their existing "Replace with gray-min" notes. NEPA-PMP runs modernearthy.css, so it gets the Modern Earthy fixes.
+
+---
+
+## 3. Color Tokens — Endless Tributes / Obituaries palette live-production audit
+
+**Found:** 2026-09-10, live-production verification of the 9 documented Endless Tributes colors (Shared Platform Reference — Style Guide section, Endless Tributes — Style Guide sub-section, now migrated into MNG Web Design System's Color Pallets page) against denverpost.com's obituaries listing page and an obituary article subpage. Verified via Claude in Chrome: a `getComputedStyle()` scan of `backgroundColor`/`color`/`borderColor`/`boxShadow`/`fill` across all rendered DOM elements, plus a separate `document.styleSheets` rule-text scan (for rules not currently applied to any rendered element, and for actual `:hover`/`:active` pseudo-class declarations, since a synthetic `:hover` match after a simulated hover did not reliably surface them).
+
+**Figma spec (Endless Tributes — Style Guide, 9 documented colors):**
+
+| Token | Hex |
+|---|---|
+| Primary (Scarlet) | `#8d092d` |
+| Primary-light | `#c00c3d` |
+| Primary-lighter | `#f15f87` |
+| Primary-dark | `#770000` |
+| Primary-darker | `#4d0000` |
+| Tan | `#a39c8a` |
+| Tan-light | `#e8e6e2` |
+| Secondary (Sage) | `#b3bc9c` |
+| Tertiary (Brown) | `#3a252b` |
+
+**Production findings (Denver Post obituaries listing + article page):**
+
+- **Confirmed live matches (2):** Primary `#8d092d` — found. Tan `#a39c8a` — found, on the "Remove Filters" button.
+- **Confirmed hover state (1):** Primary-light `#c00c3d` is not a static element color anywhere on the page, but is defined and applied as the `:hover` state of the Primary `#8d092d` button — a genuine match, just only visible on interaction rather than as a resting-state color.
+- **Drifted (1):** Tan-light — Figma spec is `#e8e6e2`; the live production value is `#ecede7`. Close but not identical.
+- **Fully absent from all loaded CSS (3):** Primary-lighter `#f15f87`, Primary-dark `#770000`, Primary-darker `#4d0000` — not found anywhere in computed styles or stylesheet rule text on the pages checked.
+- **Defined in CSS but not rendered on the pages checked (2):** Secondary/Sage `#b3bc9c` (referenced as `--quaternary-obit`) and Tertiary/Brown `#3a252b` are both present as CSS variable declarations, but neither is applied to any visible element on Denver Post's `/obituaries` listing or the article subpage checked. Tertiary/Brown's rule is scoped to a `.obits-homepage-content` selector that isn't present on the pages checked — it may render on a different obituaries page (e.g. a dedicated homepage view) not covered by this pass.
+
+**Obituaries Widget CSS variables (`--*-obit`) — live status:** all 5 (`--primary-obit`, `--primary-obit-light`, `--secondary-obit`, `--tertiary-obit`, `--quaternary-obit`) are still declared live at `:root` on Denver Post, despite being flagged "NEED TO REMOVE THESE FROM CODE" in the design documentation. Of the 5, only `--primary-obit` and `--primary-obit-light` are actually applied to visible elements; `--secondary-obit`, `--tertiary-obit`, and `--quaternary-obit` are declared but unused on the pages checked.
+
+**Newly discovered, undocumented color:** `#ccc7bc` (a beige) — found live on two elements not accounted for in any of the existing Endless Tributes / Obituaries Widget documentation: the "Send Flowers" banner (`.obit-tribute-wrapper`) and the Guestbook "Post Your Message" submit button (`guestbook-form-submit`). Does not match any documented token.
+
+**Note on scope:** only Denver Post was checked in this pass (Karl scoped the request to "any one" production site). The other 5 sites in the repertoire (ocregister.com, chicagotribune.com, orlandosentinel.com, canoncitydailyrecord.com, mcall.com) have not yet been checked for these colors.
+
+**Figma action taken:** ~~none of these findings...~~ **Superseded 2026-09-10.** The original plan was to record these findings without adding them to Figma's Brand/Colors Variables groups, since MNG Web Design System's `Colors` collection only had a fixed 7-color-slot-per-theme model (`theme/primary`, `theme/secondary`, `theme/tertiary`, `theme/primary-light`, `theme/primary-dark`, `theme/primary-lighter`, `theme/primary-darker`) with no room for the Endless Tributes palette's 9 colors without restructuring all 20 modes. **Karl's resolution:** rather than trying to shoehorn the tributes palette into the existing per-theme slot model (or into its own one-off "Endless Tributes" mode), all 9 colors were added as a new, separate `color/tributes/*` variable group — `primary-lighter`, `primary-light`, `primary`, `primary-dark`, `primary-darker`, `secondary`, `tertiary`, `tan`, `tan-light` — each carrying the same universal value across all 20 modes (BoldCoastal, ModernEarthy, MeasuredVibrant, DenverPost, Endless Tributes, and all 15 masthead-specific modes). This matches how obituary pages actually render in production: identically regardless of which site's masthead brand is active, so a single shared value per token across every mode is correct, not a compromise. The `--*-obit` CSS widget variables (`--primary-obit`, `--primary-obit-light`, `--secondary-obit`, `--tertiary-obit`, `--quaternary-obit`) and the undocumented `#ccc7bc` beige are unaffected by this — the widget vars are a live-code cleanup item for engineering, and `#ccc7bc` remains genuinely undocumented (doesn't match any of the 9 tributes tokens), so both stay open below.
+
+**Rechecked 2026-10-19 against ticket CI-14848** ("Frontend Asset Updates (colors, fonts, and icons)", open, assigned to Wesley Hebert). The ticket's Endless Tributes list (add primary-lighter, primary-dark, primary-darker, secondary "Sage", tertiary "Brown", tan-light) and its screenshots match the Figma design exactly: all 9 `color/tributes/*` values, the Universal Grays (`color/gray/*`) and the Universal Alert colors (`color/feedback/low-success` `#2e8000`, `medium` `#856a00`, `high-error` `#cc2b27`). Two errors in the ticket itself, not in the design: its screenshot labels primary-dark `#770000` as `rgb(190, 0, 0)` (correct: `rgb(119, 0, 0)`), and it lists a "Modern Vibrant" theme, which doesn't exist (the themes are Bold Coastal, Modern Earthy and Measured Vibrant, plus Endless Tributes). Both corrections were posted on the ticket 2026-10-19 (comment 274642); a second comment with the updated design files will follow.
+
+Live obituaries pages on all 6 review sites (denverpost.com, ocregister.com, orlandosentinel.com and mcall.com; chicagotribune.com and canoncitydailyrecord.com checked later the same day): identical on all 6 and unchanged since 2026-09-10, so the ticket is still not done. Rendered: primary `#8d092d`, tan-light at the drifted `#ecede7`. In CSS but not rendered: primary-light `#c00c3d` (hover), Sage `#b3bc9c` (as `--quaternary-obit`), Brown `#3a252b`, tan `#a39c8a`. Not anywhere: primary-lighter `#f15f87`, primary-dark `#770000`, primary-darker `#4d0000`, tan-light `#e8e6e2`. The 5 `--*-obit` variables are still declared at `:root`, with `--secondary-obit` `#946c82` and `--tertiary-obit` `#227db4`, which aren't Endless Tributes colors.
+
+**Status:** Open for the `--*-obit` widget CSS variables (still live despite the "remove" flag) and the undocumented `#ccc7bc` beige. **Resolved 2026-09-10** for the tributes palette itself — all 9 colors are now proper Figma variables (`color/tributes/*`) applied across all 20 brand groups; the tan-light production drift (`#e8e6e2` spec vs. `#ecede7` live) is still an open engineering item to reconcile.
+
+---
+
+## 4. Color Tokens — mcall.com primary/primary-dark shift
+
+**Found:** 2026-08-27, color token audit.
+
+**Figma spec:** Brand collection, Morning Call mode — `primary` = `#166291`, `primary-dark` = `#014B78`.
+
+**Production:** mcall.com's live-rendered `--primary` (read correctly, on the WordPress Customizer's actual scope) is `#014B78` — an exact match for the Figma table's `primary-dark`, not `primary`.
+
+**Action needed:** Determine whether the site is live-rendering the wrong step of its own color ramp, or whether the Figma table's column values are shifted for this row specifically. Not root-caused.
+
+**Note (2026-09-25):** Morning Call's full list of color fixes (6, including this one) is in entry 1.
+
+**Status:** Open.
+
+---
+
+## 5. Color Tokens — Greeley Tribune inherits three colors from the PMP override
+
+**Found:** 2026-09-24, Prairie Mountain Publishing color audit (live check of all 19 PMP sites).
+
+**Figma spec:** Colors collection, Greeley Tribune mode — `primary-lighter` `#708F9F`, `primary-darker` `#395B71`, `tertiary` `#FF5722`.
+
+**Production:** greeleytribune.com's customizer (`div#page`) sets only `primary` `#536E7F`, `primary-light` `#5B7B8B` and `primary-dark` `#44687F`, and those match Figma. The other three steps are inherited from the PMP color override that every PMP site loads: `primary-lighter` `#47B6FF`, `primary-darker` `#171E44`, `tertiary` `#303F9F`.
+
+**Action needed:** Decide whether Greeley should carry the Figma values for those three steps (engineering adds them to its customizer) or inherit the PMP values (design updates the Greeley mode to match).
+
+**Decided 2026-09-25 (Karl):** neither. Greeley Tribune is a PMP site and has no color theme of its own. The Greeley Tribune Figma mode became Prairie Mountain Publishing, and the Greeley Tribune style guide was removed. PMP's should-be values are the Measured Vibrant values. That turns this entry around: greeleytribune.com's three `div#page` overrides are now the mismatch.
+
+~~**Action needed now (engineering):** on greeleytribune.com, remove the `div#page` Customizer overrides…~~
+
+**Updated 2026-09-30 (Karl):** Greeley's three `div#page` overrides (`--primary` `#536E7F`, `--primary-light` `#5B7B8B`, `--primary-dark` `#44687F`) are a **documented exception**, not a mismatch. They stay as they are. They're noted under the PMP style guide in Figma (no red outline) and carried as Greeley's site tokens in the export. Greeley only needs the two PMP-wide fixes in entry 1 (`primary-lighter`, `tertiary`).
+
+**Status:** Resolved (exception documented). No engineering action for these three tokens.
+
+---
+
+## 6. Breaking News bar — Denver Post uses primary-lighter instead of secondary
+
+**Found:** 2026-10-02, live check of the six review sites (theme CSS read on `#page`; no breaking bar was active, so the color was read from the site's own `.breaking-bar` rule).
+
+**Figma spec (source of truth):** the Breaking News Banner (WordPress Elements, `506:5632`) background is `color/theme/secondary` and its text is `color/theme/near-black` (bound 2026-10-02).
+
+**Production:**
+
+| Site | `.breaking-bar` background | Text | Token |
+|---|---|---|---|
+| ocregister.com | #FFEA00 | #0A0908 | secondary |
+| chicagotribune.com | #EEFF41 | #1F1E1C | secondary |
+| orlandosentinel.com | #EEFF41 | #1F1E1C | secondary |
+| canoncitydailyrecord.com | #EEFF41 | #141414 | secondary |
+| mcall.com | #EEFF41 | #141414 | secondary |
+| **denverpost.com** | **#AF1628** | #0A0908 | **primary-lighter** (Denver Post override) |
+
+**Open question (Karl):** keep Denver Post's red bar as a documented Denver Post exception, or have Engineering align it to `secondary` (`#003459`, navy, on Denver Post). Until decided, Figma stays on `secondary`.
+
+**Also noted:** Denver Post's live `--tertiary` is `#A13B1E`, but its token is `#FFC518`; and its live `--primary-light` / `--primary-lighter` (`#C81632` / `#AF1628`) are the reverse of the tokens (`#AF1628` / `#C81632`). Check these against entry 1's Denver Post section.
+
+---
+
+## 7. Sponsored content badge — needs to be fixed in production
+
+**Found:** 2026-10-02, live check of the six review sites (homepage, Latest Headlines and article lists).
+
+**Figma spec (source of truth):** the "Sponsored content" badge (WordPress Elements, Article Status Badge `Type=Sponsored`, `3344:63995`, and its instances in Latest Headlines, Top Zone and TopZone Article Card) stays **#7D161E with white text** (Karl, 2026-10-02). It is intentionally not bound to a theme token for now: none of the theme roles works on every site (white text fails contrast on the yellow `secondary` themes, and `tertiary` passes on only 9 of 22 themes).
+
+**Production:** the live badge is the Nativo native-ad label (inline style set by the vendor template), not a theme class, and it doesn't match the design anywhere checked.
+
+| Site | Live label background | Design | Match |
+|---|---|---|---|
+| denverpost.com | #003459 (navy, white text) | #7D161E | ❌ |
+| ocregister.com | #0097A7 | #7D161E | ❌ |
+| chicagotribune.com, orlandosentinel.com, canoncitydailyrecord.com, mcall.com | no Nativo sponsored unit on the homepage checked | #7D161E | not checked |
+
+**Fix:** update the Nativo sponsored-label template on every site to the design badge (#7D161E background, white `gray/max` text, Noto Sans), with Ad Ops. Re-check the other four sites when a sponsored unit is running.
+
+**Note:** the theme's own `.sponsored-content .sponsored-flag` (a different element) uses `primary-light` with white text, and `secondary` with dark text on images.
+
+---
+
+## 8. Font fallbacks — Helvetica instead of the design stacks (all sites)
+
+**Found:** 2026-10-14, computed `font-family` on all 6 review sites (ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall): nav labels, section headers, card headlines, excerpts, footer and obituaries. **Team:** CMS (WordPress themes).
+
+**Design** (main file, Fonts page, Font Styles and Fallbacks `2768:1051`; tokens `font.family.noto-sans` / `font.family.noto-serif`, CSS `--mng-font-family-noto-sans` / `-serif`):
+
+| Stack | Design (should be) | Production |
+|---|---|---|
+| Sans (`$body`) | `"Noto Sans", "Helvetica Neue", Arial, sans-serif` | `"Noto Sans", Helvetica, sans-serif` |
+| Serif (`$heading`) | `"Noto Serif", Georgia, "Times New Roman", serif` | `"Noto Serif", Helvetica, serif` |
+
+The same two stacks apply on every theme; each theme only chooses which one its headings and body use. Obituaries follow the site's theme.
+
+**Fix:** in the theme font-family definitions, replace `Helvetica` with **Helvetica Neue** (then Arial) in the sans stack (Karl, 2026-10-14), and use Georgia, then Times New Roman, in the serif stack instead of Helvetica. The fallbacks only show when Noto doesn't load, so nothing changes visually when the web fonts work.
+
+**Status:** Open.
+
+---
+
+## 9. Typography — headline tiers measured live with no matching Figma style
+
+**Found:** 2026-08-27, live typography audit (recorded in a handoff note since retired). **Re-measured 2026-09-24** on ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall and greeleytribune. The values were identical on all 7.
+
+**Production:**
+
+| Role | Size | Weight | Line height | Letter spacing |
+|---|---|---|---|---|
+| Second-tier homepage card headline | 26px | 700 | 30.3px | -0.91 |
+| Third-tier card headline | 20px | 700 | 23.6px | -0.4 |
+| Fourth-tier card headline | 19px | 600 | 24px | -0.665 |
+| Section Highlight headline list | 15px | 600 | 19px | -0.15 |
+| Related ("More News") headline | 18px | 600 | 21px | normal |
+| Body copy | 16.5px | 400 | 27px | -0.165 |
+| Lead story, top of page | 29px | 700 | 32.8px | -0.87 |
+| Lead story, media block | 29px | 700 | 33px | -1.16 |
+
+**Also found:** on Bold Coastal the 19px and 15px headlines are Noto Sans, even though the theme's heading font is Noto Serif. The old Figma Title style used an averaged -1.0 letter spacing that matched neither lead-story variant.
+
+**Resolved 2026-09-24 (design side):** added as Figma Editorial styles:
+- `CardSecondary`, `CardTertiary`, `CardQuaternary`, `HeadlineList`, `RelatedHeadline`, `TitleMedia` and `Editorial/Body/Default`.
+- A new theme token, `font/theme/small-headline-family`.
+- Title's letter spacing corrected to -0.87.
+
+See `tokens/typography/typography-tokens.md`. Production matches the new styles, so no engineering action is needed.
+
+**Status:** Resolved.
+
+---
+
+## 10. Reader Dashboard — Typography (2026-09-10)
+
+**Policy:** For anything specific to the Reader Dashboard, Figma is the source of truth — even where production currently differs. MNG Web Design System's `Dashboard/*` typography tokens (in the "Dashboard Typography" collection) are kept at their Figma-specified values; any place production has been found rendering something different is recorded here instead, for engineering to either fix in production or flag back to design if the production value should actually be adopted.
+
+### 10.1 Page title size — `Dashboard/Titles/PageDesktop`
+
+**Figma:** Noto Serif, **26px**, Bold (700) — matches Reader Dashboard v2.0's own Figma token (`Titles/Page (desktop, tabletH)`) exactly.
+
+**Production:** canoncitydailyrecord.com/dashboard/ (desktop width) renders this title at **36px**, via a Tailwind `lg:text-4xl` breakpoint utility class overriding the base size.
+
+**Action needed:** Reconcile production to the Figma-specified 26px, OR — if 36px is an intentional, approved change — get that confirmed with design so Figma can be updated to match and this item retired. Until then, MNG Web Design System's token stays at 26px per the policy above.
+
+**Status:** Open.
+
+### 10.2 Section Title weight — `Dashboard/Titles/SectionTitle`
+
+**Figma:** Noto Sans, 18px, Bold (700).
+
+**Production:** One live-measured instance showed weight 600 (Semi-Bold) instead of 700.
+
+**Caveat (lower confidence than 2.1):** The measured instance may have been an admin/debug panel ("MNG Debugger" / "Entitlements JWT") rather than genuine reader-facing UI.
+
+**Action needed:** Confirm on a real reader-facing Section Title instance whether it's 700 (matches Figma) or genuinely 600.
+
+**Status:** Open.
+
+### 10.3 `font/size/10` — unconfirmed in production
+
+**Figma:** Defined at 10px in Reader Dashboard v2.0's Type Primitives, carried into MNG Web Design System.
+
+**Production:** No confirmed live sighting during this audit (only canoncitydailyrecord.com/dashboard/ was checked).
+
+**Action needed:** Low priority — confirm where (if anywhere) this size is actually used live.
+
+**Status:** Open.
+
+---
+
+## 11. Upcoming Events (CitySpark widget) — font family
+
+**Found:** 2026-10-07, ocregister.com (homepage `.csLayHolder` → `.cswidholder` iframe, CitySpark template).
+
+**Figma spec (source of truth):** WordPress Elements `Upcoming Events Widget` matches production's layout, sizes, spacing and colors exactly (Karl, 2026-10-07), but sets all text in **Noto Sans**, like the rest of the design system.
+
+**Production:** every text element in the widget is **Roboto Condensed**: the title "Upcoming Events" 400 20/22, the "See All Events" and "Add your event" buttons 400 12/15, the card dates 400 11, event names 700 13/14, venues 400 12/14, date-strip days 400 15/20 uppercase and dates 400 20/19.
+
+**Fix:** change the CitySpark widget template's font to Noto Sans (same sizes and weights) on every site, with whoever manages the CitySpark account.
+
+---
+
+## 12. Article breadcrumbs — label font family and text color
+
+**Found:** 2026-10-08, ocregister.com article page (`.breadcrumbs` › `.breadcrumb-type-wrapper > a`, e.g. "NEWS › ENVIRONMENT • News").
+
+**Figma spec (source of truth):** WordPress Elements › Article Page › `Breadcrumbs` (`1110:19469`) matches production's sizes, spacing and colors (rebuilt 2026-10-08, Karl): crumbs Noto Sans 700 16/22 uppercase, the `arrow-right2` icon at 14px in `color/gray/500` with 5px on each side, and the label " • News" in Noto Sans 400 15.2/15.2 (`font/size/15-2`). All breadcrumb text (crumbs, bullet and label) is **`color/gray/min` (#141414)** (Karl, 2026-10-08).
+
+**Production:**
+- *Label font:* the label and its CSS-added " • " bullet have no font family set, so they render in **Helvetica** (inherited from the page default). The crumbs are Noto Sans.
+- *Text color differs across sites:* breadcrumb text (crumbs, bullet and label) is **#000000** on OC Register, Chicago Tribune and Orlando Sentinel, but **Denver Post's crumbs use its theme red #8E1024**. So some sites let breadcrumbs take a theme / site-override color and others don't.
+- *Separator arrow color differs across sites:* **#D7D6D2** on OC Register and Denver Post, **#C8C4C0** on Orlando Sentinel. Design uses `color/gray/500` (#CCCAC7), the closest gray token.
+- mcall.com and canoncitydailyrecord.com weren't checked (Chrome isn't allowed on those domains).
+
+**⚠ Decision needed: design AND dev teams together.** Should breadcrumb text be one neutral color on every site, or follow each site's theme / Customizer colors (as Denver Post's red does today)? Design's proposal (Karl, 2026-10-08): one neutral, `color/gray/min` (#141414), on every site whatever its theme or site override, so breadcrumbs don't take theme colors; the arrow is `color/gray/500` everywhere. Dev needs to confirm where Denver Post's red comes from (theme stylesheet or Customizer override) and what changing it affects. Record the agreed answer here.
+
+**Fix:**
+1. Set the label to Noto Sans (same 0.95em size, 400 weight) on every site. *Not blocked.*
+2. *Pending the decision above:* set all breadcrumb text to the agreed color on every site (proposed `color/gray/min` #141414: from #000000 on most sites, and from #8E1024 on Denver Post).
+3. *Pending the decision above:* set the separator arrow to one color on every site (proposed `color/gray/500` #CCCAC7, from #D7D6D2 / #C8C4C0).
+
+**Status:** Open. Fix 1 is ready; fixes 2 and 3 wait on the design + dev decision.
+
+---
+
+## 13. Icon font — mismatches with the Figma icon page, dead and duplicate glyphs, and known missing icons
+
+**Found:** 2026-08-28 to 2026-08-31, icon font audit (`components/icons.md` §3, §5, §6). Added here 2026-09-25: `icons.md` said these were in this handoff, but they had never been logged.
+
+**Figma spec (source of truth):** the `Icons` component set in the main MNG Web Design System file (node `4693:5`, 95 variants) and the documented icon list on its Icons page.
+
+**Production (live icon font, checked on chicagotribune.com):**
+
+| Item | What's wrong | Action |
+|---|---|---|
+| `google-plus` | Still in the live font. Google+ was shut down years ago, and the icon isn't documented. | Remove from the font. |
+| `mng-podcast1` | Same codepoint (`e902`) as `android` — a font-build duplicate, not a separate icon. | Remove the alias. |
+| `grid2` | Renders the same gift-box glyph as `gift2`, not a grid. The requested "grid" icon has not shipped. | Remove the alias; ship the real `grid` icon (artwork exists in Figma). |
+| `notification-filled`, `notification-outlines` | Designed in Figma (filled and outline exclamation-in-a-circle alert icons) but missing from the live font under any name. Karl confirmed these are real, finished icons waiting to ship. | Add to the font. |
+
+
+**Updated 2026-10-08:** re-checked glyph by glyph against the Figma **Icon Categories** frame (main file, Icons | 2026.08.28, node `1412:13`) using the font extracted from ocregister.com (`tokens/icons/`). **All MNG sites use the same icon font** (Karl, 2026-10-08), so these findings apply everywhere. Of the 171 documented icons, 162 match production by name and glyph. Third-party vendor icons and the "Need to source/make/add" list are out of scope.
+
+### 13.1 Mismatches between the Figma page and the production font
+
+| Figma name | Production | Action |
+|---|---|---|
+| `grid2` | `icon-grid2` shows the gift glyph (U+E930, same as `gift2`). The Figma grid2 artwork (9 dots) **is in the font** at U+E932, with no class. | Point `icon-grid2` at U+E932. (Supersedes the 2026-08 note above that the grid hasn't shipped: the 9-dot glyph is there, just not wired up. The square-tile `grid` in Pending Updates is a different icon; see 20.2.) |
+| `windows8` | `icon-windows8` shows warning2 (U+E986). The Windows logo is in the font at U+E987, with no class. | Point `icon-windows8` at U+E987. |
+| `book3` | `icon-book3` points at U+0065 (the letter "e"). The closed book is in the font at U+E993, with no class. | Point `icon-book3` at U+E993. |
+| `content_copy` | No class. The glyph is in the font at U+E921. | Add `icon-content_copy` (or the agreed name) → U+E921. |
+| `ios_share` | No class. The glyph is in the font at U+E93A. | Add `icon-ios_share` → U+E93A. |
+| `home`, `menu7`, `enlarge7` | Same glyphs, but production names them `icon-home3`, `icon-hamburger` and `icon-enlarge`. Already listed in the Figma page's CHANGE section and in `components/icons.md` §3 as naming fixes. | Decide which name wins (design and dev); rename the Figma entry or add the Figma name as a production alias. |
+| "iTunes / Apple Music" | Same glyph as `icon-music5`; no class with this name. | Naming only; no font change. |
+| *(none)* | `icon-google-plus` (no glyph), `icon-mng-podcast1` (= android) and `icon-users4` (= user4) have no Figma entry. `google-plus` and `mng-podcast1` are in the table above; `users4` was set aside by Karl 2026-08-31. U+E941 (a second padlock) is in the font with no class and no Figma entry. | Remove the dead classes; U+E941 can go in a font rebuild. |
+
+### 13.2 Known missing icons (to be added; not mismatches)
+
+Listed in the Figma page's **Pending Updates**. None is in the production font under any name. Figma artwork for all 12 is in `tokens/icons/svg-missing/`.
+
+- **ADD:** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`.
+- **CHANGE:** `notification-outlines` (replaces `notification`) and `notification-filled` (replaces `notification2`). Same items as the `notification-filled` / `notification-outlines` row above.
+
+**Status:** Open.
+
+---
+
+## 14. Buttons — Obituaries page CTA (Chicago Tribune, Denver Post)
+
+**Found:** 2026-09-01, during the buttons audit.
+
+**Figma spec:** Button Primary (main file, ***Buttons page), Default size — padding 16px vertical + 20px horizontal, 14px text.
+
+**Production:** The live `.subscribe-button` CTA (249×44, confirmed identical on Chicago Tribune and Denver Post, also appears on regular article pages — a general paywall CTA, not obituary-specific) renders with padding 14px/10px instead of 16px/20px, and font-size 15px instead of 14px. Radius and per-masthead fill color already match Figma.
+
+**Decision (Karl, 2026-09-01):** This is not a new button size/variant — it should simply carry Button Primary's existing Default styling. Production needs to be brought in line with Figma's padding and font-size values above; no new Figma token or variant should be created for it.
+
+**Status:** Open.
+
+---
+
+## 15. Article Card / Teaser
+
+### 15.1 Denver Post — Section Highlight shows 4 headline items instead of 3
+
+**Found:** Article Card / Teaser audit.
+
+**Figma / platform norm:** Every pilot site (Chicago Tribune, OC Register, Orlando Sentinel, Greeley Tribune, mcall.com) shows exactly 3 headline items in the Section Highlight module.
+
+**Production:** Denver Post shows 4 — and this isn't theme-scoped, since OC Register shares Denver Post's Bold Coastal theme but still shows 3.
+
+**Action needed:** Confirm whether this is a deliberate per-site editorial choice or a real inconsistency worth fixing.
+
+**Status:** Open — not yet root-caused.
+
+### 15.2 Section title style (color, underline, sizing) doesn't match Figma on any of the 6 pilot sites
+
+**Found:** Article Card / Teaser audit, §4.4 / Open Item 3.
+
+**Figma spec (Karl's 2026-09-01 decision):** Section Highlight / "Latest Headlines" title — text color `color/gray/100`, a 2px underline in the site's own `--primary`, unified size/weight/letter-spacing per the eyebrow decision.
+
+**Production:** None of the 6 pilot sites match the full spec. Text color is wrong on all 6. The underline itself doesn't exist at all on 4 of 6 sites (Chicago Tribune, Orlando Sentinel, OC Register, Denver Post) — only the 2 Modern Earthy sites have the underline mechanism, and only the 2 Bold Coastal sites match the size/weight.
+
+**Action needed:** Ready to hand to engineering as a fully-specified spec to implement across all 6 sites.
+
+> **Note (2026-09-24):** The "unified size/weight" part of this spec is out of date. On 2026-09-09 the single 20px eyebrow was replaced with per-theme eyebrow tokens: Bold Coastal 20/400/Sans, Measured Vibrant 17/700/Sans, Modern Earthy 21/400/Serif (see `tokens/typography/typography-decision-log.md`, decision 6). The color and underline parts of the spec still stand. Confirm the size/weight part with Karl before handing this to engineering.
+
+**Status:** Open.
+
+### 15.3 Responsive layout rules vary by container context (not fully mapped)
+
+**Found:** Article Card / Teaser audit, §5 Open Item 8.
+
+**Detail:** `feature-medium` and `headline-only` responsive (`flex-direction`) rules change depending on the parent container class (e.g. `.landing-four-up-hybrid`, `.landing-three-one`, `.slow .feature-top` each carry their own breakpoint overrides for the same classes). This overlaps with the upcoming Containers component and hasn't been fully mapped — flagging so it isn't mistaken for one universal rule.
+
+**Status:** Open / informational — needs a dedicated mapping pass.
+
+### 15.4 Excerpt/dek color needs re-verification (minor)
+
+**Detail:** The dek/excerpt color (~`#484642`, sampled from Chicago Tribune) was derived via an rgb→hex rounding pass that wasn't double-checked the way other colors in the doc were.
+
+**Status:** Open — low priority, worth a re-check before treating as final.
+
+---
+
+## 16. Reader Dashboard — Modal
+
+**Figma source:** "ModalsCenter" library component, Reader Dashboard v2.0. **Live source:** East Bay Times preprod, account-verification flow.
+
+### 16.1 Card border mismatch
+
+Figma's ModalsCenter has a 1px `color/gray/300` border on the card; the live card was recorded relying on shadow only, with no border distinguished. Both may be true (a subtle border could be present but visually indistinguishable from the shadow) — not resolved either way.
+
+**Status:** Open.
+
+### 16.2 Backdrop opacity mismatch
+
+Live backdrop is 45% black; the Figma-modeled value is 50% black — close, and not even built into the component as a literal property either way.
+
+**Status:** Open — low priority.
+
+### 16.3 Fixed 444px width, narrow-viewport behavior untested
+
+The modal card is a fixed 444px, not fluid/responsive. Behavior at narrow viewports has not been tested.
+
+**Status:** Open.
+
+### 16.4 Password "Update" flow is unstyled design debt
+
+Clicking "Update" for password doesn't open a modal — it navigates to a separate, essentially unstyled page (`/reset-password/`: Arial font, square corners, plain black button border, default gray input border) that matches none of the design system.
+
+**Action needed:** This is design debt to flag, not a pattern worth capturing faithfully — needs a real design pass, not a Figma-matching exercise.
+
+**Status:** Open.
+
+### 16.5 Destructive-action modals unexplored
+
+Only the account-verification modal was captured live. Other triggers (e.g. canceling a subscription) were deliberately not explored to avoid triggering irreversible account actions, so their modal spec is unconfirmed.
+
+**Status:** Open — needs a human to click through and report back rather than automated exploration.
+
+---
+
+## 17. Reader Dashboard — Disclosure
+
+### 17.1 Two competing disclosure/accordion patterns need reconciliation
+
+Production's live Reader Dashboard (e.g. chicagotribune.com/user-tools/dashboard) uses a chevron/icon-based accordion pattern, different from the simpler text-link toggle documented from preprod (the pattern actually built in Figma). The chevron pattern is currently out of scope because that surface is being replaced — but if it survives the replacement, the two patterns will need to be reconciled into one.
+
+**Status:** Open — contingent on what survives the Reader Dashboard replacement.
+
+### 17.2 Coverage and behavior gaps
+
+Only one instance of the disclosure pattern (Login Methods on Profile) was found and tested; other tabs (Subscription, Benefits, etc.) weren't checked for additional instances. Whether expand/collapse is animated or instant was never confirmed.
+
+**Status:** Open.
+
+---
+
+## 18. Reader Dashboard — Design System Architecture
+
+**Found:** Reader-Dashboard-Library-Impact-Map.md.
+
+**Detail:** Modal, Disclosure, and Empty State/Status Badge had been rebuilt by hand as pilot copies instead of using Reader Dashboard v2.0's components, so they could drift out of sync.
+
+**Resolved 2026-09-25:** the hand-built copies were retired. The sources are now the real components in the main file: ModalsCenter, Button Linkstyle and InLineMessage.
+
+**Status:** Resolved.
+
+---
+
+## 19. Containers, Images & Ad Units
+
+### 19.1 `object-fit: fill` on card images — distortion risk
+
+Both hero and feature-medium images use `object-fit: fill` with no `aspect-ratio` set, meaning images are stretched to exactly fill their container rather than cropped-to-fill (`cover`). Distortion is currently minimal because sampled images happen to be close to the container's aspect ratio, but an editor uploading an off-ratio image would visibly stretch/squash it.
+
+**Action needed:** Confirm with engineering whether `fill` is intentional or should be `cover`, since this is a live distortion risk on any off-ratio upload.
+
+**Status:** Open.
+
+### 19.2 Main content container width — Chicago Tribune vs. Denver Post
+
+Chicago Tribune's `main` container measures 1260px at a 1280px viewport; Denver Post measures 1245px at the same viewport — a real 15px difference, not explained by Denver Post running a different theme (it doesn't — confirmed both load real shared theme stylesheets with their own Customizer overrides, same pattern as every other site).
+
+**Status:** Open — not root-caused; could be a scrollbar-width artifact of that specific page load rather than a genuine CSS difference.
+
+### 19.3 Orlando Sentinel — ad slots register lazily on mobile homepage
+
+On Orlando Sentinel's mobile homepage, only the `mobile_adhesion` slot registered with Google Publisher Tag at initial load; the other 10 ad containers exist in the DOM but didn't register in `getSlots()` even after scrolling most of the page and waiting. This looks like Freestar (Orlando Sentinel's header-bidding wrapper, different from the other 5 pilot sites) registering slots lazily/progressively rather than upfront.
+
+**Action needed:** Confirm with engineering whether this is expected Freestar behavior or worth a longer dwell-time re-check.
+
+**Status:** Open.
+
+### 19.4 No visible ad-disclosure label
+
+No "Advertisement"/"Sponsored" text label or `aria-label` was found near any ad container on any of the 6 pilot sites — only Google's own AdChoices icon (rendered inside the ad iframe itself, not site-authored markup).
+
+**Action needed:** Confirm with engineering/legal whether the absence of an explicit disclosure label at the container level is intentional, since AdChoices alone is a weaker disclosure than what many other publishers use.
+
+**Status:** Open — legal/compliance relevance.
+
+---
+
+## 20. Navigation
+
+### 20.1 Obituaries page — hamburger + "All Sections" both visible at desktop width
+
+**Figma / platform rule:** On the homepage, the hamburger icon is only visible at ≤1039px.
+
+**Production:** On the Obituaries page, at a comfortably-desktop viewport, both the hamburger icon and the "All Sections" button are visible simultaneously — confirmed on all 6 pilot sites (Chicago Tribune, Denver Post, OC Register, Orlando Sentinel, Greeley Tribune, mcall.com), including at a 1728px viewport.
+
+**Action needed:** Still not explained — genuinely flagged to engineering to confirm whether this is intentional for the Obituaries template or a bug.
+
+**Status:** Open.
+
+### 20.2 Cross-site avatar inconsistency for the same logged-in account
+
+Cross-site SSO is confirmed working (same session carries from one site to another with no re-login). But for the identical account, Denver Post rendered an actual photo avatar while Orlando Sentinel rendered a generated initials badge ("PA").
+
+**Action needed:** Confirm whether this is a per-site fallback difference (e.g. photo failed to load/sync on one site) or a real bug.
+
+**Status:** Open — not root-caused.
+
+### 20.3 Reader Dashboard's own breakpoint convention differs from the marketing site's
+
+The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 1024px breakpoint — different from the audited 1039px rule on the main marketing-site nav. Since the Dashboard is a distinct web app from the shared marketing-site theme, this may be a legitimately different, real breakpoint rather than a conflict.
+
+**Status:** Informational / low priority — flagged for awareness, not treated as an error.
+
+### 20.4 Hidden duplicate nav `<li>` artifacts
+
+On some categories (confirmed on Sports), the individual sub-section links (e.g. Chicago Bears, Bulls, Blackhawks, Cubs, White Sox) exist twice: once in the real working sub-menu, and again as `class="hidden"` top-level `<li>` siblings directly in the nav — apparent unused WordPress nav-menu artifacts.
+
+**Status:** Open — worth a cleanup pass, low risk/low priority.
+
+### 20.5 Device-class first-paint timing (Denver Post, mcall.com)
+
+A device-signal CSS class is added client-side (confirmed not server-side) slightly later on Denver Post and mcall.com than the other 4 sites — likely real device detection working correctly, just applied a beat slower on those two.
+
+**Action needed:** Worth asking engineering whether any component's CSS actually depends on this class being present at first paint. If nothing does, this needs no action.
+
+**Status:** Open — low priority, likely closable with a single confirmation.
+
+---
+
+## 21. Ad Units — Homepage "Ad Blocks" slot after Blueconic/Most Popular is undersized (300×250 instead of 300×600)
+
+**Found:** 2026-09-14, during the five-width (340/360/768/1024/1280) homepage production-parity audit.
+
+**Figma action taken:** Per Karl's instruction, this ad instance was updated in Figma to the production-accurate `Cube 1 RRail ATF 300x600` block at every width where it appears (Mobile 340/360, and the new 768/Tablet build), replacing the previous `Cube Article 300x250` placeholder — specifically so the Figma mockups now make this gap visible rather than quietly matching the undersized code.
+
+**Figma spec (now, post-fix):** `Cube 1 RRail ATF 300x600` — matches the size production is actually observed serving.
+
+**Production:** Live GPT ad-slot scanning (`iframe[id^="google_ads_iframe"]` DOM query, cross-referenced against scroll position) on ocregister.com found this slot — `cube2_rrail_mid` — rendering at 300×600 at both mobile (340/360) and tablet (768) widths, at every width checked.
+
+**Action needed:** Confirm whether the live implementation for this ad slot is intentionally 300×250 somewhere in code (unlikely, given production itself serves 300×600 into it) or whether this was simply never corrected after being built against an earlier/incorrect spec. Since Figma now shows the corrected 300×600 size, any remaining 300×250 assumption in the live templates should be treated as the bug to fix, not Figma.
+
+**Status:** Open.
+
+---
+
 ## 22. Masthead — Top-leaderboard ad slot renders at inconsistent sizes across page types
 
 **Found:** 2026-09-15, during the Masthead breakpoint audit (`breakpoint-audit.md`), 375px (mobile) pass, comparing OC Register live production against the `Masthead` component set (WordPress Elements → Menus and Parts).
