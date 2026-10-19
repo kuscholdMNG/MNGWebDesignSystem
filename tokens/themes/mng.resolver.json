@@ -1329,12 +1329,12 @@
           "loads": "boldcoastal.css + Customizer override (div#page)",
           "figmaMode": "The Mercury News + East Bay Times",
           "productionAudit": "2026-08-03",
-          "mismatchCount": 2,
+          "mismatchCount": 1,
           "sites": [
             "mercurynews.com",
             "eastbaytimes.com"
           ],
-          "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only."
+          "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only. subsite-custom #0097a7 documented 2026-10-19 (Karl): the Bold Coastal value, which both sites already render from boldcoastal.css."
         },
         "st-paul-pioneer-press": {
           "name": "St. Paul Pioneer Press",
@@ -1834,7 +1834,7 @@
             "bold-coastal",
             "the-mercury-news-east-bay-times"
           ],
-          "mismatchCount": 2
+          "mismatchCount": 1
         },
         "mercurynews.com": {
           "publication": "The Mercury News",
@@ -1847,7 +1847,7 @@
             "bold-coastal",
             "the-mercury-news-east-bay-times"
           ],
-          "mismatchCount": 1
+          "mismatchCount": 0
         },
         "siliconvalley.com": {
           "publication": "Silicon Valley",

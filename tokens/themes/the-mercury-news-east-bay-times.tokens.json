@@ -8,12 +8,12 @@
       "loads": "boldcoastal.css + Customizer override (div#page)",
       "figmaMode": "The Mercury News + East Bay Times",
       "productionAudit": "2026-08-03",
-      "mismatchCount": 2,
+      "mismatchCount": 1,
       "sites": [
         "mercurynews.com",
         "eastbaytimes.com"
       ],
-      "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only."
+      "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only. subsite-custom #0097a7 documented 2026-10-19 (Karl): the Bold Coastal value, which both sites already render from boldcoastal.css."
     }
   },
   "color": {
@@ -208,7 +208,7 @@
               "verified": "2026-08-03",
               "matches": false,
               "productionValue": "#eeff41",
-              "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches.",
+              "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches. Rechecked live 2026-10-19: the East Bay Times Customizer sets #eeff41 explicitly, the stock Modern Earthy / Measured Vibrant secondary, copied in by mistake (Karl, 2026-10-19).",
               "differencesEntry": 21,
               "mismatchSites": [
                 "eastbaytimes.com"
@@ -333,6 +333,34 @@
               "variable": "color/theme/nav-text",
               "mode": "The Mercury News + East Bay Times"
             },
+            "production": {
+              "source": "boldcoastal.css + Customizer override (div#page)",
+              "sites": [
+                "mercurynews.com",
+                "eastbaytimes.com"
+              ],
+              "verified": "2026-08-03",
+              "matches": true
+            }
+          }
+        }
+      },
+      "subsite-custom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0.5922,
+            0.6549
+          ],
+          "alpha": 1,
+          "hex": "#0097a7"
+        },
+        "$description": "Sub-site accent color. Defined in the color style guides; not a Figma variable yet.",
+        "$extensions": {
+          "com.mng": {
+            "rgba": "rgba(0, 151, 167, 1)",
+            "figma": null,
             "production": {
               "source": "boldcoastal.css + Customizer override (div#page)",
               "sites": [

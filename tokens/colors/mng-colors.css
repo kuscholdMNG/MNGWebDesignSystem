@@ -135,7 +135,7 @@
   --subsite-custom: #000000;
 }
 
-/* The Mercury News + East Bay Times (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 1 (Mercury News), 2 (East Bay Times) (see production-vs-design-differences.md entry 21) · combined 2026-10-19 */
+/* The Mercury News + East Bay Times (sub-theme of Bold Coastal) · 2 publications · Engineering fixes: 0 (Mercury News), 1 (East Bay Times) (see production-vs-design-differences.md entry 21) · combined 2026-10-19 */
 [data-mng-theme="the-mercury-news-east-bay-times"],
 [data-mng-site="mercurynews.com"],
 [data-mng-site="eastbaytimes.com"] {
@@ -149,6 +149,7 @@
   --near-black: #0a0908;
   --white: #ffffff;
   --nav-text: #0a0908;
+  --subsite-custom: #0097a7;
 }
 
 /* St. Paul Pioneer Press (sub-theme of Bold Coastal) · 1 publication · Engineering fixes: 5 (see production-vs-design-differences.md entry 21) */
