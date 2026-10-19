@@ -302,6 +302,23 @@ A device-signal CSS class is added client-side (confirmed not server-side) sligh
 
 **Status:** Open.
 
+
+**Per-theme audit, 2026-10-19 (for CI-14848; Karl).** Live stylesheet scan of each theme file on ocregister.com and denverpost.com (Bold Coastal), orlandosentinel.com (Measured Vibrant) and mcall.com (Modern Earthy); chicagotribune.com and canoncitydailyrecord.com couldn't be opened by the browser extension. All three themes ship the same legacy grays, so every theme needs the same fixes. Figma: a new **Grays & Alerts** block in each of the Bold Coastal, Modern Earthy and Measured Vibrant theme style guides on the Color Pallets page (Universal Grays and Alert colors as the should-be column, bound to `color/gray/*` and `color/feedback/*`; the theme's production values beside them, red-dashed where they differ).
+
+| Universal (design) | Production, all 3 themes | Fix |
+|---|---|---|
+| base text = `gray-min` `#141414` | `#000000`, hard-coded (×66 in boldcoastal.css and measuredvibrant.css, ×72 in modernearthy.css) | Change body text from `#000000` to `#141414`. |
+| `gray-min` `#141414` | `#0a0908` (`$gray-min`, compiled in; no CSS variable): ×97 boldcoastal.css, ×40 measuredvibrant.css; modernearthy.css mixes `#0a0908` ×40 and `#141414` ×45 | Replace `#0a0908` with `#141414`. |
+| `gray-100` `#393938` | `--site-branding-gray-100` `#38322a` | Change the value. |
+| `gray-200` `#5e5d5c` | `--site-branding-gray-200` `#5d5b5a` | Change the value. |
+| `gray-300` `#838280` | `--site-branding-gray-300` `#9d9a98` | Change the value. |
+| `gray-400` `#a7a6a3` | `--site-branding-gray-400` `#aaa7a4` | Change the value. |
+| `gray-500` `#cccac7` | `--site-branding-gray-500` `#d7d6d2` | Change the value. |
+| `gray-600` `#f1efeb` | `--site-branding-gray-600` `#f1efeb` | None (matches). |
+| `gray-max` `#ffffff` | `#ffffff` | None (matches). |
+| Alert low-success `#2e8000`, medium `#856a00`, high-error `#cc2b27` | Not defined in any theme file | Add all three to every theme. |
+
+The theme-specific Near Black / White neutrals (Bold Coastal `#0a0908`, Modern Earthy `#1a1a1a`, Measured Vibrant `#1f1e1c`) are separate theme tokens and keep their existing "Replace with gray-min" notes. NEPA-PMP runs modernearthy.css, so it gets the Modern Earthy fixes.
 ---
 
 ## 11. Color Tokens — Endless Tributes / Obituaries palette live-production audit
