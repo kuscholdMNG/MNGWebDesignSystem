@@ -1576,7 +1576,7 @@
       "sites": {
         "dailyherald.com": {
           "publication": "Daily Herald",
-          "cluster": "Daily Herald",
+          "cluster": "Tribune",
           "onMngThemes": true,
           "theme": "modern-earthy",
           "subTheme": "daily-herald",
@@ -2637,7 +2637,7 @@
         },
         "twincities.com": {
           "publication": "St. Paul Pioneer Press",
-          "cluster": "Twin Cities",
+          "cluster": "St. Paul",
           "onMngThemes": true,
           "theme": "bold-coastal",
           "subTheme": "st-paul-pioneer-press",
@@ -2663,7 +2663,7 @@
         },
         "capitalgazette.com": {
           "publication": "Capital Gazette",
-          "cluster": "Tribune",
+          "cluster": "Baltimore",
           "onMngThemes": true,
           "theme": "bold-coastal",
           "subTheme": "capital-gazette",
@@ -2729,7 +2729,7 @@
         },
         "baltimoresun.com": {
           "publication": "The Baltimore Sun",
-          "cluster": "Tribune",
+          "cluster": "Baltimore",
           "onMngThemes": true,
           "theme": "bold-coastal",
           "subTheme": "the-baltimore-sun",

@@ -7,12 +7,12 @@ Rebuild: `python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-t
 
 | Folder | Use |
 |---|---|
-| `css/` | `core.css` (`:root`), `themes/<key>.css` (one per theme, sub-theme and product; a sub-theme file is complete on its own), `wordpress.css` (editorial type + WordPress grid breakpoints, plus one class per editorial style), `sites/<domain>.css` (site overrides, scoped to `#page`). Load order: core, theme, wordpress, site. |
+| `css/` | `core.css` (`:root`), `themes/<key>.css` (one per theme, sub-theme and product; a sub-theme file is complete on its own), `wordpress.css` (editorial type + WordPress grid breakpoints, plus one class per editorial style), `sites/<domain>.css` (one per publication: every color resolved for that site, on `:root` and `#page`). Load order: core, theme, wordpress, site. |
 | `scss/` | The same values as Sass variables and maps (`_core.scss`, `themes/_<key>.scss`, `_wordpress.scss`, `sites/_<domain>.scss`). |
 | `js/` | `tokens.js` (ES module: `core`, `wordpress`, `themes`, `sites`, `cssVars`) and `tokens.d.ts`. |
 | `tailwind/` | `theme.css` for Tailwind v4 (`@theme`); `tailwind.preset.js` (ESM) / `.cjs` for Tailwind v3. |
 | `wordpress/` | `<key>.theme.json`: theme.json v3 fragments (palette, font families and sizes, spacing, custom values). |
-| `json/` | Flat `name -> value` (hex, rgba, px, rem): `core.json`, `wordpress.json`, `themes/<key>.json` (everything resolved for that theme), `sites.json` (each publication's theme, CSS files and resolved colors). |
+| `json/` | Flat `name -> value` (hex, rgba, px, rem): `core.json`, `wordpress.json`, `themes/<key>.json` (everything resolved for that theme), `sites/<domain>.json` (one per publication: its resolved colors), `sites.json` (all publications: theme, CSS files and resolved colors). |
 
 CSS variables are `--mng-` + the token path (`--mng-color-theme-primary`, `--mng-font-size-16-5`, `--mng-spacing-200`).
 Sizes are px, with a `-rem` twin (16px base). Colors are hex, with an `-rgb` twin (`0 117 128`) for `rgb(var(...) / 50%)`.

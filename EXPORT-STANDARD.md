@@ -162,6 +162,7 @@ Tokens and components are split into layers. **A layer may only reference layers
 |---|---|---|
 | Core (the main MNG Web Design System) | `tokens/core/` | Color primitives (gray, feedback, neutral, surface, tributes), type primitives (`font.family`, `font.size`, `font.weight`), spacing, radius, official breakpoints. Shared by every platform. **Reader Dashboard is part of core**: when it's ready, its tokens (Dashboard Typography, its breakpoints and so on) are added here under a `dashboard` group, not as a separate layer. |
 | Themes | `tokens/themes/` | One file per theme (Bold Coastal, Measured Vibrant, Modern Earthy), sub-theme (Denver Post, NEPA-PMP, 21C Michigan…) and the site overrides, plus `mng.resolver.json` that says how they stack: theme → sub-theme → site. |
+| Sites | `tokens/sites/` | One file per publication (every site in the cluster audit), each color value resolved for that site (site override → sub-theme → theme), with the site's cluster, theme, sub-theme and production fixes in `$extensions.com.mng`. `index.json` lists them theme → cluster → sub-theme → site. Generated; the theme files and resolver stay the source. |
 | WordPress | `tokens/wordpress/` | The WordPress Elements sub-system: editorial type styles (`Editorial/...`), theme type tokens (`font.theme.*`, eyebrow), layout and container widths, ad slot sizes, homepage block tokens, WordPress-specific breakpoints. |
 
 Components follow the same split:
@@ -219,7 +220,7 @@ Built from the DTCG files by `scripts/build-tokens/`. **Never edited by hand.** 
 
 | Folder | For | Contents |
 |---|---|---|
-| `dist/css/` | WordPress (classic), any web code | `core.css` (`:root`), one file per theme and sub-theme, `sites/<domain>.css` overrides scoped to `#page`. |
+| `dist/css/` | WordPress (classic), any web code | `core.css` (`:root`), one file per theme and sub-theme, `sites/<domain>.css`, one per publication with every color resolved (`:root` and `#page`). |
 | `dist/scss/` | WordPress themes using Sass | The same values as Sass variables and maps. |
 | `dist/js/` | React and other JS | ES module + TypeScript types (`tokens.js`, `tokens.d.ts`). |
 | `dist/tailwind/` | Tailwind | v4 `@theme` CSS file and a v3 preset (`tailwind.preset.js`). |

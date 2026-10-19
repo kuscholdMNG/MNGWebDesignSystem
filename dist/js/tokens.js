@@ -868,7 +868,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/advocate-news.com.css"
     ],
     "onMngThemes": true
   },
@@ -878,7 +879,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/akronnewsreporter.com.css"
     ],
     "onMngThemes": true
   },
@@ -888,7 +890,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-baltimore-sun.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/baltimoresun.com.css"
     ],
     "onMngThemes": true
   },
@@ -898,7 +901,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/bocopreps.com.css"
     ],
     "onMngThemes": true
   },
@@ -908,7 +912,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/boston-herald.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/bostonherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -929,7 +934,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/brushnewstribune.com.css"
     ],
     "onMngThemes": true
   },
@@ -939,7 +945,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/buffzone.com.css"
     ],
     "onMngThemes": true
   },
@@ -949,7 +956,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/burlington-record.com.css"
     ],
     "onMngThemes": true
   },
@@ -959,7 +967,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/canoncitydailyrecord.com.css"
     ],
     "onMngThemes": true
   },
@@ -969,7 +978,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/capital-gazette.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/capitalgazette.com.css"
     ],
     "onMngThemes": true
   },
@@ -990,7 +1000,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/chicoer.com.css"
     ],
     "onMngThemes": true
   },
@@ -1000,7 +1011,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/citizensvoice.com.css"
     ],
     "onMngThemes": true
   },
@@ -1010,7 +1022,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/coloradodaily.com.css"
     ],
     "onMngThemes": true
   },
@@ -1031,7 +1044,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/hartford-courant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/courant.com.css"
     ],
     "onMngThemes": true
   },
@@ -1052,7 +1066,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailybulletin.com.css"
     ],
     "onMngThemes": true
   },
@@ -1062,7 +1077,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailycamera.com.css"
     ],
     "onMngThemes": true
   },
@@ -1072,7 +1088,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailydemocrat.com.css"
     ],
     "onMngThemes": true
   },
@@ -1082,7 +1099,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailyfreeman.com.css"
     ],
     "onMngThemes": true
   },
@@ -1092,7 +1110,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/daily-herald.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailyherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1102,7 +1121,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailylocal.com.css"
     ],
     "onMngThemes": true
   },
@@ -1112,7 +1132,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailynews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1133,7 +1154,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/delcotimes.com.css"
     ],
     "onMngThemes": true
   },
@@ -1143,7 +1165,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/denverpost.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/denverpost.com.css"
     ],
     "onMngThemes": true
   },
@@ -1153,7 +1176,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-mercury-news-east-bay-times.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/eastbaytimes.com.css"
     ],
     "onMngThemes": true
   },
@@ -1163,7 +1187,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/eptrail.com.css"
     ],
     "onMngThemes": true
   },
@@ -1173,7 +1198,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/excelsiorcalifornia.com.css"
     ],
     "onMngThemes": true
   },
@@ -1183,7 +1209,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/fortmorgantimes.com.css"
     ],
     "onMngThemes": true
   },
@@ -1204,7 +1231,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/growthspotter.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/growthspotter.com.css"
     ],
     "onMngThemes": true
   },
@@ -1214,7 +1242,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/journal-advocate.com.css"
     ],
     "onMngThemes": true
   },
@@ -1224,7 +1253,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/julesburgadvocate.com.css"
     ],
     "onMngThemes": true
   },
@@ -1234,7 +1264,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/lamarledger.com.css"
     ],
     "onMngThemes": true
   },
@@ -1244,7 +1275,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/lowellsun.com.css"
     ],
     "onMngThemes": true
   },
@@ -1254,7 +1286,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/macombdaily.com.css"
     ],
     "onMngThemes": true
   },
@@ -1275,7 +1308,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/marinij.com.css"
     ],
     "onMngThemes": true
   },
@@ -1285,7 +1319,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/morning-call.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/mcall.com.css"
     ],
     "onMngThemes": true
   },
@@ -1295,7 +1330,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/mendocinobeacon.com.css"
     ],
     "onMngThemes": true
   },
@@ -1305,7 +1341,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-mercury-news-east-bay-times.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/mercurynews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1315,7 +1352,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/montereyherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1325,7 +1363,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/morningjournal.com.css"
     ],
     "onMngThemes": true
   },
@@ -1335,7 +1374,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/nashobavalleyvoice.com.css"
     ],
     "onMngThemes": true
   },
@@ -1345,7 +1385,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/news-herald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1366,7 +1407,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/bold-coastal.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/ocregister.com.css"
     ],
     "onMngThemes": true
   },
@@ -1376,7 +1418,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/oneidadispatch.com.css"
     ],
     "onMngThemes": true
   },
@@ -1386,7 +1429,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/orlando-sentinel.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/orlandosentinel.com.css"
     ],
     "onMngThemes": true
   },
@@ -1396,7 +1440,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/orovillemr.com.css"
     ],
     "onMngThemes": true
   },
@@ -1406,7 +1451,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/paradisepost.com.css"
     ],
     "onMngThemes": true
   },
@@ -1416,7 +1462,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pasadenastarnews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1426,7 +1473,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/petaluma-argus-courier.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/petalumanews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1447,7 +1495,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pottsmerc.com.css"
     ],
     "onMngThemes": true
   },
@@ -1457,7 +1506,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-press-democrat.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pressdemocrat.com.css"
     ],
     "onMngThemes": true
   },
@@ -1467,7 +1517,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pressenterprise.com.css"
     ],
     "onMngThemes": true
   },
@@ -1499,7 +1550,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/record-bee.com.css"
     ],
     "onMngThemes": true
   },
@@ -1509,7 +1561,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/redbluffdailynews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1519,7 +1572,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/redlandsdailyfacts.com.css"
     ],
     "onMngThemes": true
   },
@@ -1529,7 +1583,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/reporterherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1539,7 +1594,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/republicanherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1560,7 +1616,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/santacruzsentinel.com.css"
     ],
     "onMngThemes": true
   },
@@ -1570,7 +1627,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/saratogian.com.css"
     ],
     "onMngThemes": true
   },
@@ -1580,7 +1638,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sbsun.com.css"
     ],
     "onMngThemes": true
   },
@@ -1590,7 +1649,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sentinelandenterprise.com.css"
     ],
     "onMngThemes": true
   },
@@ -1600,7 +1660,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sgvtribune.com.css"
     ],
     "onMngThemes": true
   },
@@ -1610,7 +1671,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/siliconvalley.com.css"
     ],
     "onMngThemes": true
   },
@@ -1620,7 +1682,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-press-democrat.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sonomacountygazette.com.css"
     ],
     "onMngThemes": true
   },
@@ -1636,7 +1699,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/the-sonoma-index-tribune.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sonomanews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1646,7 +1710,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/southplattesentinel.com.css"
     ],
     "onMngThemes": true
   },
@@ -1656,7 +1721,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/standardspeaker.com.css"
     ],
     "onMngThemes": true
   },
@@ -1666,7 +1732,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/south-florida-sun-sentinel.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sun-sentinel.com.css"
     ],
     "onMngThemes": true
   },
@@ -1676,7 +1743,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/themorningsun.com.css"
     ],
     "onMngThemes": true
   },
@@ -1686,7 +1754,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/thenewsherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1696,7 +1765,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/theoaklandpress.com.css"
     ],
     "onMngThemes": true
   },
@@ -1706,7 +1776,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/thereporter.com.css"
     ],
     "onMngThemes": true
   },
@@ -1727,7 +1798,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/thetimes-tribune.com.css"
     ],
     "onMngThemes": true
   },
@@ -1737,7 +1809,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/times-standard.com.css"
     ],
     "onMngThemes": true
   },
@@ -1747,7 +1820,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/timescall.com.css"
     ],
     "onMngThemes": true
   },
@@ -1757,7 +1831,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/timesherald.com.css"
     ],
     "onMngThemes": true
   },
@@ -1767,7 +1842,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/timesheraldonline.com.css"
     ],
     "onMngThemes": true
   },
@@ -1788,7 +1864,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/troyrecord.com.css"
     ],
     "onMngThemes": true
   },
@@ -1798,7 +1875,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/st-paul-pioneer-press.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/twincities.com.css"
     ],
     "onMngThemes": true
   },
@@ -1808,7 +1886,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/ukiahdailyjournal.com.css"
     ],
     "onMngThemes": true
   },
@@ -1818,7 +1897,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/wcexaminer.com.css"
     ],
     "onMngThemes": true
   },
@@ -1828,7 +1908,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/whittierdailynews.com.css"
     ],
     "onMngThemes": true
   },
@@ -1838,7 +1919,8 @@ export const sites = {
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/willitsnews.com.css"
     ],
     "onMngThemes": true
   }

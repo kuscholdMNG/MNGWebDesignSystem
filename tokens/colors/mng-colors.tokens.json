@@ -712,7 +712,7 @@
     "com.mng": {
      "publication": "Daily Herald",
      "domain": "dailyherald.com",
-     "cluster": "Daily Herald",
+     "cluster": "Tribune",
      "theme": "Modern Earthy",
      "subTheme": "Daily Herald",
      "tokenSource": "color.theme.daily-herald",
@@ -2734,7 +2734,7 @@
     "com.mng": {
      "publication": "St. Paul Pioneer Press",
      "domain": "twincities.com",
-     "cluster": "Twin Cities",
+     "cluster": "St. Paul",
      "theme": "Bold Coastal",
      "subTheme": "St. Paul Pioneer Press",
      "tokenSource": "color.theme.st-paul-pioneer-press",
@@ -2785,7 +2785,7 @@
     "com.mng": {
      "publication": "Capital Gazette",
      "domain": "capitalgazette.com",
-     "cluster": "Tribune",
+     "cluster": "Baltimore",
      "theme": "Bold Coastal",
      "subTheme": "Capital Gazette",
      "tokenSource": "color.theme.capital-gazette",
@@ -2912,7 +2912,7 @@
     "com.mng": {
      "publication": "The Baltimore Sun",
      "domain": "baltimoresun.com",
-     "cluster": "Tribune",
+     "cluster": "Baltimore",
      "theme": "Bold Coastal",
      "subTheme": "The Baltimore Sun",
      "tokenSource": "color.theme.the-baltimore-sun",
