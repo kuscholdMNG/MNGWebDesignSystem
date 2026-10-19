@@ -20,8 +20,8 @@
   --mng-color-theme-white-rgb: 255 255 255;
   --mng-color-theme-nav-text: #0a0908;
   --mng-color-theme-nav-text-rgb: 10 9 8;
-  --mng-color-theme-subsite-custom: #0097a7;
-  --mng-color-theme-subsite-custom-rgb: 0 151 167;
+  --mng-color-theme-subsite-custom: #eeeeee;
+  --mng-color-theme-subsite-custom-rgb: 238 238 238;
   --mng-font-theme-heading-family: var(--mng-font-family-noto-serif);
   --mng-font-theme-body-family: var(--mng-font-family-noto-sans);
   --mng-font-theme-eyebrow-size: var(--mng-font-size-20);

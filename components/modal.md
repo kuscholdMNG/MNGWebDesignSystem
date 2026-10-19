@@ -46,7 +46,7 @@ Triggered by clicking "Update" next to Display Name: **"Please Verify Your Accou
 
 ## 3. Tokens
 
-The primary button/link color (`#006DA3`) maps cleanly to East Bay Times' own Brand `primary` token — confirmed correct as of the 2026-08-27 resolution above. No open question remains here; this was a measurement-methodology issue on our side, not a production or documentation problem.
+The primary button/link color (`#006DA3`) maps cleanly to East Bay Times' own Brand `primary` token (since 2026-10-19 the shared The Mercury News + East Bay Times mode, `color/theme/primary`) — confirmed correct as of the 2026-08-27 resolution above. No open question remains here; this was a measurement-methodology issue on our side, not a production or documentation problem.
 
 New tokens still needed:
 - Modal backdrop: `rgba(0,0,0,0.45)`

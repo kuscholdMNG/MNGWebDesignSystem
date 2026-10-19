@@ -1,0 +1,86 @@
+{
+ "Bold Coastal": {
+  "loads": "`boldcoastal.css`. Figma mode: BoldCoastal. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Modern Earthy": {
+  "loads": "`modernearthy.css`. Figma mode: ModernEarthy. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Measured Vibrant": {
+  "loads": "`measuredvibrant.css`. Figma mode: MeasuredVibrant. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Denver Post": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: DenverPost. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "The Mercury News + East Bay Times": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)` on both sites. Figma mode: The Mercury News + East Bay Times (the two sites had identical design palettes and were combined into one mode and one style guide on 2026-10-19). Production audited 2026-08-03, each site separately; both Customizers rechecked live 2026-10-19.",
+  "notes": "Why the two sites differ (checked live 2026-10-19): both Customizers set the same 7 values except `--secondary`. East Bay Times sets `#eeff41`, the stock Modern Earthy / Measured Vibrant secondary, so it was copied in by mistake, not a brand choice (Karl, 2026-10-19). On these sites `--secondary` colors the breaking-news bar, the sponsored flag and poll links.\n\n`--subsite-custom` is `#0097a7` in design since 2026-10-19 (Karl): it is the Bold Coastal value, and both sites already render it from `boldcoastal.css` (body), so there is no fix. It was blank in the old 2025 guide for these two sites."
+ },
+ "St. Paul Pioneer Press": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: St. Paul Pioneer Press. Production audited 2026-08-03.",
+  "notes": "`--subsite-custom` `#ffffff` is the sub-theme's own design value since 2026-10-19 (Karl): it overrides the Bold Coastal `#0097a7` and matches production, so there is no fix."
+ },
+ "Petaluma Argus-Courier": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: Petaluma Argus-Courier. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "The Press Democrat": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: The Press Democrat. Production audited 2026-08-03.",
+  "notes": "`--subsite-custom` `#eeeeee` is the sub-theme's own design value since 2026-10-19 (Karl): it overrides the Bold Coastal `#0097a7` and matches production, so there is no fix."
+ },
+ "The Sonoma Index-Tribune": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: The Sonoma Index-Tribune. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "The Baltimore Sun": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: none (not a Figma mode).",
+  "notes": "> Uses its documented Figma styles as is. No production comparison is tracked."
+ },
+ "Capital Gazette": {
+  "loads": "`boldcoastal.css + Customizer override (div#page)`. Figma mode: none (not a Figma mode). Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Morning Call": {
+  "loads": "`modernearthy.css + Customizer override (div#page)`. Figma mode: Morning Call. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "21C Michigan Sites (Combined)": {
+  "loads": "`modernearthy.css + Customizer override (div#page), identical on all 4 sites`. Figma mode: 21C Michigan Sites (Combined). Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Boston Herald": {
+  "loads": "`modernearthy.css + Customizer override (div#page)`. Figma mode: Boston Herald. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Daily Herald": {
+  "loads": null,
+  "notes": "New palette, added 2026-10-15 (Karl). Planned delivery: `modernearthy.css + Customizer override (div#page)`. Figma mode: Daily Herald (since 2026-10-19). The spec is that mode, the \"Daily Herald — Style Guide\" section on the Color Pallets page and `tokens/themes/daily-herald.tokens.json`.\n\nNo fixes yet: dailyherald.com still runs on Everyware (verified 2026-09-24), so there is no production column to compare. When it moves to Modern Earthy, set all ten values in the Customizer (`div#page`): `--primary-lighter` `#3b97dc`, `--primary-light` `#087abe`, `--primary` `#0072b4`, `--primary-dark` `#0066a2`, `--primary-darker` `#0e598b`, `--secondary` `#eeff41`, `--tertiary` `#ff5722` (`--near-black`, `--white` and `--nav-text` use the Modern Earthy defaults `#1a1a1a` / `#fafafa` / `#1a1a1a`). Then audit it like the other sub-themes."
+ },
+ "NEPA-PMP": {
+  "loads": "`modernearthy.css + color override on body: site-pmp style.min.css (PMP sites) or each NEPA site's own site plugin (site-citizensvoice, site-thetimes-tribune, site-wcexaminer, site-republicanherald, site-standardspeaker), identical values`. Figma mode: NEPA-PMP. Production audited 2026-10-01.",
+  "notes": "> One color sub-theme for two groups: the 19 PMP sites (shared site-pmp stylesheet) and the 5 NEPA sites (each site's own plugin stylesheet). Verified live 2026-10-01: NEPA sets the same six variables on body with identical values, and renders the same type as PMP."
+ },
+ "Chicago Tribune": {
+  "loads": "`measuredvibrant.css (Measured Vibrant values; own Figma mode)`. Figma mode: Chicago Tribune.",
+  "notes": "> No style guide of its own; audited under Measured Vibrant, whose production callouts apply."
+ },
+ "South Florida Sun Sentinel": {
+  "loads": "`measuredvibrant.css + Customizer override (div#page)`. Figma mode: South Florida Sun Sentinel. Production audited 2026-08-03.",
+  "notes": "`--subsite-custom` `#000000` is the sub-theme's own design value since 2026-10-19 (Karl); Measured Vibrant has none. It matches production, so there is no fix."
+ },
+ "Orlando Sentinel": {
+  "loads": "`measuredvibrant.css + Customizer override (div#page)`. Figma mode: Orlando Sentinel. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "GrowthSpotter": {
+  "loads": "`measuredvibrant.css + Customizer override (div#page)`. Figma mode: GrowthSpotter. Production audited 2026-08-03.",
+  "notes": ""
+ },
+ "Hartford Courant": {
+  "loads": "`measuredvibrant.css + site-tribune style.min.css + Customizer override (div#page)`. Figma mode: Hartford Courant. Production audited 2026-09-25.",
+  "notes": "> Verified live 2026-09-25: loads measuredvibrant.css + site-tribune style.min.css, with a div#page Customizer override (primary, light and dark all #2b7ea5). Production matches the Figma production column."
+ }
+}

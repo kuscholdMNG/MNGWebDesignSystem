@@ -4,7 +4,7 @@
 Inputs   tokens/core/*.tokens.json, tokens/themes/*.tokens.json (+ sites/, mng.resolver.json),
          tokens/wordpress/**/*.tokens.json
 Outputs  dist/ (overwritten; never edit by hand)
-  css/core.css, css/wordpress.css, css/themes/<key>.css, css/sites/<domain>.css (overrides, scoped to #page)
+  css/core.css, css/wordpress.css, css/themes/<key>.css, css/sites/<domain>.css (every color for one publication)
   scss/_core.scss, scss/_wordpress.scss, scss/themes/_<key>.scss, scss/sites/_<domain>.scss
   js/tokens.js, js/tokens.d.ts
   tailwind/theme.css (v4), tailwind/tailwind.preset.js (v3, ESM) and tailwind.preset.cjs (v3, CommonJS)
@@ -274,12 +274,16 @@ for k in theme_keys:
                                     ', on ' + THEMES[info['parentTheme']]['name'] if info['parentTheme'] else '', HEADER, load_note)
     write('css/themes/%s.css' % k, block(':root', css_decls(toks, list(own)), comment))
 
-for d, s in site_override.items():
-    files = [os.path.normpath(os.path.join(RES_DIR, s['overrides']))]
-    own = tokens_of(files)
+# One complete color file per publication (Karl, 2026-10-19): every color.theme.* value resolved for that site
+# (theme -> sub-theme -> site override), so a site's colors can be read or loaded on their own.
+site_pages = {d: s for d, s in SITES.items() if s.get('onMngThemes')}
+def site_color_names(d):
+    return [n for n in brand_sets[d] if n.startswith('color.theme.')]
+for d, s in site_pages.items():
     toks = brand_sets[d]
-    comment = '%s (%s): site overrides. Load css/themes/%s.css first. %s' % (s['publication'], d, s['tokenSource'], HEADER)
-    write('css/sites/%s.css' % d, block('#page', css_decls(toks, list(own)), comment))
+    comment = '%s (%s) · cluster %s · %s: every color resolved for this publication (theme, sub-theme and site overrides). %s' % (
+        s['publication'], d, s.get('cluster'), ' > '.join(THEMES[k]['name'] for k in s['chain']), HEADER)
+    write('css/sites/%s.css' % d, block(':root,\n#page', css_decls(toks, site_color_names(d)), comment))
 
 # ---------- Sass ----------
 def sass_name(n):
@@ -330,11 +334,10 @@ for k in theme_keys:
     lines, mp = sass_lines(toks, own)
     write('scss/themes/_%s.scss' % k, '// %s (%s). %s\n' % (THEMES[k]['name'], THEMES[k]['level'], HEADER) + '\n'.join(lines) +
           '\n\n$%s-theme: (\n%s\n);\n' % (PREFIX, ',\n'.join(mp)))
-for d, s in site_override.items():
-    own = list(tokens_of([os.path.normpath(os.path.join(RES_DIR, s['overrides']))]))
-    lines, mp = sass_lines(brand_sets[d], own)
-    write('scss/sites/_%s.scss' % d, '// %s (%s) site overrides; import themes/_%s.scss first. %s\n'
-          % (s['publication'], d, s['tokenSource'], HEADER) + '\n'.join(lines))
+for d, s in site_pages.items():
+    lines, mp = sass_lines(brand_sets[d], site_color_names(d))
+    write('scss/sites/_%s.scss' % d, '// %s (%s) · cluster %s: every color resolved for this publication. %s\n'
+          % (s['publication'], d, s.get('cluster'), HEADER) + '\n'.join(lines))
 
 # ---------- flat JSON ----------
 def flat(toks, names, resolve_refs=True):
@@ -372,9 +375,12 @@ for d, s in sorted(SITES.items()):
     manifest[d] = {'publication': s['publication'], 'cluster': s.get('cluster'), 'onMngThemes': True, 'theme': s['chain'][0],
                    'subTheme': s['tokenSource'] if len(s['chain']) > 1 else None,
                    'css': ['css/core.css', 'css/themes/%s.css' % s['tokenSource'], 'css/wordpress.css']
-                          + (['css/sites/%s.css' % d] if s.get('overrides') else []),
+                          + ['css/sites/%s.css' % d],
                    'tokens': flat(brand_sets[d], [n for n in brand_sets[d] if n.startswith('color.theme.')])}
 write('json/sites.json', dump(manifest))
+for d, s in site_pages.items():
+    write('json/sites/%s.json' % d, dump({'publication': s['publication'], 'domain': d, 'cluster': s.get('cluster'),
+                                          **flat(brand_sets[d], site_color_names(d))}))
 
 # ---------- JS / TS ----------
 def nested(toks, names):
@@ -587,16 +593,16 @@ Rebuild: `python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-t
 
 | Folder | Use |
 |---|---|
-| `css/` | `core.css` (`:root`), `themes/<key>.css` (one per theme, sub-theme and product; a sub-theme file is complete on its own), `wordpress.css` (editorial type + WordPress grid breakpoints, plus one class per editorial style), `sites/<domain>.css` (site overrides, scoped to `#page`). Load order: core, theme, wordpress, site. |
+| `css/` | `core.css` (`:root`), `themes/<key>.css` (one per theme, sub-theme and product; a sub-theme file is complete on its own), `wordpress.css` (editorial type + WordPress grid breakpoints, plus one class per editorial style), `sites/<domain>.css` (one per publication: every color resolved for that site, on `:root` and `#page`). Load order: core, theme, wordpress, site. |
 | `scss/` | The same values as Sass variables and maps (`_core.scss`, `themes/_<key>.scss`, `_wordpress.scss`, `sites/_<domain>.scss`). |
 | `js/` | `tokens.js` (ES module: `core`, `wordpress`, `themes`, `sites`, `cssVars`) and `tokens.d.ts`. |
 | `tailwind/` | `theme.css` for Tailwind v4 (`@theme`); `tailwind.preset.js` (ESM) / `.cjs` for Tailwind v3. |
 | `wordpress/` | `<key>.theme.json`: theme.json v3 fragments (palette, font families and sizes, spacing, custom values). |
-| `json/` | Flat `name -> value` (hex, rgba, px, rem): `core.json`, `wordpress.json`, `themes/<key>.json` (everything resolved for that theme), `sites.json` (each publication's theme, CSS files and resolved colors). |
+| `json/` | Flat `name -> value` (hex, rgba, px, rem): `core.json`, `wordpress.json`, `themes/<key>.json` (everything resolved for that theme), `sites/<domain>.json` (one per publication: its resolved colors), `sites.json` (all publications: theme, CSS files and resolved colors). |
 
 CSS variables are `--mng-` + the token path (`--mng-color-theme-primary`, `--mng-font-size-16-5`, `--mng-spacing-200`).
 Sizes are px, with a `-rem` twin (16px base). Colors are hex, with an `-rgb` twin (`0 117 128`) for `rgb(var(...) / 50%%)`.
 """ % HEADER)
 
-print('dist/ built: %d core tokens, %d wordpress tokens, %d themes, %d site override files, %d publications'
-      % (len(core_names), len(wp_names), len(theme_keys), len(site_override), len(SITES)))
+print('dist/ built: %d core tokens, %d wordpress tokens, %d themes, %d per-site color files, %d publications'
+      % (len(core_names), len(wp_names), len(theme_keys), len(site_pages), len(SITES)))

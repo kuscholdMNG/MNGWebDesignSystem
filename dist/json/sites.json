@@ -8,7 +8,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/advocate-news.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -42,7 +43,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/akronnewsreporter.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -69,14 +71,15 @@
   },
   "baltimoresun.com": {
     "publication": "The Baltimore Sun",
-    "cluster": "Tribune",
+    "cluster": "Baltimore",
     "onMngThemes": true,
     "theme": "bold-coastal",
     "subTheme": "the-baltimore-sun",
     "css": [
       "css/core.css",
       "css/themes/the-baltimore-sun.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/baltimoresun.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#373751",
@@ -112,7 +115,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/bocopreps.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -146,7 +150,8 @@
     "css": [
       "css/core.css",
       "css/themes/boston-herald.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/bostonherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3c81c7",
@@ -217,7 +222,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/brushnewstribune.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -251,7 +257,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/buffzone.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -285,7 +292,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/burlington-record.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -319,7 +327,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/canoncitydailyrecord.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -346,14 +355,15 @@
   },
   "capitalgazette.com": {
     "publication": "Capital Gazette",
-    "cluster": "Tribune",
+    "cluster": "Baltimore",
     "onMngThemes": true,
     "theme": "bold-coastal",
     "subTheme": "capital-gazette",
     "css": [
       "css/core.css",
       "css/themes/capital-gazette.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/capitalgazette.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3c6f95",
@@ -428,7 +438,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/chicoer.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -462,7 +473,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/citizensvoice.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -496,7 +508,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/coloradodaily.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -567,7 +580,8 @@
     "css": [
       "css/core.css",
       "css/themes/hartford-courant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/courant.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#5796bd",
@@ -640,7 +654,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailybulletin.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -674,7 +689,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailycamera.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -708,7 +724,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailydemocrat.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -742,7 +759,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailyfreeman.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -769,14 +787,15 @@
   },
   "dailyherald.com": {
     "publication": "Daily Herald",
-    "cluster": "Daily Herald",
+    "cluster": "Tribune",
     "onMngThemes": true,
     "theme": "modern-earthy",
     "subTheme": "daily-herald",
     "css": [
       "css/core.css",
       "css/themes/daily-herald.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailyherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3b97dc",
@@ -810,7 +829,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailylocal.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -844,7 +864,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/dailynews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -917,7 +938,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/delcotimes.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -951,7 +973,8 @@
     "css": [
       "css/core.css",
       "css/themes/denverpost.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/denverpost.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#c81632",
@@ -983,11 +1006,12 @@
     "cluster": "BANG",
     "onMngThemes": true,
     "theme": "bold-coastal",
-    "subTheme": "east-bay-times",
+    "subTheme": "the-mercury-news-east-bay-times",
     "css": [
       "css/core.css",
-      "css/themes/east-bay-times.css",
-      "css/wordpress.css"
+      "css/themes/the-mercury-news-east-bay-times.css",
+      "css/wordpress.css",
+      "css/sites/eastbaytimes.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#a0d0ed",
@@ -1023,7 +1047,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/eptrail.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1057,7 +1082,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/excelsiorcalifornia.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1091,7 +1117,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/fortmorgantimes.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1160,7 +1187,8 @@
     "css": [
       "css/core.css",
       "css/themes/growthspotter.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/growthspotter.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#529950",
@@ -1194,7 +1222,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/journal-advocate.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1228,7 +1257,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/julesburgadvocate.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1262,7 +1292,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/lamarledger.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1296,7 +1327,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/lowellsun.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1330,7 +1362,8 @@
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/macombdaily.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3e7cb2",
@@ -1401,7 +1434,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/marinij.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1435,7 +1469,8 @@
     "css": [
       "css/core.css",
       "css/themes/morning-call.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/mcall.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#5399c4",
@@ -1469,7 +1504,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/mendocinobeacon.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1499,11 +1535,12 @@
     "cluster": "BANG",
     "onMngThemes": true,
     "theme": "bold-coastal",
-    "subTheme": "the-mercury-news",
+    "subTheme": "the-mercury-news-east-bay-times",
     "css": [
       "css/core.css",
-      "css/themes/the-mercury-news.css",
-      "css/wordpress.css"
+      "css/themes/the-mercury-news-east-bay-times.css",
+      "css/wordpress.css",
+      "css/sites/mercurynews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#a0d0ed",
@@ -1539,7 +1576,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/montereyherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1573,7 +1611,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/morningjournal.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1607,7 +1646,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/nashobavalleyvoice.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1641,7 +1681,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/news-herald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1714,7 +1755,8 @@
     "css": [
       "css/core.css",
       "css/themes/bold-coastal.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/ocregister.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#1799a5",
@@ -1750,7 +1792,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/oneidadispatch.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1784,7 +1827,8 @@
     "css": [
       "css/core.css",
       "css/themes/orlando-sentinel.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/orlandosentinel.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#5c95dd",
@@ -1818,7 +1862,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/orovillemr.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1852,7 +1897,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/paradisepost.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -1886,7 +1932,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pasadenastarnews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -1920,7 +1967,8 @@
     "css": [
       "css/core.css",
       "css/themes/petaluma-argus-courier.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/petalumanews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#a8681a",
@@ -1995,7 +2043,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pottsmerc.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2029,7 +2078,8 @@
     "css": [
       "css/core.css",
       "css/themes/the-press-democrat.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pressdemocrat.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#d10f14",
@@ -2052,8 +2102,8 @@
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
       "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
-      "color.theme.subsite-custom": "#0097a7",
-      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
+      "color.theme.subsite-custom": "#eeeeee",
+      "color.theme.subsite-custom.rgba": "rgba(238, 238, 238, 1)"
     }
   },
   "pressenterprise.com": {
@@ -2065,7 +2115,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/pressenterprise.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2177,7 +2228,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/record-bee.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2211,7 +2263,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/redbluffdailynews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2245,7 +2298,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/redlandsdailyfacts.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2279,7 +2333,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/reporterherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2313,7 +2368,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/republicanherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2386,7 +2442,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/santacruzsentinel.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2420,7 +2477,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/saratogian.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2454,7 +2512,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sbsun.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2488,7 +2547,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sentinelandenterprise.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2522,7 +2582,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sgvtribune.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2556,7 +2617,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/siliconvalley.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -2590,7 +2652,8 @@
     "css": [
       "css/core.css",
       "css/themes/the-press-democrat.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sonomacountygazette.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#d10f14",
@@ -2613,8 +2676,8 @@
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
       "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
-      "color.theme.subsite-custom": "#0097a7",
-      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
+      "color.theme.subsite-custom": "#eeeeee",
+      "color.theme.subsite-custom.rgba": "rgba(238, 238, 238, 1)"
     }
   },
   "sonomamag.com": {
@@ -2631,7 +2694,8 @@
     "css": [
       "css/core.css",
       "css/themes/the-sonoma-index-tribune.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sonomanews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#149de6",
@@ -2667,7 +2731,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/southplattesentinel.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2701,7 +2766,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/standardspeaker.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2735,7 +2801,8 @@
     "css": [
       "css/core.css",
       "css/themes/south-florida-sun-sentinel.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/sun-sentinel.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#4a92af",
@@ -2757,7 +2824,9 @@
       "color.theme.white": "#fbfbfb",
       "color.theme.white.rgba": "rgba(251, 251, 251, 1)",
       "color.theme.nav-text": "#1f1e1c",
-      "color.theme.nav-text.rgba": "rgba(31, 30, 28, 1)"
+      "color.theme.nav-text.rgba": "rgba(31, 30, 28, 1)",
+      "color.theme.subsite-custom": "#000000",
+      "color.theme.subsite-custom.rgba": "rgba(0, 0, 0, 1)"
     }
   },
   "themorningsun.com": {
@@ -2769,7 +2838,8 @@
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/themorningsun.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3e7cb2",
@@ -2803,7 +2873,8 @@
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/thenewsherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3e7cb2",
@@ -2837,7 +2908,8 @@
     "css": [
       "css/core.css",
       "css/themes/21c-michigan-sites-combined.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/theoaklandpress.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#3e7cb2",
@@ -2871,7 +2943,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/thereporter.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2944,7 +3017,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/thetimes-tribune.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -2978,7 +3052,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/times-standard.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -3012,7 +3087,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/timescall.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -3046,7 +3122,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/timesherald.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -3080,7 +3157,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/timesheraldonline.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -3153,7 +3231,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/troyrecord.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -3180,14 +3259,15 @@
   },
   "twincities.com": {
     "publication": "St. Paul Pioneer Press",
-    "cluster": "Twin Cities",
+    "cluster": "St. Paul",
     "onMngThemes": true,
     "theme": "bold-coastal",
     "subTheme": "st-paul-pioneer-press",
     "css": [
       "css/core.css",
       "css/themes/st-paul-pioneer-press.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/twincities.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#0187e0",
@@ -3210,8 +3290,8 @@
       "color.theme.white.rgba": "rgba(255, 255, 255, 1)",
       "color.theme.nav-text": "#0a0908",
       "color.theme.nav-text.rgba": "rgba(10, 9, 8, 1)",
-      "color.theme.subsite-custom": "#0097a7",
-      "color.theme.subsite-custom.rgba": "rgba(0, 151, 167, 1)"
+      "color.theme.subsite-custom": "#ffffff",
+      "color.theme.subsite-custom.rgba": "rgba(255, 255, 255, 1)"
     }
   },
   "ukiahdailyjournal.com": {
@@ -3223,7 +3303,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/ukiahdailyjournal.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -3257,7 +3338,8 @@
     "css": [
       "css/core.css",
       "css/themes/nepa-pmp.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/wcexaminer.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",
@@ -3291,7 +3373,8 @@
     "css": [
       "css/core.css",
       "css/themes/modern-earthy.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/whittierdailynews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#fe521e",
@@ -3325,7 +3408,8 @@
     "css": [
       "css/core.css",
       "css/themes/measured-vibrant.css",
-      "css/wordpress.css"
+      "css/wordpress.css",
+      "css/sites/willitsnews.com.css"
     ],
     "tokens": {
       "color.theme.primary-lighter": "#717fd1",

@@ -157,7 +157,7 @@
      }
     }
    },
-   "east-bay-times": {
+   "the-mercury-news-east-bay-times": {
     "primary-lighter": {"$value": "#a0d0ed"},
     "primary-light": {"$value": "#007ab8"},
     "primary": {"$value": "#006da3"},
@@ -168,49 +168,22 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
+    "subsite-custom": {"$value": "#0097a7"},
     "$extensions": {
      "com.mng": {
-      "name": "East Bay Times",
+      "name": "The Mercury News + East Bay Times",
       "level": "sub-theme",
       "parentTheme": "Bold Coastal",
       "loads": "boldcoastal.css + Customizer override (div#page)",
       "inFigma": true,
-      "figmaMode": "East Bay Times",
-      "productionAudit": "2026-08-03",
-      "mismatchCount": 2,
-      "mismatches": [
-       { "token": "secondary", "design": "#ffc518", "production": "#eeff41", "productionSource": "", "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page).", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "subsite-custom", "design": "undocumented", "production": "#0097a7", "productionSource": "", "fix": "Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it.", "scope": "sub-theme", "figmaCallout": true }
-      ],
-      "sites": [ "eastbaytimes.com" ]
-     }
-    }
-   },
-   "the-mercury-news": {
-    "primary-lighter": {"$value": "#a0d0ed"},
-    "primary-light": {"$value": "#007ab8"},
-    "primary": {"$value": "#006da3"},
-    "primary-dark": {"$value": "#006394"},
-    "primary-darker": {"$value": "#00527a"},
-    "secondary": {"$value": "#ffc518"},
-    "tertiary": {"$value": "#cd2709"},
-    "near-black": {"$value": "#0a0908"},
-    "white": {"$value": "#ffffff"},
-    "nav-text": {"$value": "#0a0908"},
-    "$extensions": {
-     "com.mng": {
-      "name": "The Mercury News",
-      "level": "sub-theme",
-      "parentTheme": "Bold Coastal",
-      "loads": "boldcoastal.css + Customizer override (div#page)",
-      "inFigma": true,
-      "figmaMode": "The Mercury News",
+      "figmaMode": "The Mercury News + East Bay Times",
       "productionAudit": "2026-08-03",
       "mismatchCount": 1,
       "mismatches": [
-       { "token": "subsite-custom", "design": "undocumented", "production": "#0097a7", "productionSource": "", "fix": "Production sets --subsite-custom: #0097a7, but design has no value. Design to confirm: document it, or engineering removes it.", "scope": "sub-theme", "figmaCallout": true }
+       { "token": "secondary", "design": "#ffc518", "production": "#eeff41", "productionSource": "Customizer (div#page)", "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches. Rechecked live 2026-10-19: the East Bay Times Customizer sets #eeff41 explicitly, the stock Modern Earthy / Measured Vibrant secondary, copied in by mistake (Karl, 2026-10-19).", "scope": "site", "sites": [ "eastbaytimes.com" ], "figmaCallout": true }
       ],
-      "sites": [ "mercurynews.com" ]
+      "sites": [ "mercurynews.com", "eastbaytimes.com" ],
+      "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only. subsite-custom #0097a7 documented 2026-10-19 (Karl): the Bold Coastal value, which both sites already render from boldcoastal.css."
      }
     }
    },
@@ -225,7 +198,7 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#0097a7"},
+    "subsite-custom": {"$value": "#ffffff"},
     "$extensions": {
      "com.mng": {
       "name": "St. Paul Pioneer Press",
@@ -235,13 +208,12 @@
       "inFigma": true,
       "figmaMode": "St. Paul Pioneer Press",
       "productionAudit": "2026-08-03",
-      "mismatchCount": 5,
+      "mismatchCount": 4,
       "mismatches": [
        { "token": "primary-lighter", "design": "#0187e0", "production": "MISSING", "productionSource": "not set", "fix": "Define --primary-lighter: #0187e0 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
        { "token": "primary-darker", "design": "#005892", "production": "MISSING", "productionSource": "not set", "fix": "Define --primary-darker: #005892 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
        { "token": "secondary", "design": "#ffea00", "production": "MISSING", "productionSource": "not set", "fix": "Define --secondary: #ffea00 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "tertiary", "design": "#f4a700", "production": "MISSING", "productionSource": "not set", "fix": "Define --tertiary: #f4a700 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "subsite-custom", "design": "#0097a7", "production": "#ffffff", "productionSource": "div#page override", "fix": "Change --subsite-custom from #ffffff to #0097a7 (Customizer, div#page).", "scope": "sub-theme", "figmaCallout": true }
+       { "token": "tertiary", "design": "#f4a700", "production": "MISSING", "productionSource": "not set", "fix": "Define --tertiary: #f4a700 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true }
       ],
       "sites": [ "twincities.com" ]
      }
@@ -286,6 +258,7 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
+    "subsite-custom": {"$value": "#eeeeee"},
     "$extensions": {
      "com.mng": {
       "name": "The Press Democrat",
@@ -295,11 +268,10 @@
       "inFigma": true,
       "figmaMode": "The Press Democrat",
       "productionAudit": "2026-08-03",
-      "mismatchCount": 3,
+      "mismatchCount": 2,
       "mismatches": [
        { "token": "secondary", "design": "#ffea00", "production": "MISSING", "productionSource": "not set", "fix": "Define --secondary: #ffea00 (Customizer, div#page). It isn't set today.", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "tertiary", "design": "#006fb7", "production": "#d10f14", "productionSource": "div#page override", "fix": "Change --tertiary from #d10f14 to #006fb7 (Customizer, div#page).", "scope": "sub-theme", "figmaCallout": true },
-       { "token": "subsite-custom", "design": "undocumented", "production": "#eeeeee", "productionSource": "div#page override", "fix": "Production sets --subsite-custom: #eeeeee, but design has no value. Design to confirm: document it, or engineering removes it.", "scope": "sub-theme", "figmaCallout": true }
+       { "token": "tertiary", "design": "#006fb7", "production": "#d10f14", "productionSource": "div#page override", "fix": "Change --tertiary from #d10f14 to #006fb7 (Customizer, div#page).", "scope": "sub-theme", "figmaCallout": true }
       ],
       "sites": [ "pressdemocrat.com", "sonomacountygazette.com" ]
      }
@@ -503,12 +475,12 @@
       "level": "sub-theme",
       "parentTheme": "Modern Earthy",
       "loads": "modernearthy.css + Customizer override (div#page), planned",
-      "inFigma": false,
-      "figmaMode": null,
+      "inFigma": true,
+      "figmaMode": "Daily Herald",
       "mismatchCount": 0,
       "mismatches": [],
       "sites": [ "dailyherald.com" ],
-      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Not in the Figma Colors collection (20-mode limit); documented on the Color Pallets page. Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
+      "note": "New palette 2026-10-15 (Karl): primary #0072b4 is given; light, lighter, dark and darker are extrapolated with the OKLCH steps of the other blue Modern Earthy sub-themes (Boston Herald, Morning Call) and St. Paul Pioneer Press; secondary and tertiary match Boston Herald and Morning Call; near-black, white and nav-text are the Modern Earthy defaults. Figma mode Daily Herald since 2026-10-19 (it took the East Bay Times mode slot when East Bay Times and The Mercury News were combined). Daily Herald isn't on MNG themes in production yet (Everyware, verified 2026-09-24), so there is no production audit."
      }
     }
    },
@@ -583,6 +555,7 @@
     "near-black": {"$value": "#1f1e1c"},
     "white": {"$value": "#fbfbfb"},
     "nav-text": {"$value": "#1f1e1c"},
+    "subsite-custom": {"$value": "#000000"},
     "$extensions": {
      "com.mng": {
       "name": "South Florida Sun Sentinel",
@@ -739,7 +712,7 @@
     "com.mng": {
      "publication": "Daily Herald",
      "domain": "dailyherald.com",
-     "cluster": "Daily Herald",
+     "cluster": "Tribune",
      "theme": "Modern Earthy",
      "subTheme": "Daily Herald",
      "tokenSource": "color.theme.daily-herald",
@@ -1199,50 +1172,52 @@
    }
   },
   "eastbaytimes-com": {
-   "primary-lighter": {"$value": "{color.theme.east-bay-times.primary-lighter}"},
-   "primary-light": {"$value": "{color.theme.east-bay-times.primary-light}"},
-   "primary": {"$value": "{color.theme.east-bay-times.primary}"},
-   "primary-dark": {"$value": "{color.theme.east-bay-times.primary-dark}"},
-   "primary-darker": {"$value": "{color.theme.east-bay-times.primary-darker}"},
-   "secondary": {"$value": "{color.theme.east-bay-times.secondary}"},
-   "tertiary": {"$value": "{color.theme.east-bay-times.tertiary}"},
-   "near-black": {"$value": "{color.theme.east-bay-times.near-black}"},
-   "white": {"$value": "{color.theme.east-bay-times.white}"},
-   "nav-text": {"$value": "{color.theme.east-bay-times.nav-text}"},
+   "primary-lighter": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-lighter}"},
+   "primary-light": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-light}"},
+   "primary": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary}"},
+   "primary-dark": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-dark}"},
+   "primary-darker": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-darker}"},
+   "secondary": {"$value": "{color.theme.the-mercury-news-east-bay-times.secondary}"},
+   "tertiary": {"$value": "{color.theme.the-mercury-news-east-bay-times.tertiary}"},
+   "near-black": {"$value": "{color.theme.the-mercury-news-east-bay-times.near-black}"},
+   "white": {"$value": "{color.theme.the-mercury-news-east-bay-times.white}"},
+   "nav-text": {"$value": "{color.theme.the-mercury-news-east-bay-times.nav-text}"},
+   "subsite-custom": {"$value": "{color.theme.the-mercury-news-east-bay-times.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "East Bay Times",
      "domain": "eastbaytimes.com",
      "cluster": "BANG",
      "theme": "Bold Coastal",
-     "subTheme": "East Bay Times",
-     "tokenSource": "color.theme.east-bay-times",
-     "mismatchCount": 2,
-     "fixesFrom": "color.theme.east-bay-times"
+     "subTheme": "The Mercury News + East Bay Times",
+     "tokenSource": "color.theme.the-mercury-news-east-bay-times",
+     "mismatchCount": 1,
+     "fixesFrom": "color.theme.the-mercury-news-east-bay-times"
     }
    }
   },
   "mercurynews-com": {
-   "primary-lighter": {"$value": "{color.theme.the-mercury-news.primary-lighter}"},
-   "primary-light": {"$value": "{color.theme.the-mercury-news.primary-light}"},
-   "primary": {"$value": "{color.theme.the-mercury-news.primary}"},
-   "primary-dark": {"$value": "{color.theme.the-mercury-news.primary-dark}"},
-   "primary-darker": {"$value": "{color.theme.the-mercury-news.primary-darker}"},
-   "secondary": {"$value": "{color.theme.the-mercury-news.secondary}"},
-   "tertiary": {"$value": "{color.theme.the-mercury-news.tertiary}"},
-   "near-black": {"$value": "{color.theme.the-mercury-news.near-black}"},
-   "white": {"$value": "{color.theme.the-mercury-news.white}"},
-   "nav-text": {"$value": "{color.theme.the-mercury-news.nav-text}"},
+   "primary-lighter": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-lighter}"},
+   "primary-light": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-light}"},
+   "primary": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary}"},
+   "primary-dark": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-dark}"},
+   "primary-darker": {"$value": "{color.theme.the-mercury-news-east-bay-times.primary-darker}"},
+   "secondary": {"$value": "{color.theme.the-mercury-news-east-bay-times.secondary}"},
+   "tertiary": {"$value": "{color.theme.the-mercury-news-east-bay-times.tertiary}"},
+   "near-black": {"$value": "{color.theme.the-mercury-news-east-bay-times.near-black}"},
+   "white": {"$value": "{color.theme.the-mercury-news-east-bay-times.white}"},
+   "nav-text": {"$value": "{color.theme.the-mercury-news-east-bay-times.nav-text}"},
+   "subsite-custom": {"$value": "{color.theme.the-mercury-news-east-bay-times.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "The Mercury News",
      "domain": "mercurynews.com",
      "cluster": "BANG",
      "theme": "Bold Coastal",
-     "subTheme": "The Mercury News",
-     "tokenSource": "color.theme.the-mercury-news",
-     "mismatchCount": 1,
-     "fixesFrom": "color.theme.the-mercury-news"
+     "subTheme": "The Mercury News + East Bay Times",
+     "tokenSource": "color.theme.the-mercury-news-east-bay-times",
+     "mismatchCount": 0,
+     "fixesFrom": "color.theme.the-mercury-news-east-bay-times"
     }
    }
   },
@@ -2668,6 +2643,7 @@
    "near-black": {"$value": "{color.theme.the-press-democrat.near-black}"},
    "white": {"$value": "{color.theme.the-press-democrat.white}"},
    "nav-text": {"$value": "{color.theme.the-press-democrat.nav-text}"},
+   "subsite-custom": {"$value": "{color.theme.the-press-democrat.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "The Press Democrat",
@@ -2676,7 +2652,7 @@
      "theme": "Bold Coastal",
      "subTheme": "The Press Democrat",
      "tokenSource": "color.theme.the-press-democrat",
-     "mismatchCount": 3,
+     "mismatchCount": 2,
      "fixesFrom": "color.theme.the-press-democrat"
     }
    }
@@ -2716,6 +2692,7 @@
    "near-black": {"$value": "{color.theme.the-press-democrat.near-black}"},
    "white": {"$value": "{color.theme.the-press-democrat.white}"},
    "nav-text": {"$value": "{color.theme.the-press-democrat.nav-text}"},
+   "subsite-custom": {"$value": "{color.theme.the-press-democrat.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "Sonoma County Gazette",
@@ -2724,7 +2701,7 @@
      "theme": "Bold Coastal",
      "subTheme": "The Press Democrat",
      "tokenSource": "color.theme.the-press-democrat",
-     "mismatchCount": 3,
+     "mismatchCount": 2,
      "fixesFrom": "color.theme.the-press-democrat",
      "note": "Uses The Press Democrat colors; no style guide of its own."
     }
@@ -2757,11 +2734,11 @@
     "com.mng": {
      "publication": "St. Paul Pioneer Press",
      "domain": "twincities.com",
-     "cluster": "Twin Cities",
+     "cluster": "St. Paul",
      "theme": "Bold Coastal",
      "subTheme": "St. Paul Pioneer Press",
      "tokenSource": "color.theme.st-paul-pioneer-press",
-     "mismatchCount": 5,
+     "mismatchCount": 4,
      "fixesFrom": "color.theme.st-paul-pioneer-press"
     }
    }
@@ -2808,7 +2785,7 @@
     "com.mng": {
      "publication": "Capital Gazette",
      "domain": "capitalgazette.com",
-     "cluster": "Tribune",
+     "cluster": "Baltimore",
      "theme": "Bold Coastal",
      "subTheme": "Capital Gazette",
      "tokenSource": "color.theme.capital-gazette",
@@ -2935,7 +2912,7 @@
     "com.mng": {
      "publication": "The Baltimore Sun",
      "domain": "baltimoresun.com",
-     "cluster": "Tribune",
+     "cluster": "Baltimore",
      "theme": "Bold Coastal",
      "subTheme": "The Baltimore Sun",
      "tokenSource": "color.theme.the-baltimore-sun",
@@ -3004,6 +2981,7 @@
    "near-black": {"$value": "{color.theme.south-florida-sun-sentinel.near-black}"},
    "white": {"$value": "{color.theme.south-florida-sun-sentinel.white}"},
    "nav-text": {"$value": "{color.theme.south-florida-sun-sentinel.nav-text}"},
+   "subsite-custom": {"$value": "{color.theme.south-florida-sun-sentinel.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "South Florida Sun Sentinel",
