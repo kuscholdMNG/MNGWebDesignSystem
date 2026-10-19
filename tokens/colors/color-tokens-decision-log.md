@@ -177,7 +177,7 @@ Carried over from `CRUX-Gap-Analysis.md`, which was retired on 2026-09-24. All o
 
 ## 11. Daily Herald sub-theme (2026-10-15)
 
-1. **Daily Herald gets its own Modern Earthy sub-theme** (Karl), placed in the Modern Earthy row of the Color Pallets page next to NEPA-PMP. Key `daily-herald`; dailyherald.com now resolves Modern Earthy → Daily Herald instead of "not on MNG themes".
+1. **Daily Herald gets its own Modern Earthy sub-theme** (Karl; palette approved by the other team and merged 2026-10-19), placed in the Modern Earthy row of the Color Pallets page next to NEPA-PMP. Key `daily-herald`; dailyherald.com now resolves Modern Earthy → Daily Herald instead of "not on MNG themes".
 2. **Primary `#0072B4` is given; the rest was extrapolated and approved by Karl.** The light/dark steps reuse the OKLCH lightness and chroma steps of the other blue sub-themes (Boston Herald, Morning Call, St. Paul Pioneer Press), with the hue held at the primary's:
 
    | Token | Hex | Step from primary (OKLCH) | Text on it |
