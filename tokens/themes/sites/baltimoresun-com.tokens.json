@@ -1,0 +1,35 @@
+{
+  "$description": "The Baltimore Sun (baltimoresun.com) site overrides on top of The Baltimore Sun. Applied inside #page. Generated; never edit by hand.",
+  "$extensions": {
+    "com.mng": {
+      "publication": "The Baltimore Sun",
+      "domain": "baltimoresun.com",
+      "exceptions": []
+    }
+  },
+  "color": {
+    "$type": "color",
+    "theme": {
+      "subsite-custom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1098,
+            0.1451,
+            0.3176
+          ],
+          "alpha": 1,
+          "hex": "#1c2551"
+        },
+        "$description": "Site override (sub-site color set for this site only).",
+        "$extensions": {
+          "com.mng": {
+            "rgba": "rgba(28, 37, 81, 1)",
+            "figma": null,
+            "siteOverride": true
+          }
+        }
+      }
+    }
+  }
+}

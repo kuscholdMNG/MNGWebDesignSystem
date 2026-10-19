@@ -1,0 +1,35 @@
+{
+  "$description": "Capital Gazette (capitalgazette.com) site overrides on top of Capital Gazette. Applied inside #page. Generated; never edit by hand.",
+  "$extensions": {
+    "com.mng": {
+      "publication": "Capital Gazette",
+      "domain": "capitalgazette.com",
+      "exceptions": []
+    }
+  },
+  "color": {
+    "$type": "color",
+    "theme": {
+      "subsite-custom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0.5922,
+            0.6549
+          ],
+          "alpha": 1,
+          "hex": "#0097a7"
+        },
+        "$description": "Site override (sub-site color set for this site only).",
+        "$extensions": {
+          "com.mng": {
+            "rgba": "rgba(0, 151, 167, 1)",
+            "figma": null,
+            "siteOverride": true
+          }
+        }
+      }
+    }
+  }
+}

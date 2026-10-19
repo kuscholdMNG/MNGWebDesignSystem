@@ -47,7 +47,6 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#0097a7"},
     "$extensions": {
      "com.mng": {
       "name": "Bold Coastal",
@@ -137,7 +136,6 @@
     "near-black": {"$value": "#141414"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#141414"},
-    "subsite-custom": {"$value": "#000000"},
     "$extensions": {
      "com.mng": {
       "name": "Denver Post",
@@ -168,7 +166,6 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#0097a7"},
     "$extensions": {
      "com.mng": {
       "name": "The Mercury News + East Bay Times",
@@ -178,12 +175,13 @@
       "inFigma": true,
       "figmaMode": "The Mercury News + East Bay Times",
       "productionAudit": "2026-08-03",
-      "mismatchCount": 1,
+      "mismatchCount": 2,
       "mismatches": [
-       { "token": "secondary", "design": "#ffc518", "production": "#eeff41", "productionSource": "Customizer (div#page)", "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches. Rechecked live 2026-10-19: the East Bay Times Customizer sets #eeff41 explicitly, the stock Modern Earthy / Measured Vibrant secondary, copied in by mistake (Karl, 2026-10-19).", "scope": "site", "sites": [ "eastbaytimes.com" ], "figmaCallout": true }
+       { "token": "secondary", "design": "#ffc518", "production": "#eeff41", "productionSource": "Customizer (div#page)", "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches. Rechecked live 2026-10-19: the East Bay Times Customizer sets #eeff41 explicitly, the stock Modern Earthy / Measured Vibrant secondary, copied in by mistake (Karl, 2026-10-19).", "scope": "site", "sites": [ "eastbaytimes.com" ], "figmaCallout": true },
+       { "token": "subsite-custom", "design": "undocumented", "production": "#0097a7", "productionSource": "boldcoastal.css (body), inherited from the theme", "fix": "Production renders --subsite-custom: #0097a7, inherited from boldcoastal.css; neither site sets one. Sub-site colors are site-specific and never inherited (Karl, 2026-10-19), so design has no value for these sites: engineering removes the theme-level value, or design documents a value for each site.", "scope": "sub-theme", "figmaCallout": true }
       ],
       "sites": [ "mercurynews.com", "eastbaytimes.com" ],
-      "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only. subsite-custom #0097a7 documented 2026-10-19 (Karl): the Bold Coastal value, which both sites already render from boldcoastal.css."
+      "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only."
      }
     }
    },
@@ -198,7 +196,6 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#0097a7"},
     "$extensions": {
      "com.mng": {
       "name": "St. Paul Pioneer Press",
@@ -317,7 +314,6 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#1c2551"},
     "$extensions": {
      "com.mng": {
       "name": "The Baltimore Sun",
@@ -345,7 +341,6 @@
     "near-black": {"$value": "#0a0908"},
     "white": {"$value": "#ffffff"},
     "nav-text": {"$value": "#0a0908"},
-    "subsite-custom": {"$value": "#0097a7"},
     "$extensions": {
      "com.mng": {
       "name": "Capital Gazette",
@@ -1182,7 +1177,6 @@
    "near-black": {"$value": "{color.theme.the-mercury-news-east-bay-times.near-black}"},
    "white": {"$value": "{color.theme.the-mercury-news-east-bay-times.white}"},
    "nav-text": {"$value": "{color.theme.the-mercury-news-east-bay-times.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.the-mercury-news-east-bay-times.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "East Bay Times",
@@ -1191,7 +1185,7 @@
      "theme": "Bold Coastal",
      "subTheme": "The Mercury News + East Bay Times",
      "tokenSource": "color.theme.the-mercury-news-east-bay-times",
-     "mismatchCount": 1,
+     "mismatchCount": 2,
      "fixesFrom": "color.theme.the-mercury-news-east-bay-times"
     }
    }
@@ -1207,7 +1201,6 @@
    "near-black": {"$value": "{color.theme.the-mercury-news-east-bay-times.near-black}"},
    "white": {"$value": "{color.theme.the-mercury-news-east-bay-times.white}"},
    "nav-text": {"$value": "{color.theme.the-mercury-news-east-bay-times.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.the-mercury-news-east-bay-times.subsite-custom}"},
    "$extensions": {
     "com.mng": {
      "publication": "The Mercury News",
@@ -1216,7 +1209,7 @@
      "theme": "Bold Coastal",
      "subTheme": "The Mercury News + East Bay Times",
      "tokenSource": "color.theme.the-mercury-news-east-bay-times",
-     "mismatchCount": 0,
+     "mismatchCount": 1,
      "fixesFrom": "color.theme.the-mercury-news-east-bay-times"
     }
    }
@@ -1376,7 +1369,7 @@
    "near-black": {"$value": "{color.theme.denverpost.near-black}"},
    "white": {"$value": "{color.theme.denverpost.white}"},
    "nav-text": {"$value": "{color.theme.denverpost.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.denverpost.subsite-custom}"},
+   "subsite-custom": {"$value": "#000000"},
    "$extensions": {
     "com.mng": {
      "publication": "The Denver Post",
@@ -2384,7 +2377,7 @@
    "near-black": {"$value": "{color.theme.bold-coastal.near-black}"},
    "white": {"$value": "{color.theme.bold-coastal.white}"},
    "nav-text": {"$value": "{color.theme.bold-coastal.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.bold-coastal.subsite-custom}"},
+   "subsite-custom": {"$value": "#0097a7"},
    "$extensions": {
     "com.mng": {
      "publication": "Orange County Register",
@@ -2727,7 +2720,7 @@
    "near-black": {"$value": "{color.theme.st-paul-pioneer-press.near-black}"},
    "white": {"$value": "{color.theme.st-paul-pioneer-press.white}"},
    "nav-text": {"$value": "{color.theme.st-paul-pioneer-press.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.st-paul-pioneer-press.subsite-custom}"},
+   "subsite-custom": {"$value": "#0097a7"},
    "$extensions": {
     "com.mng": {
      "publication": "St. Paul Pioneer Press",
@@ -2778,7 +2771,7 @@
    "near-black": {"$value": "{color.theme.capital-gazette.near-black}"},
    "white": {"$value": "{color.theme.capital-gazette.white}"},
    "nav-text": {"$value": "{color.theme.capital-gazette.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.capital-gazette.subsite-custom}"},
+   "subsite-custom": {"$value": "#0097a7"},
    "$extensions": {
     "com.mng": {
      "publication": "Capital Gazette",
@@ -2905,7 +2898,7 @@
    "near-black": {"$value": "{color.theme.the-baltimore-sun.near-black}"},
    "white": {"$value": "{color.theme.the-baltimore-sun.white}"},
    "nav-text": {"$value": "{color.theme.the-baltimore-sun.nav-text}"},
-   "subsite-custom": {"$value": "{color.theme.the-baltimore-sun.subsite-custom}"},
+   "subsite-custom": {"$value": "#1c2551"},
    "$extensions": {
     "com.mng": {
      "publication": "The Baltimore Sun",

@@ -290,6 +290,9 @@
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
+          },
+          {
+            "$ref": "sites/baltimoresun-com.tokens.json"
           }
         ],
         "bocopreps.com": [
@@ -381,6 +384,9 @@
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
+          },
+          {
+            "$ref": "sites/capitalgazette-com.tokens.json"
           }
         ],
         "chicagotribune.com": [
@@ -553,6 +559,9 @@
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
+          },
+          {
+            "$ref": "sites/denverpost-com.tokens.json"
           }
         ],
         "eastbaytimes.com": [
@@ -771,6 +780,9 @@
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
+          },
+          {
+            "$ref": "sites/ocregister-com.tokens.json"
           }
         ],
         "oneidadispatch.com": [
@@ -1173,6 +1185,9 @@
           },
           {
             "$ref": "../wordpress/type-theme/bold-coastal.tokens.json"
+          },
+          {
+            "$ref": "sites/twincities-com.tokens.json"
           }
         ],
         "ukiahdailyjournal.com": [
@@ -1329,12 +1344,12 @@
           "loads": "boldcoastal.css + Customizer override (div#page)",
           "figmaMode": "The Mercury News + East Bay Times",
           "productionAudit": "2026-08-03",
-          "mismatchCount": 1,
+          "mismatchCount": 2,
           "sites": [
             "mercurynews.com",
             "eastbaytimes.com"
           ],
-          "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only. subsite-custom #0097a7 documented 2026-10-19 (Karl): the Bold Coastal value, which both sites already render from boldcoastal.css."
+          "note": "Combined 2026-10-19 (Karl): The Mercury News and East Bay Times had identical design palettes, so they share one Figma mode (the old The Mercury News mode, renamed). The East Bay Times mode became Daily Herald. Each site keeps its own production audit; the secondary fix applies to East Bay Times only."
         },
         "st-paul-pioneer-press": {
           "name": "St. Paul Pioneer Press",
@@ -1834,7 +1849,7 @@
             "bold-coastal",
             "the-mercury-news-east-bay-times"
           ],
-          "mismatchCount": 1
+          "mismatchCount": 2
         },
         "mercurynews.com": {
           "publication": "The Mercury News",
@@ -1847,7 +1862,7 @@
             "bold-coastal",
             "the-mercury-news-east-bay-times"
           ],
-          "mismatchCount": 0
+          "mismatchCount": 1
         },
         "siliconvalley.com": {
           "publication": "Silicon Valley",
@@ -1936,7 +1951,8 @@
             "bold-coastal",
             "denverpost"
           ],
-          "mismatchCount": 3
+          "mismatchCount": 3,
+          "overrides": "sites/denverpost-com.tokens.json"
         },
         "lowellsun.com": {
           "publication": "Lowell Sun",
@@ -2465,7 +2481,8 @@
           "chain": [
             "bold-coastal"
           ],
-          "mismatchCount": 2
+          "mismatchCount": 2,
+          "overrides": "sites/ocregister-com.tokens.json"
         },
         "pasadenastarnews.com": {
           "publication": "Pasadena Star-News",
@@ -2646,7 +2663,8 @@
             "bold-coastal",
             "st-paul-pioneer-press"
           ],
-          "mismatchCount": 5
+          "mismatchCount": 5,
+          "overrides": "sites/twincities-com.tokens.json"
         },
         "dailypress.com": {
           "publication": "Daily Press",
@@ -2672,7 +2690,8 @@
             "bold-coastal",
             "capital-gazette"
           ],
-          "mismatchCount": 3
+          "mismatchCount": 3,
+          "overrides": "sites/capitalgazette-com.tokens.json"
         },
         "chicagotribune.com": {
           "publication": "Chicago Tribune",
@@ -2738,7 +2757,8 @@
             "bold-coastal",
             "the-baltimore-sun"
           ],
-          "mismatchCount": 0
+          "mismatchCount": 0,
+          "overrides": "sites/baltimoresun-com.tokens.json"
         },
         "growthspotter.com": {
           "publication": "GrowthSpotter",

@@ -113,11 +113,17 @@ write('tokens/core/color.tokens.json', core_color)
 
 # Themes, sub-themes, product palettes
 THEME_TOKENS = ['primary-lighter', 'primary-light', 'primary', 'primary-dark', 'primary-darker',
-                'secondary', 'tertiary', 'near-black', 'white', 'nav-text', 'subsite-custom']
+                'secondary', 'tertiary', 'near-black', 'white', 'nav-text']
+# Sub-site colors are site-specific and never inherited from a theme or sub-theme (Karl, 2026-10-19):
+# they only exist in site overrides (L['site'][<domain>]), never in a theme file.
+SITE_ONLY_TOKENS = ['subsite-custom', 'subsite-text']
 theme_index = {}
 for key, th in L['theme'].items():
     if key.startswith('$'):
         continue
+    for name in SITE_ONLY_TOKENS:
+        if name in th:
+            sys.exit('%s is site-specific; move it from theme %s to the site that sets it' % (name, key))
     m = th['$extensions']['com.mng']
     mode = m.get('figmaMode')
     mism = {x['token']: x for x in m.get('mismatches', [])}
@@ -145,8 +151,6 @@ for key, th in L['theme'].items():
         desc = None
         if fname in fig_colors and fig_colors[fname]['description'] and key == 'bold-coastal':
             desc = fig_colors[fname]['description']
-        if name == 'subsite-custom' and figma is None:
-            desc = 'Sub-site accent color. Defined in the color style guides; not a Figma variable yet.'
         toks[name] = color_token(hexv, desc, figma=figma, production=prod)
     level = m['level']
     parent = slug(m['parentTheme']) if m.get('parentTheme') else None
@@ -196,7 +200,7 @@ for skey, s in legacy['site'].items():
         exc = {x['token']: x for x in m.get('exceptions', [])}
         otoks = {}
         for name, hexv in overrides.items():
-            if name not in THEME_TOKENS and name != 'subsite-text':
+            if name not in THEME_TOKENS and name not in SITE_ONLY_TOKENS:
                 sys.exit('unknown site token %s %s' % (skey, name))
             d = None
             if name in exc:

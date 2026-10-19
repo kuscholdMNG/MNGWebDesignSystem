@@ -46,7 +46,6 @@ module.exports = {
           "primary-light": "var(--mng-color-theme-primary-light)",
           "primary-lighter": "var(--mng-color-theme-primary-lighter)",
           "secondary": "var(--mng-color-theme-secondary)",
-          "subsite-custom": "var(--mng-color-theme-subsite-custom)",
           "tertiary": "var(--mng-color-theme-tertiary)",
           "white": "var(--mng-color-theme-white)"
         }

@@ -335,33 +335,6 @@
             }
           }
         }
-      },
-      "subsite-custom": {
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            0,
-            0,
-            0
-          ],
-          "alpha": 1,
-          "hex": "#000000"
-        },
-        "$description": "Sub-site accent color. Defined in the color style guides; not a Figma variable yet.",
-        "$extensions": {
-          "com.mng": {
-            "rgba": "rgba(0, 0, 0, 1)",
-            "figma": null,
-            "production": {
-              "source": "boldcoastal.css + Customizer override (div#page)",
-              "sites": [
-                "denverpost.com"
-              ],
-              "verified": "2026-08-03",
-              "matches": true
-            }
-          }
-        }
       }
     }
   }
