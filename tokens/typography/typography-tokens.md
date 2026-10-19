@@ -4,7 +4,7 @@
 > - Every token and value in this doc was re-checked against the live Figma variables on 2026-09-24 and matches.
 > - Modern Earthy eyebrow is now **confirmed**, not a placeholder. See §3.
 > - **Added 2026-09-24:** 7 new Editorial styles (card tiers, headline list, related headline, lead-story media variant, body copy) and a new theme token, `font/theme/small-headline-family`. Measured live the same day on 7 sites.
-> - History and reasoning live in `typography-decision-log.md` (this folder). Known Figma-vs-production gaps live in `production-vs-design-differences.md` (MNGWebDesignSystem folder).
+> - History and reasoning live in `typography-decision-log.md` (this folder). Known Figma-vs-production gaps live in `design-vs-production.md` (MNGWebDesignSystem folder).
 
 **Status:** Built in Figma Variables in the MNG Web Design System file: collections Type Primitives, Typeography Tokens (collection name is misspelled in Figma), Typography Theme and Dashboard Typography. This doc is the reference for the current token catalog: names, values and where each came from.
 
@@ -35,7 +35,7 @@ In Figma the variables hold bare family names. In code (`tokens/core/typography.
 | `font/size/13` | 13px | Small button / caption size, measured live. Matches CRUX `xs`. |
 | `font/size/14` | 14px | Medium/primary button label (~14.06px measured live). |
 | `font/size/15` | 15px | Primary nav-bar label (600, Noto Sans, not theme-varying) and the Section Highlight headline list (`HeadlineList`). Confirmed live. |
-| `font/size/15-2` | 15.2px | Article breadcrumb type-of-work label and its " • " bullet (400, line height 15.2). Confirmed live 2026-10-08; production renders it in Helvetica (production-vs-design entry 29). |
+| `font/size/15-2` | 15.2px | Article breadcrumb type-of-work label and its " • " bullet (400, line height 15.2). Confirmed live 2026-10-08; production renders it in Helvetica (design-vs-production entry 12). |
 | `font/size/16` | 16px | Reader Dashboard body, nav items, card subtitles/links. **Not** the editorial body size (see `16-5`). |
 | `font/size/16-5` | 16.5px | Universal editorial body copy. Confirmed live on all 6 audited sites/themes. |
 | `font/size/18` | 18px | Reader Dashboard Section Title and the article-page "More News" headlines (`RelatedHeadline`). Confirmed live. |
@@ -208,9 +208,9 @@ Single mode, **not theme-aware**. Mirrors Reader Dashboard v2.0's own Figma toke
 
 | Token | Family | Size | Weight | Notes |
 |---|---|---|---|---|
-| `Dashboard/Titles/PageDesktop` | Noto Serif | 26px | 700 | Matches Reader Dashboard v2.0's Figma token. Production shows 36px at desktop; see `production-vs-design-differences.md`. |
+| `Dashboard/Titles/PageDesktop` | Noto Serif | 26px | 700 | Matches Reader Dashboard v2.0's Figma token. Production shows 36px at desktop; see `design-vs-production.md`. |
 | `Dashboard/Titles/PageMobile` | Noto Serif | 26px | 700 | Matches production at mobile/tabletV/Fold breakpoints. |
-| `Dashboard/Titles/SectionTitle` | Noto Sans | 18px | 700 | One live instance measured 600, probably an admin panel; see `production-vs-design-differences.md`. |
+| `Dashboard/Titles/SectionTitle` | Noto Sans | 18px | 700 | One live instance measured 600, probably an admin panel; see `design-vs-production.md`. |
 | `Dashboard/Titles/SubtitleLabel` | Noto Sans | 14px | 700 | |
 | `Dashboard/Titles/SubtitleValue` | Noto Sans | 14px | 400 | |
 | `Dashboard/NavMenuItems/Default` | Noto Sans | 16px | 400 | |
@@ -233,4 +233,4 @@ Single mode, **not theme-aware**. Mirrors Reader Dashboard v2.0's own Figma toke
 2. **CRUX Style Library is never edited.** Standing rule from Karl (2026-09-10): no edits, aliases or deletions in CRUX. Its font tokens stay as reference only, and its fallback-stack mismatch (§1) stays a permanent difference.
 3. ~~Line height and letter spacing were confirmed only on serif themes.~~ **Resolved 2026-09-24:** Modern Earthy (mcall.com, canoncitydailyrecord.com, greeleytribune.com) uses exactly the same line height and letter spacing as the serif themes on every headline tier checked.
 4. **`font/size/24` has weak editorial use** (one uncertain sighting). It's kept for its confirmed Reader Dashboard use.
-5. See `production-vs-design-differences.md` for every known place production differs from these values.
+5. See `design-vs-production.md` for every known place production differs from these values.

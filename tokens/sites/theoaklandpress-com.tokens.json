@@ -53,7 +53,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --primary-lighter: #3e7cb2 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.21c-michigan-sites-combined.primary-lighter"
           }
@@ -116,7 +116,7 @@
               "matches": false,
               "productionValue": "#3a527a",
               "fix": "Change --primary-dark from #3a527a to #32476c (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.21c-michigan-sites-combined.primary-dark"
           }
@@ -141,7 +141,7 @@
               "matches": false,
               "productionValue": "#003d66",
               "fix": "Change --primary-darker from #003d66 to #2c3b55 (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.21c-michigan-sites-combined.primary-darker"
           }

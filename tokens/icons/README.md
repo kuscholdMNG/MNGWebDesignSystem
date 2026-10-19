@@ -2,7 +2,7 @@
 
 > **Updated 2026-10-08:** reorganized to match the Figma "Icon Categories" page and checked against it glyph by glyph. First extracted 2026-10-08.
 
-The production `icomoon` icon font, documented the way the design system documents it: the six categories, names and descriptions from the Figma **Icon Categories** frame (MNG Web Design System › Icons | 2026.08.28, node `1412:13`). **All MNG sites use the same icon font** (Karl, 2026-10-08). Figma is the source of truth; differences in production are in `production-vs-design-differences.md` entry 20.
+The production `icomoon` icon font, documented the way the design system documents it: the six categories, names and descriptions from the Figma **Icon Categories** frame (MNG Web Design System › Icons | 2026.08.28, node `1412:13`). **All MNG sites use the same icon font** (Karl, 2026-10-08). Figma is the source of truth; differences in production are in `design-vs-production.md` entry 13.
 
 ## Files
 

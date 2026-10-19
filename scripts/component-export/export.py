@@ -582,7 +582,7 @@ def main():
         if prod:
             md += ['- %s: `%s`' % (k, v) for k, v in prod.items()]
         else:
-            md.append('No production selector recorded yet. Production gaps go in `production-vs-design-differences.md`.')
+            md.append('No production selector recorded yet. Production gaps go in `design-vs-production.md`.')
         md += ['', '## Known issues', '']
         md += ['%d. %s' % (i + 1, x) for i, x in enumerate(issues)] if issues else ['None open.']
         md += ['', '## Files', '',

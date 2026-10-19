@@ -38,7 +38,7 @@
  "Blueconic Block (Most Popular)": {
   "rules": [
    "Device=1024 / 1100 / 1280 are the content column only; the ad sits in the template's rail. Device=Desktop (full width, no rail) is not used by any template.",
-   "Most Popular List Item stays 44px; the column gap adds the spacing production shows (60px rows for one-line items): 16 (`spacing/200`) at 360, 768, 1100 and 1280, 11 at 1024. Column gaps: 19 at 768 and 1024, 21 at 1100, 22 at 1280. See production-vs-design entry 27."
+   "Most Popular List Item stays 44px; the column gap adds the spacing production shows (60px rows for one-line items): 16 (`spacing/200`) at 360, 768, 1100 and 1280, 11 at 1024. Column gaps: 19 at 768 and 1024, 21 at 1100, 22 at 1280. See design-vs-production entry 30."
   ]
  },
  "Horizontal Thumbnail Card": {

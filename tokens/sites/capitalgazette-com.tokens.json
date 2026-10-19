@@ -53,7 +53,7 @@
               "matches": false,
               "productionValue": "#285f87",
               "fix": "Change --primary-lighter from #285f87 to #3c6f95 (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.capital-gazette.primary-lighter"
           }
@@ -116,7 +116,7 @@
               "matches": false,
               "productionValue": "#004e87",
               "fix": "Change --primary-dark from #004e87 to #004171 (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.capital-gazette.primary-dark"
           }
@@ -141,7 +141,7 @@
               "matches": false,
               "productionValue": "#014a52",
               "fix": "Change --primary-darker from #014a52 to #04365a (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.capital-gazette.primary-darker"
           }

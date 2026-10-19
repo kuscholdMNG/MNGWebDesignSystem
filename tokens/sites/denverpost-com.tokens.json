@@ -53,7 +53,7 @@
               "matches": false,
               "productionValue": "#af1628",
               "fix": "Change --primary-lighter from #af1628 to #c81632 (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.denverpost.primary-lighter"
           }
@@ -78,7 +78,7 @@
               "matches": false,
               "productionValue": "#c81632",
               "fix": "Change --primary-light from #c81632 to #af1628 (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.denverpost.primary-light"
           }
@@ -179,7 +179,7 @@
               "matches": false,
               "productionValue": "#a13b1e",
               "fix": "Change --tertiary from #a13b1e to #ffc518 (Customizer, div#page).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.denverpost.tertiary"
           }

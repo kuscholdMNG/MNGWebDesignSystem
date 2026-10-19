@@ -16,7 +16,7 @@ Direction is **Figma → code**. We do not make files meant to be imported back 
 | A color's value | Its **hex** string. RGBA and the DTCG color object are calculated from the hex by the build script and must always match it. |
 | Where a value comes from in production | `$extensions.com.mng.production` on the token (site, stylesheet, selector or CSS variable, date verified). |
 | Where a value goes to in Figma | `$extensions.com.mng.figma` on the token (file, collection, variable, mode, and which components use it). |
-| Production gaps | `production-vs-design-differences.md`. Tokens are never changed to match production. |
+| Production gaps | `design-vs-production.md`. Tokens are never changed to match production. |
 | Values that don't fit in Figma | Baltimore Sun and Capital Gazette (over Figma's 20-mode limit) live only in the token files. That is the one place the token file, not Figma, holds the design value. |
 
 ## 3. File format
@@ -138,7 +138,7 @@ Pixels are the design unit everywhere (Figma's units are CSS pixels; we don't us
     "sites": ["ocregister.com", "denverpost.com"],
     "verified": "2026-08-03",
     "matches": true,
-    "differencesEntry": 21
+    "differencesEntry": 1
   },
   "figma": {
     "file": "MNG Web Design System",
@@ -150,7 +150,7 @@ Pixels are the design unit everywhere (Figma's units are CSS pixels; we don't us
 }
 ```
 
-- `production`: where the value comes from in production. `matches: false` means production differs; the fix is in `production-vs-design-differences.md` (`differencesEntry`).
+- `production`: where the value comes from in production. `matches: false` means production differs; the fix is in `design-vs-production.md` (`differencesEntry`).
 - `figma`: where the value goes to in Figma: the variable it lives in and the components that use it. The Figma file a value was first designed in isn't recorded.
 - Tokens that exist in production but not in Figma yet get `"figma": null` and a note.
 
@@ -195,7 +195,7 @@ Breakpoints come in three tiers:
 
    The Device set matches the Figma screen widths one to one (Fold 340, Mobile 360, Tablet 768, Tablet horizontal 1024, Desktop 1280). Its token names deliberately differ from the WordPress grid names and from the Masthead's `Device` labels (`MD-TabletV (640–799px)` and so on), because those carry WordPress ranges. Each Device token records its Figma frame width in `$extensions.com.mng.figma.frameWidth`.
 2. **Component breakpoints:** an intended one-off used by a single component goes in that component's `<slug>.tokens.json`, not in the system set.
-3. **Production drift:** any other production breakpoint is logged in `production-vs-design-differences.md` with the official breakpoint it should snap to. Reader Dashboard must match the Device set (open questions: entry 30). Obituaries is part of the WordPress layer and must match the WordPress grid (drift: entry 31).
+3. **Production drift:** any other production breakpoint is logged in `design-vs-production.md` with the official breakpoint it should snap to. Reader Dashboard must match the Device set (open questions: entry 31). Obituaries is part of the WordPress layer and must match the WordPress grid (drift: entry 32).
 
 The full list of production breakpoints and how each is classified lives in `tokens/breakpoint-inventory.json` (built from the website repo and a CSS scan of the 6 review sites).
 

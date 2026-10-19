@@ -136,7 +136,7 @@
               "matches": false,
               "productionValue": "#eeff41",
               "fix": "Change --secondary from #eeff41 to #ffc518 (Customizer, div#page). East Bay Times only; The Mercury News already matches. Rechecked live 2026-10-19: the East Bay Times Customizer sets #eeff41 explicitly, the stock Modern Earthy / Measured Vibrant secondary, copied in by mistake (Karl, 2026-10-19).",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.the-mercury-news-east-bay-times.secondary"
           }

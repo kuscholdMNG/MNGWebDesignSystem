@@ -2,7 +2,7 @@
 
 > **Rewritten 2026-09-24.** Simplified from `font-token-audit.md` (Sept 9–10, 2026). The original ran as a session diary and later sections reversed earlier ones. This version keeps only the final outcome of each decision.
 > - Current token values: `typography-tokens.md` (this folder).
-> - Known Figma-vs-production gaps: `production-vs-design-differences.md` (MNGWebDesignSystem folder).
+> - Known Figma-vs-production gaps: `design-vs-production.md` (MNGWebDesignSystem folder).
 
 ## Background
 
@@ -34,7 +34,7 @@ Sites checked live: ocregister.com, denverpost.com, chicagotribune.com, orlandos
    - `Editorial/ModuleHeader`: heading family / 20px / 600.
    - `Editorial/Footer/Copyright`: Noto Sans / 12px / 400.
    - The 30px/600 homepage `h2` is screen-reader-only, so it is not a token.
-9. **Reader Dashboard gets its own collection.** "Dashboard Typography" has 14 composites (44 variables). It isn't theme-aware and uses flat Noto Sans / Noto Serif. For Reader Dashboard, **Figma is the source of truth even where production differs**, so `Dashboard/Titles/PageDesktop` is 26px, matching Reader Dashboard v2.0's Figma. Production gaps go to `production-vs-design-differences.md`, not into the tokens.
+9. **Reader Dashboard gets its own collection.** "Dashboard Typography" has 14 composites (44 variables). It isn't theme-aware and uses flat Noto Sans / Noto Serif. For Reader Dashboard, **Figma is the source of truth even where production differs**, so `Dashboard/Titles/PageDesktop` is 26px, matching Reader Dashboard v2.0's Figma. Production gaps go to `design-vs-production.md`, not into the tokens.
 10. **Near-integer measurements are rounded** to the nearest primitive: ~12.48 → 12, ~14.06 → 14, ~19.2 → 19.
 11. **Leftovers left alone:** the legacy `AccuweatherTemp` text style (weather widget only) and a generic, non-Noto type scale on the Fonts page (Frame 56). The latter looks like starter-kit content and is safe to archive if you want.
 

@@ -150,7 +150,7 @@ Icon variants: `new-tab` ×16.
 
 ## Production
 
-No production selector recorded yet. Production gaps go in `production-vs-design-differences.md`.
+No production selector recorded yet. Production gaps go in `design-vs-production.md`.
 
 ## Known issues
 

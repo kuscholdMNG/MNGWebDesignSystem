@@ -7,12 +7,12 @@ Inputs
                                                       the differences from it ("b" = extra, "absent" = missing).
   CLASSIFY below                                      who owns each value and what it should snap to (hand-checked).
   REPO_SOURCES below                                  breakpoints found in the website repo copy (2026-05-08), from
-                                                      status open item 11 and production-vs-design entries 30 and 31.
+                                                      status open item 11 and design-vs-production entries 31 and 32.
 Output
   tokens/breakpoint-inventory.json
 
 Tiers (EXPORT-STANDARD.md section 6): official (MNG Device or WordPress grid), component (an intended one-off,
-goes in that component's tokens), drift (logged in production-vs-design-differences.md with what to snap to),
+goes in that component's tokens), drift (logged in design-vs-production.md with what to snap to),
 to-confirm (waiting for Karl), plus third-party, wordpress-admin and not-documented values, which are
 left out of the output (Karl, 2026-10-14).
 
@@ -78,15 +78,15 @@ CLASSIFY = {
     '>576': ([DIGI_APP], 'drift', bp('device', 'tablet', 'min'), 'Bootstrap sm container.'),
     '<600': ([THEME, DIGI], 'drift', bp('grid', 's', 'max'), 'Theme: article bottom share buttons (.article-bottom-share), snap to grid s (639). Digisubs: change-username modal, snap to Device tablet (767). (The share box rule here is not documented.)'),
     '>600': ([WPADMIN], 'wordpress-admin', None, 'body.admin-bar.'),
-    '<624': ([THEME], 'drift', bp('grid', 's', 'max'), 'Obituaries 1-column layout (entry 31).'),
-    '>625': ([THEME], 'drift', bp('grid', 's', 'min'), 'Obituaries 2-column start (entry 31).'),
+    '<624': ([THEME], 'drift', bp('grid', 's', 'max'), 'Obituaries 1-column layout (entry 32).'),
+    '>625': ([THEME], 'drift', bp('grid', 's', 'min'), 'Obituaries 2-column start (entry 32).'),
     '<639': ([THEME], 'official', bp('grid', 's', 'max'), ''),
     '>640': ([THEME], 'official', bp('grid', 's', 'min'), ''),
     '<700': ([THEME], 'drift', bp('grid', 's', 'max'), 'Promotion widget (.promotion-widget, homepage promo tiles): follows the WordPress grid (Karl, 2026-10-14).'),
     '<720': ([MG2], 'third-party', None, ''),
     '<730': ([THEME], 'not-documented', None, 'Special investigative header template: left out for now (Karl, 2026-10-14).'),
-    '<734': ([THEME], 'drift', bp('grid', 'm', 'max'), 'Photo gallery widget (.gallery-container; also entry 31). Fix (Karl).'),
-    '>735': ([THEME], 'drift', bp('grid', 'm', 'min'), 'Photo gallery widget (also entry 31). Fix (Karl).'),
+    '<734': ([THEME], 'drift', bp('grid', 'm', 'max'), 'Photo gallery widget (.gallery-container; also entry 32). Fix (Karl).'),
+    '>735': ([THEME], 'drift', bp('grid', 'm', 'min'), 'Photo gallery widget (also entry 32). Fix (Karl).'),
     '<750': ([ADS, THEME], 'component', None, 'Ad Blocks component breakpoint: ad rules keep their own values (Karl, 2026-10-14). Header banners (.header-banners): the top leaderboard ad container under the masthead. The special investigative header also uses 750.'),
     '>750': ([ADS], 'component', None, 'Ad Blocks component breakpoint: ad rules keep their own values (Karl, 2026-10-14). Top leaderboard ad.'),
     '<767': ([MG2], 'third-party', None, ''),
@@ -128,8 +128,8 @@ CLASSIFY = {
     '<1280': ([THEME], 'drift', bp('grid', 'xl', 'max'), 'Off by one: (max-width: 1280px) overlaps xl; should be 1279 (.custom-dfm-section.dark-layout).'),
     '>1280': ([THEME, DIGI], 'official', bp('grid', 'xl', 'min'), 'Also MNG Device desktop (1280).'),
     '>1281': ([MG2], 'third-party', None, ''),
-    '<1299': ([THEME], 'drift', bp('grid', 'xl', 'max'), 'Obituaries listing (entry 31).'),
-    '>1300': ([THEME], 'drift', bp('grid', 'xl', 'min'), 'Obituaries "stop scaling" (entry 31).'),
+    '<1299': ([THEME], 'drift', bp('grid', 'xl', 'max'), 'Obituaries listing (entry 32).'),
+    '>1300': ([THEME], 'drift', bp('grid', 'xl', 'min'), 'Obituaries "stop scaling" (entry 32).'),
     '<1399.98': ([DIGI_APP], 'drift', bp('device', 'desktop', 'max'), 'Bootstrap xxl-down: no official breakpoint above 1280.'),
     '>1400': ([DIGI_APP], 'drift', bp('device', 'desktop', 'min'), 'Bootstrap xxl container: no official breakpoint above 1280.'),
     '<599': ([WPADMIN], 'wordpress-admin', None, 'Admin bar notes.'),
@@ -145,12 +145,12 @@ REPO_SOURCES = [
      'note': 'The WordPress grid ($columns-map, ai-breakpoint() mixin, written in em). The masthead switches at l (1040).'},
     {'source': 'plugins/mng-digital-subscriber-widgets/reader-dashboard-src (Reader Dashboard, Tailwind v4)',
      'values': [640, 768, 1024, 1280, 1536], 'tier': 'drift', 'set': 'device',
-     'note': 'Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Production-vs-design entry 30 (questions for DigiScrum).'},
+     'note': 'Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Production-vs-design entry 31 (questions for DigiScrum).'},
     {'source': 'Reader Dashboard built CSS', 'values': [361, 413], 'tier': 'drift', 'set': 'device',
-     'note': 'Source not traced yet; close to Device mobile (360). Entry 30.'},
+     'note': 'Source not traced yet; close to Device mobile (360). Entry 31.'},
     {'source': 'assets/client/scss/layouts/scng/components/features/_obits.scss (Obituaries)',
      'values': [624, 625, 734, 735, 1000, 1299, 1300], 'tier': 'drift', 'set': 'wordpress-grid',
-     'note': 'Obituaries off-grid values; also seen live. Entry 31 (CMS team).'},
+     'note': 'Obituaries off-grid values; also seen live. Entry 32 (CMS team).'},
     {'source': 'Spotlight template (WordPress themes)', 'values': [624, 734, 735, 1299, 1300], 'tier': 'drift',
      'set': 'wordpress-grid', 'note': 'Same off-grid values as Obituaries (shared gallery and listing rules).'},
 ]
@@ -214,8 +214,8 @@ def main():
     out = {
         '$description': 'Every width breakpoint found in MNG production code, classified as official, component or drift '
                         '(EXPORT-STANDARD.md section 6); third-party and WordPress admin-bar values are left out. Built by scripts/breakpoint-inventory/'
-                        'build-inventory.py; never edit by hand. Drift is logged in production-vs-design-differences.md '
-                        '(entries 30, 31, 33) with the official breakpoint to snap to.',
+                        'build-inventory.py; never edit by hand. Drift is logged in design-vs-production.md '
+                        '(entries 31, 32, 33) with the official breakpoint to snap to.',
         'scanned': '2026-10-14',
         'method': 'Live CSS scan (scan.js) of every loaded stylesheet, @media width conditions only, on the homepage, an '
                   'article and the obituaries page of each review site, at a 1728px-wide window (media rules are read '

@@ -1,5 +1,5 @@
 {
-  "$description": "Every width breakpoint found in MNG production code, classified as official, component or drift (EXPORT-STANDARD.md section 6); third-party and WordPress admin-bar values are left out. Built by scripts/breakpoint-inventory/build-inventory.py; never edit by hand. Drift is logged in production-vs-design-differences.md (entries 30, 31, 33) with the official breakpoint to snap to.",
+  "$description": "Every width breakpoint found in MNG production code, classified as official, component or drift (EXPORT-STANDARD.md section 6); third-party and WordPress admin-bar values are left out. Built by scripts/breakpoint-inventory/build-inventory.py; never edit by hand. Drift is logged in design-vs-production.md (entries 31, 32, 33) with the official breakpoint to snap to.",
   "scanned": "2026-10-14",
   "method": "Live CSS scan (scan.js) of every loaded stylesheet, @media width conditions only, on the homepage, an article and the obituaries page of each review site, at a 1728px-wide window (media rules are read from the CSS, so the window width does not matter). Cross-origin sheets were fetched; the HTL ad bidder sheet was blocked on most sites. em/rem converted at 16px. JavaScript breakpoints (matchMedia, window.innerWidth) are not included.",
   "officialSets": {
@@ -638,7 +638,7 @@
         "query": "(max-width: 639px)",
         "label": "WordPress grid s"
       },
-      "note": "Obituaries 1-column layout (entry 31)."
+      "note": "Obituaries 1-column layout (entry 32)."
     },
     {
       "query": "(min-width: 625px)",
@@ -667,7 +667,7 @@
         "query": "(min-width: 640px)",
         "label": "WordPress grid s"
       },
-      "note": "Obituaries 2-column start (entry 31)."
+      "note": "Obituaries 2-column start (entry 32)."
     },
     {
       "query": "(max-width: 639px)",
@@ -783,7 +783,7 @@
         "query": "(max-width: 799px)",
         "label": "WordPress grid m"
       },
-      "note": "Photo gallery widget (.gallery-container; also entry 31). Fix (Karl)."
+      "note": "Photo gallery widget (.gallery-container; also entry 32). Fix (Karl)."
     },
     {
       "query": "(min-width: 735px)",
@@ -812,7 +812,7 @@
         "query": "(min-width: 800px)",
         "label": "WordPress grid m"
       },
-      "note": "Photo gallery widget (also entry 31). Fix (Karl)."
+      "note": "Photo gallery widget (also entry 32). Fix (Karl)."
     },
     {
       "query": "(max-width: 750px)",
@@ -1613,7 +1613,7 @@
         "query": "(max-width: 1279px)",
         "label": "WordPress grid xl"
       },
-      "note": "Obituaries listing (entry 31)."
+      "note": "Obituaries listing (entry 32)."
     },
     {
       "query": "(min-width: 1300px)",
@@ -1642,7 +1642,7 @@
         "query": "(min-width: 1280px)",
         "label": "WordPress grid xl"
       },
-      "note": "Obituaries \"stop scaling\" (entry 31)."
+      "note": "Obituaries \"stop scaling\" (entry 32)."
     },
     {
       "query": "(max-width: 1399.98px)",
@@ -1730,7 +1730,7 @@
         ],
         "tier": "drift",
         "set": "device",
-        "note": "Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Production-vs-design entry 30 (questions for DigiScrum)."
+        "note": "Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Production-vs-design entry 31 (questions for DigiScrum)."
       },
       {
         "source": "Reader Dashboard built CSS",
@@ -1740,7 +1740,7 @@
         ],
         "tier": "drift",
         "set": "device",
-        "note": "Source not traced yet; close to Device mobile (360). Entry 30."
+        "note": "Source not traced yet; close to Device mobile (360). Entry 31."
       },
       {
         "source": "assets/client/scss/layouts/scng/components/features/_obits.scss (Obituaries)",
@@ -1755,7 +1755,7 @@
         ],
         "tier": "drift",
         "set": "wordpress-grid",
-        "note": "Obituaries off-grid values; also seen live. Entry 31 (CMS team)."
+        "note": "Obituaries off-grid values; also seen live. Entry 32 (CMS team)."
       },
       {
         "source": "Spotlight template (WordPress themes)",

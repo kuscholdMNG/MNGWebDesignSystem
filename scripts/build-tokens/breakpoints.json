@@ -1,7 +1,7 @@
 {
   "$description": "The two official breakpoint sets (Karl, 2026-10-14; EXPORT-STANDARD.md section 6). Input for make-tokens.py. Breakpoints are min-width boundaries; Figma frame widths are documentation, not tokens. Changing a value or adding a breakpoint needs Karl's review (review branch + pull request).",
   "device": {
-    "description": "MNG Device breakpoints (core). Min-width boundaries matching the Figma screen widths 340 / 360 / 768 / 1024 / 1280. fold (340) is the smallest supported width. Reader Dashboard today; every product eventually. Production drift: production-vs-design-differences.md entry 30.",
+    "description": "MNG Device breakpoints (core). Min-width boundaries matching the Figma screen widths 340 / 360 / 768 / 1024 / 1280. fold (340) is the smallest supported width. Reader Dashboard today; every product eventually. Production drift: design-vs-production.md entry 31.",
     "tokens": [
       {
         "name": "fold",
@@ -36,7 +36,7 @@
     ]
   },
   "wordpressGrid": {
-    "description": "WordPress grid breakpoints (WordPress layer, legacy). From the WordPress themes' grid (16 columns x 80px, 20px gutters, 1280 container). Used by the three shared themes and Obituaries. Retired when WordPress moves to the MNG Device set. Obituaries drift: production-vs-design-differences.md entry 31.",
+    "description": "WordPress grid breakpoints (WordPress layer, legacy). From the WordPress themes' grid (16 columns x 80px, 20px gutters, 1280 container). Used by the three shared themes and Obituaries. Retired when WordPress moves to the MNG Device set. Obituaries drift: design-vs-production.md entry 32.",
     "tokens": [
       {
         "name": "xs",

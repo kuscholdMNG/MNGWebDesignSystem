@@ -136,7 +136,7 @@
               "matches": false,
               "productionValue": "MISSING",
               "fix": "Define --secondary: #ffea00 (Customizer, div#page). It isn't set today.",
-              "differencesEntry": 21
+              "differencesEntry": 1
             },
             "resolvedFrom": "color.theme.petaluma-argus-courier.secondary"
           }
