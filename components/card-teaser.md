@@ -2,7 +2,7 @@
 
 > **Updated 2026-09-25 — read this first.** Three things below have been superseded by later decisions:
 > 1. **Eyebrow / section-title size and weight.** The 2026-09-01 "20px/400/0.7px on every theme" decision never shipped. Eyebrows are now per theme: Bold Coastal 20/400 Sans, Measured Vibrant 17/700 Sans, Modern Earthy 21/400 Serif (`tokens/typography/typography-decision-log.md`, decision 6). The text color (`color/gray/100`) and 2px `--primary` underline decisions still stand (design-vs-production entry 12.2). The Section Title / Eyebrow component lives in WordPress Elements (`3333:42278`).
-> 2. **Bold Coastal's Sans 19px headline is not a bug.** On 2026-09-24 Karl made it a design token: `font/theme/small-headline-family` = Bold Coastal Sans, Modern Earthy Sans, Measured Vibrant Serif, used by the 19px (`CardQuaternary`) and 15px (`HeadlineList`) styles. Production matches, so no engineering action (design-vs-production entry 3).
+> 2. **Bold Coastal's Sans 19px headline is not a bug.** On 2026-09-24 Karl made it a design token: `font/theme/small-headline-family` = Bold Coastal Sans, Modern Earthy Sans, Measured Vibrant Serif, used by the 19px (`CardQuaternary`) and 15px (`HeadlineList`) styles. Production matches, so no engineering action (was design-vs-production entry 3, resolved and removed 2026-10-20).
 > 3. **Headline type values.** The current values are the Editorial styles in `tokens/typography/typography-tokens.md` (re-measured on 7 sites 2026-09-24). In particular the 15px headline-list links are Sans on Bold Coastal, not Serif on every site.
 >
 > The rest of this doc (card anatomy, the 640px breakpoint, divider colors, Section Highlight structure) is still accurate.

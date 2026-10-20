@@ -10,7 +10,6 @@
   - [1. Icon font — mismatches with the Figma icon page, dead and duplicate glyphs, and known missing icons](#1-icon-font--mismatches-with-the-figma-icon-page-dead-and-duplicate-glyphs-and-known-missing-icons)
 - **Fonts and typography**
   - [2. Font fallbacks — Helvetica instead of the design stacks (all sites)](#2-font-fallbacks--helvetica-instead-of-the-design-stacks-all-sites)
-  - [3. Typography — headline tiers measured live with no matching Figma style](#3-typography--headline-tiers-measured-live-with-no-matching-figma-style)
   - [4. Reader Dashboard — Typography (2026-09-10)](#4-reader-dashboard--typography-2026-09-10)
   - [5. Upcoming Events (CitySpark widget) — font family](#5-upcoming-events-cityspark-widget--font-family)
   - [6. Article breadcrumbs — label font family and text color](#6-article-breadcrumbs--label-font-family-and-text-color)
@@ -24,7 +23,6 @@
   - [12. Article Card / Teaser](#12-article-card--teaser)
   - [13. Reader Dashboard — Modal](#13-reader-dashboard--modal)
   - [14. Reader Dashboard — Disclosure](#14-reader-dashboard--disclosure)
-  - [15. Reader Dashboard — Design System Architecture](#15-reader-dashboard--design-system-architecture)
   - [16. Containers, Images & Ad Units](#16-containers-images--ad-units)
   - [17. Navigation](#17-navigation)
   - [18. Ad Units — Homepage "Ad Blocks" slot after Blueconic/Most Popular is undersized (300×250 instead of 300×600)](#18-ad-units--homepage-ad-blocks-slot-after-blueconicmost-popular-is-undersized-300250-instead-of-300600)
@@ -40,6 +38,7 @@
   - [28. Reader Dashboard — breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)](#28-reader-dashboard--breakpoints-close-to-but-not-on-the-figma-screen-widths-questions-for-digiscrum)
   - [29. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)](#29-obituaries--breakpoints-that-dont-match-the-wordpress-grid-for-the-cms-team)
   - [30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#30-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
+- [Notes (reading live colors, removed entries)](#notes)
 
 ---
 
@@ -101,36 +100,6 @@ The same two stacks apply on every theme; each theme only chooses which one its 
 **Fix:** in the theme font-family definitions, replace `Helvetica` with **Helvetica Neue** (then Arial) in the sans stack (Karl, 2026-10-14), and use Georgia, then Times New Roman, in the serif stack instead of Helvetica. The fallbacks only show when Noto doesn't load, so nothing changes visually when the web fonts work.
 
 **Status:** Open.
-
----
-
-## 3. Typography — headline tiers measured live with no matching Figma style
-
-**Found:** 2026-08-27, live typography audit (recorded in a handoff note since retired). **Re-measured 2026-09-24** on ocregister, denverpost, chicagotribune, orlandosentinel, canoncitydailyrecord, mcall and greeleytribune. The values were identical on all 7.
-
-**Production:**
-
-| Role | Size | Weight | Line height | Letter spacing |
-|---|---|---|---|---|
-| Second-tier homepage card headline | 26px | 700 | 30.3px | -0.91 |
-| Third-tier card headline | 20px | 700 | 23.6px | -0.4 |
-| Fourth-tier card headline | 19px | 600 | 24px | -0.665 |
-| Section Highlight headline list | 15px | 600 | 19px | -0.15 |
-| Related ("More News") headline | 18px | 600 | 21px | normal |
-| Body copy | 16.5px | 400 | 27px | -0.165 |
-| Lead story, top of page | 29px | 700 | 32.8px | -0.87 |
-| Lead story, media block | 29px | 700 | 33px | -1.16 |
-
-**Also found:** on Bold Coastal the 19px and 15px headlines are Noto Sans, even though the theme's heading font is Noto Serif. The old Figma Title style used an averaged -1.0 letter spacing that matched neither lead-story variant.
-
-**Resolved 2026-09-24 (design side):** added as Figma Editorial styles:
-- `CardSecondary`, `CardTertiary`, `CardQuaternary`, `HeadlineList`, `RelatedHeadline`, `TitleMedia` and `Editorial/Body/Default`.
-- A new theme token, `font/theme/small-headline-family`.
-- Title's letter spacing corrected to -0.87.
-
-See `tokens/typography/typography-tokens.md`. Production matches the new styles, so no engineering action is needed.
-
-**Status:** Resolved.
 
 ---
 
@@ -1397,19 +1366,17 @@ Ordered theme > cluster > sub-theme > site, as above.
 
 **Status:** Open — not yet root-caused.
 
-### 12.2 Section title style (color, underline, sizing) doesn't match Figma on any of the 6 pilot sites
+### 12.2 Section title color and underline don't match Figma on any of the 6 review sites
 
-**Found:** Article Card / Teaser audit, §4.4 / Open Item 3.
+**Found:** Article Card / Teaser audit.
 
-**Figma spec (Karl's 2026-09-01 decision):** Section Highlight / "Latest Headlines" title — text color `color/gray/100`, a 2px underline in the site's own `--primary`, unified size/weight/letter-spacing per the eyebrow decision.
+**Figma spec:** Section Highlight / "Latest Headlines" title: text color `color/gray/100`, with a 2px underline in the site's own `--primary`. Size, weight and family come from the per-theme eyebrow tokens: Bold Coastal 20px / 400 / Noto Sans, Measured Vibrant 17px / 700 / Noto Sans, Modern Earthy 21px / 400 / Noto Serif (`tokens/typography/typography-decision-log.md`, decision 6). Production already matches these sizes.
 
-**Production:** None of the 6 pilot sites match the full spec. Text color is wrong on all 6. The underline itself doesn't exist at all on 4 of 6 sites (Chicago Tribune, Orlando Sentinel, OC Register, Denver Post) — only the 2 Modern Earthy sites have the underline mechanism, and only the 2 Bold Coastal sites match the size/weight.
+**Production:** the text color is wrong on all 6 sites. The underline is missing on Chicago Tribune, Orlando Sentinel, OC Register and Denver Post; only the two Modern Earthy sites have it.
 
-**Action needed:** Ready to hand to engineering as a fully-specified spec to implement across all 6 sites.
+**Fix:** set the title color to `color/gray/100` and add the 2px `--primary` underline on every theme.
 
-> **Note (2026-09-24):** The "unified size/weight" part of this spec is out of date. On 2026-09-09 the single 20px eyebrow was replaced with per-theme eyebrow tokens: Bold Coastal 20/400/Sans, Measured Vibrant 17/700/Sans, Modern Earthy 21/400/Serif (see `tokens/typography/typography-decision-log.md`, decision 6). The color and underline parts of the spec still stand. Confirm the size/weight part with Karl before handing this to engineering.
-
-**Status:** Open.
+**Status:** Open. Ready for Engineering.
 
 ### 12.3 Responsive layout rules vary by container context (not fully mapped)
 
@@ -1478,18 +1445,6 @@ Production's live Reader Dashboard (e.g. chicagotribune.com/user-tools/dashboard
 Only one instance of the disclosure pattern (Login Methods on Profile) was found and tested; other tabs (Subscription, Benefits, etc.) weren't checked for additional instances. Whether expand/collapse is animated or instant was never confirmed.
 
 **Status:** Open.
-
----
-
-## 15. Reader Dashboard — Design System Architecture
-
-**Found:** Reader-Dashboard-Library-Impact-Map.md.
-
-**Detail:** Modal, Disclosure, and Empty State/Status Badge had been rebuilt by hand as pilot copies instead of using Reader Dashboard v2.0's components, so they could drift out of sync.
-
-**Resolved 2026-09-25:** the hand-built copies were retired. The sources are now the real components in the main file: ModalsCenter, Button Linkstyle and InLineMessage.
-
-**Status:** Resolved.
 
 ---
 
@@ -1923,8 +1878,8 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 ---
 
-## How to use this doc
+## Notes
 
-Add a new dated, numbered entry whenever a Figma-vs-production gap or an explicit engineering/legal flag is found during an audit, rather than quietly "fixing" the design tokens to match whatever production happens to do. Mark each item's status (Open / Fixed / Confirmed-intentional) as it gets resolved, and keep the original finding text rather than deleting it once resolved — see how `tokens/colors/color-tokens-decision-log.md` and the component audit docs annotate resolved items in place, for the pattern to follow here too.
+**Reading live colors:** read themed CSS variables such as `--primary` on `document.querySelector('#page')`, not on `document.documentElement`. The WordPress Customizer's per-site override is scoped to `#page`, so reading at `:root` only shows the theme default.
 
-**Method note for live color checks** (from a 2026-08-27 note, since retired): read themed CSS variables such as `--primary` on `document.querySelector('#page')`, not on `document.documentElement`. The WordPress Customizer's per-site override is scoped to `#page`, so reading at `:root` only shows the theme default. That mistake once produced a false drift finding on Modal and Disclosure.
+**Removed entries:** 3 (headline tiers, resolved in design 2026-09-24) and 15 (Reader Dashboard hand-built copies, retired 2026-09-25) were resolved and removed on 2026-10-20; see git history. Their numbers aren't reused, so links to the other entries still work.
