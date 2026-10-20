@@ -1,7 +1,7 @@
 # MNG Web Design System — Project Folder
 
 > Folder map and filing rules. **Every session working on this project reads this first and follows it.**
-> Set up 2026-09-30, when duplicate copies made by different sessions were removed. **Updated 2026-10-01:** the project moved from Google Drive to GitHub (`kuscholdMNG/MNGWebDesignSystem`). See "Working in GitHub" below. **Updated 2026-10-02:** added `scripts/`; the homepage template audit was deleted from `_archive/`. **Updated 2026-10-08:** added `tokens/icons/`, `logos/` and `scripts/logos-export/`. **Updated 2026-10-09:** added `figma-exports/mng-ads-export/` and `scripts/ads-export/`. **Updated 2026-10-13:** added `EXPORT-STANDARD.md`; `figma-exports/` is now legacy (frozen). **Updated 2026-10-14:** added `components/core/` and `scripts/component-export/` (shared component exporter; buttons exported, the legacy buttons export and `_archive/` deleted); added `tokens/core/`, `tokens/themes/`, `tokens/wordpress/`, `dist/`, `package.json` and `scripts/build-tokens/` (open item 11, step 2; merged 2026-10-14, pull request #2); renamed from "MNG Design System" to **MNG Web Design System** (see "Names" below); local copy moved to `~/Github/`.
+> Set up 2026-09-30, when duplicate copies made by different sessions were removed. **Updated 2026-10-01:** the project moved from Google Drive to GitHub (now `kuscholdMNG/mng_web_ds`). See "Working in GitHub" below. **Updated 2026-10-02:** added `scripts/`; the homepage template audit was deleted from `_archive/`. **Updated 2026-10-08:** added `tokens/icons/`, `logos/` and `scripts/logos-export/`. **Updated 2026-10-09:** added `figma-exports/mng-ads-export/` and `scripts/ads-export/`. **Updated 2026-10-13:** added `EXPORT-STANDARD.md`; `figma-exports/` is now legacy (frozen). **Updated 2026-10-14:** added `components/core/` and `scripts/component-export/` (shared component exporter; buttons exported, the legacy buttons export and `_archive/` deleted); added `tokens/core/`, `tokens/themes/`, `tokens/wordpress/`, `dist/`, `package.json` and `scripts/build-tokens/` (open item 11, step 2; merged 2026-10-14, pull request #2); renamed from "MNG Design System" to **MNG Web Design System** (see "Names" below); local copy moved to `~/Github/`. **Updated 2026-10-20:** GitHub repo renamed to `mng_web_ds` (Karl); the local folder keeps the name `MNGWebDesignSystem`.
 
 ## Names
 
@@ -10,7 +10,8 @@ The design system was renamed on 2026-10-14 (Karl). Use these forms everywhere:
 | Where | Form |
 |---|---|
 | Prose, docs, Figma file name and labels | **MNG Web Design System** |
-| GitHub repo, local folder, Claude project, anything without spaces | **MNGWebDesignSystem** |
+| GitHub repo (renamed 2026-10-20) | **mng_web_ds** (`kuscholdMNG/mng_web_ds`) |
+| Local folder, Claude project, anything else without spaces | **MNGWebDesignSystem** |
 | Code identifiers, the `dist/` package name, snake_case contexts | **mng_web_design_system** |
 | Status file | `MNG-Web-Design-System-Status.md` |
 
@@ -107,7 +108,7 @@ MNGWebDesignSystem/
 
 ## Working in GitHub
 
-- **Repo:** https://github.com/kuscholdMNG/MNGWebDesignSystem (branch `main`).
+- **Repo:** https://github.com/kuscholdMNG/mng_web_ds (branch `main`; renamed from `MNGWebDesignSystem` 2026-10-20, old links redirect).
 - **Local copy:** `~/Github/MNGWebDesignSystem` on Karl's Mac (moved 2026-10-14; `~/Github` also holds the `for_you_tab_mvp` repo). Work only there. The old Google Drive folder is retired; don't save anything to it.
 - **Commit every change** with a short message that says what changed and why (for example "Add card-teaser hover states"). Git history replaces the dates in file names, so rule 5 still applies: put the date inside the file.
 - **Value changes that need Karl's review** (token values, decisions in the decision logs) go on a branch, such as `review/primary-blue-fix`, with a pull request. Everything else can go straight to `main`.

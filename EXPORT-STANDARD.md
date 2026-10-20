@@ -227,7 +227,7 @@ Built from the DTCG files by `scripts/build-tokens/`. **Never edited by hand.** 
 | `dist/wordpress/` | WordPress block themes | `theme.json` fragments: color palette, font sizes, font families, spacing sizes and custom values, one per theme. |
 | `dist/json/` | Anything else | Flat `name → value` JSON (hex, rgba, px). |
 
-- `dist/` is also a package: a `package.json` at the repo top level with `exports`, so Vite, webpack or any Node build can install it straight from GitHub (`npm install github:kuscholdMNG/MNGWebDesignSystem`) and import `mng_web_design_system/css/core.css`, `.../js/tokens.js` or `.../tailwind/theme.css`. The Tailwind v4 file works with Tailwind's Vite plugin as is.
+- `dist/` is also a package: a `package.json` at the repo top level with `exports`, so Vite, webpack or any Node build can install it straight from GitHub (`npm install github:kuscholdMNG/mng_web_ds`) and import `mng_web_design_system/css/core.css`, `.../js/tokens.js` or `.../tailwind/theme.css`. The Tailwind v4 file works with Tailwind's Vite plugin as is.
 - CSS variable names: `--mng-` + the token path with hyphens (`--mng-color-theme-primary`, `--mng-font-size-16-5`, `--mng-spacing-200`).
 - Colors are written as hex when alpha is 1, and as `rgba()` when it's below 1.
 - Sizes are written in `px`, with `rem` versions where the format supports them.
