@@ -197,8 +197,8 @@ Kept here for a few weeks so the history is easy to find; git log has the rest.
 - On the Buttons page, keep the older `Button` sets in `Frame 13001` as they are (Karl, 2026-10-02).  
 - The **Fonts** page documents fallbacks and font changes, so it keeps its non-Noto specimens. Everywhere else, text is Noto Sans or Noto Serif.  
 - `subsite-custom` cascades: a theme's value is pushed to every related sub-theme style guide unless the sub-theme has its own override (Denver Post, The Press Democrat, St. Paul Pioneer Press, The Baltimore Sun, South Florida Sun Sentinel); a theme with no value is documented as missing on every related sub-theme (Karl, 2026-10-19).  
-- On the Color Pallets page, a style guide only shows a production column when production differs from design. With no mismatch, it shows the should-be column alone (Karl, 2026-10-19).  
-- Color tokens always carry design (should-be) values. When production differs, mark the production row in Figma with the red-dashed outline and log the fix; never change the token to match production.  
+- On the Color Pallets page, a style guide only shows a production column when production differs from design. With no mismatch, it shows the design spec column alone (Karl, 2026-10-19).  
+- Color tokens always carry design spec values. When production differs, mark the production row in Figma with the red-dashed outline and log the fix; never change the token to match production.  
 - The project lives in GitHub (`kuscholdMNG/MNGWebDesignSystem`), not Google Drive. Work in the local copy, commit every change and push. Value changes that need Karl's review go on a branch with a pull request. See "Working in GitHub" in `README.md`.  
 - Never commit credentials, `.DS_Store` files, `__pycache__` / `.pyc` files or zips.  
 - Every token and component export follows `EXPORT-STANDARD.md`: DTCG 2025.10 `.tokens.json` files only (hex is the color source of truth; RGBA and color objects are generated), Figma → code direction only, no new files in the legacy `figma-exports/`, and `dist/` files are generated, never hand-edited.
