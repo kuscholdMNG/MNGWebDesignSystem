@@ -2,7 +2,44 @@
 
 **Purpose:** A running list of every place live production has been found diverging from the Figma design-system spec, or where something was explicitly flagged as needing engineering (or legal) attention. Figma is the source of truth for these systems; when production disagrees, the fix belongs here as an engineering item rather than being silently absorbed into design tokens. Each entry says where the drift is, what Figma says vs. what's live, and what engineering should do about it.
 
-**Contents:** Icons 1 · Fonts and typography 2–6 · Colors 7–10 (easy wins first: 7 Universal Grays and Alerts, 8 Endless Tributes; then 9 per-site color fixes, 10 Breaking News bar and Sponsored badge) · Components, layout, ads and breakpoints 11–30.
+**Color fixes checklist (Google Sheet, one row per fix with a Done checkbox):** [MNG color fixes checklist](https://docs.google.com/spreadsheets/d/17oRvVmGWZgnfvKzupvgX7SEtA9b-uK6guqyufM4bxBk/edit). The same rows are in `tokens/colors/mng-colors-fixes.csv`.
+
+**Contents**
+
+- **Icons**
+  - [1. Icon font — mismatches with the Figma icon page, dead and duplicate glyphs, and known missing icons](#1-icon-font--mismatches-with-the-figma-icon-page-dead-and-duplicate-glyphs-and-known-missing-icons)
+- **Fonts and typography**
+  - [2. Font fallbacks — Helvetica instead of the design stacks (all sites)](#2-font-fallbacks--helvetica-instead-of-the-design-stacks-all-sites)
+  - [3. Typography — headline tiers measured live with no matching Figma style](#3-typography--headline-tiers-measured-live-with-no-matching-figma-style)
+  - [4. Reader Dashboard — Typography (2026-09-10)](#4-reader-dashboard--typography-2026-09-10)
+  - [5. Upcoming Events (CitySpark widget) — font family](#5-upcoming-events-cityspark-widget--font-family)
+  - [6. Article breadcrumbs — label font family and text color](#6-article-breadcrumbs--label-font-family-and-text-color)
+- **Colors**
+  - [7. Color Tokens — Universal Grays and Alert colors (all three themes)](#7-color-tokens--universal-grays-and-alert-colors-all-three-themes)
+  - [8. Color Tokens — Endless Tributes (obituaries) palette](#8-color-tokens--endless-tributes-obituaries-palette)
+  - [9. Color Tokens — theme and sub-theme color fixes (every publication)](#9-color-tokens--theme-and-sub-theme-color-fixes-every-publication)
+  - [10. Component colors — Breaking News bar and Sponsored badge](#10-component-colors--breaking-news-bar-and-sponsored-badge)
+- **Components, layout, ads and breakpoints**
+  - [11. Buttons — Obituaries page CTA (Chicago Tribune, Denver Post)](#11-buttons--obituaries-page-cta-chicago-tribune-denver-post)
+  - [12. Article Card / Teaser](#12-article-card--teaser)
+  - [13. Reader Dashboard — Modal](#13-reader-dashboard--modal)
+  - [14. Reader Dashboard — Disclosure](#14-reader-dashboard--disclosure)
+  - [15. Reader Dashboard — Design System Architecture](#15-reader-dashboard--design-system-architecture)
+  - [16. Containers, Images & Ad Units](#16-containers-images--ad-units)
+  - [17. Navigation](#17-navigation)
+  - [18. Ad Units — Homepage "Ad Blocks" slot after Blueconic/Most Popular is undersized (300×250 instead of 300×600)](#18-ad-units--homepage-ad-blocks-slot-after-blueconicmost-popular-is-undersized-300250-instead-of-300600)
+  - [19. Masthead — Top-leaderboard ad slot renders at inconsistent sizes across page types](#19-masthead--top-leaderboard-ad-slot-renders-at-inconsistent-sizes-across-page-types)
+  - [20. Masthead — Top nav bar overflows its container at the 1040–1279px (Tier 4) breakpoint](#20-masthead--top-nav-bar-overflows-its-container-at-the-10401279px-tier-4-breakpoint)
+  - [21. Masthead — Article scrolled-state headline overflows behind the bookmark/share icons](#21-masthead--article-scrolled-state-headline-overflows-behind-the-bookmarkshare-icons)
+  - [22. Masthead — Reader Dashboard shows the top nav-links row and "TRENDING:" bar, which the design explicitly excludes](#22-masthead--reader-dashboard-shows-the-top-nav-links-row-and-trending-bar-which-the-design-explicitly-excludes)
+  - [23. Video carousel ("Videos from @OCRegister") — fixed-height iframe leaves ~200px of unused blank space at narrow (340–360px) widths](#23-video-carousel-videos-from-ocregister--fixed-height-iframe-leaves-200px-of-unused-blank-space-at-narrow-340360px-widths)
+  - [24. Spacing — 10px and 14px values off the 4/8 grid](#24-spacing--10px-and-14px-values-off-the-48-grid)
+  - [25. Radius — buttons are 4px; 5px on a button is drift](#25-radius--buttons-are-4px-5px-on-a-button-is-drift)
+  - [26. Mobile adhesion — empty sticky bar shows at 1024px and up](#26-mobile-adhesion--empty-sticky-bar-shows-at-1024px-and-up)
+  - [27. Blueconic Block (Most Popular) — list spacing and item headline](#27-blueconic-block-most-popular--list-spacing-and-item-headline)
+  - [28. Reader Dashboard — breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)](#28-reader-dashboard--breakpoints-close-to-but-not-on-the-figma-screen-widths-questions-for-digiscrum)
+  - [29. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)](#29-obituaries--breakpoints-that-dont-match-the-wordpress-grid-for-the-cms-team)
+  - [30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#30-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
 
 ---
 
