@@ -4,7 +4,7 @@
 > - Every token and value in this doc was re-checked against the live Figma variables on 2026-09-24 and matches.
 > - Modern Earthy eyebrow is now **confirmed**, not a placeholder. See §3.
 > - **Added 2026-09-24:** 7 new Editorial styles (card tiers, headline list, related headline, lead-story media variant, body copy) and a new theme token, `font/theme/small-headline-family`. Measured live the same day on 7 sites.
-> - History and reasoning live in `typography-decision-log.md` (this folder). Known Figma-vs-production gaps live in `design-vs-production.md` (MNGWebDesignSystem folder).
+> - History and reasoning live in `typography-decision-log.md` (this folder). Known Figma-vs-production gaps live in `design-vs-production.md` (repo top level).
 
 **Status:** Built in Figma Variables in the MNG Web Design System file: collections Type Primitives, Typeography Tokens (collection name is misspelled in Figma), Typography Theme and Dashboard Typography. This doc is the reference for the current token catalog: names, values and where each came from.
 

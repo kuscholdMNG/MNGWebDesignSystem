@@ -7,7 +7,7 @@ Inputs
   --source   the 'Completed Market Logos' folder downloaded from Drive
              (https://drive.google.com/drive/folders/1luw8jc2lUoAHwbbOCokgacO_nzDLm7Vi).
              Only its 'Master Logos' sub-folder is read.
-  --repo     the MNGWebDesignSystem repo root (default: two folders up from this script).
+  --repo     the mng_web_ds repo root (default: two folders up from this script).
   sources.json (next to this script): which file and artboard each publication uses.
 
   figma-placeholders.json (next to this script): vector data of the 'FAKE NEWSPAPER LOGOS'

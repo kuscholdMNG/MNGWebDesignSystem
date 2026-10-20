@@ -2,7 +2,7 @@
 **Date:** September 8, 2026 (file references updated 2026-09-25)
 **Scope:** The `InLineMessage` component set — the shared alert/panel/message pattern used across the Reader Dashboard (gift articles, subscriptions, newsletters, profile, etc.) and referenced piecemeal elsewhere in the design system.
 
-**Related doc:** `Reader-Dashboard-Library-Impact-Map.md`, in the MNGWebDesignSystem folder root. Its scope is different from this doc — it maps which files/pages across the whole footprint would be affected by a Reader Dashboard v2.0 → v2.1 library publish (component usage/exposure, not variant-axis design), compiled 2026-09-02 across three rounds of scanning. See §6 below for how the two connect.
+**Related doc:** `Reader-Dashboard-Library-Impact-Map.md`, in the repo's top-level folder. Its scope is different from this doc — it maps which files/pages across the whole footprint would be affected by a Reader Dashboard v2.0 → v2.1 library publish (component usage/exposure, not variant-axis design), compiled 2026-09-02 across three rounds of scanning. See §6 below for how the two connect.
 
 ---
 
@@ -79,7 +79,7 @@ Sources:
 2. Is `Device` ever a genuine structural difference for this component (not just resizing), or can all breakpoints collapse into one responsive component? I'd want a couple of real Desktop-vs-Mobile pairs pulled up side by side in Figma to check before committing either way.
 3. Once the axes are agreed, do you want me to actually rebuild `InLineMessage` in the main file (new properties, consolidated variants, internal layer renames), or just hand off this plan for your team to execute?
 4. Should the Empty State, Status Badge and Modal error alert be built as instances of the reorganized component as a follow-up pass, or is that out of scope for now?
-5. ~~Where does the Library Impact Map live?~~ Resolved — `Reader-Dashboard-Library-Impact-Map.md` in the MNGWebDesignSystem folder root. Its own next-step items (Account Selector Feat., Single Use Landing Pages, Email Options for Non-Registered Users) are about the v2.1 publish, separate from the InLineMessage rework above — flagging in case you want both workstreams sequenced together.
+5. ~~Where does the Library Impact Map live?~~ Resolved — `Reader-Dashboard-Library-Impact-Map.md` in the repo's top-level folder. Its own next-step items (Account Selector Feat., Single Use Landing Pages, Email Options for Non-Registered Users) are about the v2.1 publish, separate from the InLineMessage rework above — flagging in case you want both workstreams sequenced together.
 
 ---
 
