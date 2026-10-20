@@ -108,8 +108,11 @@ OBITS = [  # design-vs-production entry 8 (rechecked 2026-10-19); obituaries loo
     ('primary-dark (tributes)', 'MISSING', '#770000', 'Add Endless Tributes primary-dark #770000 (rgb 119, 0, 0).'),
     ('primary-darker (tributes)', 'MISSING', '#4d0000', 'Add Endless Tributes primary-darker #4d0000.'),
     ('tan-light (tributes)', '#ecede7', '#e8e6e2', 'Change tan-light from #ecede7 to #e8e6e2.'),
-    ('--secondary-obit', '#946c82', 'remove', 'Remove --secondary-obit (not part of the Endless Tributes palette).'),
-    ('--tertiary-obit', '#227db4', 'remove', 'Remove --tertiary-obit (not part of the Endless Tributes palette).'),
+    ('--primary-obit', '#8d092d', 'remove (use tributes primary #8d092d)', 'Remove the old widget variable --primary-obit; use the Endless Tributes primary #8d092d instead (same color).'),
+    ('--primary-obit-light', '#c00c3d', 'remove (use tributes primary-light #c00c3d)', 'Remove --primary-obit-light; use the Endless Tributes primary-light #c00c3d instead (same color).'),
+    ('--secondary-obit', '#946c82', 'remove', 'Remove --secondary-obit (not part of the Endless Tributes palette; no replacement).'),
+    ('--tertiary-obit', '#227db4', 'remove', 'Remove --tertiary-obit (not part of the Endless Tributes palette; no replacement).'),
+    ('--quaternary-obit', '#b3bc9c', 'remove (use tributes secondary Sage #b3bc9c)', 'Remove --quaternary-obit; use the Endless Tributes secondary (Sage) #b3bc9c instead (same color).'),
     ('beige #ccc7bc (article pages)', '#ccc7bc', '#e8e6e2', 'Replace #ccc7bc with tan-light #e8e6e2 on the Send Flowers banner (.obit-tribute-wrapper), the guestbook submit button and the Upcoming events / Sign Guestbook buttons (styleArticleObit.min.css).'),
 ]
 def where(fix):

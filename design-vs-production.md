@@ -215,16 +215,18 @@ See `tokens/typography/typography-tokens.md`. Production matches the new styles,
 
 | Color | Live | Fix |
 |---|---|---|
-| primary `#8d092d` | Rendered (`--primary-obit`) | None. |
-| primary-light `#c00c3d` | Hover state of the primary button (`--primary-obit-light`) | None. |
+| primary `#8d092d` | Rendered, through the old widget variable `--primary-obit` | Keep the color; replace `--primary-obit` with the Endless Tributes primary. |
+| primary-light `#c00c3d` | Hover state of the primary button, through `--primary-obit-light` | Keep the color; replace `--primary-obit-light` with the Endless Tributes primary-light. |
 | primary-lighter `#f15f87` | Not in any stylesheet | Add it. |
 | primary-dark `#770000` | Not in any stylesheet | Add it. |
 | primary-darker `#4d0000` | Not in any stylesheet | Add it. |
-| Sage `#b3bc9c` | Declared as `--quaternary-obit`, not used on the pages checked | Rename to the design name when the palette is added. |
+| Sage `#b3bc9c` | Declared as `--quaternary-obit`, not used on the pages checked | Replace `--quaternary-obit` with the Endless Tributes secondary (Sage). |
 | Brown `#3a252b` | Hard-coded on `.obits-homepage-*`, not on the pages checked | None. |
 | tan `#a39c8a` | Hard-coded (search filter button) | None. |
 | tan-light `#e8e6e2` | Renders `#ecede7` | Change to `#e8e6e2`. |
 | `--secondary-obit` `#946c82`, `--tertiary-obit` `#227db4` | Declared at `:root`, not part of the palette | Remove. |
+
+**Remove the old obituaries widget variables from the code** (Figma: Shared Platform Reference style guide, "Obituaries Widget Colors (--*-obit vars) - NEED TO REMOVE THESE FROM CODE"). All five are still declared at `:root` on every site: `--primary-obit`, `--primary-obit-light`, `--secondary-obit`, `--tertiary-obit`, `--quaternary-obit`. Delete them all; the three that carry palette colors (`--primary-obit`, `--primary-obit-light`, `--quaternary-obit`) are replaced by the Endless Tributes colors above (same values), and `--secondary-obit` and `--tertiary-obit` have no replacement.
 
 **Beige `#ccc7bc` on obituary article pages:** not a palette color, still live on Denver Post obituary articles (rechecked 2026-10-19 on two articles): the "Click here to Send Flowers" banner (`.obit-tribute-wrapper`, black text), the guestbook "Post Your Message" button (`.guestbook-form-submit`), and the "Upcoming events" and "Sign Guestbook" buttons when they show. Set in `styleArticleObit.min.css`. **Fix:** replace it with tan-light `#e8e6e2` (Karl, 2026-10-19).
 
