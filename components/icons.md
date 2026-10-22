@@ -149,4 +149,4 @@ Done 2026-10-22: Karl rebuilt the IcoMoon project by hand from `selection.json` 
 
 Also renamed in the IcoMoon project to match production (Karl, 2026-10-22): `Threads-square` → `threads`, `users4` → `user4`. The final export was checked: every production class is in its CSS under its production name, with the same codepoint (the four-color `google-color` as layered `.path1`–`.path4`). Production-only duplicates `icon-users4` and `icon-mng-podcast1` and the dead `icon-google-plus` aren't in it, as entry 1 of design-vs-production asks. It adds classes for `content_copy` and `ios_share`. The unused second padlock (`lock4`, U+E941, drawn off-center to the left) was left out of the font (Karl, 2026-10-22); the centered `padlock` (U+EA26) stays.
 
-Still open: the Figma labeling pass (production name plus "IcoMoon: name" or "Custom" on every icon) and the legend revision are next.
+Figma labeling done the same day: every icon in Icon Categories (171) and on the ADD list (17) shows its production name plus a gray "IcoMoon: name" or blue "Custom" tag (text layer `Source`), and the legend explains both. The Pending Updates REMOVE list has `lock4` (U+E941).
