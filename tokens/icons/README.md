@@ -24,7 +24,7 @@ To change a name, description or status, edit `icons.json`, then run `python3 sc
 - **`artworkSource: "icomoon"`** (146 icons): original IcoMoon artwork. `icomoonName` is the name to search for in IcoMoon. It differs from the production name for 9 icons: `hamburger` (IcoMoon `menu7`), `enlarge` (`enlarge7`), `enlarge2` (`enlarge`), `shrink2` (`shrink`), `user4` (`users`), `heart-broken2` (`heart-broken`), `book3` (`book`), `quill3` and `quill4` (`quill`).
 - **`artworkSource: "custom"`** (25 icons): MNG artwork, made in-house or changed from an IcoMoon icon (the blue names on the Figma page), plus the four-color Google mark, which was imported from an SVG.
 
-The IcoMoon names come from the MNG IcoMoon project (`selection.json`, 2025-03-19, Google Drive › Icons › MNG IconFont Update 20250319). Where the project had renamed an icon, the icon's IcoMoon tag gives the original name.
+The IcoMoon names come from the MNG IcoMoon project (`selection.json`, 2025-03-19, Google Drive › Icons › MNG IconFont Update 20250319). The 2026-10-22 export is in Google Drive › My Drive › Icons › MNG Icomoon Export 20261022. Where the project had renamed an icon, the icon's IcoMoon tag gives the original name.
 
 ## Status of the 171 icons in production
 
