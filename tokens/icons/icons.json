@@ -1968,7 +1968,7 @@
   }
  ],
  "nextFontBuild": {
-  "source": "MNG IcoMoon project \"MNG Icon Font 2025.03.19\", updated and exported by Karl 2026-10-22 (188 icons). Every production class is in the export's CSS under its production name. Not in production yet.",
+  "source": "MNG IcoMoon project \"MNG Icon Font 2025.03.19\", updated and exported by Karl 2026-10-22 (187 icons). Every production class is in the export's CSS under its production name. Not in production yet.",
   "add": [
    {
     "name": "plus-circle",
@@ -2130,7 +2130,14 @@
    "enlarge7": "enlarge",
    "Threads-square": "threads",
    "users4": "user4"
-  }
+  },
+  "removeGlyph": [
+   {
+    "name": "lock4",
+    "codepoint": "U+E941",
+    "note": "Second closed padlock, drawn off-center to the left; never had a production class. Left out of the font (Karl, 2026-10-22). The centered padlock (icon-padlock, U+EA26) stays."
+   }
+  ]
  },
  "productionOnly": [
   {
@@ -2153,7 +2160,7 @@
  "unusedGlyphs": [
   {
    "codepoint": "U+E941",
-   "note": "Second closed padlock; no class and not documented (the documented padlock is U+EA26)."
+   "note": "Second closed padlock (off-center to the left); no class and not documented (the documented padlock is U+EA26). Removed in the next font build (Karl, 2026-10-22)."
   }
  ]
 }

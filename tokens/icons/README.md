@@ -34,11 +34,12 @@ The IcoMoon names come from the MNG IcoMoon project (`selection.json`, 2025-03-1
 
 ## Next font build (not in production yet)
 
-Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (188 icons). Its files aren't in the repo yet.
+Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (187 icons). Its files aren't in the repo yet.
 
 - **Add (17):** plus-circle, plus-circle2, minus-circle, minus-circle2, list, grid, crown, giving-hand, yield-filled, yield-outline (the original Pending Updates list), and headphones, sort, sort2, sort-alpha-asc, sort-alpha-desc, filter3, filter4 (IcoMoon icons added 2026-10-22). Codepoints are in `icons.json`.
 - **New artwork, same class and codepoint (2):** `notification` (U+E94D) and `notification2` (U+E94E).
 - **Renamed in the IcoMoon project to match production:** `menu7` → `hamburger`, `enlarge7` → `enlarge`, `Threads-square` → `threads`, `users4` → `user4`. Every production class is in the export's CSS under its production name.
+- **Removed:** U+E941 (`lock4`), an unused second padlock drawn off-center; it never had a production class. The centered `padlock` (U+EA26) stays.
 
 ## Not included
 

@@ -74,11 +74,12 @@
 
 ### 1.2 Next font build (updated 2026-10-22)
 
-Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (188 icons). None of these is in the production font yet. Codepoints are in `tokens/icons/icons.json` (`nextFontBuild`); artwork is in `tokens/icons/svg-missing/`.
+Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (187 icons). None of these is in the production font yet. Codepoints are in `tokens/icons/icons.json` (`nextFontBuild`); artwork is in `tokens/icons/svg-missing/`.
 
 - **Add (17 new icons):** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`, `headphones`, `sort`, `sort2`, `sort-alpha-asc`, `sort-alpha-desc`, `filter3`, `filter4`.
 - **New artwork, same class and codepoint:** `notification` (U+E94D, outline) and `notification2` (U+E94E, filled). Where they show today: `notification2` in the Reader Dashboard's inline-message headings (Saved Articles, Gifted Articles and Subscription pages; seen on Cañon City Daily Record 2026-10-21) and `notification` in the Save Article modal's "out of space" messages (`mng-digisubs` plugin CSS).
-- **Production class names are kept.** The IcoMoon project was renamed to match production: `hamburger` (was `menu7`), `enlarge` (was `enlarge7`), `threads` (was `Threads-square`), `user4` (was `users4`). Every production class is in the export's CSS with the same codepoint. Not in it: the duplicates `icon-users4` and `icon-mng-podcast1` and the dead `icon-google-plus` (see the table above). New in it: `icon-content_copy`, `icon-ios_share` (see 1.1) and `icon-lock4` (U+E941, the unused second padlock).
+- **Production class names are kept.** The IcoMoon project was renamed to match production: `hamburger` (was `menu7`), `enlarge` (was `enlarge7`), `threads` (was `Threads-square`), `user4` (was `users4`). Every production class is in the export's CSS with the same codepoint. Not in it: the duplicates `icon-users4` and `icon-mng-podcast1` and the dead `icon-google-plus` (see the table above). New in it: `icon-content_copy` and `icon-ios_share` (see 1.1).
+- **Removed:** U+E941, the unused second padlock (drawn off-center; never had a class). The centered `padlock` (U+EA26) stays.
 
 **Status:** Open.
 
