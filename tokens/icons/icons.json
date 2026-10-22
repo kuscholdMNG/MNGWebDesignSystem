@@ -1968,7 +1968,7 @@
   }
  ],
  "nextFontBuild": {
-  "source": "MNG IcoMoon project \"MNG Icon Font 2025.03.19\", updated and exported by Karl 2026-10-22 (188 icons). Not in production yet.",
+  "source": "MNG IcoMoon project \"MNG Icon Font 2025.03.19\", updated and exported by Karl 2026-10-22 (188 icons). Every production class is in the export's CSS under its production name. Not in production yet.",
   "add": [
    {
     "name": "plus-circle",
@@ -2127,7 +2127,9 @@
   ],
   "renamedInIcomoonProject": {
    "menu7": "hamburger",
-   "enlarge7": "enlarge"
+   "enlarge7": "enlarge",
+   "Threads-square": "threads",
+   "users4": "user4"
   }
  },
  "productionOnly": [

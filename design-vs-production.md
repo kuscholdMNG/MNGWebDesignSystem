@@ -78,7 +78,7 @@ Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (188 icons). 
 
 - **Add (17 new icons):** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`, `headphones`, `sort`, `sort2`, `sort-alpha-asc`, `sort-alpha-desc`, `filter3`, `filter4`.
 - **New artwork, same class and codepoint:** `notification` (U+E94D, outline) and `notification2` (U+E94E, filled). Where they show today: `notification2` in the Reader Dashboard's inline-message headings (Saved Articles, Gifted Articles and Subscription pages; seen on Cañon City Daily Record 2026-10-21) and `notification` in the Save Article modal's "out of space" messages (`mng-digisubs` plugin CSS).
-- **Keep production's class names.** The IcoMoon project was renamed to match production for `hamburger` (was `menu7`) and `enlarge` (was `enlarge7`). Two names in the export still differ from production: `Threads-square` (production `icon-threads`) and `users4` (production `icon-user4`). Keep the production classes when the font ships.
+- **Production class names are kept.** The IcoMoon project was renamed to match production: `hamburger` (was `menu7`), `enlarge` (was `enlarge7`), `threads` (was `Threads-square`), `user4` (was `users4`). Every production class is in the export's CSS with the same codepoint. Not in it: the duplicates `icon-users4` and `icon-mng-podcast1` and the dead `icon-google-plus` (see the table above). New in it: `icon-content_copy`, `icon-ios_share` (see 1.1) and `icon-lock4` (U+E941, the unused second padlock).
 
 **Status:** Open.
 
