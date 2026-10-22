@@ -1,5 +1,6 @@
-/* MNG icon font — classes follow the Figma "Icon Categories" page (MNG Web Design System, node 1412:13).
- * Font: production icomoon (identical on every MNG site), extracted 2026-10-08. See README.md and icons.json. */
+/* MNG icon font — one class per icon, named by its production class (Karl, 2026-10-22).
+ * Font: production icomoon (identical on every MNG site), extracted 2026-10-08.
+ * Generated from icons.json by scripts/icon-font/build.py. Don't edit by hand. */
 @font-face{font-family:'icomoon';src:url('icomoon.woff2') format('woff2'),url('icomoon.woff') format('woff'),url('icomoon.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:block}
 [class^='icon-'],[class*=' icon-']{font-family:'icomoon'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 
@@ -23,9 +24,9 @@
 .icon-enlarge2::before{content:"\eb3e"}
 .icon-shrink2::before{content:"\eb3f"}
 .icon-checkmark3::before{content:"\e91a"}
-.icon-menu7::before{content:"\e943"}  /* production: icon-hamburger */
-.icon-content-copy::before{content:"\e921"}  /* production: no class */
-.icon-grid2::before{content:"\e932"}  /* production: icon-grid2 */
+.icon-hamburger::before{content:"\e943"}
+.icon-content-copy::before{content:"\e921"}  /* no production class yet */
+.icon-grid2::before{content:"\e932"}  /* production's icon-grid2 shows the wrong glyph; this is the design glyph */
 .icon-share-more::before{content:"\e961"}
 .icon-more2::before{content:"\e946"}
 .icon-circle-small::before{content:"\e91b"}
@@ -34,7 +35,7 @@
 .icon-search::before{content:"\e95f"}
 .icon-zoom-in2::before{content:"\e98a"}
 .icon-zoom-out2::before{content:"\e98b"}
-.icon-enlarge7::before{content:"\e926"}  /* production: icon-enlarge */
+.icon-enlarge::before{content:"\e926"}
 .icon-shrink7::before{content:"\e963"}
 .icon-question3::before{content:"\e95c"}
 .icon-question4::before{content:"\e95d"}
@@ -102,7 +103,7 @@
 .icon-paperplane::before{content:"\e950"}
 .icon-share2::before{content:"\e962"}
 .icon-share-alt::before{content:"\e960"}
-.icon-ios-share::before{content:"\e93a"}  /* production: no class */
+.icon-ios-share::before{content:"\e93a"}  /* no production class yet */
 .icon-print::before{content:"\e95b"}
 .icon-sms::before{content:"\e965"}
 .icon-link::before{content:"\e93e"}
@@ -135,7 +136,6 @@
 .icon-google-color .path4::before{content:"\ea2e";color:#EA4335;margin-left:-1em}
 .icon-google::before{content:"\eee7"}
 .icon-instagram::before{content:"\e939"}
-.icon-itunes-apple-music::before{content:"\e947"}  /* production: icon-music5 */
 .icon-linkedin::before{content:"\e93f"}
 .icon-paypal::before{content:"\e952"}
 .icon-pinterest-p::before{content:"\e957"}
@@ -151,12 +151,12 @@
 .icon-tumblr::before{content:"\e976"}
 .icon-x::before, .icon-twitter::before{content:"\e990"}
 .icon-vimeo::before{content:"\e97e"}
-.icon-windows8::before{content:"\e987"}  /* production: icon-windows8 */
+.icon-windows8::before{content:"\e987"}  /* production's icon-windows8 shows the wrong glyph; this is the design glyph */
 .icon-yelp::before{content:"\e988"}
 .icon-youtube::before{content:"\e989"}
 
 /* Decoration */
-.icon-home::before{content:"\e936"}  /* production: icon-home3 */
+.icon-home3::before{content:"\e936"}
 .icon-office::before{content:"\e94f"}
 .icon-city::before{content:"\e91c"}
 .icon-store::before{content:"\e970"}
@@ -176,7 +176,7 @@
 .icon-calendar-empty::before{content:"\e913"}
 .icon-padlock::before{content:"\ea26"}
 .icon-book::before{content:"\e992"}
-.icon-book3::before{content:"\e993"}  /* production: icon-book3 */
+.icon-book3::before{content:"\e993"}  /* production's icon-book3 shows the wrong glyph; this is the design glyph */
 .icon-quill3::before{content:"\e994"}
 .icon-quill4::before{content:"\e995"}
 .icon-unlocked::before{content:"\e978"}
