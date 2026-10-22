@@ -55,7 +55,8 @@
 | `google-plus` | Still in the live font. Google+ was shut down years ago, and the icon isn't documented. | Remove from the font. |
 | `mng-podcast1` | Same codepoint (`e902`) as `android` — a font-build duplicate, not a separate icon. | Remove the alias. |
 | `grid2` | Renders the same gift-box glyph as `gift2`, not a grid. The requested "grid" icon has not shipped. | Remove the alias; ship the real `grid` icon (artwork exists in Figma). |
-| `notification-filled`, `notification-outlines` | Designed in Figma (filled and outline exclamation-in-a-circle alert icons) but missing from the live font under any name. Karl confirmed these are real, finished icons waiting to ship. | Add to the font. |
+| U+E941 (unused second padlock) | A second closed padlock, drawn off-center to the left, is in the live font with no class. Nothing can show it. The padlock in use is `icon-padlock` (U+EA26, centered), confirmed live on ocregister.com 2026-10-22. *Added 2026-10-22 (Karl).* | Remove the U+E941 glyph from the font. Keep `icon-padlock` (U+EA26). Already left out of the next font build (see 1.2). |
+| `notification`, `notification2` | New outline and filled alert artwork is designed in Figma to replace the IcoMoon glyphs. The class names stay: both are in use (Reader Dashboard inline-message headings, Save Article modal). *Updated 2026-10-22: this is new artwork under the existing names, not two new icons.* | Replace the glyphs at U+E94D (`notification`, outline) and U+E94E (`notification2`, filled); keep the classes. See 1.2. |
 
 
 **Updated 2026-10-08:** re-checked glyph by glyph against the Figma **Icon Categories** frame (main file, Icons | 2026.08.28, node `1412:13`) using the font extracted from ocregister.com (`tokens/icons/`). **All MNG sites use the same icon font** (Karl, 2026-10-08), so these findings apply everywhere. Of the 171 documented icons, 162 match production by name and glyph. Third-party vendor icons and the "Need to source/make/add" list are out of scope.
@@ -69,16 +70,17 @@
 | `book3` | `icon-book3` points at U+0065 (the letter "e"). The closed book is in the font at U+E993, with no class. | Point `icon-book3` at U+E993. |
 | `content_copy` | No class. The glyph is in the font at U+E921. | Add `icon-content_copy` (or the agreed name) → U+E921. |
 | `ios_share` | No class. The glyph is in the font at U+E93A. | Add `icon-ios_share` → U+E93A. |
-| `home`, `menu7`, `enlarge7` | Same glyphs, but production names them `icon-home3`, `icon-hamburger` and `icon-enlarge`. Already listed in the Figma page's CHANGE section and in `components/icons.md` §3 as naming fixes. | Decide which name wins (design and dev); rename the Figma entry or add the Figma name as a production alias. |
-| "iTunes / Apple Music" | Same glyph as `icon-music5`; no class with this name. | Naming only; no font change. |
-| *(none)* | `icon-google-plus` (no glyph), `icon-mng-podcast1` (= android) and `icon-users4` (= user4) have no Figma entry. `google-plus` and `mng-podcast1` are in the table above; `users4` was set aside by Karl 2026-08-31. U+E941 (a second padlock) is in the font with no class and no Figma entry. | Remove the dead classes; U+E941 can go in a font rebuild. |
+| ~~`home`, `menu7`, `enlarge7`, "iTunes / Apple Music"~~ | **Resolved 2026-10-22 (Karl): production names win.** These are `icon-home3`, `icon-hamburger`, `icon-enlarge` and `icon-music5`; the design system now uses those names. | None. |
+| *(none)* | `icon-google-plus` (no glyph), `icon-mng-podcast1` (= android) and `icon-users4` (= user4) have no Figma entry. `google-plus` and `mng-podcast1` are in the table above; `users4` was set aside by Karl 2026-08-31. U+E941 (a second padlock) is in the font with no class and no Figma entry. | Remove the dead classes. U+E941: see the table above (remove, 2026-10-22). |
 
-### 1.2 Known missing icons (to be added; not mismatches)
+### 1.2 Next font build (updated 2026-10-22)
 
-Listed in the Figma page's **Pending Updates**. None is in the production font under any name. Figma artwork for all 12 is in `tokens/icons/svg-missing/`.
+Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (187 icons). None of these is in the production font yet. Codepoints are in `tokens/icons/icons.json` (`nextFontBuild`); artwork is in `tokens/icons/svg-missing/`.
 
-- **ADD:** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`.
-- **CHANGE:** `notification-outlines` (replaces `notification`) and `notification-filled` (replaces `notification2`). Same items as the `notification-filled` / `notification-outlines` row above.
+- **Add (17 new icons):** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`, `headphones`, `sort`, `sort2`, `sort-alpha-asc`, `sort-alpha-desc`, `filter3`, `filter4`.
+- **New artwork, same class and codepoint:** `notification` (U+E94D, outline) and `notification2` (U+E94E, filled). Where they show today: `notification2` in the Reader Dashboard's inline-message headings (Saved Articles, Gifted Articles and Subscription pages; seen on Cañon City Daily Record 2026-10-21) and `notification` in the Save Article modal's "out of space" messages (`mng-digisubs` plugin CSS).
+- **Production class names are kept.** The IcoMoon project was renamed to match production: `hamburger` (was `menu7`), `enlarge` (was `enlarge7`), `threads` (was `Threads-square`), `user4` (was `users4`). Every production class is in the export's CSS with the same codepoint. Not in it: the duplicates `icon-users4` and `icon-mng-podcast1` and the dead `icon-google-plus` (see the table above). New in it: `icon-content_copy` and `icon-ios_share` (see 1.1).
+- **Removed:** U+E941, the unused second padlock (drawn off-center; never had a class). The centered `padlock` (U+EA26) stays.
 
 **Status:** Open.
 

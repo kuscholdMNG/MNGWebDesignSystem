@@ -1,7 +1,7 @@
 # MNG Web Design System — Project Folder
 
 > Folder map and filing rules. **Every session working on this project reads this first and follows it.**
-> Set up 2026-09-30, when duplicate copies made by different sessions were removed. **Updated 2026-10-01:** the project moved from Google Drive to GitHub (now `kuscholdMNG/mng_web_ds`). See "Working in GitHub" below. **Updated 2026-10-02:** added `scripts/`; the homepage template audit was deleted from `_archive/`. **Updated 2026-10-08:** added `tokens/icons/`, `logos/` and `scripts/logos-export/`. **Updated 2026-10-09:** added `figma-exports/mng-ads-export/` and `scripts/ads-export/`. **Updated 2026-10-13:** added `EXPORT-STANDARD.md`; `figma-exports/` is now legacy (frozen). **Updated 2026-10-14:** added `components/core/` and `scripts/component-export/` (shared component exporter; buttons exported, the legacy buttons export and `_archive/` deleted); added `tokens/core/`, `tokens/themes/`, `tokens/wordpress/`, `dist/`, `package.json` and `scripts/build-tokens/` (open item 11, step 2; merged 2026-10-14, pull request #2); renamed from "MNG Design System" to **MNG Web Design System** (see "Names" below); local copy moved to `~/Github/`. **Updated 2026-10-20:** GitHub repo renamed to `mng_web_ds` (Karl); the local folder was renamed to match (`~/Github/mng_web_ds`).
+> Set up 2026-09-30, when duplicate copies made by different sessions were removed. **Updated 2026-10-01:** the project moved from Google Drive to GitHub (now `kuscholdMNG/mng_web_ds`). See "Working in GitHub" below. **Updated 2026-10-02:** added `scripts/`; the homepage template audit was deleted from `_archive/`. **Updated 2026-10-08:** added `tokens/icons/`, `logos/` and `scripts/logos-export/`. **Updated 2026-10-09:** added `figma-exports/mng-ads-export/` and `scripts/ads-export/`. **Updated 2026-10-13:** added `EXPORT-STANDARD.md`; `figma-exports/` is now legacy (frozen). **Updated 2026-10-14:** added `components/core/` and `scripts/component-export/` (shared component exporter; buttons exported, the legacy buttons export and `_archive/` deleted); added `tokens/core/`, `tokens/themes/`, `tokens/wordpress/`, `dist/`, `package.json` and `scripts/build-tokens/` (open item 11, step 2; merged 2026-10-14, pull request #2); renamed from "MNG Design System" to **MNG Web Design System** (see "Names" below); local copy moved to `~/Github/`. **Updated 2026-10-20:** GitHub repo renamed to `mng_web_ds` (Karl); the local folder was renamed to match (`~/Github/mng_web_ds`). **Updated 2026-10-22:** added `scripts/icon-font/` (rebuilds the icon CSS and preview from `tokens/icons/icons.json`).
 
 ## Names
 
@@ -69,6 +69,7 @@ mng_web_ds/
     ├── colors-docs/                        ← build-color-docs.py (per-site CSV, mng-colors.css and entry 9 of
     │                                         design-vs-production, from mng-colors.tokens.json) + notes.json
     ├── breakpoint-inventory/               ← scan.js (live CSS scan in Chrome) + scans/ + build-inventory.py
+    ├── icon-font/                          ← build.py (tokens/icons/icomoon.css and preview.html, from icons.json)
     ├── component-export/                   ← shared component exporter: extract.js (Figma plugin code) +
     │                                         registry.json (which components, hand-checked text) + export.py
     ├── design-system-export/               ← extract.js + build-design-system-export.py + curated.json
@@ -88,7 +89,7 @@ mng_web_ds/
 | Token values (color, type, spacing, radius, breakpoints) | Change Figma, rerun `scripts/build-tokens/extract.js`, then `npm run build` (or the two Python scripts). Writes `tokens/core/`, `tokens/themes/`, `tokens/wordpress/` and `dist/`. On a `review/...` branch with a pull request. |
 | Color decisions, sites CSV | Decisions: `tokens/colors/color-tokens-decision-log.md`. Color values and production mismatches: `tokens/colors/mng-colors.tokens.json`, then run `scripts/colors-docs/build-color-docs.py` (rewrites the sites CSV, `mng-colors.css` and the per-site part of entry 9; notes per theme in `scripts/colors-docs/notes.json`) and `npm run build`. |
 | Typography tokens or decisions | `tokens/typography/` |
-| Icon font, glyph map, icon previews | `tokens/icons/` |
+| Icon font, glyph map, icon previews | `tokens/icons/` (edit `icons.json`, then run `scripts/icon-font/build.py` to rebuild `icomoon.css` and `preview.html`) |
 | Newspaper logo SVGs, manifest, preview | `logos/` (rebuilt by `scripts/logos-export/build-logos.py`; don't hand-edit the SVGs) |
 | A token or component export | Follow `EXPORT-STANDARD.md` (DTCG `.tokens.json`, layers, `dist/`). Never add to `figma-exports/` (legacy). |
 | A script that rebuilds an export | `scripts/<export-name>/` (inputs and outputs explained at the top of the script) |
