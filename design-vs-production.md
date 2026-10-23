@@ -38,7 +38,7 @@
   - [28. Reader Dashboard — breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)](#28-reader-dashboard--breakpoints-close-to-but-not-on-the-figma-screen-widths-questions-for-digiscrum)
   - [29. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)](#29-obituaries--breakpoints-that-dont-match-the-wordpress-grid-for-the-cms-team)
   - [30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#30-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
-  - [31. Homepage tabs (World Cup tabs) — font, colors and spacing off the design system](#31-homepage-tabs-world-cup-tabs--font-colors-and-spacing-off-the-design-system)
+  - [31. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system](#31-homepage-tabs-world-cup-tabs--font-colors-spacing-and-breakpoint-off-the-design-system)
 - [Notes (reading live colors, removed entries)](#notes)
 
 ---
@@ -1881,27 +1881,29 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 ---
 
-## 31. Homepage tabs (World Cup tabs) — font, colors and spacing off the design system
+## 31. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system
 
 **Found:** 2026-10-23, on staging.dailylocal.com/world-cup/ (`ul.sr-nav-tabs` > `button.tab-btn`), while building the For You tab bar. **Team:** CMS.
 
-**Design:** WordPress Elements ▸ Menus and Parts ▸ **Homepage Tabs** (set `3629:44974`, Breakpoint = Desktop / Mobile) built from **Homepage Tab** (set `3629:44949`, State = Default / Hover / Active / Focus). The layout is production's; the values are mapped to MNG tokens.
+**Design:** WordPress Elements ▸ Menus and Parts ▸ **Homepage Tabs** (set `3629:44974`, Breakpoint = Desktop / Mobile) built from **Homepage Tab** (set `3629:44949`, State = Default / Hover / Active / Focus). The layout is production's. Every value is an existing MNG token: where production uses a value with no token, it's rounded to the nearest one, and production should change to match (Karl, 2026-10-23).
 
 | Property | Production | Design |
 |---|---|---|
 | Tab font | Inter 600 12px | Noto Sans SemiBold, `font/size/12` |
-| Default text | `#6B7280` | `color/gray/200` (#5E5D5C) |
+| Tab letter spacing | 0.14em (1.68px) | 0 (no token; the production top nav and Subscriber Only badge use none) |
+| Default text | `#6B7280` | `color/gray/200` (#5E5D5C, 6.6:1 on white) |
 | Hover text | `#111827` | `color/gray/min` (#141414) |
 | Active text | `#000` | `color/gray/black` |
 | Active underline (2px) | `#C62828` | `color/theme/primary` |
 | Bar background | `#FAFAFA` | `color/gray/max` |
 | Bar bottom border (1px) | `#808080` | `color/gray/300` (#838280) |
-| Tab top/bottom padding | 12px | `spacing/150` |
-| Nav side padding | 24px | `spacing/300` |
+| Tab top/bottom padding | 12px | `spacing/150` (12) |
+| Tab side padding | 18px | `spacing/200` (16) |
+| Gap between tabs | 32px | `spacing/300` (24) |
+| Nav side padding | 24px | `spacing/300` (24) |
+| No side padding below | `(max-width: 500px)` | `(max-width: 639px)` (WordPress grid; see entry 30) |
 
-**No token yet (kept as production; decide in design):** 18px tab side padding and the 32px gap between tabs (both off the spacing scale), and the 0.14em (1.68px) letter spacing. The nav drops its side padding at `(max-width: 500px)`, which is off the WordPress grid (entry 30); snap it to `(max-width: 639px)`.
-
-**Fix:** use the theme font (Noto Sans) and the MNG color variables above instead of the hard-coded values.
+**Fix:** update the `sr-nav-tabs` styles to the design column.
 
 ## Notes
 

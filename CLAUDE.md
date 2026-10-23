@@ -41,6 +41,8 @@ We are building a full design system based on in-production websites in our foot
 ## Design vs. production
 
 - Design (Figma) is the source of truth. Tokens always carry design spec values. Never change a token to match production. Mark the gap in Figma with the red-dashed outline and log it in `design-vs-production.md`.
+- No off-token values in new components (Karl, 2026-10-23). When production uses a value that has no token (spacing, letter spacing, breakpoints and so on), round it to the nearest existing Figma token or official breakpoint, and log the production value in `design-vs-production.md` so production can be updated to match. On a tie, ask Karl.
+- Colors: use the closest existing MNG color or gray. Text must pass WCAG AA (4.5:1); if the closest gray doesn't, use the closest one that does.
 - Engineering handoff: `design-vs-production.md`, read on GitHub (https://github.com/kuscholdMNG/mng_web_ds/blob/main/design-vs-production.md). Fixes checklist: the "MNG color fixes checklist" Google Sheet (https://docs.google.com/spreadsheets/d/17oRvVmGWZgnfvKzupvgX7SEtA9b-uK6guqyufM4bxBk/edit), tabs "Color fixes" and "Other fixes". When a fix changes, update the sheet and the repo together.
 - Documented exceptions (currently only Greeley Tribune's primary, light and dark) are part of the design, not mismatches.
 - Use DTCG token naming (e.g. `color/theme/primary`, `font/size/16`).
