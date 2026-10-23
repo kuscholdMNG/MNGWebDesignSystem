@@ -1,6 +1,6 @@
 # For You → MNG DS components: status and handoff
 
-> **Updated 2026-10-23** for the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
+> **Updated 2026-10-23** for the Homepage Tabs (Menus and Parts; design-vs-production entry 31), the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
 
 ## Goal
 
@@ -86,7 +86,7 @@ Bold Coastal token values:
 
 | # | Element | Prototype class | Closest existing | Status / next step |
 |---|---|---|---|---|
-| 1 | Homepage tabs (Editor's Picks / For You) | `.tabs` | Production World Cup tabs | **New.** Build from the production spec. Ask Karl where it goes. |
+| 1 | Homepage tabs (Editor's Picks / For You) | `.tabs` | Production World Cup tabs | **Built 2026-10-23** in WordPress Elements ▸ Menus and Parts: Homepage Tab `3629:44949`, Homepage Tabs `3629:44974`. |
 | 2 | Feed header "While You Were Away" | `.fyh .eb` | WP Section Title / Eyebrow, Style=Underline (`3333:42278`) | **Exists.** The "Based on what you read." subhead line is new. |
 | 3 | Info tooltip | `.tip` | none (the `info` icon U+E937 exists) | **New** |
 | 4 | Featured story | `.lead` | Zone 1 Lead Article Card (set `3336:46157`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44769` / `3628:44822` / `3628:44874`). |
@@ -164,7 +164,7 @@ Each set got a new variant property **Style = Standard / For You**. The existing
 | Zone 1 Lead Article Card `3336:46157` | `Style=For You` × `Device=Mobile` `3628:44769`, `Tablet` `3628:44822`, `Desktop` `3628:44874` | Cloned from Standard (same headline, excerpt and image tokens). Removed: subscriber badge, Related list. Added: a Headline Group (Kicker, spacing/050, headline) and a Byline row after the excerpt (Author + Timestamp, spacing/150 gap, 12px above it). Mobile: the excerpt's 16px bottom padding is 0 and the byline has spacing/150 bottom padding, so the bottom border sits 20px below it. |
 
 Not built / open:
-- **Hover state** (prototype `.card:hover` / `.row:hover`: primary border plus a 1px primary ring, headline in primary). Needs a State property; ask Karl first.
+- **Hover state** (prototype `.card:hover` / `.row:hover`: primary border plus a 1px primary ring, headline in primary). Needs a State property. **Parked (Karl, 2026-10-23): come back to it later.**
 - **Card body space-between:** in code the card body is space-between so footers line up when cards in a row stretch to the same height. Figma can't combine that with a fixed 12px gap, so the Figma card uses the gap (noted in the component description).
 - **Featured story excerpt gap:** the prototype has 6px above the excerpt (`.lead-d`); the Figma Standard lead (production-measured) has a 4px gap. The For You variant keeps 4px. Check against production.
 - **Unused properties on For You variants:** `Show Subscriber Badge`, `Show Excerpt` and `Show Meta` (1Col) and `Show Gallery Icon` (Horizontal Thumbnail) don't apply to them.
@@ -186,7 +186,16 @@ Not built / open:
   - #6B7280 / #111827 → nearest MNG grays.
   - #C62828 → color/theme/primary.
   - #FAFAFA / #808080 → MNG grays.
-- The prototype's current tabs: white bar, 1px #CCCAC7 bottom border, inner width 896, 24px padding (4px on mobile).
+- The prototype's current tabs: white bar, 1px #CCCAC7 bottom border, inner width 896, 24px padding (4px on mobile). They also differ from production in the tab itself: Noto Sans 600 14/20, 0.35px letter spacing, 12px 24px padding, gray/200 text, active teal text with a 3px teal underline, and the tabs spread with space-between. **To do: update the prototype to match the built component.**
+
+**Built (2026-10-23)** in WordPress Elements ▸ **Menus and Parts** (Karl's choice), in a new "Homepage Tabs Documentation" frame (`3629:44928`) after the Breaking News Banner:
+
+| Component | Node | Notes |
+|---|---|---|
+| Homepage Tab | set `3629:44949`: `State=Default` `3629:44932`, `Hover` `3629:44936`, `Active` `3629:44940`, `Focus` `3629:44944`; text property `Label#3629:8` | Label Container (spacing/150 top/bottom, 18px sides) over a 2px Underline. Noto Sans SemiBold 12 (font/size/12, font/style/semibold), line height auto, 1.68px letter spacing, uppercase. Default gray/200; Hover gray/min; Active gray/black with a theme/primary underline; Focus: absolute 2px gray/black ring inset 3px. |
+| Homepage Tabs | set `3629:44974`: `Breakpoint=Desktop` `3629:44950` (1280), `Mobile` `3629:44962` (360) | gray/max bar, absolute 1px gray/300 Bottom Border behind the tabs (so the active underline covers it, like production's −1px margin). Nav 1200 wide with spacing/300 side padding (Desktop) or full width with no padding (Mobile). Tab List: 32px gap; Editor's Picks (Active) and For You (Default). |
+
+Color mapping (nearest MNG gray, with readable contrast): #6B7280 → gray/200 (gray/300 is closer in value but too light for 12px text on white), #111827 → gray/min, #000 → gray/black, #C62828 → theme/primary, #FAFAFA → gray/max, #808080 → gray/300. Logged as design-vs-production entry 31 and as a row in the "Other fixes" tab of the color fixes sheet. No token for 18px padding, the 32px gap or the 1.68px letter spacing.
 
 ## Next steps
 
@@ -194,8 +203,8 @@ Not built / open:
 2. ~~Timestamp size~~ 13px (Karl, 2026-10-23).
 3. ~~Build the 3 atoms~~ Done 2026-10-23, all screenshotted. ~~Prototype `.tm` 12px → 13px~~ Done 2026-10-23 in `claude-design-v3/Main.dc.html` (`font:400 13px/normal`). Not changed: the older `claude-design/Main.dc.html` and the `index.html` built from it (Oct 15), and the Claude Design canvas artifact.
 4. Publish the WordPress Elements library so the atoms can be used.
-5. ~~Card variants~~ Done 2026-10-23 (see "Card variants built"). Open: hover state; the 6px vs 4px excerpt gap on the featured story.
-6. Tabs: ask Karl where they go, then build from the production spec mapped to tokens.
+5. ~~Card variants~~ Done 2026-10-23 (see "Card variants built"). Open: hover state (parked); the 6px vs 4px excerpt gap on the featured story.
+6. ~~Tabs~~ Built 2026-10-23 in Menus and Parts; logged as design-vs-production entry 31. Open: update the prototype's tabs to match; Karl to confirm the gray mapping.
 7. Tooltip and CTA panel: ask Karl where each goes, then build.
 8. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
 9. Log the off-system values in `mng_web_ds/design-vs-production.md` and update `MNG-Web-Design-System-Status.md`. Re-export the new components with the repo's exporter (`scripts/component-export/`).
