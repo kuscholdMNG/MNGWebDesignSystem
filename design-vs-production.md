@@ -75,7 +75,7 @@
 
 ### 1.2 Next font build (updated 2026-10-22)
 
-Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (187 icons). None of these is in the production font yet. Codepoints are in `tokens/icons/icons.json` (`nextFontBuild`); artwork is in `tokens/icons/svg-missing/`.
+Karl updated the MNG IcoMoon project and exported it on 2026-10-22 (187 icons). None of these is in the production font yet. Engineering gets the font package directly from the MNG IcoMoon project when they're ready (Karl, 2026-10-23). Codepoints are in `tokens/icons/icons.json` (`nextFontBuild`); artwork is in `tokens/icons/svg-missing/`.
 
 - **Add (17 new icons):** `plus-circle`, `plus-circle2`, `minus-circle`, `minus-circle2`, `list`, `grid` (square tiles), `crown`, `giving-hand`, `yield-filled`, `yield-outline`, `headphones`, `sort`, `sort2`, `sort-alpha-asc`, `sort-alpha-desc`, `filter3`, `filter4`.
 - **New artwork, same class and codepoint:** `notification` (U+E94D, outline) and `notification2` (U+E94E, filled). Where they show today: `notification2` in the Reader Dashboard's inline-message headings (Saved Articles, Gifted Articles and Subscription pages; seen on Cañon City Daily Record 2026-10-21) and `notification` in the Save Article modal's "out of space" messages (`mng-digisubs` plugin CSS).
