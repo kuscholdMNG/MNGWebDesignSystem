@@ -56,6 +56,30 @@ Box styles:
 - Close button: 40×40px, transparent, a 12px "close" icon in #000000, `aria-label="Close"`. Focus-visible: 2px solid #000000 outline.
 - Caret: 12px wide × 6px tall, pointing up, centered, with the same #838280 1px edge and #FFFFFF fill, overlapping the box's top border so it looks like one shape.
 
-## 4. Article timestamp (already done 2026-10-23)
+## 4. Feed header subhead
+
+The line under "While You Were Away" ("Based on what you read." + the info button), in both copies of `.fyh`:
+
+- `.fyh p`: `font: 400 13px/normal 'Noto Sans', sans-serif`; color #5E5D5C (color/gray/200); keep the 6px top margin; gap between the text and the info button 4px (spacing/050; was 6px).
+- Info icon (`.tipb .ic`): 12px, color #5E5D5C (was 13px). Keep the button's invisible 12px hit-area extension and focus outline.
+- Leave the eyebrow (`.eb`) as it is.
+
+## 5. Load More (replaces the "Load More Articles" link)
+
+Use the production Load More (the same rule as production's `.load-more` / `.show-more-videos`, Figma: WordPress Elements ▸ Show More Affordance). Apply to both copies of the `.lm` block. Keep the click behavior (`loadMore`, `canMore`).
+
+- Change the label to "Load More" (shown uppercase by CSS). Make the button a full-width block; remove `.btn-link` from it.
+- Copy production's CSS exactly, including its colors (this one deliberately uses production values, not tokens):
+
+```css
+.load-more { position: relative; display: inline-block; width: 100%; padding: 40px 0; border: 0; border-top: 1px solid #D7D6D2; background: none; font: 700 16px/1 'Noto Sans', sans-serif; color: #007580; text-align: center; text-transform: uppercase; cursor: pointer; }
+.load-more::before { content: ""; position: absolute; left: 50%; top: -5px; width: 35px; height: 35px; background-color: #FBFBFB; border-bottom: 1px solid #D7D6D2; border-left: 1px solid #D7D6D2; transform: rotate(-45deg) translateY(-50%); }
+.load-more:hover { color: #0A0908; }
+.load-more:focus-visible { outline: 2px solid #000000; outline-offset: 5px; }
+```
+
+- Remove the old `.lm` padding (16px 0 8px) so the 40px above and below comes from the button. It's the same at every width; don't add breakpoints.
+
+## 6. Article timestamp (already done 2026-10-23)
 
 - `.tm` is `font: 400 13px/normal 'Noto Sans', sans-serif` (was 12px/16px), matching production's card meta. No change needed; listed so the prompt is complete.

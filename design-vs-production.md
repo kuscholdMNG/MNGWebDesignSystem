@@ -1945,7 +1945,7 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 **Found:** 2026-10-23, on the OC Register homepage (Photos block) and a section front, in the shared theme rule `.show-more-videos, .load-more` (and `::before`), same on all three themes. **Team:** CMS.
 
-**Design:** WordPress Elements ▸ Homepage ▸ Photos ▸ **Show More Affordance (Production, tokens)** (`3634:49427`, Karl, 2026-10-23).
+**Status: on hold (Karl, 2026-10-23).** For now the design uses production's exact values: WordPress Elements ▸ Homepage ▸ Photos ▸ **Show More Affordance** (`3634:49423`), used in Photos Block and the For You feed. The token version below, **Show More Affordance (tokens, future reference)** (`3634:49427`), is the future target; this fix applies when it's adopted.
 
 | Property | Production | Design |
 |---|---|---|
