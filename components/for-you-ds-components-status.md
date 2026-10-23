@@ -224,7 +224,7 @@ Still to do, in order (Karl, 2026-10-23: finish the For You components first, th
 
 1. **Remaining For You components:**
    - ~~Feed header subhead~~ Done 2026-10-23: Section Title / Eyebrow (`3333:42278`) has new properties Show Subhead (off by default), Subhead and Show Info; Noto Sans Regular 13 gray/200 with a 12px info icon, spacing/050 between them (prototype 6px, a tie between 4 and 8, rounded down); example instance "Example: For You feed header" (`3632:48697`). Style=Bold's gap set to 6 (raw, like Style=Underline). Prototype section to add.
-   - Load More: reuse Show More Affordance (gap #8); waiting on Karl's call after the production comparison.
+   - ~~Load More~~ Done 2026-10-23: For You uses **Show More Affordance (Production, tokens)** (`3634:49427`, WordPress Elements ▸ Homepage ▸ Photos): 1px gray/500 rule; 35px gray/600 notch with gray/500 edges, always centered; Noto Sans Bold 16/16 uppercase theme/primary label; 40px above and below (raw: no 40px token). Same at every width (checked live at 360, 768, 1728). Production differences: design-vs-production entry 35. Still to decide: what happens to the original Show More Affordance (`3352:24180`, 12 Photos Block instances) and the raw copy (`3634:49423`). Prototype section to add.
    - Welcome modal: parity check against ModalsCenter and `components/modal.md` (gap #10).
    - CTA panel: read DashSubsNonSub's exact values and add its prototype prompt section (needs the bridge reconnected to the MNG Web Design System file).
    - Onboarding steps and chips (gap #11): deferred, hidden in the prototype.
