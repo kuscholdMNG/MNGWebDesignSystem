@@ -1,6 +1,6 @@
 # For You → MNG DS components: status and handoff
 
-> **Updated 2026-10-23** for the import re-test (still hanging; workaround found for every variable the atoms need), the timestamp decision (13px, Karl), and the three card atoms in WordPress Elements ▸ Article Parts (Kicker and Author done; Timestamp waiting on the clock icon). Moved into the repo from the "For You Tab MVP" project the same day.
+> **Updated 2026-10-23** for library imports working again, the timestamp decision (13px, Karl), and the three card atoms in WordPress Elements ▸ Article Parts (all three done). Moved into the repo from the "For You Tab MVP" project the same day.
 
 ## Goal
 
@@ -37,9 +37,11 @@ How the Figma files are connected: Figma Desktop with the Desktop Bridge plugin 
 - **Gap audit complete** (see the table below).
 - **Tabs scraped from production** (spec below).
 
-## Blocker: library imports (re-tested 2026-10-23)
+## Library imports (fixed 2026-10-23)
 
-**Still broken on Oct 23**, after Karl relaunched the Desktop Bridge plugin in WordPress Elements. `figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync()` and `getVariablesInLibraryCollectionAsync()` now answer in about 0.2s, but `importVariableByKeyAsync` (font/size/10) and `importComponentByKeyAsync` (access-time) still time out (tested at 8s and 22s). Possible cause: the bridge showed two MCP server instances (ports 9223 and 9224) from two Claude sessions.
+**Working again (2026-10-23).** After Karl published the Web DS library and dragged an `access-time` instance into WordPress Elements, `importVariableByKeyAsync` (spacing/050) returned at once. It's unclear which step fixed it: the publish, the manual insert, or the plugin relaunch. If imports hang again, try those three.
+
+Earlier the same day they were **still broken**, after Karl relaunched the Desktop Bridge plugin in WordPress Elements. `figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync()` and `getVariablesInLibraryCollectionAsync()` now answer in about 0.2s, but `importVariableByKeyAsync` (font/size/10) and `importComponentByKeyAsync` (access-time) still time out (tested at 8s and 22s). Possible cause: the bridge showed two MCP server instances (ports 9223 and 9224) from two Claude sessions.
 
 - Every variable the atoms need is now reachable without an import, because WordPress Elements already uses it somewhere: font/size/13 `VariableID:60351d5c1d19d94946edc9a5c53565709a6a443a/6847:7`, font/size/10 `VariableID:a704424118ebeeef3c4d27cda5966f7801447ba3/6850:36`, font/style/medium `VariableID:1098f60a5a71c40d8f65024a17845de914519c30/7121:5`.
 - **Still needs a manual step:** spacing/050 isn't used anywhere in WordPress Elements, and the Web DS Icons set has **unpublished changes** (access-time's publish status is `CHANGED`), so the clock icon isn't in the library yet. Karl publishes the Web DS library, then drags an Icons `access-time` instance into WordPress Elements (or binds the Timestamp gap to spacing/050 in the UI), which brings both in.
@@ -90,7 +92,7 @@ Bold Coastal token values:
 | 4 | Featured story | `.lead` | Zone 1 Lead Article Card (`3336:46156` / `3336:46155` / `3383:46111`) | **New variant.** Adds a kicker and byline/time. |
 | 5 | Article card | `.card` | 1Col Article Card (Style=Media Lead, 16:9) | **New Style variant.** Adds a 1px gray/500 border, 8px radius, kicker and byline footer. |
 | 6 | Article row | `.row` | Horizontal Thumbnail Card (`3362:2990` / `3362:2991` / `3383:46153`) | **New variant.** Adds a border, kicker and byline. |
-| 7 | Card atoms: kicker, author, timestamp | `.kick` `.au` `.tm` | none (the WP Article Page Byline `1110:19503` is the full article byline) | **Built 2026-10-23** in Article Parts. Kicker `3609:39112` and Author `3609:39115` done; Timestamp `3621:38794` needs the clock icon and the spacing/050 binding (see Blocker). |
+| 7 | Card atoms: kicker, author, timestamp | `.kick` `.au` `.tm` | none (the WP Article Page Byline `1110:19503` is the full article byline) | **Built 2026-10-23** in Article Parts: Kicker `3609:39112`, Author `3609:39115`, Timestamp `3621:38794`. |
 | 8 | Load More Articles | `.btn-link` | Button Linkstyle (`5428:3953`) | **Exists.** Check the prototype's styling against it. |
 | 9 | Non-subscriber CTA panel | `.cta` | Button Primary / Secondary; WP Paywalls ▸ Engage Paywall Modal (`1495:23511`) | **New.** Compare with the Paywall modal first. |
 | 10 | Welcome to For You modal | `.mc-*` | ModalsCenter (`3040:2262`) + Button Modal Close (`5335:16196`) | **Exists.** Parity check against `components/modal.md`. |
@@ -122,7 +124,7 @@ Match the existing documentation containers there, for example "Article Status B
 |---|---|---|---|
 | Article Section Kicker | `3609:39112` (text property `Section#3609:0`) | `3609:39117` | Done. Size, style, family and fill bound; 12.5 line height and 1px letter spacing are raw (no tokens). |
 | Article Author | `3609:39115` (text property `Author#3609:1`) | `3609:39159` | Done. Size, style, family and fill bound; 16 line height raw. |
-| Article Timestamp | `3621:38794` (text property `Time#3621:0`) | `3621:38786` | Text done and bound (13 / Regular / Noto Sans / gray/200). **To do:** add the access-time icon (11×11, gray/200) as the first child and bind the 4px gap to spacing/050, once the Web DS library is published. |
+| Article Timestamp | `3621:38794` (text property `Time#3621:0`) | `3621:38786` | Done. Clock Icon (Icons `access-time` instance `3623:44633`, rescaled to 11×11, vector fill bound to gray/200), then the text (13 / Regular / Noto Sans / gray/200, line height auto). Gap bound to spacing/050; centered. |
 
 Cleanup: the previous session had left two stray copies of the whole Article Parts frame ("Article Section Kicker Container" `3609:39116` and "Article Author Container" `3609:39158`) under Top Zone Parts, with duplicate Related Article List Item and Article Image Placeholder components (0 instances). The Kicker and Author containers were moved into Article Parts and the stray copies deleted.
 
@@ -171,11 +173,12 @@ Cleanup: the previous session had left two stray copies of the whole Article Par
 
 ## Next steps
 
-1. ~~Confirm the imports work~~ Still broken (2026-10-23); see Blocker. Karl publishes the Web DS library.
+1. ~~Confirm the imports work~~ Working again (2026-10-23).
 2. ~~Timestamp size~~ 13px (Karl, 2026-10-23).
-3. ~~Build the 3 atoms~~ Kicker and Author done. Timestamp: add the access-time icon and bind the gap to spacing/050, then screenshot.
-4. Card variants: add them to 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, built from the atoms.
-5. Tabs: ask Karl where they go, then build from the production spec mapped to tokens.
-6. Tooltip and CTA panel: ask Karl where each goes, then build.
-7. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
-8. Log the off-system values in `mng_web_ds/design-vs-production.md` and update `MNG-Web-Design-System-Status.md`. Re-export the new components with the repo's exporter (`scripts/component-export/`).
+3. ~~Build the 3 atoms~~ Done 2026-10-23, all screenshotted. Still to do: change the prototype's `.tm` from 12px to 13px.
+4. Publish the WordPress Elements library so the atoms can be used.
+5. Card variants: add them to 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, built from the atoms.
+6. Tabs: ask Karl where they go, then build from the production spec mapped to tokens.
+7. Tooltip and CTA panel: ask Karl where each goes, then build.
+8. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
+9. Log the off-system values in `mng_web_ds/design-vs-production.md` and update `MNG-Web-Design-System-Status.md`. Re-export the new components with the repo's exporter (`scripts/component-export/`).
