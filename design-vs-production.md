@@ -1950,12 +1950,12 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 | Property | Production | Design |
 |---|---|---|
 | Notch position | about 5px right of center: `::before { left: 50%; transform: rotate(-45deg) translateY(-50%) }` overrides the `translate(-50%, 0)` that would center it | always centered on the rule (a bug) |
-| Notch fill | `#FBFBFB` | `color/gray/500` |
+| Notch fill | `#FBFBFB` | `color/gray/600` (#F1EFEB) |
 | Notch edges and rule | `1px solid #D7D6D2` | `color/gray/500` (#CCCAC7) |
 | Label | Noto Sans Bold 16/16, uppercase, `var(--primary)` | same (`font/size/16`, `font/style/bold`, `color/theme/primary`) |
 | Space above and below the label | 40px (`padding: 2.5em 0`) | 40px. No spacing token is this large yet (largest is `spacing/300`, 24px); kept at production's value. |
 
-**Fix:** center the notch (for example `transform: translate(-50%, -50%) rotate(-45deg)` with `top: 0`), fill it with the gray/500 value (#CCCAC7) and use #CCCAC7 for the rule and the notch edges.
+**Fix:** center the notch (for example `transform: translate(-50%, -50%) rotate(-45deg)` with `top: 0`), fill it with the gray/600 value (#F1EFEB) and use the gray/500 value (#CCCAC7) for the rule and the notch edges.
 
 ## Notes
 
