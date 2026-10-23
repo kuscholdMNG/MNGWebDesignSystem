@@ -42,6 +42,7 @@
   - [32. Obituaries masthead — shadow and bottom border don't match the main masthead](#32-obituaries-masthead--shadow-and-bottom-border-dont-match-the-main-masthead)
   - [33. Masthead — nav bottom border color isn't a design token](#33-masthead--nav-bottom-border-color-isnt-a-design-token)
   - [34. Account menu — dropdown shadow isn't the design token](#34-account-menu--dropdown-shadow-isnt-the-design-token)
+  - [35. Load More / Show More Photos — notch off center and colors off the design tokens](#35-load-more--show-more-photos--notch-off-center-and-colors-off-the-design-tokens)
 - [Notes (reading live colors, removed entries)](#notes)
 
 ---
@@ -1939,6 +1940,22 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 **Design:** the account menu uses the effect style **shadow/lg**, `0 8px 16px 0 rgba(0,0,0,.2)`, like every floating element (Karl, 2026-10-23). Applied in WordPress Elements ▸ Menus and Parts ▸ AccountMenu (`910:16425`) and its documentation frames (56 layers; Figma used 8px 6px 16px 0 · 25% before).
 
 **Fix:** change the spread from −4px to 0: `box-shadow: 0 8px 16px 0 rgba(0,0,0,.2)`. The digisubs `.dropdown-content`, `.digisubs-modal-skin` and the e-edition menu already use exactly this value; `.paywall-container` (`0 9px 16px 0 rgba(0,0,0,.25)`) should move to it too.
+
+## 35. Load More / Show More Photos — notch off center and colors off the design tokens
+
+**Found:** 2026-10-23, on the OC Register homepage (Photos block) and a section front, in the shared theme rule `.show-more-videos, .load-more` (and `::before`), same on all three themes. **Team:** CMS.
+
+**Design:** WordPress Elements ▸ Homepage ▸ Photos ▸ **Show More Affordance (Production, tokens)** (`3634:49427`, Karl, 2026-10-23).
+
+| Property | Production | Design |
+|---|---|---|
+| Notch position | about 5px right of center: `::before { left: 50%; transform: rotate(-45deg) translateY(-50%) }` overrides the `translate(-50%, 0)` that would center it | always centered on the rule (a bug) |
+| Notch fill | `#FBFBFB` | `color/gray/500` |
+| Notch edges and rule | `1px solid #D7D6D2` | `color/gray/500` (#CCCAC7) |
+| Label | Noto Sans Bold 16/16, uppercase, `var(--primary)` | same (`font/size/16`, `font/style/bold`, `color/theme/primary`) |
+| Space above and below the label | 40px (`padding: 2.5em 0`) | 40px. No spacing token is this large yet (largest is `spacing/300`, 24px); kept at production's value. |
+
+**Fix:** center the notch (for example `transform: translate(-50%, -50%) rotate(-45deg)` with `top: 0`), fill it with the gray/500 value (#CCCAC7) and use #CCCAC7 for the rule and the notch edges.
 
 ## Notes
 
