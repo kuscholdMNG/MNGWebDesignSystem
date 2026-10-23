@@ -39,6 +39,7 @@
   - [29. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)](#29-obituaries--breakpoints-that-dont-match-the-wordpress-grid-for-the-cms-team)
   - [30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#30-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
   - [31. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system](#31-homepage-tabs-world-cup-tabs--font-colors-spacing-and-breakpoint-off-the-design-system)
+  - [32. Obituaries masthead — shadow and bottom border don't match the main masthead](#32-obituaries-masthead--shadow-and-bottom-border-dont-match-the-main-masthead)
 - [Notes (reading live colors, removed entries)](#notes)
 
 ---
@@ -1904,6 +1905,20 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 | No side padding below | `(max-width: 500px)` | `(max-width: 639px)` (WordPress grid; see entry 30) |
 
 **Fix:** update the `sr-nav-tabs` styles to the design column.
+
+## 32. Obituaries masthead — shadow and bottom border don't match the main masthead
+
+**Found:** 2026-10-23, in the theme stylesheets (boldcoastal.css, measuredvibrant.css, modernearthy.css; checked on ocregister, chicagotribune and canoncitydailyrecord) while setting up the shadow tokens. **Team:** CMS.
+
+**Design:** the obituaries masthead matches the main masthead (Karl, 2026-10-23). WordPress Elements ▸ Menus and Parts: **ObitMastHead** (`1139:22369`) and **Masthead** (`456:2572`) both use the effect style **shadow/masthead** (0 3px 3px 0, black 25%) only when scrolled, and no shadow at the top of the page.
+
+| Property | Main masthead (production) | Obituaries masthead (production) | Design (both) |
+|---|---|---|---|
+| Shadow at the top of the page | none | `0 5px 10px rgba(0,0,0,.4)` (`.obits-content-header .nav-wrapper-primary`), always on | none |
+| Shadow when scrolled | `0 3px 3px rgba(0,0,0,.25)` (`.site-header.headroom--not-top`) | `0 5px 10px rgba(0,0,0,.4)` | shadow/masthead (0 3px 3px · 25%) |
+| Nav bottom border | `1px solid #9D9A98` (`.nav-wrapper-primary`) | `1px solid #CCCCCC` | same as the main masthead |
+
+**Fix:** remove the `.obits-content-header .nav-wrapper-primary` box-shadow and border-bottom overrides, so the obituaries masthead uses the main masthead's styles.
 
 ## Notes
 

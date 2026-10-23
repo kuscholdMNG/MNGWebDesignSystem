@@ -50,7 +50,7 @@ Behavior:
 
 Box styles:
 - Position: below the info button, centered on it, 8px gap (spacing/100), with a caret pointing up at the button.
-- width 275px (max-width calc(100vw - 32px) so it never overflows on phones); background #FFFFFF (color/gray/max); 1px solid #838280 border (color/gray/300); border-radius 4px (radius/sm); no box-shadow.
+- width 275px (max-width calc(100vw - 32px) so it never overflows on phones); background #FFFFFF (color/gray/max); 1px solid #838280 border (color/gray/300); border-radius 4px (radius/sm); box-shadow 0 8px 16px 0 rgba(0,0,0,.2) (shadow/lg).
 - Layout: a row with the text area and the close button, top-aligned. Text area padding 12px (spacing/150).
 - Text: `font: 400 13px/normal 'Noto Sans', sans-serif`, color #393938 (color/gray/100), not italic. Keep the placeholder copy: "Placeholder text with more information about this feature."
 - Close button: 40×40px, transparent, a 12px "close" icon in #000000, `aria-label="Close"`. Focus-visible: 2px solid #000000 outline.

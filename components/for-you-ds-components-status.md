@@ -1,6 +1,6 @@
 # For You → MNG DS components: status and handoff
 
-> **Updated 2026-10-23** for the Tooltip (MNG Web Design System, new Tooltips page), the Homepage Tabs (Menus and Parts; design-vs-production entry 31), the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
+> **Updated 2026-10-23** for the shadow tokens (Tooltip now uses shadow/lg), the Tooltip (MNG Web Design System, new Tooltips page), the Homepage Tabs (Menus and Parts; design-vs-production entry 31), the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
 
 ## Goal
 
@@ -173,6 +173,8 @@ Not built / open:
 ### Tooltip built (2026-10-23)
 
 Karl: the prototype's tooltip was a placeholder; it goes in the MNG Web Design System, open to what tooltips in the wild do. He chose **both types in one set**, on a new page **Tooltips | 2026.10.23** (`7372:25702`, after Modal Panels), in a "Tooltip Container" doc frame (`7372:25704`).
+
+**Shadow (2026-10-23):** both types now use the new `shadow/lg` effect style (see the main status doc, §4 Tokens, and the Shadows | 2026.10.23 page).
 
 References: production's article "type of work" popup (`#tiPopupContent` on ocregister articles: opened by clicking the "News" label, white, 1px #787878 border, 1px radius, 275px wide, 15px 10px padding, 0.9em Helvetica, 10px caret, close X); the old "Section Menu/ToolTip box" frames on "Elements to be detailed still" (dark #616262, 20px text, not a component); and the common split in other design systems between a hover **tooltip** (short label, mouse/keyboard only) and a click **toggletip** (an info button that opens an explanation; works on touch). No elevation/shadow tokens exist, so neither type has a shadow.
 
