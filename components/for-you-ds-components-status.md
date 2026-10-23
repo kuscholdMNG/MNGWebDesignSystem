@@ -218,13 +218,57 @@ Color mapping (nearest MNG gray, with readable contrast): #6B7280 → gray/200 (
 
 ## Next steps
 
-1. ~~Confirm the imports work~~ Working again (2026-10-23).
-2. ~~Timestamp size~~ 13px (Karl, 2026-10-23).
-3. ~~Build the 3 atoms~~ Done 2026-10-23, all screenshotted. ~~Prototype `.tm` 12px → 13px~~ Done 2026-10-23 in `claude-design-v3/Main.dc.html` (`font:400 13px/normal`). Not changed: the older `claude-design/Main.dc.html` and the `index.html` built from it (Oct 15), and the Claude Design canvas artifact.
-4. Publish the WordPress Elements library so the atoms can be used.
-5. ~~Card variants~~ Done 2026-10-23 (see "Card variants built"). Open: hover state (parked); the 6px vs 4px excerpt gap on the featured story.
-6. ~~Tabs~~ Built 2026-10-23 in Menus and Parts; logged as design-vs-production entry 31; gray mapping and AA contrast confirmed. Open: update the prototype's tabs and the kicker's letter spacing (1px → 0).
-10. **Prototype fixes prompt:** `components/for-you-prototype-fixes.md` collects every change the prototype needs. Add a section each time a component is built, then Karl runs it in the For You Tab MVP project once the list is complete.
-7. ~~Tooltip~~ Built 2026-10-23 (see "Tooltip built"); prototype section added to the fixes prompt. **The MNG Web Design System library needs publishing.** CTA panel: ask Karl where it goes, then build.
-8. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
-9. Log the off-system values in `mng_web_ds/design-vs-production.md` and update `MNG-Web-Design-System-Status.md`. Re-export the new components with the repo's exporter (`scripts/component-export/`).
+Done 2026-10-23: imports working again; timestamp 13px (prototype `.tm` updated); the 3 atoms; the card, row and featured-story variants; Homepage Tab / Tabs; Tooltip; shadow tokens; masthead rule and shadows; CTA panel decision (reuse InLineMessage DashSubsNonSub).
+
+Still to do, in order (Karl, 2026-10-23: finish the For You components first, then clean up, then export):
+
+1. **Remaining For You components:**
+   - Feed header subhead ("Based on what you read." + info toggletip trigger) on Section Title / Eyebrow (gap #2).
+   - Load More: parity check against Button Linkstyle (gap #8).
+   - Welcome modal: parity check against ModalsCenter and `components/modal.md` (gap #10).
+   - CTA panel: read DashSubsNonSub's exact values and add its prototype prompt section (needs the bridge reconnected to the MNG Web Design System file).
+   - Onboarding steps and chips (gap #11): deferred, hidden in the prototype.
+2. **Cleanup** (see "Cleanup before export" below).
+3. **InLineMessage simplified copy** (see below). Required before export; don't start until Karl says.
+4. **Export** with the shared exporter (`scripts/component-export/`, `registry.json`), per `EXPORT-STANDARD.md`. First WordPress Elements export, so `components/wordpress/` gets created.
+5. **Prototype fixes prompt:** `components/for-you-prototype-fixes.md` gets a section for each component; Karl runs it in the For You Tab MVP project once it's complete.
+
+## Cleanup before export
+
+Everything touched for the For You tab, by library. Check each item, then add the component to `scripts/component-export/registry.json`.
+
+**WordPress Elements** (publish when done)
+
+| Item | Node | Cleanup |
+|---|---|---|
+| Article Section Kicker | `3609:39112` | Line height 12.5 raw (no line-height token). Description and container text mention the prototype; reword for production. |
+| Article Author | `3609:39115` | Line height 16 raw. Description mentions the prototype; reword for production. |
+| Article Timestamp | `3621:38794` | Line height auto. Description; confirm the Clock Icon instance is the published library icon. |
+| 1Col Article Card, Style=For You | `3628:44640` | Hover state (parked). Show Subscriber Badge / Show Excerpt / Show Meta don't apply: document or hide. Body space-between note. Sample image placeholder. |
+| Horizontal Thumbnail Card, Style=For You | `3628:44666` / `44686` / `44706` | Hover state (parked). Show Gallery Icon doesn't apply. Built widths 340 / 720 / 848: confirm. Variant order on the canvas. |
+| Zone 1 Lead Article Card, Style=For You | `3628:44769` / `44822` / `44874` | Excerpt gap 4 vs prototype 6 (open). Byline top padding mixes spacing/050 (Mobile) and spacing/100 (Tablet, Desktop) to reach 12px: simplify. |
+| Homepage Tab / Homepage Tabs | `3629:44949` / `3629:44974` | Doc frame uses the gray Menus and Parts style, not the white container style; no state labels on the variant grid; Focus ring sizing after the padding change. |
+| Masthead | `456:2572` | New: shadow/masthead on Scrolled; no shadow at the top; gray/400 rule on every variant. Variant descriptions don't mention these. The masthead search bar (production `0 3px 3px` · 25%) not checked. |
+| ObitMastHead | `1139:22369` | Now matches Masthead (shadow/masthead when scrolled, gray/400 rule). The mobile Scrolled variants show a gray edge on the sides: check. |
+| AccountMenu | `910:16425` | Uses shadow/lg from the library. Documentation frames ("AccountMenu Desktop", Frame 12800) also updated. |
+| shadow/masthead effect style | local style | No documentation frame in WordPress Elements yet. |
+
+**MNG Web Design System** (publish when done)
+
+| Item | Node | Cleanup |
+|---|---|---|
+| Icons, access-time | `7329:25691` | The frame "Icons" (`4693:2`) shows as a second "Icons" in the Assets panel; rename it (e.g. "Icons Documentation") and the generic "Frame 12687" / "Frame 12769" (offered, not done). |
+| Tooltip | `7372:25744` | Two text properties (Label for Tooltip, Text for Toggletip). No example of the toggletip next to an info icon trigger. Caret is two vectors: check it scales. Old "Section Menu/ToolTip box" frames on "Elements to be detailed still" are superseded. |
+| Shadow effect styles shadow/sm, md, lg | Shadows \| 2026.10.23 page | Effect styles aren't in the token pipeline (`scripts/build-tokens/extract.js` reads variables only): add DTCG `shadow` tokens to `tokens/core/` and `dist/`, and a section in `EXPORT-STANDARD.md`. |
+| ModalsCenter / ModalsOffset | `3040:2262` / `6497:6263` | Now shadow/lg (FixedFooter too). Update `components/modal.md` (it still describes the Tailwind shadow-xl). |
+| InLineMessage DashSubsNonSub | `3421:643` | Reused for the For You CTA; covered by the simplified copy below. |
+
+**Repo**
+
+- `registry.json` entries for every component above; `components/wordpress/` for the WordPress Elements ones.
+- `components/modal.md`, `components/navigation.md` (masthead shadow and rule now tokenized), `components/icons.md` (access-time).
+- Design-vs-production entries 31–34 are logged; recheck them after cleanup.
+
+## InLineMessage simplified copy (deferred, Karl, 2026-10-23)
+
+Before export, make a **new, simplified copy** of InLineMessage (`2776:2`, 114 variants) in the MNG Web Design System for production use going forward. Don't remove or change the existing set: it's used in several design files. Build reusable versions of its variants (properties for copy, icons and CTAs instead of one variant per screen), using open item 6 in the main status doc and `components/reader-dashboard-inline-message-component-audit.md` as the starting point. First confirm that the variants are documented in the specs container on the In-Line Content Containers page. **Don't start until Karl says.**
