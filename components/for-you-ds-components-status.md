@@ -112,9 +112,19 @@ Match the existing documentation containers there, for example "Article Status B
 |---|---|---|
 | **Article Section Kicker** | Noto Sans Bold 10 / 12.5 line height, 1px letter spacing, uppercase (text case), color/theme/primary. Hugs its text. | `Section` (e.g. "Crime and Public Safety") |
 | **Article Author** | Noto Sans Medium 12/16, color/gray/min. Hugs its text. | `Author` (e.g. "Ruby Gonzales") |
-| **Article Timestamp** | Horizontal auto layout, 4px gap (spacing/050), centered. An Icons `access-time` instance at 11×11 in color/gray/200, then the text in Noto Sans Regular 12/16, color/gray/200. | `Time` (relative: "56 mins ago", "2 hours ago", "3 days ago", "1 week ago") |
+| **Article Timestamp** | Horizontal auto layout, 4px gap (spacing/050), centered. An Icons `access-time` instance at 11×11 in color/gray/200, then the text in Noto Sans Regular **13**, line height auto, color/gray/200. | `Time` (relative: "56 mins ago", "2 hours ago", "3 days ago", "1 week ago") |
 
-❓ **Open:** the prototype timestamp is 12px, but the existing production-measured card meta in 1Col Article Card is 13px Regular gray/200. Karl to choose.
+✅ **Decided (Karl, 2026-10-23): 13px**, matching the production-measured card meta in 1Col Article Card (`3352:24153`: Noto Sans Regular 13, line height auto, gray/200). The prototype's 12px `.tm` should change to 13px.
+
+**Built (2026-10-23)**, each in its own documentation container appended to Article Parts (`3484:67765`):
+
+| Atom | Component | Container | State |
+|---|---|---|---|
+| Article Section Kicker | `3609:39112` (text property `Section#3609:0`) | `3609:39117` | Done. Size, style, family and fill bound; 12.5 line height and 1px letter spacing are raw (no tokens). |
+| Article Author | `3609:39115` (text property `Author#3609:1`) | `3609:39159` | Done. Size, style, family and fill bound; 16 line height raw. |
+| Article Timestamp | `3621:38794` (text property `Time#3621:0`) | `3621:38786` | Text done and bound (13 / Regular / Noto Sans / gray/200). **To do:** add the access-time icon (11×11, gray/200) as the first child and bind the 4px gap to spacing/050, once the Web DS library is published. |
+
+Cleanup: the previous session had left two stray copies of the whole Article Parts frame ("Article Section Kicker Container" `3609:39116` and "Article Author Container" `3609:39158`) under Top Zone Parts, with duplicate Related Article List Item and Article Image Placeholder components (0 instances). The Kicker and Author containers were moved into Article Parts and the stray copies deleted.
 
 ### Card variants (from the prototype CSS)
 
@@ -161,9 +171,9 @@ Match the existing documentation containers there, for example "Article Status B
 
 ## Next steps
 
-1. Confirm the WordPress Elements library imports work again. If they don't, get Karl to relaunch the plugin and publish the Web DS library.
-2. Ask Karl: 12px or 13px for the timestamp?
-3. Build the 3 atoms in WordPress Elements ▸ Article Parts. Screenshot each to verify.
+1. ~~Confirm the imports work~~ Still broken (2026-10-23); see Blocker. Karl publishes the Web DS library.
+2. ~~Timestamp size~~ 13px (Karl, 2026-10-23).
+3. ~~Build the 3 atoms~~ Kicker and Author done. Timestamp: add the access-time icon and bind the gap to spacing/050, then screenshot.
 4. Card variants: add them to 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, built from the atoms.
 5. Tabs: ask Karl where they go, then build from the production spec mapped to tokens.
 6. Tooltip and CTA panel: ask Karl where each goes, then build.
