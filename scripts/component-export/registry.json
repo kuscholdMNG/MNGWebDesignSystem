@@ -250,6 +250,28 @@
         "Line height 16px has no token."
       ],
       "production": null
+    },
+    {
+      "slug": "article-timestamp",
+      "name": "Article Timestamp",
+      "group": "article-parts",
+      "layer": "wordpress",
+      "order": 3,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3621:38794",
+      "documentationFrame": "3621:38786",
+      "description": "Relative publish time with a clock icon, in For You cards, rows and the featured story byline.",
+      "rules": [
+        "**Icon:** Icons `access-time` (production icon font U+E900), 11×11, `color/gray/200`.",
+        "**Text:** relative time (\"56 mins ago\", \"2 hours ago\", \"3 days ago\", \"1 week ago\"), `Time` text property. One line.",
+        "**Type:** Noto Sans Regular 13 (`font/size/13`, `font/style/regular`), line height auto, `color/gray/200` (6.6:1 on white). Same as production's card meta; 13px chosen over the prototype's 12px (Karl, 2026-10-23).",
+        "**Spacing:** 4px (`spacing/050`) between icon and time, centered vertically; hugs its content.",
+        "**Placement:** under the Article Author in cards; 12px (`spacing/150`) to its right in rows and the featured story.",
+        "**Used in:** 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card (`Style=For You`), as an exposed instance."
+      ],
+      "breakpoints": null,
+      "knownIssues": [],
+      "production": "Card meta time on production homepages: Noto Sans 13px / 400, #5E5D5C (color/gray/200)."
     }
   ]
 }
