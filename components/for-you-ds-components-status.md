@@ -197,7 +197,7 @@ Not built / open:
 
 Color mapping (nearest MNG gray, with readable contrast): #6B7280 → gray/200 (gray/300 is closer in value but too light for 12px text on white), #111827 → gray/min, #000 → gray/black, #C62828 → theme/primary, #FAFAFA → gray/max, #808080 → gray/300. Logged as design-vs-production entry 31 and as a row in the "Other fixes" tab of the color fixes sheet.
 
-**Rule (Karl, 2026-10-23): no off-token values.** Where production uses a value with no token, round to the nearest existing Figma token and update production later; same for breakpoints. Applied: tab side padding 18 → spacing/200 (16; a tie with 20, Karl chose 16); tab gap 32 → spacing/300 (24); tab letter spacing 1.68px → 0 and the Article Section Kicker's 1px → 0, matching production's top nav items and Subscriber Only badge (both `letter-spacing: normal`, checked live on ocregister, denverpost and canoncitydailyrecord; chicagotribune, orlandosentinel and mcall were blocked by the browser extension's site permissions); ≤500px → ≤639px.
+**Rule (Karl, 2026-10-23): no off-token values.** Where production uses a value with no token, round to the nearest existing Figma token and update production later; same for breakpoints. Applied: tab side padding 18 → spacing/200 (16; a tie with 20, Karl chose 16); tab gap 32 → spacing/300 (24); tab letter spacing 1.68px → 0 and the Article Section Kicker's 1px → 0, matching production's top nav items and Subscriber Only badge (both `letter-spacing: normal`, checked live on all 6 review sites, 2026-10-23: top nav 14.06px and 15px / 600, `.subscriber-only-tag` 13px, no letter-spacing rule on any site); ≤500px → ≤639px.
 
 **WCAG AA (text 4.5:1 on white):** gray/200 6.6:1 (default tab, timestamp), gray/min 18.4:1, gray/black 21:1, theme/primary #007580 5.5:1 (kicker; Bold Coastal). gray/300 is 3.8:1, so it fails for text; it's used only for the bar border (non-text). Production's #6B7280 on #FAFAFA is 4.6:1.
 
@@ -208,7 +208,8 @@ Color mapping (nearest MNG gray, with readable contrast): #6B7280 → gray/200 (
 3. ~~Build the 3 atoms~~ Done 2026-10-23, all screenshotted. ~~Prototype `.tm` 12px → 13px~~ Done 2026-10-23 in `claude-design-v3/Main.dc.html` (`font:400 13px/normal`). Not changed: the older `claude-design/Main.dc.html` and the `index.html` built from it (Oct 15), and the Claude Design canvas artifact.
 4. Publish the WordPress Elements library so the atoms can be used.
 5. ~~Card variants~~ Done 2026-10-23 (see "Card variants built"). Open: hover state (parked); the 6px vs 4px excerpt gap on the featured story.
-6. ~~Tabs~~ Built 2026-10-23 in Menus and Parts; logged as design-vs-production entry 31; gray mapping and AA contrast confirmed. Open: update the prototype's tabs (Karl has a prompt for the prototype project) and the prototype kicker's letter spacing (1px → 0).
+6. ~~Tabs~~ Built 2026-10-23 in Menus and Parts; logged as design-vs-production entry 31; gray mapping and AA contrast confirmed. Open: update the prototype's tabs and the kicker's letter spacing (1px → 0).
+10. **Prototype fixes prompt:** `components/for-you-prototype-fixes.md` collects every change the prototype needs. Add a section each time a component is built, then Karl runs it in the For You Tab MVP project once the list is complete.
 7. Tooltip and CTA panel: ask Karl where each goes, then build.
 8. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
 9. Log the off-system values in `mng_web_ds/design-vs-production.md` and update `MNG-Web-Design-System-Status.md`. Re-export the new components with the repo's exporter (`scripts/component-export/`).
