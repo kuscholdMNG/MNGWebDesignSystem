@@ -80,6 +80,32 @@ Use the production Load More (the same rule as production's `.load-more` / `.sho
 
 - Remove the old `.lm` padding (16px 0 8px) so the 40px above and below comes from the button. It's the same at every width; don't add breakpoints.
 
-## 6. Article timestamp (already done 2026-10-23)
+## 6. Non-subscriber CTA panel (reuse the Reader Dashboard "subscribe" panel)
+
+Replace the `.cta` block with the MNG Web Design System InLineMessage panel used by Reader Dashboard for locked features (Figma: In-Line Content Containers ▸ InLineMessage, Priority=Medium, Location=DashSubsNonSub, PanelType=Alert).
+
+Content:
+- Title: "Your personalized feed is waiting"
+- Description: "Subscribe to unlock a feed tailored to what you actually read — local news, sports, tech, and more."
+- One button: "Subscribe Now" (the existing primary button, `.btn .btn-p`).
+- Remove the padlock circle (`.cta-ic`), the "Sign in" button and the price line ("Starting at $1.99/week…").
+
+Styles:
+- Panel: background #F1EFEB (color/gray/600), border-radius 5px (radius/utility), no border, no shadow. Full width of the feed column.
+- Padding 24px (spacing/300) and 16px between rows (spacing/200); at ≤639px, padding 16px (spacing/200) and 8px between rows (spacing/100).
+- Header row: the `notification2` icon (16px, icomoon U+E94E) then the title, 8px apart (spacing/100), left-aligned. Icon and title color #856A00 (color/feedback/medium).
+- Title: `font: 700 16px/normal 'Noto Sans', sans-serif`.
+- Description: `font: 400 16px/normal 'Noto Sans', sans-serif`, color #141414 (color/gray/min), left-aligned.
+- Button: centered under the description, at its natural width.
+- Keep the panel's spacing from the content above and below as it is now.
+
+## 7. Welcome to For You modal (one small fix)
+
+The modal (`.mc`) already matches the MNG Web Design System ModalsCenter: 444px card (24px narrower than the viewport on phones), 8px radius, 1px gray/300 border, shadow 0 8px 16px rgba(0,0,0,.2) (shadow/lg), 40/40/24 padding (24 at ≤639px), 16px gaps, 20px Bold title and 16px subtitle, the bordered body box (gray/500, 4px radius, 24px padding, 16px at ≤639px), the centered primary button, the round close button (32px, gray/600 with a gray/400 edge; white with a gray/500 edge on hover), and the 50% black backdrop.
+
+- Change the card border color from #83827F to #838280 (the exact color/gray/300 value).
+- Keep the `info` icon in the header (ModalsCenter's sample uses `notification`; the icon is content and can change).
+
+## 8. Article timestamp (already done 2026-10-23)
 
 - `.tm` is `font: 400 13px/normal 'Noto Sans', sans-serif` (was 12px/16px), matching production's card meta. No change needed; listed so the prompt is complete.
