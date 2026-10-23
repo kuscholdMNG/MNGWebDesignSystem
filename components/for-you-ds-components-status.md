@@ -1,6 +1,6 @@
 # For You → MNG DS components: status and handoff
 
-> **Updated 2026-10-23** for library imports working again, the timestamp decision (13px, Karl), and the three card atoms in WordPress Elements ▸ Article Parts (all three done). Moved into the repo from the "For You Tab MVP" project the same day.
+> **Updated 2026-10-23** for the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
 
 ## Goal
 
@@ -89,9 +89,9 @@ Bold Coastal token values:
 | 1 | Homepage tabs (Editor's Picks / For You) | `.tabs` | Production World Cup tabs | **New.** Build from the production spec. Ask Karl where it goes. |
 | 2 | Feed header "While You Were Away" | `.fyh .eb` | WP Section Title / Eyebrow, Style=Underline (`3333:42278`) | **Exists.** The "Based on what you read." subhead line is new. |
 | 3 | Info tooltip | `.tip` | none (the `info` icon U+E937 exists) | **New** |
-| 4 | Featured story | `.lead` | Zone 1 Lead Article Card (`3336:46156` / `3336:46155` / `3383:46111`) | **New variant.** Adds a kicker and byline/time. |
-| 5 | Article card | `.card` | 1Col Article Card (Style=Media Lead, 16:9) | **New Style variant.** Adds a 1px gray/500 border, 8px radius, kicker and byline footer. |
-| 6 | Article row | `.row` | Horizontal Thumbnail Card (`3362:2990` / `3362:2991` / `3383:46153`) | **New variant.** Adds a border, kicker and byline. |
+| 4 | Featured story | `.lead` | Zone 1 Lead Article Card (set `3336:46157`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44769` / `3628:44822` / `3628:44874`). |
+| 5 | Article card | `.card` | 1Col Article Card (set `3536:39065`) | **Built 2026-10-23:** `Style=For You` (`3628:44640`). |
+| 6 | Article row | `.row` | Horizontal Thumbnail Card (set `3362:2992`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44666` / `3628:44686` / `3628:44706`). |
 | 7 | Card atoms: kicker, author, timestamp | `.kick` `.au` `.tm` | none (the WP Article Page Byline `1110:19503` is the full article byline) | **Built 2026-10-23** in Article Parts: Kicker `3609:39112`, Author `3609:39115`, Timestamp `3621:38794`. |
 | 8 | Load More Articles | `.btn-link` | Button Linkstyle (`5428:3953`) | **Exists.** Check the prototype's styling against it. |
 | 9 | Non-subscriber CTA panel | `.cta` | Button Primary / Secondary; WP Paywalls ▸ Engage Paywall Modal (`1495:23511`) | **New.** Compare with the Paywall modal first. |
@@ -153,6 +153,23 @@ Cleanup: the previous session had left two stray copies of the whole Article Par
   - Small print in 11/16 gray/200: "Starting at $1.99/week. Cancel anytime."
 - **Load More**: "Load More Articles", Noto Sans Bold 16/24, primary, underlined, centered, 16px top / 8px bottom padding.
 
+### Card variants built (2026-10-23)
+
+Each set got a new variant property **Style = Standard / For You**. The existing variants were renamed `Style=Standard, …` (renaming is safe; existing instances keep working and default to Standard). All new values are bound to MNG DS variables; the atoms are nested as exposed instances, so the kicker, author and time can be edited from the card. Every variant was screenshotted and checked against the prototype CSS.
+
+| Set | New variants | Built from the prototype |
+|---|---|---|
+| 1Col Article Card `3536:39065` | `Style=For You` `3628:44640` (296 wide) | White (gray/max), 1px gray/500 border, radius/lg, clips. 16:9 Article Image Placeholder (`Show Image` still applies). Card Body: spacing/200 padding, spacing/150 gap: Kicker, spacing/100, headline bound to `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88), max 5 lines with ellipsis. Card Footer: 1px gray/500 top border, spacing/100 top padding, Author over Timestamp. |
+| Horizontal Thumbnail Card `3362:2992` | `Style=For You` × `Device=Mobile` `3628:44666` (340), `Tablet` `3628:44686` (720), `Desktop` `3628:44706` (848) | Same border, radius, fill, kicker and headline (not clamped). Image left: 220 wide, min height 132 (Mobile: 120, min 110). Body padding spacing/200 (Mobile spacing/150), spacing/150 gap. Footer: Author and Timestamp in a row, spacing/150 gap, same top border. Widths are the prototype's feed column at 360 / 768 / 1280. |
+| Zone 1 Lead Article Card `3336:46157` | `Style=For You` × `Device=Mobile` `3628:44769`, `Tablet` `3628:44822`, `Desktop` `3628:44874` | Cloned from Standard (same headline, excerpt and image tokens). Removed: subscriber badge, Related list. Added: a Headline Group (Kicker, spacing/050, headline) and a Byline row after the excerpt (Author + Timestamp, spacing/150 gap, 12px above it). Mobile: the excerpt's 16px bottom padding is 0 and the byline has spacing/150 bottom padding, so the bottom border sits 20px below it. |
+
+Not built / open:
+- **Hover state** (prototype `.card:hover` / `.row:hover`: primary border plus a 1px primary ring, headline in primary). Needs a State property; ask Karl first.
+- **Card body space-between:** in code the card body is space-between so footers line up when cards in a row stretch to the same height. Figma can't combine that with a fixed 12px gap, so the Figma card uses the gap (noted in the component description).
+- **Featured story excerpt gap:** the prototype has 6px above the excerpt (`.lead-d`); the Figma Standard lead (production-measured) has a 4px gap. The For You variant keeps 4px. Check against production.
+- **Unused properties on For You variants:** `Show Subscriber Badge`, `Show Excerpt` and `Show Meta` (1Col) and `Show Gallery Icon` (Horizontal Thumbnail) don't apply to them.
+- The Figma Bridge's bound-paint colors render black in exports until the stored fallback color is set; fixed by writing the resolved value with the binding.
+
 ### Homepage tabs (production, staging.dailylocal.com/world-cup/)
 
 - **Markup:** `<ul class="sr-nav-tabs" role="tablist">` > `<li role="presentation">` > `<button class="tab-btn [active]" role="tab" aria-selected aria-controls>`.
@@ -175,9 +192,9 @@ Cleanup: the previous session had left two stray copies of the whole Article Par
 
 1. ~~Confirm the imports work~~ Working again (2026-10-23).
 2. ~~Timestamp size~~ 13px (Karl, 2026-10-23).
-3. ~~Build the 3 atoms~~ Done 2026-10-23, all screenshotted. Still to do: change the prototype's `.tm` from 12px to 13px.
+3. ~~Build the 3 atoms~~ Done 2026-10-23, all screenshotted. ~~Prototype `.tm` 12px → 13px~~ Done 2026-10-23 in `claude-design-v3/Main.dc.html` (`font:400 13px/normal`). Not changed: the older `claude-design/Main.dc.html` and the `index.html` built from it (Oct 15), and the Claude Design canvas artifact.
 4. Publish the WordPress Elements library so the atoms can be used.
-5. Card variants: add them to 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, built from the atoms.
+5. ~~Card variants~~ Done 2026-10-23 (see "Card variants built"). Open: hover state; the 6px vs 4px excerpt gap on the featured story.
 6. Tabs: ask Karl where they go, then build from the production spec mapped to tokens.
 7. Tooltip and CTA panel: ask Karl where each goes, then build.
 8. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
