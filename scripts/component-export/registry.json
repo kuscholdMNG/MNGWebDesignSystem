@@ -227,6 +227,29 @@
         "Line height 12.5px has no token."
       ],
       "production": null
+    },
+    {
+      "slug": "article-author",
+      "name": "Article Author",
+      "group": "article-parts",
+      "layer": "wordpress",
+      "order": 2,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3609:39115",
+      "documentationFrame": "3609:39159",
+      "description": "Author name in the footer of For You cards and rows and in the featured story byline.",
+      "rules": [
+        "**Text:** the author's name as published (`Author` text property). One line; hugs its text.",
+        "**Type:** Noto Sans Medium 12 (`font/size/12`, `font/style/medium`), line height 16px (no line-height token yet). Color `color/gray/min` (18.4:1 on white).",
+        "**Cards:** the footer has a 1px `color/gray/500` top border and 8px (`spacing/100`) above the author; the Article Timestamp sits directly under it.",
+        "**Rows and the featured story:** author and timestamp side by side, 12px apart (`spacing/150`).",
+        "**Used in:** 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card (`Style=For You`), as an exposed instance."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Line height 16px has no token."
+      ],
+      "production": null
     }
   ]
 }

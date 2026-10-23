@@ -242,8 +242,8 @@ Everything touched for the For You tab, by library. Check each item, then add th
 
 | Item | Node | Cleanup |
 |---|---|---|
-| Article Section Kicker | `3609:39112` | ✅ **Done 2026-10-23.** Description reworded for production; Specifications section added to its container (`3609:39117`); registry entry `article-section-kicker` (layer wordpress, group article-parts). Line height 12.5 stays raw (no line-height tokens): listed as a known issue. Primary passes AA on white on all 96 sites (lowest 4.75:1). |
-| Article Author | `3609:39115` | Line height 16 raw. Description mentions the prototype; reword for production. |
+| Article Section Kicker | `3609:39112` | ✅ **Done 2026-10-23.** Description reworded for production; Specifications section with spacing samples (green markers) added to its container (`3609:39117`, widened to 760); registry entry `article-section-kicker` (layer wordpress, group article-parts). Line height 12.5 stays raw (no line-height tokens): listed as a known issue. Primary passes AA on white on all 96 sites (lowest 4.75:1). |
+| Article Author | `3609:39115` | ✅ **Done 2026-10-23.** Description reworded; Specifications section with spacing samples (card footer: 8px above; rows and byline: 12px between author and timestamp) in its container (`3609:39159`, widened to 760); registry entry `article-author`. Line height 16 stays raw (known issue). |
 | Article Timestamp | `3621:38794` | Line height auto. Description; confirm the Clock Icon instance is the published library icon. |
 | 1Col Article Card, Style=For You | `3628:44640` | Hover state (parked). Show Subscriber Badge / Show Excerpt / Show Meta don't apply: document or hide. Body space-between note. Sample image placeholder. |
 | Horizontal Thumbnail Card, Style=For You | `3628:44666` / `44686` / `44706` | Hover state (parked). Show Gallery Icon doesn't apply. Built widths 340 / 720 / 848: confirm. Variant order on the canvas. |
