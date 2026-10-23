@@ -94,7 +94,7 @@ Bold Coastal token values:
 | 6 | Article row | `.row` | Horizontal Thumbnail Card (set `3362:2992`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44666` / `3628:44686` / `3628:44706`). |
 | 7 | Card atoms: kicker, author, timestamp | `.kick` `.au` `.tm` | none (the WP Article Page Byline `1110:19503` is the full article byline) | **Built 2026-10-23** in Article Parts: Kicker `3609:39112`, Author `3609:39115`, Timestamp `3621:38794`. |
 | 8 | Load More Articles | `.btn-link` | Button Linkstyle (`5428:3953`) | **Exists.** Check the prototype's styling against it. |
-| 9 | Non-subscriber CTA panel | `.cta` | Button Primary / Secondary; WP Paywalls ▸ Engage Paywall Modal (`1495:23511`) | **New.** Compare with the Paywall modal first. |
+| 9 | Non-subscriber CTA panel | `.cta` | MNG Web Design System ▸ In-Line Content Containers ▸ InLineMessage (`2776:2`), `Priority=Medium, Location=DashSubsNonSub, PanelType=Alert` (Desktop `3421:643`, Mobile `3421:658`, FOLD `3421:673`) | **Reuse, no new component (Karl, 2026-10-23).** Same job as Reader Dashboard's locked-feature panels (DashGiftCTAnonSub, DashSavednonSub). For You copy: title "Your personalized feed is waiting", the prototype's description, button "Subscribe Now". The prototype's padlock circle, serif headline, "Sign in" button and price line are dropped. Prototype prompt section to add once the panel's exact values are read from Figma. |
 | 10 | Welcome to For You modal | `.mc-*` | ModalsCenter (`3040:2262`) + Button Modal Close (`5335:16196`) | **Exists.** Parity check against `components/modal.md`. |
 | 11 | Onboarding steps 1–3 | `.ob` `.chip` | CheckBox (`4693:690`) | Deferred (hidden in the prototype). Chips are new. |
 
