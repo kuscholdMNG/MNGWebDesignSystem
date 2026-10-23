@@ -204,6 +204,29 @@
       "breakpoints": null,
       "knownIssues": [],
       "production": null
+    },
+    {
+      "slug": "article-section-kicker",
+      "name": "Article Section Kicker",
+      "group": "article-parts",
+      "layer": "wordpress",
+      "order": 1,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3609:39112",
+      "documentationFrame": "3609:39117",
+      "description": "Section label above an article headline in For You cards, rows and the featured story: the article's section (articleSection), shown uppercase in the theme primary color.",
+      "rules": [
+        "**Text:** the section name typed as written (`Section` text property); uppercase comes from the text case. One line.",
+        "**Type:** Noto Sans Bold 10 (`font/size/10`, `font/style/bold`), line height 12.5px (no line-height token yet), no letter spacing, matching the production top nav and Subscriber Only badge (Karl, 2026-10-23).",
+        "**Color:** `color/theme/primary`, so it changes per theme. Passes WCAG AA on white on all 96 sites (lowest 4.75:1, orlandosentinel.com).",
+        "**Size and spacing:** hugs its text, no padding. 8px (`spacing/100`) between it and the headline in For You cards and rows; 4px (`spacing/050`) in the featured story.",
+        "**Used in:** 1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card (`Style=For You`), as an exposed instance."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Line height 12.5px has no token."
+      ],
+      "production": null
     }
   ]
 }
