@@ -1,6 +1,6 @@
 # For You → MNG DS components: status and handoff
 
-> **Updated 2026-10-23** for the Homepage Tabs (Menus and Parts; design-vs-production entry 31), the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
+> **Updated 2026-10-23** for the Tooltip (MNG Web Design System, new Tooltips page), the Homepage Tabs (Menus and Parts; design-vs-production entry 31), the three card variants (1Col Article Card, Horizontal Thumbnail Card and Zone 1 Lead Article Card, Style=For You), the prototype timestamp fix, library imports working again, the timestamp decision (13px, Karl) and the three card atoms in WordPress Elements ▸ Article Parts. Moved into the repo from the "For You Tab MVP" project the same day.
 
 ## Goal
 
@@ -88,7 +88,7 @@ Bold Coastal token values:
 |---|---|---|---|---|
 | 1 | Homepage tabs (Editor's Picks / For You) | `.tabs` | Production World Cup tabs | **Built 2026-10-23** in WordPress Elements ▸ Menus and Parts: Homepage Tab `3629:44949`, Homepage Tabs `3629:44974`. |
 | 2 | Feed header "While You Were Away" | `.fyh .eb` | WP Section Title / Eyebrow, Style=Underline (`3333:42278`) | **Exists.** The "Based on what you read." subhead line is new. |
-| 3 | Info tooltip | `.tip` | none (the `info` icon U+E937 exists) | **New** |
+| 3 | Info tooltip | `.tip` | none (the `info` icon U+E937 exists) | **Built 2026-10-23** in the MNG Web Design System, new page "Tooltips \| 2026.10.23": Tooltip set `7372:25744` (Type=Tooltip / Toggletip × Placement=Top / Bottom). |
 | 4 | Featured story | `.lead` | Zone 1 Lead Article Card (set `3336:46157`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44769` / `3628:44822` / `3628:44874`). |
 | 5 | Article card | `.card` | 1Col Article Card (set `3536:39065`) | **Built 2026-10-23:** `Style=For You` (`3628:44640`). |
 | 6 | Article row | `.row` | Horizontal Thumbnail Card (set `3362:2992`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44666` / `3628:44686` / `3628:44706`). |
@@ -170,6 +170,19 @@ Not built / open:
 - **Unused properties on For You variants:** `Show Subscriber Badge`, `Show Excerpt` and `Show Meta` (1Col) and `Show Gallery Icon` (Horizontal Thumbnail) don't apply to them.
 - The Figma Bridge's bound-paint colors render black in exports until the stored fallback color is set; fixed by writing the resolved value with the binding.
 
+### Tooltip built (2026-10-23)
+
+Karl: the prototype's tooltip was a placeholder; it goes in the MNG Web Design System, open to what tooltips in the wild do. He chose **both types in one set**, on a new page **Tooltips | 2026.10.23** (`7372:25702`, after Modal Panels), in a "Tooltip Container" doc frame (`7372:25704`).
+
+References: production's article "type of work" popup (`#tiPopupContent` on ocregister articles: opened by clicking the "News" label, white, 1px #787878 border, 1px radius, 275px wide, 15px 10px padding, 0.9em Helvetica, 10px caret, close X); the old "Section Menu/ToolTip box" frames on "Elements to be detailed still" (dark #616262, 20px text, not a component); and the common split in other design systems between a hover **tooltip** (short label, mouse/keyboard only) and a click **toggletip** (an info button that opens an explanation; works on touch). No elevation/shadow tokens exist, so neither type has a shadow.
+
+| Variant | Node | Spec |
+|---|---|---|
+| Type=Tooltip, Placement=Top / Bottom | `7372:25710` / `7372:25715` | Label property. color/gray/100 box (white text 11.6:1), Noto Sans Regular 12 color/gray/max, line height auto, spacing/050 × spacing/100 padding, radius/sm, max width 240, 12×6 caret. Hover/focus only; for icon-only buttons. |
+| Type=Toggletip, Placement=Top / Bottom | `7372:25720` / `7372:25732` | Text property; Show Close (boolean). 275 wide, color/gray/max, 1px color/gray/300 border, radius/sm. Text Container (spacing/150 padding) with Noto Sans Regular 13 color/gray/100 (11.6:1), then a Button In-Line Close instance (40×40, main file `5335:16200`). 12×6 caret with a gray/300 edge. Opens on click/tap; Esc, close or outside click closes. |
+
+Production follow-up (not logged yet): the article type-of-work popup could move to this component (Noto Sans instead of Helvetica, gray/300 border instead of #787878, radius/sm). That's open item 7 in the main status doc.
+
 ### Homepage tabs (production, staging.dailylocal.com/world-cup/)
 
 - **Markup:** `<ul class="sr-nav-tabs" role="tablist">` > `<li role="presentation">` > `<button class="tab-btn [active]" role="tab" aria-selected aria-controls>`.
@@ -210,6 +223,6 @@ Color mapping (nearest MNG gray, with readable contrast): #6B7280 → gray/200 (
 5. ~~Card variants~~ Done 2026-10-23 (see "Card variants built"). Open: hover state (parked); the 6px vs 4px excerpt gap on the featured story.
 6. ~~Tabs~~ Built 2026-10-23 in Menus and Parts; logged as design-vs-production entry 31; gray mapping and AA contrast confirmed. Open: update the prototype's tabs and the kicker's letter spacing (1px → 0).
 10. **Prototype fixes prompt:** `components/for-you-prototype-fixes.md` collects every change the prototype needs. Add a section each time a component is built, then Karl runs it in the For You Tab MVP project once the list is complete.
-7. Tooltip and CTA panel: ask Karl where each goes, then build.
+7. ~~Tooltip~~ Built 2026-10-23 (see "Tooltip built"); prototype section added to the fixes prompt. **The MNG Web Design System library needs publishing.** CTA panel: ask Karl where it goes, then build.
 8. Parity checks for the modal (against `components/modal.md`) and for Load More (against Button Linkstyle). Fix the prototype if either differs.
 9. Log the off-system values in `mng_web_ds/design-vs-production.md` and update `MNG-Web-Design-System-Status.md`. Re-export the new components with the repo's exporter (`scripts/component-export/`).

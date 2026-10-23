@@ -39,6 +39,23 @@ Tab (`.tab`):
 
 - `.kick`: letter-spacing 0 (was 1px), to match production's top nav items and Subscriber Only badge. Leave its other values as they are.
 
-## 3. Article timestamp (already done 2026-10-23)
+## 3. Feed header info toggletip (replaces the hover tooltip)
+
+The info icon after "Based on what you read." becomes a click/tap **toggletip**, matching the MNG Web Design System Tooltip component (Type=Toggletip, Placement=Bottom). Apply this to both copies of the feed header (`.fyh`).
+
+Behavior:
+- Remove the hover/focus-within reveal (`.tipw:hover .tip, .tipw:focus-within .tip`). The box opens when the info button is clicked or tapped, and closes on a second click, the close button, Esc, or a click outside it. When it closes from the close button or Esc, move focus back to the info button.
+- Info button (`.tipb`): add `aria-expanded="false|true"` and `aria-controls` pointing at the box. Change its aria-label to "About this feed". Keep its icon, size, the 12px invisible hit-area extension and the focus-visible outline.
+- Box (`.tip`): give it an id and `role="status"` (so the text is read when it opens); remove `aria-hidden`; use the `hidden` attribute when closed.
+
+Box styles:
+- Position: below the info button, centered on it, 8px gap (spacing/100), with a caret pointing up at the button.
+- width 275px (max-width calc(100vw - 32px) so it never overflows on phones); background #FFFFFF (color/gray/max); 1px solid #838280 border (color/gray/300); border-radius 4px (radius/sm); no box-shadow.
+- Layout: a row with the text area and the close button, top-aligned. Text area padding 12px (spacing/150).
+- Text: `font: 400 13px/normal 'Noto Sans', sans-serif`, color #393938 (color/gray/100), not italic. Keep the placeholder copy: "Placeholder text with more information about this feature."
+- Close button: 40×40px, transparent, a 12px "close" icon in #000000, `aria-label="Close"`. Focus-visible: 2px solid #000000 outline.
+- Caret: 12px wide × 6px tall, pointing up, centered, with the same #838280 1px edge and #FFFFFF fill, overlapping the box's top border so it looks like one shape.
+
+## 4. Article timestamp (already done 2026-10-23)
 
 - `.tm` is `font: 400 13px/normal 'Noto Sans', sans-serif` (was 12px/16px), matching production's card meta. No change needed; listed so the prompt is complete.
