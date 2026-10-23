@@ -1928,7 +1928,7 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 **Production:** `.nav-wrapper-primary { border-bottom: 1px solid #9D9A98 }`. It's the 1px rule under the masthead, there both at the top of the page (under the section nav row) and when scrolled (under the 64px bar, which is 65px tall with the rule).
 
-**Design:** `color/gray/400` (#A7A6A3), the closest MNG gray (Karl, 2026-10-23). In WordPress Elements ▸ Masthead (`456:2572`), every Scrolled and AdFree-Scrolled variant now has this rule at the bottom (27 added 2026-10-23; the 3 Dashboard variants already had one). Most top-of-page variants still draw it in `color/gray/300`; align them to gray/400 in a later pass.
+**Design:** `color/gray/400` (#A7A6A3), the closest MNG gray (Karl, 2026-10-23). In WordPress Elements, every masthead rule now uses gray/400 (2026-10-23): Masthead (`456:2572`) top-of-page variants (36 rules changed from `color/gray/300`), every Scrolled and AdFree-Scrolled variant (27 rules added at the bottom; the 3 Dashboard variants already had one), and ObitMastHead (`1139:22369`, 26 rules added at the bottom, matching the main masthead per entry 32).
 
 **Fix:** change the border color to the gray/400 value (#A7A6A3). The obituaries masthead's own #CCCCCC border goes away with entry 32.
 
