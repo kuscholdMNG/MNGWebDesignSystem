@@ -272,6 +272,30 @@
       "breakpoints": null,
       "knownIssues": [],
       "production": "Card meta time on production homepages: Noto Sans 13px / 400, #5E5D5C (color/gray/200)."
+    },
+    {
+      "slug": "1col-article-card",
+      "name": "1Col Article Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "order": 1,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3536:39065",
+      "documentationFrame": "3484:67695",
+      "description": "Single-column article card. Style=Standard (4:3 image, CardQuaternary headline, compact excerpt: section-highlight lead cards), Style=Media Lead (16:9 image, TitleMedia headline, excerpt: the Photos lead) and Style=For You (bordered card for the For You tab).",
+      "rules": [
+        "**Style=For You container:** `color/gray/max` fill, 1px `color/gray/500` border, `radius/lg` (8px) corners, clips its content. No shadow.",
+        "**Style=For You content:** 16:9 Article Image Placeholder (Show Image applies); Article Section Kicker; headline in `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88, `color/gray/min`), max 5 lines with an ellipsis; footer with a 1px `color/gray/500` top border, Article Author with the Article Timestamp under it.",
+        "**Style=For You spacing:** 16px (`spacing/200`) body padding; 8px (`spacing/100`) between kicker and headline; 12px (`spacing/150`) between the headline group and the footer; 8px (`spacing/100`) above the author.",
+        "**Style=For You width:** fills its column, 16px between cards: 3-up from 800px, 2-up at 640–799px, 1-up below 640px. Built at 296px.",
+        "**Equal-height rows:** in code the card body is also `justify-content: space-between`, so footers line up when cards in a row stretch to the same height. Figma can't combine that with a fixed gap, so the Figma card uses the 12px gap.",
+        "**Properties:** Show Subscriber Badge, Show Excerpt and Show Meta apply to Standard and Media Lead only."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Style=For You: hover state (primary border and ring, primary headline) not built yet (parked)."
+      ],
+      "production": null
     }
   ]
 }

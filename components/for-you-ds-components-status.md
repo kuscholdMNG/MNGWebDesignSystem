@@ -134,7 +134,7 @@ Cleanup: the previous session had left two stray copies of the whole Article Par
   - White, 1px #CCCAC7 border, 8px radius, clips content. The image is 16:9.
   - Body: 16px padding, 12px gap, space-between. Kicker (8px below it), then the title: Noto Serif Bold 16 / 18.88, clamped to 5 lines.
   - Footer: 1px #CCCAC7 top border, 8px top padding, author over timestamp.
-  - Layout: 2-up above 639px, 1-up at ≤639px.
+  - Layout: 3-up from 800px, 2-up at 640–799px, 1-up at ≤639px (16px gap).
 - **Row** (`.row`):
   - A 2-column grid: image 220px wide (min height 132), then the body (16px padding).
   - At small widths: image 120px wide (min height 110), body padding 12px.
@@ -245,7 +245,7 @@ Everything touched for the For You tab, by library. Check each item, then add th
 | Article Section Kicker | `3609:39112` | ✅ **Done 2026-10-23.** Description reworded for production; Specifications section with spacing samples (green markers) added to its container (`3609:39117`, widened to 760); registry entry `article-section-kicker` (layer wordpress, group article-parts). Line height 12.5 stays raw (no line-height tokens): listed as a known issue. Primary passes AA on white on all 96 sites (lowest 4.75:1). |
 | Article Author | `3609:39115` | ✅ **Done 2026-10-23.** Description reworded; Specifications section with spacing samples (card footer: 8px above; rows and byline: 12px between author and timestamp) in its container (`3609:39159`, widened to 760); registry entry `article-author`. Line height 16 stays raw (known issue). |
 | Article Timestamp | `3621:38794` | ✅ **Done 2026-10-23.** Description reworded; Clock Icon confirmed as the published library icon (access-time); Specifications section with a 2× spacing sample (4px between icon and time) in its container (`3621:38786`, widened to 760); registry entry `article-timestamp`. |
-| 1Col Article Card, Style=For You | `3628:44640` | Hover state (parked). Show Subscriber Badge / Show Excerpt / Show Meta don't apply: document or hide. Body space-between note. Sample image placeholder. |
+| 1Col Article Card, Style=For You | `3628:44640` | ✅ **Done 2026-10-23.** Variant description rewritten; "Specifications · Style=For You" section in the set's container (`3484:67695`): detached sample with green padding markers (16, 8, 12, 8), a magenta 16px card-gap demo, and spec text (unused properties and the space-between note documented). Grid: 3-up from 800px, 2-up at 640–799, 1-up below 640 (corrected from "2-up above 639"). Registry entry `1col-article-card`. Hover still parked. |
 | Horizontal Thumbnail Card, Style=For You | `3628:44666` / `44686` / `44706` | Hover state (parked). Show Gallery Icon doesn't apply. Built widths 340 / 720 / 848: confirm. Variant order on the canvas. |
 | Zone 1 Lead Article Card, Style=For You | `3628:44769` / `44822` / `44874` | Excerpt gap 4 vs prototype 6 (open). Byline top padding mixes spacing/050 (Mobile) and spacing/100 (Tablet, Desktop) to reach 12px: simplify. |
 | Homepage Tab / Homepage Tabs | `3629:44949` / `3629:44974` | Doc frame uses the gray Menus and Parts style, not the white container style; no state labels on the variant grid; Focus ring sizing after the padding change. |
