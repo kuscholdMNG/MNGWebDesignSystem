@@ -40,6 +40,7 @@
   - [30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#30-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
   - [31. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system](#31-homepage-tabs-world-cup-tabs--font-colors-spacing-and-breakpoint-off-the-design-system)
   - [32. Obituaries masthead — shadow and bottom border don't match the main masthead](#32-obituaries-masthead--shadow-and-bottom-border-dont-match-the-main-masthead)
+  - [33. Masthead — nav bottom border color isn't a design token](#33-masthead--nav-bottom-border-color-isnt-a-design-token)
 - [Notes (reading live colors, removed entries)](#notes)
 
 ---
@@ -1919,6 +1920,16 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 | Nav bottom border | `1px solid #9D9A98` (`.nav-wrapper-primary`) | `1px solid #CCCCCC` | same as the main masthead |
 
 **Fix:** remove the `.obits-content-header .nav-wrapper-primary` box-shadow and border-bottom overrides, so the obituaries masthead uses the main masthead's styles.
+
+## 33. Masthead — nav bottom border color isn't a design token
+
+**Found:** 2026-10-23, on ocregister, chicagotribune, canoncitydailyrecord, denverpost and orlandosentinel (all three theme stylesheets). **Team:** CMS.
+
+**Production:** `.nav-wrapper-primary { border-bottom: 1px solid #9D9A98 }`. It's the 1px rule under the masthead, there both at the top of the page (under the section nav row) and when scrolled (under the 64px bar, which is 65px tall with the rule).
+
+**Design:** `color/gray/400` (#A7A6A3), the closest MNG gray (Karl, 2026-10-23). In WordPress Elements ▸ Masthead (`456:2572`), every Scrolled and AdFree-Scrolled variant now has this rule at the bottom (27 added 2026-10-23; the 3 Dashboard variants already had one). Most top-of-page variants still draw it in `color/gray/300`; align them to gray/400 in a later pass.
+
+**Fix:** change the border color to the gray/400 value (#A7A6A3). The obituaries masthead's own #CCCCCC border goes away with entry 32.
 
 ## Notes
 
