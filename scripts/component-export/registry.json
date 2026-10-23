@@ -296,6 +296,30 @@
         "Style=For You: hover state (primary border and ring, primary headline) not built yet (parked)."
       ],
       "production": null
+    },
+    {
+      "slug": "horizontal-thumbnail-card",
+      "name": "Horizontal Thumbnail Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "order": 2,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3362:2992",
+      "documentationFrame": "3484:67724",
+      "description": "Horizontal article row. Style=Standard: compact thumbnail list item (Photos Block secondary list). Style=For You: the bordered For You tab article row.",
+      "rules": [
+        "**Style=For You container:** `color/gray/max` fill, 1px `color/gray/500` border, `radius/lg` (8px) corners, clips its content. No shadow.",
+        "**Style=For You image:** Article Image Placeholder on the left, filling the row height: 220px wide with a 132px minimum height at 640px and up, 120px wide with a 110px minimum below 640px.",
+        "**Style=For You body:** Article Section Kicker; headline in `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88, `color/gray/min`), not clamped; footer with a 1px `color/gray/500` top border, Article Author and Article Timestamp side by side.",
+        "**Style=For You spacing:** body padding 16px (`spacing/200`), 12px (`spacing/150`) below 640px; 8px (`spacing/100`) kicker to headline; 12px (`spacing/150`) headline group to footer; 8px (`spacing/100`) above the footer content; 12px (`spacing/150`) between author and timestamp.",
+        "**Style=For You width:** fills the feed column; rows stack 16px apart.",
+        "**Properties:** Show Gallery Icon applies to Style=Standard only."
+      ],
+      "breakpoints": "| Device | Viewport | Style=For You |\n|---|---|---|\n| Mobile | below 640px (340/360 templates) | 120px image, 12px body padding; built at 340 |\n| Tablet | 640px and up (768 template) | 220px image, 16px body padding; built at 720 |\n| Desktop | 640px and up (1280 template) | Same as Tablet; built at 848 (896px feed column minus 24px padding each side) |",
+      "knownIssues": [
+        "Style=For You: hover state not built yet (parked)."
+      ],
+      "production": null
     }
   ]
 }
