@@ -93,7 +93,7 @@ Bold Coastal token values:
 | 5 | Article card | `.card` | 1Col Article Card (set `3536:39065`) | **Built 2026-10-23:** `Style=For You` (`3628:44640`). |
 | 6 | Article row | `.row` | Horizontal Thumbnail Card (set `3362:2992`) | **Built 2026-10-23:** `Style=For You` × Mobile / Tablet / Desktop (`3628:44666` / `3628:44686` / `3628:44706`). |
 | 7 | Card atoms: kicker, author, timestamp | `.kick` `.au` `.tm` | none (the WP Article Page Byline `1110:19503` is the full article byline) | **Built 2026-10-23** in Article Parts: Kicker `3609:39112`, Author `3609:39115`, Timestamp `3621:38794`. |
-| 8 | Load More Articles | `.btn-link` | Button Linkstyle (`5428:3953`) | **Exists.** Check the prototype's styling against it. |
+| 8 | Load More Articles | `.btn-link` | WordPress Elements ▸ Homepage ▸ Photos: **Show More Affordance** (`3352:24180`, was "Show More Photos Affordance", 12 instances in Photos Block) | **Reuse (Karl, 2026-10-23).** Production's `.load-more` (section fronts) and `.show-more-videos` (Photos) share one CSS rule. Added a Label text property and a "Load More" example (For You). The Figma component doesn't match production, so a raw-value copy, **Show More Affordance (Production)** (`3634:49423`), sits next to it for comparison; Karl to decide next. Differences: label 19px vs 16/16; rule 2px gray/500 vs 1px #D7D6D2; notch 50px gray/600 with gray/500 edges vs 35px #FBFBFB with #D7D6D2 edges, centered vs ~5px right of center; 0 vs 40px above the label (the Figma rule row is 71px tall); 40px below in both. Hover (#0A0908) and focus (2px black, 5px offset) aren't in Figma. |
 | 9 | Non-subscriber CTA panel | `.cta` | MNG Web Design System ▸ In-Line Content Containers ▸ InLineMessage (`2776:2`), `Priority=Medium, Location=DashSubsNonSub, PanelType=Alert` (Desktop `3421:643`, Mobile `3421:658`, FOLD `3421:673`) | **Reuse, no new component (Karl, 2026-10-23).** Same job as Reader Dashboard's locked-feature panels (DashGiftCTAnonSub, DashSavednonSub). For You copy: title "Your personalized feed is waiting", the prototype's description, button "Subscribe Now". The prototype's padlock circle, serif headline, "Sign in" button and price line are dropped. Prototype prompt section to add once the panel's exact values are read from Figma. |
 | 10 | Welcome to For You modal | `.mc-*` | ModalsCenter (`3040:2262`) + Button Modal Close (`5335:16196`) | **Exists.** Parity check against `components/modal.md`. |
 | 11 | Onboarding steps 1–3 | `.ob` `.chip` | CheckBox (`4693:690`) | Deferred (hidden in the prototype). Chips are new. |
@@ -223,8 +223,8 @@ Done 2026-10-23: imports working again; timestamp 13px (prototype `.tm` updated)
 Still to do, in order (Karl, 2026-10-23: finish the For You components first, then clean up, then export):
 
 1. **Remaining For You components:**
-   - Feed header subhead ("Based on what you read." + info toggletip trigger) on Section Title / Eyebrow (gap #2).
-   - Load More: parity check against Button Linkstyle (gap #8).
+   - ~~Feed header subhead~~ Done 2026-10-23: Section Title / Eyebrow (`3333:42278`) has new properties Show Subhead (off by default), Subhead and Show Info; Noto Sans Regular 13 gray/200 with a 12px info icon, spacing/050 between them (prototype 6px, a tie between 4 and 8, rounded down); example instance "Example: For You feed header" (`3632:48697`). Style=Bold's gap set to 6 (raw, like Style=Underline). Prototype section to add.
+   - Load More: reuse Show More Affordance (gap #8); waiting on Karl's call after the production comparison.
    - Welcome modal: parity check against ModalsCenter and `components/modal.md` (gap #10).
    - CTA panel: read DashSubsNonSub's exact values and add its prototype prompt section (needs the bridge reconnected to the MNG Web Design System file).
    - Onboarding steps and chips (gap #11): deferred, hidden in the prototype.
